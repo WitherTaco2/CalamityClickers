@@ -1,0 +1,3 @@
+displayName = Calamity Clickers
+author = WitherTaco
+version = 0.1
