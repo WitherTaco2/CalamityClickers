@@ -7,7 +7,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace CalamityClickers.Content.Armor
+namespace CalamityClickers.Content.Items.Armor
 {
     [AutoloadEquip(EquipType.Head)]
     public class AerospecCapsuit : ModItem, ILocalizedModType

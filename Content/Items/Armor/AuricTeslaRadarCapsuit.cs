@@ -7,7 +7,7 @@ using ClickerClass.Items;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace CalamityClickers.Content.Armor
+namespace CalamityClickers.Content.Items.Armor
 {
     [AutoloadEquip(EquipType.Head)]
     public class AuricTeslaRadarCapsuit : ClickerItem, ILocalizedModType
@@ -81,7 +81,7 @@ namespace CalamityClickers.Content.Armor
 
         public override void ArmorSetShadows(Player player)
         {
-            player.armorEffectDrawShadow = true;
+            player.armorEffectDrawOutlines = true;
         }
 
         /*public override void AddRecipes()

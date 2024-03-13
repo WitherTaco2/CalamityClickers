@@ -1,1 +1,26 @@
-# This file will automatically update with entries for new content after a build and reload
+ClickEffect: {
+	SeaBubble: {
+		Name: Sea Bubble
+		Description: $Mods.ClickerClass.Common.Unknown
+	}
+}
+
+Items: {
+	Armor: {
+		Capsuit: {
+			AerospecCapsuit: {
+				DisplayName: Aerospec Capsuit
+				Tooltip: ""
+			}
+
+			AuricTeslaRadarCapsuit: {
+				DisplayName: Auric Tesla Radar Capsuit
+				Tooltip: ""
+			}
+		}
+	}
+
+	Weapons.Clicker.SeaRemainClicker.DisplayName: Sea Remain Clicker
+}
+
+Projectiles.Typeless.SeaRemainClickerProjectile.DisplayName: Sea Remain Clicker Projectile
