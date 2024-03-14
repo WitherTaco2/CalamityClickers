@@ -1,5 +1,6 @@
 ﻿using CalamityMod;
 using CalamityMod.Items;
+using CalamityMod.Items.Materials;
 using CalamityMod.Projectiles.Typeless;
 using ClickerClass;
 using Microsoft.Xna.Framework;
@@ -34,6 +35,14 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
             Item.knockBack = 1.5f;
             Item.rare = ItemRarityID.Orange;
             Item.value = CalamityGlobalItem.Rarity3BuyPrice;
+        }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<AerialiteBar>(7)
+                .AddIngredient(ItemID.SunplateBlock, 3)
+                .AddTile(TileID.SkyMill)
+                .Register();
         }
     }
 }

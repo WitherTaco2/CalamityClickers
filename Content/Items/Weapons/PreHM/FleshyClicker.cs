@@ -11,21 +11,21 @@ using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Weapons.PreHM
 {
-    public class RottenClicker : ModdedClickerWeapon
+    public class FleshyClicker : ModdedClickerWeapon
     {
         public static string ClickerEffect { get; internal set; } = string.Empty;
         public override float Radius => 2.5f;
-        public override Color RadiusColor => new Color(91, 71, 127);
+        public override Color RadiusColor => new Color(153, 54, 63);
         public override void SafeSetStaticDefaults()
         {
-            RottenClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "BrainExplosion", 7, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            FleshyClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "BloodyExplosion", 7, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
-                Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<RottenClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
+                Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<FleshyClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
             });
         }
         public override void SafeSetDefaults()
         {
-            AddEffect(Item, RottenClicker.ClickerEffect);
+            AddEffect(Item, FleshyClicker.ClickerEffect);
 
             Item.damage = 7;
             Item.knockBack = 1f;
@@ -35,14 +35,14 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(ItemID.DemoniteBar, 3)
-                .AddIngredient<RottenMatter>(9)
-                .AddIngredient(ItemID.RottenChunk, 3)
+                .AddIngredient(ItemID.CrimtaneBar, 3)
+                .AddIngredient<BloodSample>(9)
+                .AddIngredient(ItemID.Vertebrae, 3)
                 .AddTile(TileID.Anvils)
                 .Register();
         }
     }
-    public class RottenClickerProjectile : ModProjectile, ILocalizedModType
+    public class FleshyClickerProjectile : ModProjectile, ILocalizedModType
     {
         public new string LocalizationCategory => "Projectiles.Clicker";
         public override string Texture => "CalamityMod/Projectiles/InvisibleProj";
@@ -77,18 +77,18 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
 
                 for (int k = 0; k < 30; k++)
                 {
-                    Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Demonite, Main.rand.NextFloat(-8f, 8f), Main.rand.NextFloat(-8f, 8f), 125, default, 1.25f);
+                    Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.CrimtaneWeapons, Main.rand.NextFloat(-8f, 8f), Main.rand.NextFloat(-8f, 8f), 125, default, 1.25f);
                     dust.noGravity = true;
                 }
             }
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            target.AddBuff(ModContent.BuffType<BrainRot>(), 180);
+            target.AddBuff(ModContent.BuffType<BurningBlood>(), 180);
         }
         public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
-            target.AddBuff(ModContent.BuffType<BrainRot>(), 180);
+            target.AddBuff(ModContent.BuffType<BurningBlood>(), 180);
         }
     }
 }
