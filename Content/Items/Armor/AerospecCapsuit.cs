@@ -13,11 +13,6 @@ namespace CalamityClickers.Content.Items.Armor
     public class AerospecCapsuit : ModItem, ILocalizedModType
     {
         public new string LocalizationCategory => "Items.Armor.Capsuit";
-        public override void SetStaticDefaults()
-        {
-            ClickerCompat.RegisterClickerItem(this);
-            //ArmorIDs.Head.Sets.Draw = true;
-        }
 
         public override void SetDefaults()
         {

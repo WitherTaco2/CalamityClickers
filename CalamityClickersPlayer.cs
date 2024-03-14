@@ -6,13 +6,13 @@ namespace CalamityClickers
     public class CalamityClickersPlayer : ModPlayer
     {
         public bool daedalusClicker = false;
-        public bool hydrothermicClicker = false;
+        public bool ataxiaClicker = false;
         public bool bloodflareClicker = false;
         public bool godSlayerClicker = false;
         public override void ResetEffects()
         {
             daedalusClicker = false;
-            hydrothermicClicker = false;
+            ataxiaClicker = false;
             bloodflareClicker = false;
             godSlayerClicker = false;
         }

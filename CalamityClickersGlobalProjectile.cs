@@ -12,7 +12,7 @@ namespace CalamityClickers
         public override void OnHitNPC(Projectile projectile, NPC target, NPC.HitInfo hit, int damageDone)
         {
             Player player = projectile.Owner();
-            if (player.GetModPlayer<CalamityClickersPlayer>().hydrothermicClicker && ClickerCompat.IsClickerItem(player.HeldItem))
+            if (player.GetModPlayer<CalamityClickersPlayer>().ataxiaClicker && ClickerCompat.IsClickerItem(player.HeldItem))
             {
                 if (Main.player[Main.myPlayer].lifeSteal > 0 && target.canGhostHeal && (target.type != NPCID.TargetDummy && target.type != ModContent.NPCType<SuperDummyNPC>()) && !player.moonLeech)
                 {

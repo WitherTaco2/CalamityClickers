@@ -13,10 +13,6 @@ namespace CalamityClickers.Content.Items.Armor
     public class AuricTeslaRadarCapsuit : ClickerItem, ILocalizedModType
     {
         public new string LocalizationCategory => "Items.Armor.Capsuit";
-        public override void SetStaticDefaults()
-        {
-            ClickerCompat.RegisterClickerItem(this);
-        }
 
         public override void SetDefaults()
         {
