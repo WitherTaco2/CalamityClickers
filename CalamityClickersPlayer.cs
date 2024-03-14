@@ -28,7 +28,7 @@ namespace CalamityClickers
         }
         public override void PostUpdateMiscEffects()
         {
-            Player.Clicker().clickerBonusPercent = 1f - 1f / (1f + Player.Clicker().clickerBonusPercent);
+            Player.Clicker().clickerBonusPercent = 1f / (2f - Player.Clicker().clickerBonusPercent);
         }
     }
 }

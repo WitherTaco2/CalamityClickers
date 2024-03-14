@@ -76,7 +76,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
 
                 for (int k = 0; k < 30; k++)
                 {
-                    Dust dust = Dust.NewDustDirect(Projectile.position, Projectile.width, Projectile.height, DustID.Demonite, Main.rand.NextFloat(-8f, 8f), Main.rand.NextFloat(-8f, 8f), 125, default, 1.25f);
+                    Dust dust = Dust.NewDustDirect(Projectile.Center, 8, 8, DustID.Demonite, Main.rand.NextFloat(-8f, 8f), Main.rand.NextFloat(-8f, 8f), 125, default, 2f);
                     dust.noGravity = true;
                 }
             }

@@ -11,7 +11,32 @@ ClickEffect: {
 
 	Mushy: {
 		Name: Mushy
-		Description: "You gets a buff 'Mushy' for 2 seconds"
+		Description: You gets a buff 'Mushy' for 2 seconds
+	}
+
+	BloodyExplosion: {
+		Name: Bloody Explosion
+		Description: Creates an bloody explosion, inflict Burning Blood
+	}
+
+	BrainExplosion: {
+		Name: Brain Explosion
+		Description: Creates an explosion of rotten brain, inflict the Brain Rot
+	}
+
+	FeatherRain: {
+		Name: Feather Rain
+		Description: Fall a explosive feathers from sky into mouse position
+	}
+
+	SlimePuppet: {
+		Name: Slime Puppet
+		Description: Creates a slime ball which will make a short dash towards the cursor after a short period of time
+	}
+
+	GaussFlux: {
+		Name: Gauss Flux
+		Description: Creates a turbulent magnetic force
 	}
 }
 
@@ -30,6 +55,54 @@ Items: {
 					Taking over 25 damage in one hit will cause a spread of homing feathers to fall
 					Allows you to fall more quickly and disables fall damage
 					5% increased clicker critical strike chance
+					'''
+			}
+
+			StatigelCapsuit: {
+				DisplayName: Statigel Capsuit
+				Tooltip:
+					'''
+					10% increased clicker damage
+					7% increased clicker critical strike chance
+					25% increased clicker radius
+					'''
+				SetBonus:
+					'''
+					When you take over 100 damage in one hit you become immune to damage for an extended period of time
+					Grants an extra jump and increased jump height
+					12% increased jump speed
+					'''
+			}
+
+			DaedalusCapsuit: {
+				DisplayName: Daedalus Capsuit
+				Tooltip:
+					'''
+					8% increased clicker damage
+					7% increased clicker critical strike chance
+					25% increased clicker radius
+					'''
+				SetBonus:
+					'''
+					[Clicker effect]
+					5% increased clicker damage
+					'''
+			}
+
+			HydrothermicCapsuit: {
+				DisplayName: Hydrothermic Capsuit
+				Tooltip:
+					'''
+					12% increased clicker damage
+					10% increased clicker critical strike chance
+					55% increased clicker radius
+					'''
+				SetBonus:
+					'''
+					Inferno effect when below 50% life
+					You emit a blazing explosion when you are hit
+					Clicker attacks summon damaging and healing flare orbs on hit
+					5% increased clicker damage
 					'''
 			}
 
@@ -56,6 +129,10 @@ Items: {
 			ScourgeClicker.DisplayName: Scourge Clicker
 			MushyClicker.DisplayName: Mushy Clicker
 			RottenClicker.DisplayName: Rotten Clicker
+			FleshyClicker.DisplayName: Fleshy Clicker
+			AeroClicker.DisplayName: Aero Clicker
+			GooClicker.DisplayName: Gooclicker
+			GaussClicker.DisplayName: Gauss Clicker
 		}
 	}
 }
@@ -64,5 +141,9 @@ Projectiles: {
 	Clicker: {
 		SeaRemainClickerProjectile.DisplayName: Sea Bubble
 		ScourgeClickerProjectile.DisplayName: Sand Explosion
+		FleshyClickerProjectile.DisplayName: Bloody Explosion
+		RottenClickerProjectile.DisplayName: Brain Explosion
+		GooClickerProjectile.DisplayName: Slime Puppet
+		GaussClickerProjectile.DisplayName: Gauss Flux
 	}
 }

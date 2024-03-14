@@ -1,4 +1,5 @@
 ﻿using ClickerClass.Items;
+using Terraria;
 using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Weapons
@@ -32,6 +33,10 @@ namespace CalamityClickers.Content.Items.Weapons
         public virtual void SafeSetDefaults()
         {
 
+        }
+        public override void UpdateInventory(Player player)
+        {
+            SetColor(Item, RadiusColor);
         }
     }
 }
