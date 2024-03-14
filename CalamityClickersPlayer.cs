@@ -26,5 +26,9 @@ namespace CalamityClickers
                 //ClickerCompat.SetClickerRadiusAdd(Player, bloodflareRadius);
             }
         }
+        public override void PostUpdateMiscEffects()
+        {
+            Player.Clicker().clickerBonusPercent = 1f - 1f / (1f + Player.Clicker().clickerBonusPercent);
+        }
     }
 }

@@ -1,7 +1,12 @@
 ClickEffect: {
 	SeaBubble: {
 		Name: Sea Bubble
-		Description: $Mods.ClickerClass.Common.Unknown
+		Description: Creates one bubble which slowly hit and flying away
+	}
+
+	Sandstorm: {
+		Name: Sandstorm
+		Description: Creates sandstorm explosion
 	}
 }
 
@@ -10,17 +15,47 @@ Items: {
 		Capsuit: {
 			AerospecCapsuit: {
 				DisplayName: Aerospec Capsuit
-				Tooltip: ""
+				Tooltip:
+					'''
+					8% increased clicker damage
+					15% increased clicker radius
+					'''
+				SetBonus:
+					'''
+					Taking over 25 damage in one hit will cause a spread of homing feathers to fall
+					Allows you to fall more quickly and disables fall damage
+					5% increased clicker critical strike chance
+					'''
 			}
 
 			AuricTeslaRadarCapsuit: {
 				DisplayName: Auric Tesla Radar Capsuit
-				Tooltip: ""
+				Tooltip:
+					'''
+					30% increased clicker damage and critical strike chance
+					100% increased clicker radius
+					10% reduced the amount of clicks required for a click effect 
+					'''
+				SetBonus:
+					'''
+					AA
+					AA
+					'''
 			}
 		}
 	}
 
-	Weapons.Clicker.SeaRemainClicker.DisplayName: Sea Remain Clicker
+	Weapons: {
+		Clicker: {
+			SeaRemainClicker.DisplayName: Sea Remain Clicker
+			ScourgeClicker.DisplayName: Scourge Clicker
+		}
+	}
 }
 
-Projectiles.Typeless.SeaRemainClickerProjectile.DisplayName: Sea Remain Clicker Projectile
+Projectiles: {
+	Clicker: {
+		SeaRemainClickerProjectile.DisplayName: Sea Bubble
+		ScourgeClickerProjectile.DisplayName: Sand Explosion
+	}
+}

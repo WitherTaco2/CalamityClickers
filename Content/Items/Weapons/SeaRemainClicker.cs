@@ -13,15 +13,15 @@ namespace CalamityClickers.Content.Items.Weapons
     public class SeaRemainClicker : ModdedClickerWeapon
     {
         public static string ClickerEffect { get; internal set; } = string.Empty;
-        public override void SafeSetStaticDefaults()
-        {
-            SeaRemainClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "SeaBubble", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
-            {
-                Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<SeaRemainClickerProjectile>(), damage, knockBack, player.whoAmI, 1);
-            });
-        }
         public override float Radius => 2f;
         public override Color RadiusColor => new Color(25, 79, 150);
+        public override void SafeSetStaticDefaults()
+        {
+            SeaRemainClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "SeaBubble", 8, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            {
+                Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<SeaRemainClickerProjectile>(), damage * 2, knockBack, player.whoAmI, 1);
+            });
+        }
         public override void SafeSetDefaults()
         {
             AddEffect(Item, SeaRemainClicker.ClickerEffect);
@@ -39,7 +39,7 @@ namespace CalamityClickers.Content.Items.Weapons
                 .Register();
         }
     }
-    public class SeaRemainClickerProjectile : SulphuricAcidBubbleFriendly
+    public class SeaRemainClickerProjectile : SulphuricAcidBubbleFriendly, ILocalizedModType
     {
         public new string LocalizationCategory => "Projectiles.Clicker";
         public override string Texture => (GetType().Namespace + "." + Name).Replace('.', '/');
