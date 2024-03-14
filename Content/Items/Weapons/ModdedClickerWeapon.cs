@@ -24,9 +24,10 @@ namespace CalamityClickers.Content.Items.Weapons
             SetRadius(Item, Radius);
             SetColor(Item, RadiusColor);
             //AddEffect(Item, ClickerEffect);
-            SafeSetDefaults();
             Item.width = 30;
             Item.height = 30;
+
+            SafeSetDefaults();
         }
         public virtual void SafeSetDefaults()
         {

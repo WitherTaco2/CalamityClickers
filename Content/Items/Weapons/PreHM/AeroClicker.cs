@@ -18,7 +18,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
         public override Color RadiusColor => new Color(157, 200, 193);
         public override void SafeSetStaticDefaults()
         {
-            AeroClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "AeroRain", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            AeroClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "FeatherRain", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 for (int n = 0; n < 4; n++)
                 {

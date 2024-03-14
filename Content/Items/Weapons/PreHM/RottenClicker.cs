@@ -54,8 +54,6 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
         }
         public override void SetDefaults()
         {
-            base.SetDefaults();
-
             Projectile.width = 200;
             Projectile.height = 200;
             Projectile.penetrate = -1;
@@ -66,6 +64,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
             Projectile.extraUpdates = 3;
             Projectile.usesLocalNPCImmunity = true;
             Projectile.localNPCHitCooldown = 30;
+            Projectile.DamageType = ModContent.GetInstance<ClickerDamage>();
         }
         public override void AI()
         {
