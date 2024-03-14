@@ -1,4 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+﻿using CalamityClickers.Content.Items.Weapons;
+using CalamityMod;
+using CalamityMod.Items.TreasureBags;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
@@ -37,6 +40,21 @@ namespace CalamityClickers
                 return false;
             }
             return base.Shoot(item, player, source, position, velocity, type, damage, knockback);
+        }
+        public override void ModifyItemLoot(Item item, ItemLoot itemLoot)
+        {
+            if (item.type == ModContent.ItemType<DesertScourgeBag>())
+            {
+                itemLoot.Add(ModContent.ItemType<ScourgeClicker>(), 3);
+            }
+            if (item.type == ModContent.ItemType<CrabulonBag>())
+            {
+                itemLoot.Add(ModContent.ItemType<MushyClicker>(), 3);
+            }
+            if (item.type == ModContent.ItemType<HiveMindBag>())
+            {
+                itemLoot.Add(ModContent.ItemType<RottenClicker>(), 3);
+            }
         }
     }
 }

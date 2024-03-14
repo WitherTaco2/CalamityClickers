@@ -8,6 +8,11 @@ ClickEffect: {
 		Name: Sandstorm
 		Description: Creates sandstorm explosion
 	}
+
+	Mushy: {
+		Name: Mushy
+		Description: "You gets a buff 'Mushy' for 2 seconds"
+	}
 }
 
 Items: {
@@ -49,6 +54,8 @@ Items: {
 		Clicker: {
 			SeaRemainClicker.DisplayName: Sea Remain Clicker
 			ScourgeClicker.DisplayName: Scourge Clicker
+			MushyClicker.DisplayName: Mushy Clicker
+			RottenClicker.DisplayName: Rotten Clicker
 		}
 	}
 }

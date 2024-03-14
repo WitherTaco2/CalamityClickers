@@ -1,5 +1,4 @@
 ﻿using ClickerClass.Items;
-using Microsoft.Xna.Framework;
 using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Weapons
@@ -18,7 +17,7 @@ namespace CalamityClickers.Content.Items.Weapons
 
         }
         public abstract float Radius { get; }
-        public abstract Color RadiusColor { get; }
+        public abstract Microsoft.Xna.Framework.Color RadiusColor { get; }
         public override void SetDefaults()
         {
             base.SetDefaults();
