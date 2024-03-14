@@ -1,4 +1,4 @@
-﻿using CalamityClickers.Content.Items.Weapons;
+﻿using CalamityClickers.Content.Items.Weapons.PreHM;
 using CalamityMod;
 using CalamityMod.NPCs.Crabulon;
 using CalamityMod.NPCs.DesertScourge;

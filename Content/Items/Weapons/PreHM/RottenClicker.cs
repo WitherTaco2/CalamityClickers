@@ -9,7 +9,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace CalamityClickers.Content.Items.Weapons
+namespace CalamityClickers.Content.Items.Weapons.PreHM
 {
     public class RottenClicker : ModdedClickerWeapon
     {
@@ -18,14 +18,14 @@ namespace CalamityClickers.Content.Items.Weapons
         public override Color RadiusColor => new Color(91, 71, 127);
         public override void SafeSetStaticDefaults()
         {
-            RottenClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "Brain Explosion", 6, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "Brain Explosion", 6, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<RottenClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
             });
         }
         public override void SafeSetDefaults()
         {
-            AddEffect(Item, RottenClicker.ClickerEffect);
+            AddEffect(Item, ClickerEffect);
 
             Item.damage = 7;
             Item.knockBack = 1f;

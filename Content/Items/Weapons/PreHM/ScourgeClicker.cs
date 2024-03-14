@@ -8,7 +8,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace CalamityClickers.Content.Items.Weapons
+namespace CalamityClickers.Content.Items.Weapons.PreHM
 {
     public class ScourgeClicker : ModdedClickerWeapon
     {
@@ -17,14 +17,14 @@ namespace CalamityClickers.Content.Items.Weapons
         public override Color RadiusColor => new Color(124, 81, 60);
         public override void SafeSetStaticDefaults()
         {
-            ScourgeClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "Sandstorm", 8, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "Sandstorm", 8, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<ScourgeClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
             });
         }
         public override void SafeSetDefaults()
         {
-            AddEffect(Item, ScourgeClicker.ClickerEffect);
+            AddEffect(Item, ClickerEffect);
 
             Item.damage = 6;
             Item.knockBack = 1f;

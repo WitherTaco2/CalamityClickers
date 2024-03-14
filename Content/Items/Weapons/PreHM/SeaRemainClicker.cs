@@ -8,7 +8,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace CalamityClickers.Content.Items.Weapons
+namespace CalamityClickers.Content.Items.Weapons.PreHM
 {
     public class SeaRemainClicker : ModdedClickerWeapon
     {
@@ -17,14 +17,14 @@ namespace CalamityClickers.Content.Items.Weapons
         public override Color RadiusColor => new Color(25, 79, 150);
         public override void SafeSetStaticDefaults()
         {
-            SeaRemainClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "SeaBubble", 8, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "SeaBubble", 8, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<SeaRemainClickerProjectile>(), damage * 2, knockBack, player.whoAmI, 1);
             });
         }
         public override void SafeSetDefaults()
         {
-            AddEffect(Item, SeaRemainClicker.ClickerEffect);
+            AddEffect(Item, ClickerEffect);
 
             Item.damage = 6;
             Item.knockBack = 1f;
