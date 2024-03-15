@@ -33,11 +33,8 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
 
         }
     }
-    public class ScourgeClickerProjectile : ModProjectile, ILocalizedModType
+    public class ScourgeClickerProjectile : ModdedClickerProjectile
     {
-        public new string LocalizationCategory => "Projectiles.Clicker";
-        public override string Texture => "CalamityMod/Projectiles/InvisibleProj";
-
         public bool Spawned
         {
             get => Projectile.ai[0] == 1f;
@@ -55,7 +52,6 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
             Projectile.extraUpdates = 3;
             Projectile.usesLocalNPCImmunity = true;
             Projectile.localNPCHitCooldown = 30;
-            Projectile.DamageType = ModContent.GetInstance<ClickerDamage>();
         }
         public override void AI()
         {

@@ -2,7 +2,7 @@ Calamity Clicker is addon which adds new clickers where used calamity materials 
 
 Also mod has changes in clicker class
 1. Now reducing the click amount for click effect recalculated: click amount percent = 1 / (2 - click amount percent)
-2. The clicker now don t dropped from moon lord. (he is op and i think need put into endgame = shadowspec weapons tier)
+2. The Clicker now don t dropped from moon lord. (he is OP and i think need put into endgame = shadowspec weapons tier)
 
 
 [quote=WitherTaco]

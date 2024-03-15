@@ -42,10 +42,10 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
                 .Register();
         }
     }
-    public class GooClickerProjectile : ModProjectile, ILocalizedModType
+    public class GooClickerProjectile : ModdedClickerProjectile
     {
-        public new string LocalizationCategory => "Projectiles.Clicker";
-        public override void SetDefaults()
+        public override bool UseInvisibleProjectile => false;
+        public override void SafeSetDefaults()
         {
             Projectile.width = 24;
             Projectile.height = 24;

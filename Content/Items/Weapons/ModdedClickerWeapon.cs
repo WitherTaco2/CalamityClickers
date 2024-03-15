@@ -1,4 +1,5 @@
 ﻿using ClickerClass.Items;
+using ClickerClass.Projectiles;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -37,6 +38,23 @@ namespace CalamityClickers.Content.Items.Weapons
         public override void UpdateInventory(Player player)
         {
             SetColor(Item, RadiusColor);
+        }
+    }
+    public class ModdedClickerProjectile : ClickerProjectile, ILocalizedModType
+    {
+        public new string LocalizationCategory => "Projectiles.Clicker";
+        public virtual bool UseInvisibleProjectile => true;
+        public override string Texture => UseInvisibleProjectile ? "CalamityMod/Projectiles/InvisibleProj" : base.Texture;
+
+        public override void SetDefaults()
+        {
+            base.SetDefaults();
+
+            SafeSetDefaults();
+        }
+        public virtual void SafeSetDefaults()
+        {
+
         }
     }
 }

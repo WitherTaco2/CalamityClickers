@@ -42,17 +42,14 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
                 .Register();
         }
     }
-    public class RottenClickerProjectile : ModProjectile, ILocalizedModType
+    public class RottenClickerProjectile : ModdedClickerProjectile
     {
-        public new string LocalizationCategory => "Projectiles.Clicker";
-        public override string Texture => "CalamityMod/Projectiles/InvisibleProj";
-
         public bool Spawned
         {
             get => Projectile.ai[0] == 1f;
             set => Projectile.ai[0] = value ? 1f : 0f;
         }
-        public override void SetDefaults()
+        public override void SafeSetDefaults()
         {
             Projectile.width = 200;
             Projectile.height = 200;
@@ -64,7 +61,6 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
             Projectile.extraUpdates = 3;
             Projectile.usesLocalNPCImmunity = true;
             Projectile.localNPCHitCooldown = 30;
-            Projectile.DamageType = ModContent.GetInstance<ClickerDamage>();
         }
         public override void AI()
         {
