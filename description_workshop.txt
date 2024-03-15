@@ -1,0 +1,18 @@
+Calamity Clicker is addon which adds new clickers where used calamity materials or dropped from calamity bosses. Also in future he add and clicker helmets for armors and new accessories
+
+Also mod has changes in clicker class
+1. Now reducing the click amount for click effect recalculated: click amount percent = 1 / (2 - click amount percent)
+2. The clicker now don t dropped from moon lord. (he is op and i think need put into endgame = shadowspec weapons tier)
+
+
+[quote=WitherTaco]
+I RETURNS into clicker class community
+Hello, its me WitherTaco and i make a addon for calamiry and clicker class at once
+[/quote]
+
+QNA?
+Q: Why he is early beta?
+A: I don't want to release it completely, but to release updates step by step. So you can already test what I have ready
+
+Q; WitherTaco, Why you don't update a Clicker Addom
+A: I think Calamity Clickers mod is a stand-alone product. Moreover, this is my experiment on how my modding skills have changed

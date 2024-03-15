@@ -1,9 +1,11 @@
 ﻿using CalamityClickers.Content.Items.Weapons.PreHM;
 using CalamityMod;
 using CalamityMod.Items.TreasureBags;
+using ClickerClass.Items.Weapons.Clickers;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;
 
 namespace CalamityClickers
@@ -43,6 +45,22 @@ namespace CalamityClickers
         }
         public override void ModifyItemLoot(Item item, ItemLoot itemLoot)
         {
+            foreach (var rule in itemLoot.Get())
+            {
+                if (rule is CommonDrop normalDrop)
+                {
+                    if (normalDrop.itemId == ModContent.ItemType<TheClicker>())
+                    {
+                        itemLoot.Remove(rule);
+                    }
+                }
+            }
+
+
+
+
+
+
             if (item.type == ModContent.ItemType<DesertScourgeBag>())
             {
                 itemLoot.Add(ModContent.ItemType<ScourgeClicker>(), 3);

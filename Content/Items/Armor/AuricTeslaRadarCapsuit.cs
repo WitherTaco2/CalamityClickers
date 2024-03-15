@@ -14,6 +14,11 @@ namespace CalamityClickers.Content.Items.Armor
     {
         public new string LocalizationCategory => "Items.Armor.Capsuit";
 
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return false;
+        }
+
         public override void SetDefaults()
         {
             Item.width = 27;
