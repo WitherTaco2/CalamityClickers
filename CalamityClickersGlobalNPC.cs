@@ -1,6 +1,8 @@
-﻿using CalamityClickers.Content.Items.Weapons.PreHM;
+﻿using CalamityClickers.Content.Items.Weapons.HM;
+using CalamityClickers.Content.Items.Weapons.PreHM;
 using CalamityMod;
 using CalamityMod.NPCs.Crabulon;
+using CalamityMod.NPCs.Cryogen;
 using CalamityMod.NPCs.DesertScourge;
 using CalamityMod.NPCs.HiveMind;
 using ClickerClass.Items.Weapons.Clickers;
@@ -55,6 +57,10 @@ namespace CalamityClickers
             if (npc.type == ModContent.NPCType<HiveMind>())
             {
                 mainRule.Add(ModContent.ItemType<RottenClicker>(), 3);
+            }
+            if (npc.type == ModContent.NPCType<Cryogen>())
+            {
+                mainRule.Add(ModContent.ItemType<CryoClicker>(), 3);
             }
 
         }

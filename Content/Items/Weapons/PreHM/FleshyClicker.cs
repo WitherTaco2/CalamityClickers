@@ -27,7 +27,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
         {
             AddEffect(Item, FleshyClicker.ClickerEffect);
 
-            Item.damage = 7;
+            Item.damage = 10;
             Item.knockBack = 1f;
             Item.rare = ItemRarityID.Orange;
             Item.value = CalamityGlobalItem.Rarity3BuyPrice;

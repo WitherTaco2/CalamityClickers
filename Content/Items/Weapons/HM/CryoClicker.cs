@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Weapons.HM
 {
@@ -17,8 +18,11 @@ namespace CalamityClickers.Content.Items.Weapons.HM
             CryoClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "CoolFlake", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 player.AddBuff(BuffID.CoolWhipPlayerBuff, 4 * 60);
-                Projectile.NewProjectile(source, position, Vector2.Zero, ProjectileID.CoolWhipProj, damage, knockBack, player.whoAmI);
-
+                if (player.ownedProjectileCounts[ProjectileID.CoolWhipProj] < 1)
+                {
+                    int index = Projectile.NewProjectile(source, position, Vector2.Zero, ProjectileID.CoolWhipProj, damage, knockBack, player.whoAmI);
+                    Main.projectile[index].DamageType = ModContent.GetInstance<ClickerDamage>();
+                }
             });
         }
         public override void SafeSetDefaults()

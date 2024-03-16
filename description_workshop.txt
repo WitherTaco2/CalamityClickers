@@ -1,13 +1,15 @@
 Calamity Clicker is addon which adds new clickers where used calamity materials or dropped from calamity bosses. Also in future he add and clicker helmets for armors and new accessories
 
 Also mod has changes in clicker class
-1. Now reducing the click amount for click effect recalculated: click amount percent = 1 / (2 - click amount percent)
-2. The Clicker now don t dropped from moon lord. (he is OP and i think need put into endgame = shadowspec weapons tier)
+1. Now reducing the click amount for click effect recalculated: real click amount percent = 1 / (2 - actual click amount percent)
+2. The Clicker moved into Endgame Stage. He now crafted with using Shadowspec Bars
+3. Galactica Singularity now uses Mice Fragments in craft
+4. Gamer Crate now uses Purified Gel in craft
 
 
 [quote=WitherTaco]
 I RETURNS into clicker class community
-Hello, its me WitherTaco and i make a addon for calamiry and clicker class at once
+Hello, its me WitherTaco and i make a addon for calamity and clicker class at once
 [/quote]
 
 QNA?

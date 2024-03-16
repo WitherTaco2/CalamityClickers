@@ -40,7 +40,7 @@ namespace CalamityClickers.Content.Items.Weapons
             SetColor(Item, RadiusColor);
         }
     }
-    public class ModdedClickerProjectile : ClickerProjectile, ILocalizedModType
+    public abstract class ModdedClickerProjectile : ClickerProjectile, ILocalizedModType
     {
         public new string LocalizationCategory => "Projectiles.Clicker";
         public virtual bool UseInvisibleProjectile => true;

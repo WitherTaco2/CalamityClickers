@@ -1,0 +1,12 @@
+
+Added Brimstone Clicker (craft from Unholy Core)
+Added Cryo Clicker (Cryogen drop)
+
+Added Tarragon, Bloodflare, God Slayer and Auric Tesla Helmets (Capsuit) for Clicker Class
+
+Added D.o.G. (Post Devourer of Gods accessory)
+Added Finger of Blood God (Bloodstone-tier upgrade of Trigger Finger)
+
+Buffed Aero Clicker damage: 7 -> 12
+Buffed Fleshy Clicker damage: 7 -> 10
+Buffed Rotten Clicker damage: 7 -> 10

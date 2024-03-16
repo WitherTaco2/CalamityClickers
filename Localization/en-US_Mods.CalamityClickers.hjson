@@ -38,6 +38,16 @@ ClickEffect: {
 		Name: Gauss Flux
 		Description: Creates a turbulent magnetic force
 	}
+
+	CoolFlake: {
+		Name: Cool Flake
+		Description: Creates Snowflake minion. Only one exist. Updates a lifetime of existing snowflake
+	}
+
+	BrimstoneInferno: {
+		Name: Brimstone Inferno
+		Description: Creates an explosion in the form of satanic sigil. Inflict a Brimstone Flames
+	}
 }
 
 Items: {
@@ -106,6 +116,55 @@ Items: {
 					'''
 			}
 
+			TarragonCapsuit: {
+				DisplayName: Tarragon Capsuit
+				Tooltip:
+					'''
+					10% increased clicker damage
+					5% increased clicker critical strike chance
+					25% increased clicker radius
+					5% increased damage reduction
+					'''
+				SetBonus:
+					'''
+					Increased heart pickup range
+					Enemies have a chance to drop extra hearts on death
+					10% increased clicker critical strike chance
+					'''
+			}
+
+			BloodflareCrimeraCapsuit: {
+				DisplayName: Bloodflare Crimera Capsuit
+				Tooltip:
+					'''
+					10% increased clicker damage and clicker critical strike chance
+					35% increased clicker radius
+					'''
+				SetBonus:
+					'''
+					Greatly increased life regen, equivalent to Crimson armor
+					Enemies below 50% life drop a heart when struck
+					This effect has a 5 second cooldown
+					Reduces the amount of clicks required for a click effect based on your currect life
+					Maximum you gain 20% of reducing
+					'''
+			}
+
+			GodSlayerCapsuit: {
+				DisplayName: God Slayer Capsuit
+				Tooltip:
+					'''
+					14% increased clicker damage and critical strike chance
+					45% increased clicker radius
+					10% reduced the amount of clicks required for a click effect 
+					'''
+				SetBonus:
+					'''
+					Press {0} to allow every click trigger all active click effects with reduced damage for 2 seconds
+					'Overclock' has 60 second cooldown
+					'''
+			}
+
 			AuricTeslaRadarCapsuit: {
 				DisplayName: Auric Tesla Radar Capsuit
 				Tooltip:
@@ -114,11 +173,7 @@ Items: {
 					100% increased clicker radius
 					10% reduced the amount of clicks required for a click effect 
 					'''
-				SetBonus:
-					'''
-					AA
-					AA
-					'''
+				SetBonus: Clicker Tarragon, Bloodflare and God Slayer effects
 			}
 		}
 	}
@@ -133,6 +188,34 @@ Items: {
 			AeroClicker.DisplayName: Aero Clicker
 			GooClicker.DisplayName: Gooclicker
 			GaussClicker.DisplayName: Gauss Clicker
+			CryoClicker.DisplayName: Cryo Clicker
+			BrimstoneClicker.DisplayName: Brimstone Clicker
+		}
+	}
+
+	Accessories: {
+		DOG: {
+			Tooltip:
+				'''
+				'Devourer of Games'
+				30% increased clicker damage
+				50% increased clicker radius
+				20% reduced the amount of clicks required for a click effect
+				Pressing the 'Clicker Accessory' key will toggle auto click on all Clickers
+				While auto click is enabled, click rates are slightly decreased
+				Pressing the 'Clicker Aim Assist' key will toggle aimbot, targeting nearby enemies automatically. 
+				If the target dies or is lost, a new nearby target will be selected if possible.
+				'''
+			DisplayName: D.o.G.
+		}
+
+		FingerOfBloodGod: {
+			Tooltip:
+				'''
+				Your first click when out of combat will automatically trigger its clicker effect.
+				Has chance every click to extra trigger the clicker effect
+				'''
+			DisplayName: Finger Of Blood God
 		}
 	}
 }
@@ -145,5 +228,15 @@ Projectiles: {
 		RottenClickerProjectile.DisplayName: Brain Explosion
 		GooClickerProjectile.DisplayName: Slime Puppet
 		GaussClickerProjectile.DisplayName: Gauss Flux
+		BrimstoneClickerProjectile.DisplayName: Brimstone Sigil
 	}
 }
+
+Buffs: {
+	GodSlayerOverclockBuff: {
+		DisplayName: God Slayer Overclock
+		Description: You can every click trigger all active click effects with reduced damage
+	}
+}
+
+UI.Cooldowns.GodSlayerOverclockCooldown: God Slayer Overclock Cooldown

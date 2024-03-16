@@ -1,7 +1,10 @@
 using CalamityMod;
+using CalamityMod.CalPlayer.Dashes;
 using CalamityMod.Items;
 using CalamityMod.Items.Armor.Auric;
+using CalamityMod.Items.Materials;
 using CalamityMod.Rarities;
+using CalamityMod.Tiles.Furniture.CraftingStations;
 using ClickerClass;
 using ClickerClass.Items;
 using Terraria;
@@ -13,11 +16,6 @@ namespace CalamityClickers.Content.Items.Armor
     public class AuricTeslaRadarCapsuit : ClickerItem, ILocalizedModType
     {
         public new string LocalizationCategory => "Items.Armor.Capsuit";
-
-        public override bool IsLoadingEnabled(Mod mod)
-        {
-            return false;
-        }
 
         public override void SetDefaults()
         {
@@ -59,17 +57,21 @@ namespace CalamityClickers.Content.Items.Armor
 
             //Tarragon
             player.Calamity().tarraSet = true;
+            player.GetCritChance<ClickerDamage>() += 10;
 
             //Bloodflare
             player.Calamity().bloodflareSet = true;
             player.crimsonRegen = true;
-            //player.GetModPlayer<ClickerAddonPlayer>().bloodflareCapsuit = true;
-            player.lavaMax += 240;
-            player.ignoreWater = true;
+            player.GetModPlayer<CalamityClickersPlayer>().bloodflareClicker = true;
 
             //God Slayer
             player.Calamity().godSlayer = true;
-            //player.GetModPlayer<ClickerAddonPlayer>().godSlayerCapsuit = true;
+            player.GetModPlayer<CalamityClickersPlayer>().godSlayerClicker = true;
+            if (player.Calamity().godSlayerDashHotKeyPressed || (player.dashDelay != 0 && player.Calamity().LastUsedDashID == GodslayerArmorDash.ID))
+            {
+                player.Calamity().DeferredDashID = GodslayerArmorDash.ID;
+                //player.dash = 0;
+            }
 
             //Silva - Now not used
             //CalamityCompat.CalamityArmorSetBonus(player, "silva");
@@ -85,15 +87,15 @@ namespace CalamityClickers.Content.Items.Armor
             player.armorEffectDrawOutlines = true;
         }
 
-        /*public override void AddRecipes()
-		{
-			CreateRecipe()
-				//.AddIngredient<>()
-				//.AddIngredient<>()
-				//.AddIngredient<>()
-				.AddTile<DraedonsForge>()
-				.Register();
-
-        }*/
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<TarragonCapsuit>()
+                .AddIngredient<BloodflareCrimeraCapsuit>()
+                .AddIngredient<GodSlayerCapsuit>()
+                .AddIngredient<AuricBar>(12)
+                .AddTile<CosmicAnvil>()
+                .Register();
+        }
     }
 }

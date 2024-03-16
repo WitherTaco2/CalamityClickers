@@ -31,7 +31,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
         {
             AddEffect(Item, AeroClicker.ClickerEffect);
 
-            Item.damage = 7;
+            Item.damage = 12;
             Item.knockBack = 1.5f;
             Item.rare = ItemRarityID.Orange;
             Item.value = CalamityGlobalItem.Rarity3BuyPrice;
