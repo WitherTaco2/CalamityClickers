@@ -21,11 +21,12 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
             RottenClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "BrainExplosion", 7, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<RottenClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
-            });
+            }, true);
         }
         public override void SafeSetDefaults()
         {
             AddEffect(Item, RottenClicker.ClickerEffect);
+            SetDust(Item, DustID.Demonite);
 
             Item.damage = 10;
             Item.knockBack = 1f;

@@ -21,11 +21,12 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
             FleshyClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "BloodyExplosion", 7, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<FleshyClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
-            });
+            }, true);
         }
         public override void SafeSetDefaults()
         {
             AddEffect(Item, FleshyClicker.ClickerEffect);
+            SetDust(Item, DustID.CrimtaneWeapons);
 
             Item.damage = 10;
             Item.knockBack = 1f;

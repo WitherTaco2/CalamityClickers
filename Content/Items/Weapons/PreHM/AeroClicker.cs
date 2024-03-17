@@ -25,11 +25,12 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
                     Projectile proj = CalamityUtils.ProjectileRain(source, position, 400f, 100f, 500f, 800f, 20f, ModContent.ProjectileType<StickyFeatherAero>(), damage, 1f, player.whoAmI);
                     proj.DamageType = ModContent.GetInstance<ClickerDamage>();
                 }
-            });
+            }, true);
         }
         public override void SafeSetDefaults()
         {
             AddEffect(Item, AeroClicker.ClickerEffect);
+            SetDust(Item, 206);
 
             Item.damage = 12;
             Item.knockBack = 1.5f;

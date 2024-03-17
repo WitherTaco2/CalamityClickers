@@ -1,6 +1,8 @@
 ﻿using CalamityClickers.Content.Items.Weapons.HM;
+using CalamityClickers.Content.Items.Weapons.PostML;
 using CalamityClickers.Content.Items.Weapons.PreHM;
 using CalamityMod;
+using CalamityMod.NPCs.Bumblebirb;
 using CalamityMod.NPCs.Crabulon;
 using CalamityMod.NPCs.Cryogen;
 using CalamityMod.NPCs.DesertScourge;
@@ -58,9 +60,15 @@ namespace CalamityClickers
             {
                 mainRule.Add(ModContent.ItemType<RottenClicker>(), 3);
             }
+
             if (npc.type == ModContent.NPCType<Cryogen>())
             {
                 mainRule.Add(ModContent.ItemType<CryoClicker>(), 3);
+            }
+
+            if (npc.type == ModContent.NPCType<Bumblefuck>())
+            {
+                mainRule.Add(ModContent.ItemType<RedLightningClicker>(), 3);
             }
 
         }

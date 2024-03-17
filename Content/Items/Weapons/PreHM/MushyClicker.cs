@@ -19,7 +19,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
             MushyClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "Mushy", 1, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 player.AddBuff(ModContent.BuffType<Mushy>(), 120);
-            });
+            }, true);
         }
         public override void SafeSetDefaults()
         {

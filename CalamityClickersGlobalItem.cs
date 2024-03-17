@@ -1,4 +1,5 @@
 ﻿using CalamityClickers.Content.Items.Weapons.HM;
+using CalamityClickers.Content.Items.Weapons.PostML;
 using CalamityClickers.Content.Items.Weapons.PreHM;
 using CalamityMod;
 using CalamityMod.Items.TreasureBags;
@@ -74,9 +75,15 @@ namespace CalamityClickers
             {
                 itemLoot.Add(ModContent.ItemType<RottenClicker>(), 3);
             }
+
             if (item.type == ModContent.ItemType<CryogenBag>())
             {
                 itemLoot.Add(ModContent.ItemType<CryoClicker>(), 3);
+            }
+
+            if (item.type == ModContent.ItemType<DragonfollyBag>())
+            {
+                itemLoot.Add(ModContent.ItemType<RedLightningClicker>(), 3);
             }
         }
     }

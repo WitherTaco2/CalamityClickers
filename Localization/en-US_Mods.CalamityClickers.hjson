@@ -48,6 +48,16 @@ ClickEffect: {
 		Name: Brimstone Inferno
 		Description: Creates an explosion in the form of satanic sigil. Inflict a Brimstone Flames
 	}
+
+	DaedalusCrystals: {
+		Name: Daedalus Crystals
+		Description: Creates a homing daedalus bolts
+	}
+
+	RedLightning: {
+		Name: Red Lightning
+		Description: Creates a four lighning from sky
+	}
 }
 
 Items: {
@@ -190,6 +200,8 @@ Items: {
 			GaussClicker.DisplayName: Gauss Clicker
 			CryoClicker.DisplayName: Cryo Clicker
 			BrimstoneClicker.DisplayName: Brimstone Clicker
+			DaedalusClicker.DisplayName: Daedalus Clicker
+			RedLightningClicker.DisplayName: Red Lightning Clicker
 		}
 	}
 
