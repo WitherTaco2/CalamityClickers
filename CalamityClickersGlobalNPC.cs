@@ -1,4 +1,5 @@
-﻿using CalamityClickers.Content.Items.Weapons.HM;
+﻿using CalamityClickers.Content.Items.Armor;
+using CalamityClickers.Content.Items.Weapons.HM;
 using CalamityClickers.Content.Items.Weapons.PostML;
 using CalamityClickers.Content.Items.Weapons.PreHM;
 using CalamityMod;
@@ -7,9 +8,11 @@ using CalamityMod.NPCs.Crabulon;
 using CalamityMod.NPCs.Cryogen;
 using CalamityMod.NPCs.DesertScourge;
 using CalamityMod.NPCs.HiveMind;
+using CalamityMod.NPCs.TownNPCs;
 using ClickerClass.Items.Weapons.Clickers;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace CalamityClickers
@@ -74,7 +77,16 @@ namespace CalamityClickers
         }
         public override void ModifyShop(NPCShop shop)
         {
-            shop.Add(ModContent.ItemType<FrostysClicker>(), Condition.DownedEverscream, Condition.DownedSantaNK1, Condition.DownedIceQueen);
+            int type = shop.NpcType;
+
+            if (type == ModContent.NPCType<DILF>())
+            {
+                shop.Add(ModContent.ItemType<FrostysClicker>(), Condition.DownedEverscream, Condition.DownedSantaNK1, Condition.DownedIceQueen);
+            }
+            if (type == NPCID.Clothier)
+            {
+                shop.AddWithCustomValue(ModContent.ItemType<SilvaCapsuit>(), Item.buyPrice(gold: 8), new Condition(CalamityUtils.GetText("Condition.PostDoG"), () => DownedBossSystem.downedDoG));
+            }
         }
     }
 }

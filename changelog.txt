@@ -2,9 +2,12 @@
 Added Brimstone Clicker (craft from Unholy Core)
 Added Cryo Clicker (Cryogen drop)
 Added Daedalus Clicker (craft from Cryonic Bars)
+Added Frosty's Clicker (bought from Permafrost after All Frost Moon minibosses)
+
 Added Red Lightning Clicker (Dragonfolly drop)
 
 Added Tarragon, Bloodflare, God Slayer and Auric Tesla Helmets (Capsuit) for Clicker Class
+Added Silva Capsuit as Legecy vanity headpiece
 
 Added D.o.G. (Post Devourer of Gods accessory)
 Added Finger of Blood God (Bloodstone-tier upgrade of Trigger Finger)
