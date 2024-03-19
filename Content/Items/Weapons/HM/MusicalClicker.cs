@@ -9,7 +9,7 @@ using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Weapons.HM
 {
-    public class TideClicker : ModdedClickerWeapon
+    public class MusicalClicker : ModdedClickerWeapon
     {
         public static string ClickerEffect { get; internal set; } = string.Empty;
         public override float Radius => 3.4f;
@@ -17,7 +17,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
 
         public override void SafeSetStaticDefaults()
         {
-            TideClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "AnahitasMusic", 8, new Color(206, 255, 31), delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            MusicalClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "AnahitasMusic", 8, new Color(206, 255, 31), delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 for (int i = 0; i < 8; i++)
                 {
@@ -28,7 +28,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         }
         public override void SafeSetDefaults()
         {
-            AddEffect(Item, TideClicker.ClickerEffect);
+            AddEffect(Item, MusicalClicker.ClickerEffect);
 
             Item.damage = 53;
             Item.knockBack = 1f;
@@ -36,7 +36,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
             Item.value = CalamityGlobalItem.Rarity5BuyPrice;
         }
     }
-    public class TideClickerProjectile : SirenSong, ILocalizedModType
+    public class MusicalClickerProjectile : SirenSong, ILocalizedModType
     {
         public new string LocalizationCategory => "Projectiles.Clicker";
         public override string Texture => "CalamityMod/Projectiles/Boss/SirenSong";

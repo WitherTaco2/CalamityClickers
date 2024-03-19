@@ -80,6 +80,10 @@ namespace CalamityClickers
             {
                 itemLoot.Add(ModContent.ItemType<CryoClicker>(), 3);
             }
+            if (item.type == ModContent.ItemType<LeviathanBag>())
+            {
+                itemLoot.Add(ModContent.ItemType<MusicalClicker>(), 3);
+            }
 
             if (item.type == ModContent.ItemType<DragonfollyBag>())
             {

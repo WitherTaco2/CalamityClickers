@@ -8,6 +8,7 @@ using CalamityMod.NPCs.Crabulon;
 using CalamityMod.NPCs.Cryogen;
 using CalamityMod.NPCs.DesertScourge;
 using CalamityMod.NPCs.HiveMind;
+using CalamityMod.NPCs.Leviathan;
 using CalamityMod.NPCs.TownNPCs;
 using ClickerClass.Items.Weapons.Clickers;
 using Terraria;
@@ -67,6 +68,13 @@ namespace CalamityClickers
             if (npc.type == ModContent.NPCType<Cryogen>())
             {
                 mainRule.Add(ModContent.ItemType<CryoClicker>(), 3);
+            }
+            if (npc.type == ModContent.NPCType<Leviathan>() || npc.type == ModContent.NPCType<Anahita>())
+            {
+                var lastStanding = npcLoot.DefineConditionalDropSet(Leviathan.LastAnLStanding);
+                LeadingConditionRule normalOnly = new LeadingConditionRule(new Conditions.NotExpert());
+                lastStanding.Add(normalOnly);
+                normalOnly.Add(ModContent.ItemType<MusicalClicker>(), 3);
             }
 
             if (npc.type == ModContent.NPCType<Bumblefuck>())
