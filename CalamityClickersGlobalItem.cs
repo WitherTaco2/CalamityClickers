@@ -3,6 +3,8 @@ using CalamityClickers.Content.Items.Weapons.PostML;
 using CalamityClickers.Content.Items.Weapons.PreHM;
 using CalamityMod;
 using CalamityMod.Items.TreasureBags;
+using ClickerClass;
+using ClickerClass.Items;
 using ClickerClass.Items.Weapons.Clickers;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -14,6 +16,17 @@ namespace CalamityClickers
 {
     public class CalamityClickersGlobalItem : GlobalItem
     {
+        public override void SetDefaults(Item item)
+        {
+            if (ClickerSystem.IsClickerWeapon(item, out ClickerItemCore clickerItem))
+            {
+                if (clickerItem.itemClickEffects.Contains(ClickEffect.WildMagic))
+                {
+                    clickerItem.itemClickEffects.Remove(ClickEffect.WildMagic);
+                    ClickerCompat.AddEffect(item, CalamityClickersEffects.WildMagic);
+                }
+            }
+        }
         public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
             Mod calamity = ModLoader.GetMod("CalamityMod");

@@ -17,12 +17,12 @@ namespace CalamityClickers.Content.Items.Weapons.HM
 
         public override void SafeSetStaticDefaults()
         {
-            MusicalClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "AnahitasMusic", 8, new Color(206, 255, 31), delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            MusicalClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "AnahitasMusic", 10, new Color(206, 255, 31), delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
-                for (int i = 0; i < 8; i++)
+                for (int i = 0; i < 6; i++)
                 {
-                    Vector2 vec1 = Vector2.UnitX.RotatedBy(MathHelper.TwoPi / 8 * i);
-                    Projectile.NewProjectile(source, position + vec1 * 100, -vec1 * 5, ModContent.ProjectileType<TideClickerProjectile>(), damage, knockBack, player.whoAmI);
+                    Vector2 vec1 = Vector2.UnitX.RotatedBy(MathHelper.TwoPi / 6 * i);
+                    Projectile.NewProjectile(source, position + vec1 * 100, -vec1 * 5, ModContent.ProjectileType<MusicalClickerProjectile>(), damage, knockBack, player.whoAmI);
                 }
             });
         }

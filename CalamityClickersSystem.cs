@@ -1,8 +1,10 @@
 ﻿using CalamityMod.Items.Materials;
 using CalamityMod.Tiles.Furniture.CraftingStations;
+using ClickerClass;
 using ClickerClass.Items;
 using ClickerClass.Items.Accessories;
 using ClickerClass.Items.Weapons.Clickers;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -11,6 +13,34 @@ namespace CalamityClickers
 {
     public class CalamityClickersSystem : ModSystem
     {
+        internal static bool FinalizedRegister { get; private set; }
+        public static HashSet<string> PostMLClickerEffects { get; private set; }
+        public override void OnModLoad()
+        {
+            FinalizedRegister = false;
+
+            PostMLClickerEffects = new HashSet<string>();
+        }
+        public override void OnModUnload()
+        {
+            FinalizedRegister = false;
+
+            PostMLClickerEffects = null;
+        }
+        public override void PostAddRecipes()
+        {
+            FinalizedRegister = true;
+        }
+        public override void SetStaticDefaults()
+        {
+
+        }
+        public override void PostSetupContent()
+        {
+            PostMLClickerEffects.Add(ClickEffect.Conqueror);
+            PostMLClickerEffects.Add(ClickEffect.TheClick);
+            PostMLClickerEffects.Add(ClickEffect.Transcend);
+        }
         public override void AddRecipes()
         {
             foreach (Recipe recipe in Main.recipe)

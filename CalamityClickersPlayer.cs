@@ -92,7 +92,7 @@ namespace CalamityClickers
             if (CalamityKeybinds.ArmorSetBonusHotKey.JustPressed && godSlayerClicker && !Player.HasCooldown(GodSlayerOverclockCooldown.ID))
             {
                 Player.AddCooldown(GodSlayerOverclockCooldown.ID, 60 * 60);
-                Player.AddBuff(ModContent.BuffType<GodSlayerOverclockBuff>(), 2 * 60);
+                Player.AddBuff(ModContent.BuffType<GodSlayerOverclockBuff>(), 3 * 60);
             }
         }
     }
