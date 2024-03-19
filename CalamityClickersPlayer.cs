@@ -1,5 +1,6 @@
 ﻿using CalamityClickers.Content.Buffs;
 using CalamityClickers.Content.Cooldowns;
+using CalamityClickers.Content.Items.Weapons;
 using CalamityMod;
 using ClickerClass;
 using Microsoft.Xna.Framework;
@@ -29,12 +30,34 @@ namespace CalamityClickers
         }
         public override void PostUpdateEquips()
         {
+            ClickerPlayer cplayer = Player.Clicker();
             if (bloodflareClicker)
             {
                 float num1 = (Player.statLife / Player.statLifeMax2);
                 Player.Clicker().clickerBonusPercent += 0.2f * (1f - num1);
 
                 //ClickerCompat.SetClickerRadiusAdd(Player, bloodflareRadius);
+            }
+
+
+            if (Player.whoAmI == Main.myPlayer)
+            {
+                if (cplayer.clickerInRange && cplayer.clickerSelected)
+                {
+
+                    for (int i = 0; i < Main.maxProjectiles; i++)
+                    {
+                        Projectile proj = Main.projectile[i];
+                        if (proj.active && proj.owner == Player.whoAmI &&
+                            proj.ModProjectile is ClickableClickerProjectile clickable && !clickable.HasChanged && !clickable.Trigger)
+                        {
+                            if (Main.mouseLeft && Main.mouseLeftRelease && proj.DistanceSQ(Main.MouseWorld) < 30 * 30)
+                            {
+                                clickable.Trigger = true; //Handled in the AI
+                            }
+                        }
+                    }
+                }
             }
         }
         public override void PostUpdateMiscEffects()

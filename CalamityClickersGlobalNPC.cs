@@ -72,5 +72,9 @@ namespace CalamityClickers
             }
 
         }
+        public override void ModifyShop(NPCShop shop)
+        {
+            shop.Add(ModContent.ItemType<FrostysClicker>(), Condition.DownedEverscream, Condition.DownedSantaNK1, Condition.DownedIceQueen);
+        }
     }
 }

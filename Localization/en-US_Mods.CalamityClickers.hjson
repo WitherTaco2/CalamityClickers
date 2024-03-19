@@ -58,6 +58,11 @@ ClickEffect: {
 		Name: Red Lightning
 		Description: Creates a four lighning from sky
 	}
+
+	CryoBomb: {
+		Name: Cryo Bomb
+		Description: Creates a cryobomb aroud cursor that can be clicked to release shards
+	}
 }
 
 Items: {
@@ -202,6 +207,7 @@ Items: {
 			BrimstoneClicker.DisplayName: Brimstone Clicker
 			DaedalusClicker.DisplayName: Daedalus Clicker
 			RedLightningClicker.DisplayName: Red Lightning Clicker
+			FrostysClicker.DisplayName: Frosty's Clicker
 		}
 	}
 
@@ -241,6 +247,7 @@ Projectiles: {
 		GooClickerProjectile.DisplayName: Slime Puppet
 		GaussClickerProjectile.DisplayName: Gauss Flux
 		BrimstoneClickerProjectile.DisplayName: Brimstone Sigil
+		CryoClickerProjectile.DisplayName: Cryo Clicker Projectile
 	}
 }
 
