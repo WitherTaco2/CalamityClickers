@@ -1,4 +1,9 @@
 ClickEffect: {
+	WildMagicNew: {
+		Name: Wild Magic
+		Description: Randomly acts as any possible click effect
+	}
+
 	SeaBubble: {
 		Name: Sea Bubble
 		Description: Creates one bubble which slowly hit and flying away
@@ -62,6 +67,11 @@ ClickEffect: {
 	CryoBomb: {
 		Name: Cryo Bomb
 		Description: Creates a cryobomb aroud cursor that can be clicked to release shards
+	}
+
+	AnahitasMusic: {
+		Name: Anahita's Music
+		Description: Creates a circle of music notes
 	}
 }
 
@@ -191,6 +201,13 @@ Items: {
 				SetBonus: Clicker Tarragon, Bloodflare and God Slayer effects
 			}
 		}
+
+		Vanity: {
+			SilvaCapsuit: {
+				DisplayName: Silva Capsuit
+				Tooltip: ""
+			}
+		}
 	}
 
 	Weapons: {
@@ -208,6 +225,7 @@ Items: {
 			DaedalusClicker.DisplayName: Daedalus Clicker
 			RedLightningClicker.DisplayName: Red Lightning Clicker
 			FrostysClicker.DisplayName: Frosty's Clicker
+			AnahitasClicker.DisplayName: Anahita's Clicker
 		}
 	}
 
@@ -247,7 +265,8 @@ Projectiles: {
 		GooClickerProjectile.DisplayName: Slime Puppet
 		GaussClickerProjectile.DisplayName: Gauss Flux
 		BrimstoneClickerProjectile.DisplayName: Brimstone Sigil
-		CryoClickerProjectile.DisplayName: Cryo Clicker Projectile
+		CryoClickerProjectile.DisplayName: Cryo Bomb
+		MusicalClickerProjectile.DisplayName: Musical Note
 	}
 }
 

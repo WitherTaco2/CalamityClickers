@@ -26,6 +26,10 @@ namespace CalamityClickers
                     ClickerCompat.AddEffect(item, CalamityClickersEffects.WildMagic);
                 }
             }
+            if (item.type == ModContent.ItemType<TheClicker>())
+            {
+                item.damage = 600;
+            }
         }
         public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
@@ -95,7 +99,7 @@ namespace CalamityClickers
             }
             if (item.type == ModContent.ItemType<LeviathanBag>())
             {
-                itemLoot.Add(ModContent.ItemType<MusicalClicker>(), 3);
+                itemLoot.Add(ModContent.ItemType<AnahitasClicker>(), 3);
             }
 
             if (item.type == ModContent.ItemType<DragonfollyBag>())

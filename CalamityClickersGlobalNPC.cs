@@ -74,7 +74,7 @@ namespace CalamityClickers
                 var lastStanding = npcLoot.DefineConditionalDropSet(Leviathan.LastAnLStanding);
                 LeadingConditionRule normalOnly = new LeadingConditionRule(new Conditions.NotExpert());
                 lastStanding.Add(normalOnly);
-                normalOnly.Add(ModContent.ItemType<MusicalClicker>(), 3);
+                normalOnly.Add(ModContent.ItemType<AnahitasClicker>(), 3);
             }
 
             if (npc.type == ModContent.NPCType<Bumblefuck>())
