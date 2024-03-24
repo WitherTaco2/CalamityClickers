@@ -9,6 +9,7 @@ using CalamityMod.NPCs.Cryogen;
 using CalamityMod.NPCs.DesertScourge;
 using CalamityMod.NPCs.HiveMind;
 using CalamityMod.NPCs.Leviathan;
+using CalamityMod.NPCs.NormalNPCs;
 using CalamityMod.NPCs.TownNPCs;
 using ClickerClass.Items.Weapons.Clickers;
 using Terraria;
@@ -50,6 +51,10 @@ namespace CalamityClickers
                         i++;
                     }
                 }*/
+            }
+            if (npc.type == ModContent.NPCType<Horse>())
+            {
+                mainRule.Add(ModContent.ItemType<EarthenClicker>(), 4);
             }
 
             if (npc.type == ModContent.NPCType<DesertScourgeHead>())

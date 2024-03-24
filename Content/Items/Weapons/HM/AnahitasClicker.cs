@@ -16,7 +16,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         //public override Color RadiusColor => new Color(67, 207, 130);
         public override Color RadiusColor => new Color(146, 179, 245);
 
-        public override void SafeSetStaticDefaults()
+        public override void SetStaticDefaultsExtra()
         {
             AnahitasClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "AnahitasMusic", 10, new Color(206, 255, 31), delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
@@ -28,7 +28,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
                 }
             });
         }
-        public override void SafeSetDefaults()
+        public override void SetDefaultsExtra()
         {
             AddEffect(Item, AnahitasClicker.ClickerEffect);
 

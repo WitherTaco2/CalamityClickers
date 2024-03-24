@@ -13,14 +13,14 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         public override float Radius => 3.5f;
         public override Color RadiusColor => new Color(141, 203, 50);
 
-        public override void SafeSetStaticDefaults()
+        public override void SetStaticDefaultsExtra()
         {
             TerraClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "Terra", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
 
             });
         }
-        public override void SafeSetDefaults()
+        public override void SetDefaultsExtra()
         {
             AddEffect(Item, TerraClicker.ClickerEffect);
 

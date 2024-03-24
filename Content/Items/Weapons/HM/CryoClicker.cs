@@ -18,14 +18,14 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         public static string ClickerEffect { get; internal set; } = string.Empty;
         public override float Radius => 3f;
         public override Color RadiusColor => new Color(50, 105, 88);
-        public override void SafeSetStaticDefaults()
+        public override void SetStaticDefaultsExtra()
         {
             CryoClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "CryoBomb", 5, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position + Main.rand.NextVector2Circular(200, 200), Main.rand.NextVector2CircularEdge(1, 1), ModContent.ProjectileType<CryoClickerProjectile>(), damage, knockBack, player.whoAmI);
             });
         }
-        public override void SafeSetDefaults()
+        public override void SetDefaultsExtra()
         {
             AddEffect(Item, CryoClicker.ClickerEffect);
 
@@ -39,7 +39,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
     {
         public override bool UseInvisibleProjectile => false;
         public override string Texture => "CalamityMod/Projectiles/Boss/IceBomb";
-        public override void SafeSetDefaults()
+        public override void SetDefaultsExtra()
         {
             Projectile.width = 30;
             Projectile.height = 30;

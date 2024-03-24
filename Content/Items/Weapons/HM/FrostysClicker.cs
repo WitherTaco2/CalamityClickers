@@ -13,7 +13,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         public static string ClickerEffect { get; internal set; } = string.Empty;
         public override float Radius => 5.5f;
         public override Color RadiusColor => new Color(122, 190, 255);
-        public override void SafeSetStaticDefaults()
+        public override void SetStaticDefaultsExtra()
         {
             FrostysClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "CoolFlake", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
@@ -25,7 +25,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
                 }
             });
         }
-        public override void SafeSetDefaults()
+        public override void SetDefaultsExtra()
         {
             AddEffect(Item, FrostysClicker.ClickerEffect);
 

@@ -14,7 +14,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
         public static string ClickerEffect { get; internal set; } = string.Empty;
         public override float Radius => 6.1f;
         public override Color RadiusColor => Color.Red;
-        public override void SafeSetStaticDefaults()
+        public override void SetStaticDefaultsExtra()
         {
             RedLightningClicker.ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "RedLightning", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
@@ -38,7 +38,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
             }, postMoonLord: true);
 
         }
-        public override void SafeSetDefaults()
+        public override void SetDefaultsExtra()
         {
             AddEffect(Item, RedLightningClicker.ClickerEffect);
             SetDust(Item, 160);

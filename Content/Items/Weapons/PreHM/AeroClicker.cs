@@ -16,7 +16,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
         public static string ClickerEffect { get; internal set; } = string.Empty;
         public override float Radius => 2.6f;
         public override Color RadiusColor => new Color(157, 200, 193);
-        public override void SafeSetStaticDefaults()
+        public override void SetStaticDefaultsExtra()
         {
             AeroClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "FeatherRain", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
@@ -27,7 +27,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
                 }
             }, true);
         }
-        public override void SafeSetDefaults()
+        public override void SetDefaultsExtra()
         {
             AddEffect(Item, AeroClicker.ClickerEffect);
             SetDust(Item, 206);

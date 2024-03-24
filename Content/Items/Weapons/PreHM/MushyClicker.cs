@@ -14,14 +14,14 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
         public static string ClickerEffect { get; internal set; } = string.Empty;
         public override float Radius => 2.1f;
         public override Color RadiusColor => new Color(90, 167, 209);
-        public override void SafeSetStaticDefaults()
+        public override void SetStaticDefaultsExtra()
         {
             MushyClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "Mushy", 1, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 player.AddBuff(ModContent.BuffType<Mushy>(), 120);
             }, true);
         }
-        public override void SafeSetDefaults()
+        public override void SetDefaultsExtra()
         {
             AddEffect(Item, MushyClicker.ClickerEffect);
 

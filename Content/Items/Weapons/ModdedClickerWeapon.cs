@@ -12,9 +12,9 @@ namespace CalamityClickers.Content.Items.Weapons
         public override void SetStaticDefaults()
         {
             base.SetStaticDefaults();
-            SafeSetStaticDefaults();
+            SetStaticDefaultsExtra();
         }
-        public virtual void SafeSetStaticDefaults()
+        public virtual void SetStaticDefaultsExtra()
         {
 
         }
@@ -29,9 +29,9 @@ namespace CalamityClickers.Content.Items.Weapons
             Item.width = 30;
             Item.height = 30;
 
-            SafeSetDefaults();
+            SetDefaultsExtra();
         }
-        public virtual void SafeSetDefaults()
+        public virtual void SetDefaultsExtra()
         {
 
         }
@@ -50,9 +50,9 @@ namespace CalamityClickers.Content.Items.Weapons
         {
             base.SetDefaults();
 
-            SafeSetDefaults();
+            SetDefaultsExtra();
         }
-        public virtual void SafeSetDefaults()
+        public virtual void SetDefaultsExtra()
         {
 
         }
