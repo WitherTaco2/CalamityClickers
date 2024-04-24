@@ -1,4 +1,4 @@
-displayName = Calamity Clickers (Active Development - Early Hardmode Stage)
+displayName = Calamity Clickers (Demo - Early Hardmode Stage)
 author = WitherTaco
 version = 0.3
 modReferences = CalamityMod, ClickerClass
