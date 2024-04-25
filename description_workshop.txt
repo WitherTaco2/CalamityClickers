@@ -1,10 +1,19 @@
-Calamity Clicker is addon which adds new clickers where used calamity materials or dropped from calamity bosses. Also in future he add and clicker helmets for armors and new accessories
+Calamity Clicker is addon which adds new clickers where used calamity materials or dropped from calamity bosses. This addon also planned add more post-Moonlord content up to Shadowspec-tier
+
+Currect development progress: 
+Pre-hardmode clickers - completed,
+Hardmode clickers - made up to Post-Plantera
+Post-Moonlord clickers - made up to first bosses (Dragonfolly and Providance)
+Draedon Arsenal clickers - only Mythril-tier correctly
+Armor - completed
+Accessories - almost completed (need more ideas)
 
 Also mod has changes in clicker class
 1. Now reducing the click amount for click effect recalculated: real click amount percent = 1 / (2 - actual click amount percent)
 2. The Clicker moved into Endgame Stage. He now crafted with using Shadowspec Bars
 3. Galactica Singularity now uses Mice Fragments in craft
-4. Gamer Crate now uses Purified Gel in craft
+4. Any Lunar Pillar enemies now drops mice fragments (less chance when other fragments but drops by any this event enemies)
+5. Gamer Crate now uses Purified Gel in craft
 
 
 [quote=WitherTaco]

@@ -17,7 +17,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
     {
         public static string ClickerEffect { get; internal set; } = string.Empty;
         public override float Radius => 3f;
-        public override Color RadiusColor => new Color(50, 105, 88);
+        public override Color RadiusColor => new Color(90, 90, 203);
         public override void SetStaticDefaultsExtra()
         {
             CryoClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "CryoBomb", 5, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
@@ -28,6 +28,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         public override void SetDefaultsExtra()
         {
             AddEffect(Item, CryoClicker.ClickerEffect);
+            SetDust(Item, DustID.IceRod);
 
             Item.damage = 23;
             Item.knockBack = 1f;

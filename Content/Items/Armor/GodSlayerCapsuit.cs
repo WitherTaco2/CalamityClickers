@@ -49,7 +49,7 @@ namespace CalamityClickers.Content.Items.Armor
         {
             var hotkey2 = CalamityKeybinds.GodSlayerDashHotKey.TooltipHotkeyString();
             var hotkey = CalamityKeybinds.ArmorSetBonusHotKey.TooltipHotkeyString();
-            player.setBonus = this.GetLocalization("SetBonus").Format(hotkey2) + "\n" + CalamityUtils.GetTextFromModItem<GodSlayerChestplate>("CommonSetBonus").Format(hotkey, GodslayerArmorDash.GodslayerCooldown);
+            player.setBonus = this.GetLocalization("SetBonus").Format(hotkey) + "\n" + CalamityUtils.GetTextFromModItem<GodSlayerChestplate>("CommonSetBonus").Format(hotkey2, GodslayerArmorDash.GodslayerCooldown);
 
             var modPlayer = player.Calamity();
             modPlayer.godSlayer = true;

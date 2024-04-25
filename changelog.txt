@@ -1,1 +1,9 @@
+Added Earthen Clicker. Earth Elemental drop (from Calamity fandom wiki)
+Added Aquatic Clicker. Aquatic Scourge drop (clicker effect correctly placeholder)
+Added Terra Clicker. Clicker for Terra set
+Added Feral Clicker. Perennial upgrade of Crimson/Corrupt Clicker
+Added Elemental Clicker. Clicker for Elemental set
 
+Fixed some uncorrects dusts for clickers
+Fixed God Slayer Capsuit mixed button in armor set tooltip
+Fixed Fleshy Clicker don't dropping from Perforator and his bag

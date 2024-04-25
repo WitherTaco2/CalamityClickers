@@ -61,7 +61,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
                     NPC target = Main.npc[u];
                     if (target.CanBeChasedBy() && target.DistanceSQ(Projectile.Center) < 158 * 158)
                     {
-                        target.AddBuff(ModContent.BuffType<ArmorCrunch>(), 180, false);
+                        target.AddBuff(ModContent.BuffType<ArmorCrunch>(), 180);
                         //target.Hitbox.Intersects
 
                         for (int i = 0; i < 15; i++)

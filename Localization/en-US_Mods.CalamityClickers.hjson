@@ -69,9 +69,34 @@ ClickEffect: {
 		Description: Creates a cryobomb aroud cursor that can be clicked to release shards
 	}
 
-	AnahitasMusic: {
-		Name: Anahita's Music
+	AnahitasVoice: {
+		Name: Anahita's Voice
 		Description: Creates a circle of music notes
+	}
+
+	Crunch: {
+		Name: Crunch
+		Description: Inflict Armor Crunch for 3 seconds for nearest enemies
+	}
+
+	TerraAura: {
+		Name: Terra Aura
+		Description: Create a damaging aura which last 3 seconds
+	}
+
+	ElementalAura: {
+		Name: Elemental Aura
+		Description: Create a damaging elemental aura which last 2 seconds. Inflict Elemental Mix for 1 second
+	}
+
+	GreenInfection: {
+		Name: Green Infection
+		Description: Fires {0} burning green ichor streams that home in at enemies
+	}
+
+	ProfanedInferno: {
+		Name: Profaned Inferno
+		Description: Create holy flare explosion. Inflict Holy Flames for 3 seconds
 	}
 }
 
@@ -226,6 +251,12 @@ Items: {
 			RedLightningClicker.DisplayName: Red Lightning Clicker
 			FrostysClicker.DisplayName: Frosty's Clicker
 			AnahitasClicker.DisplayName: Anahita's Clicker
+			AquaticClicker.DisplayName: Aquatic Clicker
+			EarthenClicker.DisplayName: Earthen Clicker
+			TerraClicker.DisplayName: Terra Clicker
+			ElementalClicker.DisplayName: Elemental Clicker
+			FeralClicker.DisplayName: Feral Clicker
+			ProfanedClicker.DisplayName: Profaned Clicker
 		}
 	}
 
@@ -267,6 +298,11 @@ Projectiles: {
 		BrimstoneClickerProjectile.DisplayName: Brimstone Sigil
 		CryoClickerProjectile.DisplayName: Cryo Bomb
 		MusicalClickerProjectile.DisplayName: Musical Note
+		EarthenClickerProjectile.DisplayName: Earthen Clicker Projectile
+		TerraClickerProjectile.DisplayName: Terra Clicker Projectile
+		ElementalClickerProjectile.DisplayName: Elemental Clicker Projectile
+		FeralClickerProjectile.DisplayName: Feral Clicker Projectile
+		ProfanedClickerProjectile.DisplayName: Profaned Clicker Projectile
 	}
 }
 

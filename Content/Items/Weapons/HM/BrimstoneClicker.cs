@@ -27,6 +27,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         public override void SetDefaultsExtra()
         {
             AddEffect(Item, BrimstoneClicker.ClickerEffect);
+            SetDust(Item, ModContent.DustType<BrimstoneFlameClickers>());
 
             Item.damage = 23;
             Item.knockBack = 1f;
@@ -51,6 +52,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
             get => Projectile.ai[0] == 1f;
             set => Projectile.ai[0] = value ? 1f : 0f;
         }
+
         public override void SetDefaults()
         {
             Projectile.width = 250;

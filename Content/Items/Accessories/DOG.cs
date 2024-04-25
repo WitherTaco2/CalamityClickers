@@ -39,7 +39,7 @@ namespace CalamityClickers.Content.Items.Accessories
             CreateRecipe()
                 .AddIngredient<GamerCrate>()
                 .AddIngredient<AimbotModule>()
-                .AddIngredient<IcePack>()
+                //.AddIngredient<IcePack>()
                 .AddIngredient(ItemID.LunarBar, 8)
                 .AddIngredient<GalacticaSingularity>(4)
                 .AddIngredient<AscendantSpiritEssence>(4)

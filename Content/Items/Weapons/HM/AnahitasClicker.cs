@@ -18,13 +18,13 @@ namespace CalamityClickers.Content.Items.Weapons.HM
 
         public override void SetStaticDefaultsExtra()
         {
-            AnahitasClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "AnahitasMusic", 10, new Color(206, 255, 31), delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            AnahitasClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "AnahitasVoice", 10, new Color(206, 255, 31), delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 float extraRot = Main.rand.NextBool() ? (MathHelper.TwoPi / 12) : 0;
                 for (int i = 0; i < 6; i++)
                 {
                     Vector2 vec1 = Vector2.UnitX.RotatedBy(MathHelper.TwoPi / 6 * i + extraRot);
-                    Projectile.NewProjectile(source, position + vec1 * 100, -vec1, ModContent.ProjectileType<MusicalClickerProjectile>(), damage, knockBack, player.whoAmI);
+                    Projectile.NewProjectile(source, position + vec1 * 100, -vec1 / 2, ModContent.ProjectileType<MusicalClickerProjectile>(), damage, knockBack, player.whoAmI);
                 }
             });
         }

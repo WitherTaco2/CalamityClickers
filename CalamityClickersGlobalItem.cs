@@ -82,29 +82,43 @@ namespace CalamityClickers
 
             if (item.type == ModContent.ItemType<DesertScourgeBag>())
             {
-                itemLoot.Add(ModContent.ItemType<ScourgeClicker>(), 3);
+                itemLoot.Add(ModContent.ItemType<ScourgeClicker>(), 4);
             }
             if (item.type == ModContent.ItemType<CrabulonBag>())
             {
-                itemLoot.Add(ModContent.ItemType<MushyClicker>(), 3);
+                itemLoot.Add(ModContent.ItemType<MushyClicker>(), 4);
             }
             if (item.type == ModContent.ItemType<HiveMindBag>())
             {
-                itemLoot.Add(ModContent.ItemType<RottenClicker>(), 3);
+                itemLoot.Add(ModContent.ItemType<RottenClicker>(), 4);
             }
+            if (item.type == ModContent.ItemType<PerforatorBag>())
+            {
+                itemLoot.Add(ModContent.ItemType<FleshyClicker>(), 4);
+            }
+
 
             if (item.type == ModContent.ItemType<CryogenBag>())
             {
-                itemLoot.Add(ModContent.ItemType<CryoClicker>(), 3);
+                itemLoot.Add(ModContent.ItemType<CryoClicker>(), 4);
+            }
+            if (item.type == ModContent.ItemType<AquaticScourgeBag>())
+            {
+                itemLoot.Add(ModContent.ItemType<AquaticClicker>(), 4);
             }
             if (item.type == ModContent.ItemType<LeviathanBag>())
             {
-                itemLoot.Add(ModContent.ItemType<AnahitasClicker>(), 3);
+                itemLoot.Add(ModContent.ItemType<AnahitasClicker>(), 4);
             }
+
 
             if (item.type == ModContent.ItemType<DragonfollyBag>())
             {
-                itemLoot.Add(ModContent.ItemType<RedLightningClicker>(), 3);
+                itemLoot.Add(ModContent.ItemType<RedLightningClicker>(), 4);
+            }
+            if (item.type == ModContent.ItemType<ProvidenceBag>())
+            {
+                itemLoot.Add(ModContent.ItemType<ProfanedClicker>(), 4);
             }
         }
     }

@@ -28,6 +28,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         public override void SetDefaultsExtra()
         {
             AddEffect(Item, FrostysClicker.ClickerEffect);
+            SetDust(Item, DustID.SnowBlock);
 
             Item.damage = 53;
             Item.knockBack = 1f;

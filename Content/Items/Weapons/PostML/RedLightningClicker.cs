@@ -41,7 +41,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
         public override void SetDefaultsExtra()
         {
             AddEffect(Item, RedLightningClicker.ClickerEffect);
-            SetDust(Item, 160);
+            SetDust(Item, DustID.RedTorch);
 
             Item.damage = 130;
             Item.knockBack = 1f;
