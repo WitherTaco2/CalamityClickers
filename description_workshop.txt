@@ -3,10 +3,10 @@ Calamity Clicker is addon which adds new clickers where used calamity materials 
 Currect development progress: 
 Pre-hardmode clickers - completed,
 Hardmode clickers - made up to Post-Plantera
-Post-Moonlord clickers - made up to first bosses (Dragonfolly and Providance)
+Post-Moonlord clickers - made up to early post-Providance
 Draedon Arsenal clickers - only Mythril-tier correctly
 Armor - completed
-Accessories - almost completed (need more ideas)
+Accessories - almost completed (need more ideas for accessories)
 
 Also mod has changes in clicker class
 1. Now reducing the click amount for click effect recalculated: real click amount percent = 1 / (2 - actual click amount percent)

@@ -18,5 +18,12 @@ namespace CalamityClickers
                 CalamityClickersSystem.PostMLClickerEffects.Add(clickerEffect);
             return clickerEffect;
         }
+        public static string RegisterClickEffect(Mod mod, string internalName, int amount, Func<Color> color, Action<Player, EntitySource_ItemUse_WithAmmo, Vector2, int, int, float> action, bool preHardMode = false, bool postMoonLord = false, object[] nameArgs = null, object[] descriptionArgs = null)
+        {
+            string clickerEffect = ClickerCompat.RegisterClickEffect(mod, internalName, amount, color, action, preHardMode, nameArgs, descriptionArgs);
+            if (postMoonLord)
+                CalamityClickersSystem.PostMLClickerEffects.Add(clickerEffect);
+            return clickerEffect;
+        }
     }
 }

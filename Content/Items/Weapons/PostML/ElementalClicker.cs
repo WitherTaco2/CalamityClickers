@@ -49,10 +49,10 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
         }
         public override void SetStaticDefaultsExtra()
         {
-            ElementalClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "ElementalAura", 10, (Func<Color>)color, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            ElementalClicker.ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "ElementalAura", 10, (Func<Color>)color, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<ElementalClickerProjectile>(), damage * 2, knockBack, player.whoAmI, Main.rand.Next(4));
-            });
+            }, postMoonLord: true);
         }
         public override void SetDefaultsExtra()
         {

@@ -98,6 +98,11 @@ ClickEffect: {
 		Name: Profaned Inferno
 		Description: Create holy flare explosion. Inflict Holy Flames for 3 seconds
 	}
+
+	TarragonThorns: {
+		Name: Tarragon Thorns
+		Description: Grown thorns in 8 directions
+	}
 }
 
 Items: {
@@ -257,6 +262,7 @@ Items: {
 			ElementalClicker.DisplayName: Elemental Clicker
 			FeralClicker.DisplayName: Feral Clicker
 			ProfanedClicker.DisplayName: Profaned Clicker
+			BloomClicker.DisplayName: Bloom Clicker
 		}
 	}
 
@@ -298,11 +304,12 @@ Projectiles: {
 		BrimstoneClickerProjectile.DisplayName: Brimstone Sigil
 		CryoClickerProjectile.DisplayName: Cryo Bomb
 		MusicalClickerProjectile.DisplayName: Musical Note
-		EarthenClickerProjectile.DisplayName: Earthen Clicker Projectile
-		TerraClickerProjectile.DisplayName: Terra Clicker Projectile
-		ElementalClickerProjectile.DisplayName: Elemental Clicker Projectile
-		FeralClickerProjectile.DisplayName: Feral Clicker Projectile
-		ProfanedClickerProjectile.DisplayName: Profaned Clicker Projectile
+		EarthenClickerProjectile.DisplayName: Crunch
+		TerraClickerProjectile.DisplayName: Terra Aura
+		ElementalClickerProjectile.DisplayName: Elemental Aura
+		FeralClickerProjectile.DisplayName: Burning Green Ichor
+		ProfanedClickerProjectile.DisplayName: Profaned Explosion
+		ExoClickerProjectile.DisplayName: Exo Explosion
 	}
 }
 

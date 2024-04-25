@@ -1,4 +1,4 @@
-displayName = Calamity Clickers (Beta - Terra-Elemental Clicker Update)
+displayName = Calamity Clickers (In Development)
 author = WitherTaco
 version = 0.3
 modReferences = CalamityMod, ClickerClass
