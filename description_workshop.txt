@@ -1,20 +1,21 @@
 Calamity Clicker is addon which adds new clickers where used calamity materials or dropped from calamity bosses. This addon also planned add more post-Moonlord content up to Shadowspec-tier
 
 Currect development progress: 
-Pre-hardmode clickers - completed,
-Hardmode clickers - made up to Post-Plantera
+Pre-hardmode clickers - almost completed,
+Hardmode clickers - work in progress (i made all boss clicker except PGoliath's clicker and need make some late hardmode clicker)
 Post-Moonlord clickers - made up to early post-Providance
-Draedon Arsenal clickers - only Mythril-tier correctly
+Draedon Arsenal clickers - only Mythril-tier correctly (i need ideas)
 Armor - completed
 Accessories - almost completed (need more ideas for accessories)
 
 Also mod has changes in clicker class and calamity
 1. Now reducing the click amount for click effect recalculated: real click amount percent = 1 / (2 - actual click amount percent)
-2. 'The Clicker' moved into Endgame Stage. He now crafted with using Shadowspec Bars
+2. 'The Clicker' and 'Quintessence Clicker' moved into Endgame Stage. (He is OP) The Clicker now crafted with using Shadowspec Bars. Making Quintessence Clicker now allow only after defeating Exo Mechs and Calamitas
 3. Galactica Singularity now uses Mice Fragments in craft
 4. Any Lunar Pillar enemies now drops mice fragments (less chance when other fragments but drops by any this event enemies)
 5. Gamer Crate now uses Purified Gel in craft
 6. Calamity's Starter Bag contain starter clicker (Tin or Copper)
+7. Clicker class items can be used in recipe groups (Like Mice Hamaxe in Grax recipe)
 
 
 [quote=WitherTaco]

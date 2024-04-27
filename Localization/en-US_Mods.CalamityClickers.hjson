@@ -108,6 +108,26 @@ ClickEffect: {
 		Name: Basic Autoclicker
 		Description: Allow autoclick with 7.5 click per second. Right Click to toggle this
 	}
+
+	BloodBlasts: {
+		Description: Causes 8 blood blast projectiles to be summoned near the player and shoot across the screen
+		Name: Blood Blasts
+	}
+
+	ChaosFlame: {
+		Name: Chaos Flame
+		Description: Create small portal-like flame. Inflict Brimstone Flames
+	}
+
+	StarRain: {
+		Description: Shoots 4 astral stars from sky into mouse cursor position
+		Name: Star Rain
+	}
+
+	AureusBlast: {
+		Name: Aureus Blast
+		Description: Shoots a aureus blast for every nearest enemies around cursor position. Also clicker effect adapted for single target
+	}
 }
 
 Items: {
@@ -269,6 +289,10 @@ Items: {
 			ProfanedClicker.DisplayName: Profaned Clicker
 			BloomClicker.DisplayName: Bloom Clicker
 			WulfrumClicker.DisplayName: Wulfrum Clicker
+			BloodGodsClicker.DisplayName: Blood God's Clicker
+			ClickerOfCalamity.DisplayName: Clicker of Calamity
+			CosmicStarClicker.DisplayName: Cosmic Star Clicker
+			AureusClicker.DisplayName: Aureus Clicker
 		}
 	}
 
@@ -316,6 +340,10 @@ Projectiles: {
 		FeralClickerProjectile.DisplayName: Burning Green Ichor
 		ProfanedClickerProjectile.DisplayName: Profaned Explosion
 		ExoClickerProjectile.DisplayName: Exo Explosion
+		BloodGodFlareClickerProjectile.DisplayName: Blood God Flare Clicker Projectile
+		ClickerOfCalamityProjectile.DisplayName: Chaos Flame
+		BloodGodsClickerProjectile.DisplayName: Blood Gods Clicker Projectile
+		AureusClickerProjectile.DisplayName: Aureus Clicker Projectile
 	}
 }
 

@@ -110,6 +110,18 @@ namespace CalamityClickers
             {
                 itemLoot.Add(ModContent.ItemType<AnahitasClicker>(), 4);
             }
+            if (item.type == ModContent.ItemType<AstrumAureusBag>())
+            {
+                itemLoot.Add(ModContent.ItemType<AureusClicker>(), 4);
+            }
+            if (item.type == ModContent.ItemType<RavagerBag>())
+            {
+                itemLoot.Add(ModContent.ItemType<BloodGodsClicker>(), 4);
+            }
+            if (item.type == ModContent.ItemType<AstrumDeusBag>())
+            {
+                itemLoot.Add(ModContent.ItemType<CosmicStarClicker>(), 4);
+            }
 
 
             if (item.type == ModContent.ItemType<DragonfollyBag>())

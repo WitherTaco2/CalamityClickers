@@ -19,14 +19,14 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
 
         public override void SetStaticDefaultsExtra()
         {
-            ProfanedClicker.ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "ProfanedInferno", 7, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "ProfanedInferno", 7, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<ProfanedClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
             }, postMoonLord: true);
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ProfanedClicker.ClickerEffect);
+            AddEffect(Item, ClickerEffect);
             SetDust(Item, ModContent.DustType<HolyFireDust>());
 
             Item.damage = 140;

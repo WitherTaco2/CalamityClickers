@@ -18,7 +18,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
 
         public override void SetStaticDefaultsExtra()
         {
-            AnahitasClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "AnahitasVoice", 10, new Color(206, 255, 31), delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "AnahitasVoice", 10, new Color(206, 255, 31), delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 float extraRot = Main.rand.NextBool() ? (MathHelper.TwoPi / 12) : 0;
                 for (int i = 0; i < 6; i++)
@@ -30,7 +30,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, AnahitasClicker.ClickerEffect);
+            AddEffect(Item, ClickerEffect);
 
             Item.damage = 53;
             Item.knockBack = 1f;

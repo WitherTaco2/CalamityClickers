@@ -22,7 +22,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         public static readonly int StreamAmount = 8;
         public override void SetStaticDefaultsExtra()
         {
-            FeralClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "GreenInfection", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "GreenInfection", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 //Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<TerraClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
                 bool spawnEffects = true;
@@ -37,7 +37,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, FeralClicker.ClickerEffect);
+            AddEffect(Item, ClickerEffect);
             SetDust(Item, 157);
 
             Item.damage = 60;

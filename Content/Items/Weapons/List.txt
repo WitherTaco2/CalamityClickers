@@ -1,20 +1,29 @@
++ - fully addded
+* - added sprite (without code)
+
+=====
+
 Pre-HM
 Sea Prism Set (Pearl Shard + Sea Prism + Navystone)
+Sea king's shop
 Acid Set (Acidwood + Sulphuric Scale)
 from Depth's chest
 
 =====
 HM
 
+Forbidden Set (Forbidden Fragment + Any Adamantite Bar)
 T2 Acid Set
 Astral Biome drop
-Calamitas Clone Drop
-Astrum Aureus drop
+Hardmode Giant Clam drop + direct Clamitas's upgrade (Clamity Addon)
++Calamitas Clone Drop
++Astrum Aureus drop
 Scoria Set (Scoria Bar)
 Plaguebringer Goliath drop
-Ravager drop
-Meld Construct Set
-Astrum Deus drop
++Ravager drop
+*Meld Construct Set
++Astrum Deus drop
+Astral Bar Set
 Astrageldon Set (Catalyst Addon)
 
 =====
@@ -27,12 +36,21 @@ Eidolon/Primordial wyrm drop (last depths layer)
 Old Duke drop
 Devourer of Gods drop
 Cosmilite Set (Cosmilite Bar)
+Direct upgrade of Eclipse Clicker with using Darksun Fragments
 Yharon drop
 Something from Auric Bar (i don t know what make)
 Exo Mech drop
 Exo Clicker (Miracle Matter)
 Calamitas drop
-
 Post-ML clicker with random clicker effect (Like witch clicker)
-
 My own developer (Shadowspec) clicker
+
+=====
+Draedon Arsenal
+
+Nuclear Clicker (Cosmilite tier)
+
+=====
+Equip
+
+SS Medal (Upgrade of S Medal)

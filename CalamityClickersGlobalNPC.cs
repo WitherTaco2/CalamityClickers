@@ -4,7 +4,10 @@ using CalamityClickers.Content.Items.Weapons.PostML;
 using CalamityClickers.Content.Items.Weapons.PreHM;
 using CalamityMod;
 using CalamityMod.NPCs.AquaticScourge;
+using CalamityMod.NPCs.AstrumAureus;
+using CalamityMod.NPCs.AstrumDeus;
 using CalamityMod.NPCs.Bumblebirb;
+using CalamityMod.NPCs.CalClone;
 using CalamityMod.NPCs.Crabulon;
 using CalamityMod.NPCs.Cryogen;
 using CalamityMod.NPCs.DesertScourge;
@@ -13,6 +16,7 @@ using CalamityMod.NPCs.Leviathan;
 using CalamityMod.NPCs.NormalNPCs;
 using CalamityMod.NPCs.Perforator;
 using CalamityMod.NPCs.Providence;
+using CalamityMod.NPCs.Ravager;
 using CalamityMod.NPCs.TownNPCs;
 using ClickerClass.Items;
 using ClickerClass.Items.Weapons.Clickers;
@@ -119,12 +123,28 @@ namespace CalamityClickers
             {
                 mainRule.Add(ModContent.ItemType<AquaticClicker>(), 4);
             }
+            if (npc.type == ModContent.NPCType<CalamitasClone>())
+            {
+                mainRule.Add(ModContent.ItemType<BloodGodsClicker>(), 4);
+            }
             if (npc.type == ModContent.NPCType<Leviathan>() || npc.type == ModContent.NPCType<Anahita>())
             {
                 var lastStanding = npcLoot.DefineConditionalDropSet(Leviathan.LastAnLStanding);
                 LeadingConditionRule normalOnly = new LeadingConditionRule(new Conditions.NotExpert());
                 lastStanding.Add(normalOnly);
                 normalOnly.Add(ModContent.ItemType<AnahitasClicker>(), 4);
+            }
+            if (npc.type == ModContent.NPCType<AstrumAureus>())
+            {
+                mainRule.Add(ModContent.ItemType<AureusClicker>(), 4);
+            }
+            if (npc.type == ModContent.NPCType<RavagerBody>())
+            {
+                mainRule.Add(ModContent.ItemType<ClickerOfCalamity>(), 4);
+            }
+            if (npc.type == ModContent.NPCType<AstrumDeusHead>())
+            {
+                mainRule.Add(ModContent.ItemType<CosmicStarClicker>(), 4);
             }
 
 

@@ -17,7 +17,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         public override Color RadiusColor => new Color(218, 105, 233);
         public override void SetStaticDefaultsExtra()
         {
-            DaedalusClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "DaedalusCrystals", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "DaedalusCrystals", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 for (int k = 0; k < 3; k++)
                 {
@@ -29,7 +29,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, DaedalusClicker.ClickerEffect);
+            AddEffect(Item, ClickerEffect);
             SetDust(Item, 56);
 
             Item.damage = 32;

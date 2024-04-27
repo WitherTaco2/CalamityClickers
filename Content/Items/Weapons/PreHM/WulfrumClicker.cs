@@ -43,10 +43,19 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
         {
             return true;
         }
-        public override void RightClick(Player player)
+        public override bool? UseItem(Player player)
+        {
+            if (player.altFunctionUse == 2)
+            {
+                autoClicker = !autoClicker;
+                return true;
+            }
+            return base.UseItem(player);
+        }
+        /*public override void RightClick(Player player)
         {
             autoClicker = !autoClicker;
-        }
+        }*/
         public override void AddRecipes()
         {
             CreateRecipe()

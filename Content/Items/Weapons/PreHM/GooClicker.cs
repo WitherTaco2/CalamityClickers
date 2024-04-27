@@ -19,14 +19,14 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
         public override Color RadiusColor => Color.Lerp(new Color(91, 123, 205), new Color(195, 70, 124), MathF.Sin(Main.GlobalTimeWrappedHourly * 3) * 0.5f + 0.5f);
         public override void SetStaticDefaultsExtra()
         {
-            GooClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "SlimePuppet", 6, new Color(243, 79, 174), delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "SlimePuppet", 6, new Color(243, 79, 174), delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.UnitX.RotatedByRandom(MathHelper.ToRadians(180)), ModContent.ProjectileType<GooClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
             }, true);
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, GooClicker.ClickerEffect);
+            AddEffect(Item, ClickerEffect);
 
             Item.damage = 13;
             Item.knockBack = 1f;
@@ -67,12 +67,12 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
             switch (Projectile.ai[0])
             {
                 case 0:
-                    if (Main.rand.NextBool(3))
+                    /*if (Main.rand.NextBool(3))
                     {
                         var womp = Main.rand.NextVector2Circular(4, 4);
                         var d = Dust.NewDustPerfect(Projectile.Center + womp * 12, DustID.Flare_Blue, womp, 47, default, 2);
                         d.noGravity = true;
-                    }
+                    }*/
 
                     Projectile.ai[1] += Projectile.localAI[0] + Projectile.ai[2] / 98;
                     if (Projectile.ai[2] <= 4)
@@ -90,12 +90,12 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
                     Projectile.position.Y += (float)Math.Cos(Projectile.ai[1]) * Projectile.ai[2];
                     break;
                 case 1:
-                    if (Main.rand.NextBool(5) && Projectile.alpha <= 180)
+                    /*if (Main.rand.NextBool(5) && Projectile.alpha <= 180)
                     {
                         var womp = Main.rand.NextVector2Circular(4, 4);
                         var d = Dust.NewDustPerfect(Projectile.Center + womp * 9, DustID.PinkSlime, womp / 2, 47, default, 1.4f);
                         d.noGravity = true;
-                    }
+                    }*/
 
                     Projectile.velocity /= 1.1f;
                     Projectile.alpha += 9;

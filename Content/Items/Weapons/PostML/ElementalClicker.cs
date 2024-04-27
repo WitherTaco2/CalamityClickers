@@ -5,7 +5,6 @@ using CalamityMod.Items.Materials;
 using CalamityMod.Particles;
 using ClickerClass;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -17,8 +16,8 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
     {
         public static string ClickerEffect { get; internal set; } = string.Empty;
         public override float Radius => 6f;
-        public override Color RadiusColor => Color.White;
-        /*public override Color RadiusColor
+        //public override Color RadiusColor => Color.White;
+        public override Color RadiusColor
         {
             get
             {
@@ -31,42 +30,24 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
                     return Color.Lerp(new Color(255, 138, 232), new Color(108, 199, 235), a - 2);
                 else
                     return Color.Lerp(new Color(108, 199, 235), new Color(255, 215, 51), a - 3);
-                return Color.White;
             }
-        }*/
-        private Color color()
-        {
-            float a = Main.GlobalTimeWrappedHourly % 4;
-            if (a < 1)
-                return Color.Lerp(new Color(255, 215, 51), new Color(85, 237, 194), a);
-            if (a >= 1 && a < 2)
-                return Color.Lerp(new Color(85, 237, 194), new Color(255, 138, 232), a - 1);
-            if (a >= 2 && a < 3)
-                return Color.Lerp(new Color(255, 138, 232), new Color(76, 138, 273), a - 2);
-            else
-                return Color.Lerp(new Color(76, 138, 273), new Color(255, 215, 51), a - 3);
-            return Color.White;
         }
         public override void SetStaticDefaultsExtra()
         {
-            ElementalClicker.ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "ElementalAura", 10, (Func<Color>)color, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "ElementalAura", 10, () => RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<ElementalClickerProjectile>(), damage * 2, knockBack, player.whoAmI, Main.rand.Next(4));
             }, postMoonLord: true);
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ElementalClicker.ClickerEffect);
-            SetColor(Item, color());
+            AddEffect(Item, ClickerEffect);
+            //SetColor(Item, color());
 
             Item.damage = 110;
             Item.knockBack = 1f;
             Item.rare = ItemRarityID.Red;
             Item.value = CalamityGlobalItem.Rarity10BuyPrice;
-        }
-        public override void UpdateInventory(Player player)
-        {
-            SetColor(Item, color());
         }
         public override void AddRecipes()
         {

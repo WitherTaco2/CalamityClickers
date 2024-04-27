@@ -20,7 +20,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
 
         public override void SetStaticDefaultsExtra()
         {
-            BloomClicker.ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "TarragonThorns", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "TarragonThorns", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 float random = Main.rand.Next(30, 90);
                 float spread = random * 0.0174f;
@@ -42,7 +42,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, BloomClicker.ClickerEffect);
+            AddEffect(Item, ClickerEffect);
             SetDust(Item, DustID.CursedTorch);
 
             Item.damage = 145;

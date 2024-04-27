@@ -19,14 +19,14 @@ namespace CalamityClickers.Content.Items.Weapons.HM
 
         public override void SetStaticDefaultsExtra()
         {
-            TerraClicker.ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "TerraAura", 14, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "TerraAura", 14, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<TerraClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
             });
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, TerraClicker.ClickerEffect);
+            AddEffect(Item, ClickerEffect);
             SetDust(Item, DustID.TerraBlade);
 
             Item.damage = 64;

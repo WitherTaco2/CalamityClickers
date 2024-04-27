@@ -4,13 +4,20 @@ Added Wulfrum Clicker. Clicker with autoclicker
 
 Added Earthen Clicker. Earth Elemental drop (from Calamity fandom wiki)
 Added Aquatic Clicker. Aquatic Scourge drop (clicker effect is placeholder at the moment)
+Added Clicker of Calamity. Calamitas Clone drop
 Added Terra Clicker. Clicker for Terra set
 Added Feral Clicker. Perennial upgrade of Crimson/Corrupt Clicker
+Added Aureus Clicker. Astrum Aureus drop
+Added Blood God's Clicker. Ravager drop
+Added Cosmic Star Clicker. Astrum Deus drop
 
 Added Elemental Clicker. Clicker for Elemental set
 Added Profaned Clicker. Providance drop
 Added Bloom Clicker. Clicker from Uelibloom Bars
 
+Quintessence Clicker moved into Endgame (after Exo Mechs and Calamitas)
+
 Fixed some uncorrects dusts for clickers
-Fixed God Slayer Capsuit mixed button in armor set tooltip
-Fixed Fleshy Clicker don't dropping from Perforator and his bag
+Fixed God Slayer Capsuit mixed buttons in armor set tooltip
+Fixed Fleshy Clicker don't dropping from Perforators and his bag
+Removed dust from Gooclicker projectile
