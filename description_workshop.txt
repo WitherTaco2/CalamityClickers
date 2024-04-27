@@ -8,12 +8,13 @@ Draedon Arsenal clickers - only Mythril-tier correctly
 Armor - completed
 Accessories - almost completed (need more ideas for accessories)
 
-Also mod has changes in clicker class
+Also mod has changes in clicker class and calamity
 1. Now reducing the click amount for click effect recalculated: real click amount percent = 1 / (2 - actual click amount percent)
-2. The Clicker moved into Endgame Stage. He now crafted with using Shadowspec Bars
+2. 'The Clicker' moved into Endgame Stage. He now crafted with using Shadowspec Bars
 3. Galactica Singularity now uses Mice Fragments in craft
 4. Any Lunar Pillar enemies now drops mice fragments (less chance when other fragments but drops by any this event enemies)
 5. Gamer Crate now uses Purified Gel in craft
+6. Calamity's Starter Bag contain starter clicker (Tin or Copper)
 
 
 [quote=WitherTaco]

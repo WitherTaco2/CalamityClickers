@@ -1,8 +1,15 @@
+Update 0.3 - Elemental Update
+
+Added Wulfrum Clicker. Clicker with autoclicker
+
 Added Earthen Clicker. Earth Elemental drop (from Calamity fandom wiki)
-Added Aquatic Clicker. Aquatic Scourge drop (clicker effect correctly placeholder)
+Added Aquatic Clicker. Aquatic Scourge drop (clicker effect is placeholder at the moment)
 Added Terra Clicker. Clicker for Terra set
 Added Feral Clicker. Perennial upgrade of Crimson/Corrupt Clicker
+
 Added Elemental Clicker. Clicker for Elemental set
+Added Profaned Clicker. Providance drop
+Added Bloom Clicker. Clicker from Uelibloom Bars
 
 Fixed some uncorrects dusts for clickers
 Fixed God Slayer Capsuit mixed button in armor set tooltip

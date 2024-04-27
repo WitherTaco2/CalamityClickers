@@ -103,6 +103,11 @@ ClickEffect: {
 		Name: Tarragon Thorns
 		Description: Grown thorns in 8 directions
 	}
+
+	BasicAutoclicker: {
+		Name: Basic Autoclicker
+		Description: Allow autoclick with 7.5 click per second. Right Click to toggle this
+	}
 }
 
 Items: {
@@ -263,6 +268,7 @@ Items: {
 			FeralClicker.DisplayName: Feral Clicker
 			ProfanedClicker.DisplayName: Profaned Clicker
 			BloomClicker.DisplayName: Bloom Clicker
+			WulfrumClicker.DisplayName: Wulfrum Clicker
 		}
 	}
 
