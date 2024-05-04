@@ -14,36 +14,47 @@ HM
 
 Forbidden Set (Forbidden Fragment + Any Adamantite Bar)
 T2 Acid Set
-Astral Biome drop
 Hardmode Giant Clam drop + direct Clamitas's upgrade (Clamity Addon)
 +Calamitas Clone Drop
+Sandstorm Set (Grand Scale) Crafted with using clicker from Forbidden Set
 +Astrum Aureus drop
-Scoria Set (Scoria Bar)
-Plaguebringer Goliath drop
+Astral Biome enemy drop after Astrum Aureus
++Scoria Set (Scoria Bar)
++Plaguebringer Goliath drop
 +Ravager drop
-*Meld Construct Set
++Meld Construct Set
 +Astrum Deus drop
-Astral Bar Set
+Astral Set (Astral Bar)
 Astrageldon Set (Catalyst Addon)
 
 =====
 Post-ML
 
-Bloodstone Set
-Polterghast drop
+*Bloodstone Set
+
+*Polterghast drop
++Polterplasme Clicker. Direct upgrade of Spectre Clicker
 Stratus Set (Lumenyl + Ruinous Soul + Exodium Cluster)
 Eidolon/Primordial wyrm drop (last depths layer)
 Old Duke drop
+
 Devourer of Gods drop
 Cosmilite Set (Cosmilite Bar)
-Direct upgrade of Eclipse Clicker with using Darksun Fragments
+Darksun Clicker. Direct upgrade of Eclipse Clicker with using Darksun Fragments
+Nightmare Essence Clicker. Direct upgrade of Witch Clicker + Burning Super Death Clicker. Post-ML clicker with random clicker effect (Like witch clicker)
+
 Yharon drop
 Something from Auric Bar (i don t know what make)
+
 Exo Mech drop
 Exo Clicker (Miracle Matter)
 Calamitas drop
-Post-ML clicker with random clicker effect (Like witch clicker)
 My own developer (Shadowspec) clicker
+
+=====
+Other Clicker ideas
+
+Combination of Critter Clicker, Magnet Clicker and other utility clickers
 
 =====
 Draedon Arsenal

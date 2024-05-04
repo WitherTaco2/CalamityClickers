@@ -128,6 +128,21 @@ ClickEffect: {
 		Name: Aureus Blast
 		Description: Shoots a aureus blast for every nearest enemies around cursor position. Also clicker effect adapted for single target
 	}
+
+	Entropy: {
+		Name: Entropy
+		Description: Create big meld energy explosion on cursor postion
+	}
+
+	PlagueBees: {
+		Name: Plague Bees
+		Description: Summon a lot of plague seekers. Inflict Plague
+	}
+
+	Eruption: {
+		Name: Eruption
+		Description: Creates a explosion damaging area
+	}
 }
 
 Items: {
@@ -293,6 +308,10 @@ Items: {
 			ClickerOfCalamity.DisplayName: Clicker of Calamity
 			CosmicStarClicker.DisplayName: Cosmic Star Clicker
 			AureusClicker.DisplayName: Aureus Clicker
+			MeldClicker.DisplayName: Meld Clicker
+			PlagueClicker.DisplayName: Plague Clicker
+			ScoriaClicker.DisplayName: Scoria Clicker
+			PolterplasmeClicker.DisplayName: Polterplasme Clicker
 		}
 	}
 
@@ -345,6 +364,8 @@ Projectiles: {
 		BloodGodsClickerProjectile.DisplayName: Blood Gods Clicker Projectile
 		AureusClickerProjectile.DisplayName: Aureus Clicker Projectile
 	}
+
+	Rogue.PlagueClickerProjectile.DisplayName: Plague Clicker Projectile
 }
 
 Buffs: {

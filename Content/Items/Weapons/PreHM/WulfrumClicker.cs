@@ -39,7 +39,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
                 ClickerCompat.SetAutoReuseEffect(player, 8);
             }
         }
-        public override bool CanRightClick()
+        public override bool AltFunctionUse(Player player)
         {
             return true;
         }

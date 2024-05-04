@@ -25,5 +25,10 @@ namespace CalamityClickers
                 CalamityClickersSystem.PostMLClickerEffects.Add(clickerEffect);
             return clickerEffect;
         }
+        public static void RegisterBlacklistedClickEffect(string clickEffectName)
+        {
+            if (!CalamityClickersSystem.BlacklistedClickerEffects.Contains(clickEffectName))
+                CalamityClickersSystem.BlacklistedClickerEffects.Add(clickEffectName);
+        }
     }
 }

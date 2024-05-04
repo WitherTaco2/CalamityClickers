@@ -18,7 +18,7 @@ namespace CalamityClickers
         {
             WildMagic = CalamityClickersUtils.RegisterClickEffect(Mod, "WildMagicNew", 6, new Color(175, 75, 255), delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
-                List<string> excluded = new List<string>
+                /*List<string> excluded = new List<string>
                 {
                     CalamityClickersEffects.WildMagic,
                     ClickEffect.WildMagic,
@@ -28,13 +28,13 @@ namespace CalamityClickers
                     ClickEffect.Bold,
                     ClickEffect.Yoink,
                     ClickEffect.Nab
-                };
+                };*/
 
                 List<ClickEffect> allowed = new List<ClickEffect>();
 
                 foreach (var name in ClickerSystem.GetAllEffectNames())
                 {
-                    if (!excluded.Contains(name) && !CalamityClickersSystem.PostMLClickerEffects.Contains(name) && ClickerSystem.IsClickEffect(name, out ClickEffect effect))
+                    if (!CalamityClickersSystem.BlacklistedClickerEffects.Contains(name) && !CalamityClickersSystem.PostMLClickerEffects.Contains(name) && ClickerSystem.IsClickEffect(name, out ClickEffect effect))
                     {
                         allowed.Add(effect);
                     }
