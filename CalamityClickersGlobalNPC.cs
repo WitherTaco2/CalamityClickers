@@ -15,6 +15,8 @@ using CalamityMod.NPCs.HiveMind;
 using CalamityMod.NPCs.Leviathan;
 using CalamityMod.NPCs.NormalNPCs;
 using CalamityMod.NPCs.Perforator;
+using CalamityMod.NPCs.PlaguebringerGoliath;
+using CalamityMod.NPCs.Polterghast;
 using CalamityMod.NPCs.Providence;
 using CalamityMod.NPCs.Ravager;
 using CalamityMod.NPCs.TownNPCs;
@@ -140,7 +142,11 @@ namespace CalamityClickers
             }
             if (npc.type == ModContent.NPCType<RavagerBody>())
             {
-                mainRule.Add(ModContent.ItemType<ClickerOfCalamity>(), 4);
+                mainRule.Add(ModContent.ItemType<BloodGodsClicker>(), 4);
+            }
+            if (npc.type == ModContent.NPCType<PlaguebringerGoliath>())
+            {
+                mainRule.Add(ModContent.ItemType<PlagueClicker>(), 4);
             }
             if (npc.type == ModContent.NPCType<AstrumDeusHead>())
             {
@@ -155,6 +161,10 @@ namespace CalamityClickers
             if (npc.type == ModContent.NPCType<Providence>())
             {
                 mainRule.Add(ModContent.ItemType<ProfanedClicker>(), 4);
+            }
+            if (npc.type == ModContent.NPCType<Polterghast>())
+            {
+                mainRule.Add(ModContent.ItemType<RuinousClicker>(), 4);
             }
 
         }

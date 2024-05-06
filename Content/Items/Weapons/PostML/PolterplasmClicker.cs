@@ -6,7 +6,7 @@ using Terraria.ID;
 
 namespace CalamityClickers.Content.Items.Weapons.PostML
 {
-    public class PolterplasmeClicker : ModdedClickerWeapon
+    public class PolterplasmClicker : ModdedClickerWeapon
     {
         public static string ClickerEffect { get; internal set; } = string.Empty;
         public override float Radius => 6f;

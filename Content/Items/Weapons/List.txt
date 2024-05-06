@@ -30,9 +30,9 @@ Astrageldon Set (Catalyst Addon)
 =====
 Post-ML
 
-*Bloodstone Set
++Bloodstone Set (Bloodstone Core)
 
-*Polterghast drop
++Polterghast drop
 +Polterplasme Clicker. Direct upgrade of Spectre Clicker
 Stratus Set (Lumenyl + Ruinous Soul + Exodium Cluster)
 Eidolon/Primordial wyrm drop (last depths layer)
@@ -41,7 +41,7 @@ Old Duke drop
 Devourer of Gods drop
 Cosmilite Set (Cosmilite Bar)
 Darksun Clicker. Direct upgrade of Eclipse Clicker with using Darksun Fragments
-Nightmare Essence Clicker. Direct upgrade of Witch Clicker + Burning Super Death Clicker. Post-ML clicker with random clicker effect (Like witch clicker)
+*Nightmare Clicker. Direct upgrade of Witch Clicker + Burning Super Death Clicker. Post-ML clicker with random clicker effect (Like witch clicker)
 
 Yharon drop
 Something from Auric Bar (i don t know what make)

@@ -19,6 +19,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
             {
 
             }, true);
+            CalamityClickersUtils.RegisterBlacklistedClickEffect(ClickerEffect);
         }
         public override void SetDefaultsExtra()
         {

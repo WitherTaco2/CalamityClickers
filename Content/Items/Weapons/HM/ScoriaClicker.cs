@@ -17,7 +17,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         public override Color RadiusColor => new Color(224, 108, 29);
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "Eruption", 6, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "Eruption", 7, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 int index = Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<ForbiddenSunburst>(), damage, 0.5f, player.whoAmI);
                 Main.projectile[index].DamageType = ModContent.GetInstance<ClickerDamage>();

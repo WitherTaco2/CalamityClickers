@@ -118,6 +118,10 @@ namespace CalamityClickers
             {
                 itemLoot.Add(ModContent.ItemType<BloodGodsClicker>(), 4);
             }
+            if (item.type == ModContent.ItemType<PlaguebringerGoliathBag>())
+            {
+                itemLoot.Add(ModContent.ItemType<PlagueClicker>(), 4);
+            }
             if (item.type == ModContent.ItemType<AstrumDeusBag>())
             {
                 itemLoot.Add(ModContent.ItemType<CosmicStarClicker>(), 4);
@@ -131,6 +135,10 @@ namespace CalamityClickers
             if (item.type == ModContent.ItemType<ProvidenceBag>())
             {
                 itemLoot.Add(ModContent.ItemType<ProfanedClicker>(), 4);
+            }
+            if (item.type == ModContent.ItemType<PolterghastBag>())
+            {
+                itemLoot.Add(ModContent.ItemType<RuinousClicker>(), 4);
             }
         }
     }
