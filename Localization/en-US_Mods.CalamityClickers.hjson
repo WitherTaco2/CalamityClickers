@@ -143,6 +143,16 @@ ClickEffect: {
 		Name: Eruption
 		Description: Creates a explosion damaging area
 	}
+
+	Lifestealing: {
+		Name: Lifestealing
+		Description: Heal 2 hp on click
+	}
+
+	GhastlyPortal: {
+		Name: Ghastly Portal
+		Description: Summon Ghastly Portal which summon homing souls in response to your clicks
+	}
 }
 
 Items: {
@@ -312,6 +322,8 @@ Items: {
 			PlagueClicker.DisplayName: Plague Clicker
 			ScoriaClicker.DisplayName: Scoria Clicker
 			PolterplasmClicker.DisplayName: Polterplasm Clicker
+			BloodstoneClicker.DisplayName: Bloodstone Clicker
+			RuinousClicker.DisplayName: Ruinous Clicker
 		}
 	}
 
@@ -336,6 +348,7 @@ Items: {
 				'''
 				Your first click when out of combat will automatically trigger its clicker effect.
 				Has chance every click to extra trigger the clicker effect
+				Chance based on click amount for clicker effect
 				'''
 			DisplayName: Finger Of Blood God
 		}
@@ -359,10 +372,11 @@ Projectiles: {
 		FeralClickerProjectile.DisplayName: Burning Green Ichor
 		ProfanedClickerProjectile.DisplayName: Profaned Explosion
 		ExoClickerProjectile.DisplayName: Exo Explosion
-		BloodGodFlareClickerProjectile.DisplayName: Blood God Flare Clicker Projectile
 		ClickerOfCalamityProjectile.DisplayName: Chaos Flame
-		BloodGodsClickerProjectile.DisplayName: Blood Gods Clicker Projectile
-		AureusClickerProjectile.DisplayName: Aureus Clicker Projectile
+		BloodGodsClickerProjectile.DisplayName: Blood God's Blast
+		AureusClickerProjectile.DisplayName: Aureus Blast
+		RuinousClickerProjectile.DisplayName: Ruinous Portal
+		RuinousClickerProjectileSoul.DisplayName: Ruinous Clicker Projectile Soul
 	}
 
 	Rogue.PlagueClickerProjectile.DisplayName: Plague Clicker Projectile

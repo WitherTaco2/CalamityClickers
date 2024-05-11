@@ -49,6 +49,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
             Projectile.DamageType = ModContent.GetInstance<ClickerDamage>();
             //Projectile.usesLocalNPCImmunity = true;
             //Projectile.localNPCHitCooldown = 60;
+            base.Projectile.alpha = 255;
         }
         public override void AIExtra()
         {
@@ -58,15 +59,30 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
         {
             for (int i = 0; i < 2; i++)
             {
-                int index = Projectile.NewProjectile(Projectile.GetSource_FromAI(), Projectile.Center, new Vector2(10, 0).RotatedByRandom(MathHelper.TwoPi), ModContent.ProjectileType<LostSoulFriendly>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
-                Main.projectile[index].DamageType = ModContent.GetInstance<ClickerDamage>();
+                int index = Projectile.NewProjectile(Projectile.GetSource_FromAI(), Projectile.Center, new Vector2(10, 0).RotatedByRandom(MathHelper.TwoPi), ModContent.ProjectileType<RuinousClickerProjectileSoul>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
+                //Main.projectile[index].DamageType = ModContent.GetInstance<ClickerDamage>();
             }
         }
         public override bool? CanHitNPC(NPC target) => false;
         public override bool CanHitPlayer(Player target) => false;
         public override bool CanHitPvp(Player target) => false;
         public override bool PreDraw(ref Color lightColor) => ModContent.GetInstance<GhastlyBlast>().PreDraw(ref lightColor);
-        public override Color? GetAlpha(Color lightColor) => Color.White;
+        //public override Color? GetAlpha(Color lightColor) => Color.White;
+        public override Color? GetAlpha(Color lightColor) => ModContent.GetInstance<GhastlyBlast>().GetAlpha(lightColor);
         //public override Color? GetAlpha(Color lightColor) => new Color(255, 255, 255, 255);
+    }
+    public class RuinousClickerProjectileSoul : LostSoulFriendly, ILocalizedModType
+    {
+        public new string LocalizationCategory => "Projectiles.Clicker";
+        public override string Texture => ModContent.GetInstance<LostSoulFriendly>().Texture;
+        public override void SetDefaults()
+        {
+            base.SetDefaults();
+            Projectile.DamageType = ModContent.GetInstance<ClickerDamage>();
+        }
+        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
+        {
+
+        }
     }
 }

@@ -77,7 +77,7 @@ namespace CalamityClickers
                     {
                         if (clickerPlayer.HasClickEffect(name, out ClickEffect effect))
                         {
-                            if ((fingerOfBG && Main.rand.NextBool(10)))
+                            if ((fingerOfBG && Main.rand.NextBool(effect.Amount / 2)))
                                 effect.Action?.Invoke(Player, source, position, type, damage, knockback);
 
                         }
