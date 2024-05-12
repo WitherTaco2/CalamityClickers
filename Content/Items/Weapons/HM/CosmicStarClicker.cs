@@ -34,7 +34,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
             Item.damage = 95;
             Item.knockBack = 1f;
             Item.rare = ItemRarityID.Cyan;
-            Item.value = CalamityGlobalItem.Rarity9BuyPrice;
+            Item.value = CalamityGlobalItem.RarityCyanBuyPrice;
         }
     }
 }

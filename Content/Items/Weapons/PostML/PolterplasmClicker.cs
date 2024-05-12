@@ -19,13 +19,13 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
             Item.damage = 130;
             Item.knockBack = 1f;
             Item.rare = ItemRarityID.Red;
-            Item.value = CalamityGlobalItem.Rarity10BuyPrice;
+            Item.value = CalamityGlobalItem.RarityRedBuyPrice;
         }
         public override void AddRecipes()
         {
             CreateRecipe()
                 .AddIngredient<SpectreClicker>()
-                .AddIngredient<Polterplasm>(12)
+                .AddIngredient<Necroplasm>(12)
                 .AddTile(TileID.LunarCraftingStation)
                 .Register();
         }

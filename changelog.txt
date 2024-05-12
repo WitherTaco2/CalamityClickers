@@ -1,17 +1,1 @@
-Update 0.4 - 
-
-Added Scoria Clicker. Crafted from Scoria Bars
-Added Plague Clicker. Plaguebringer Goliath drop
-Added Meld Clicker. Crafted from Meld Constructs
-
-Added Bloodstone Clicker. Crafted from Bloodstone Cores
-Added Polterplasm Clicker. Post-Moonlord upgrade of Spectre Clicker
-Added Ruinous Clicker. Polterghast drop
-
-Adapted calamity changes to clicker class items
-. Buffed Mice Hamaxe, Mice Drill (like other lunar fragment tools)
-. Mice Drill projectile now acts as True Melee
-. Added unique effect and wing stat tooltip for The Scroller
-
-Fixed Wulfrum Clicker not right-clickable
-Fixed Blood God's Clicker not drops by Ravager in Normal Mode (Ravager drops Clicker of Calamity)
+Update 0.5 - 

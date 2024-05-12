@@ -34,7 +34,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
             Item.damage = 150;
             Item.knockBack = 1f;
             Item.rare = ModContent.RarityType<Turquoise>();
-            Item.value = CalamityGlobalItem.Rarity12BuyPrice;
+            Item.value = CalamityGlobalItem.RarityTurquoiseBuyPrice;
         }
         public override void AddRecipes()
         {

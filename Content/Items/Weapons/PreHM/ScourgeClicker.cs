@@ -30,7 +30,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
             Item.damage = 6;
             Item.knockBack = 1f;
             Item.rare = ItemRarityID.Green;
-            Item.value = CalamityGlobalItem.Rarity2BuyPrice;
+            Item.value = CalamityGlobalItem.RarityGreenBuyPrice;
 
         }
     }

@@ -31,7 +31,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
             Item.damage = 35;
             Item.knockBack = 1.5f;
             Item.rare = ItemRarityID.Pink;
-            Item.value = CalamityGlobalItem.Rarity5BuyPrice;
+            Item.value = CalamityGlobalItem.RarityPinkBuyPrice;
 
             CalamityGlobalItem modItem = Item.Calamity();
             modItem.UsesCharge = true;

@@ -31,7 +31,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
             Item.damage = 10;
             Item.knockBack = 1f;
             Item.rare = ItemRarityID.Orange;
-            Item.value = CalamityGlobalItem.Rarity3BuyPrice;
+            Item.value = CalamityGlobalItem.RarityOrangeBuyPrice;
         }
         public override void AddRecipes()
         {

@@ -33,7 +33,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
             Item.damage = 23;
             Item.knockBack = 1f;
             Item.rare = ItemRarityID.Pink;
-            Item.value = CalamityGlobalItem.Rarity5BuyPrice;
+            Item.value = CalamityGlobalItem.RarityPinkBuyPrice;
         }
     }
     public class CryoClickerProjectile : ClickableClickerProjectile

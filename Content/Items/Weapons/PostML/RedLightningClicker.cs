@@ -46,7 +46,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
             Item.damage = 130;
             Item.knockBack = 1f;
             Item.rare = ItemRarityID.Purple;
-            Item.value = CalamityGlobalItem.Rarity11BuyPrice;
+            Item.value = CalamityGlobalItem.RarityPurpleBuyPrice;
 
         }
     }

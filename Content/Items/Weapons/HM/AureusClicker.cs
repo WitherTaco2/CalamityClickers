@@ -73,7 +73,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
             Item.damage = 66;
             Item.knockBack = 1f;
             Item.rare = ItemRarityID.Yellow;
-            Item.value = CalamityGlobalItem.Rarity8BuyPrice;
+            Item.value = CalamityGlobalItem.RarityYellowBuyPrice;
         }
     }
     public class AureusClickerProjectile : ModdedClickerProjectile

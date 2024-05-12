@@ -43,7 +43,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
             Item.damage = 60;
             Item.knockBack = 1f;
             Item.rare = ItemRarityID.Lime;
-            Item.value = CalamityGlobalItem.Rarity7BuyPrice;
+            Item.value = CalamityGlobalItem.RarityLimeBuyPrice;
         }
         public override void AddRecipes()
         {

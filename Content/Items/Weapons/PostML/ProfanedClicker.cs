@@ -32,7 +32,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
             Item.damage = 140;
             Item.knockBack = 1f;
             Item.rare = ModContent.RarityType<Turquoise>();
-            Item.value = CalamityGlobalItem.Rarity12BuyPrice;
+            Item.value = CalamityGlobalItem.RarityTurquoiseBuyPrice;
         }
     }
     public class ProfanedClickerProjectile : ModdedClickerProjectile

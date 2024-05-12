@@ -29,7 +29,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
             Item.damage = 22;
             Item.knockBack = 2f;
             Item.rare = ItemRarityID.LightRed;
-            Item.value = CalamityGlobalItem.Rarity4BuyPrice;
+            Item.value = CalamityGlobalItem.RarityLightRedBuyPrice;
         }
     }
     public class EarthenClickerProjectile : ModdedClickerProjectile

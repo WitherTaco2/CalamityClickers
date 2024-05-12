@@ -47,7 +47,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
             Item.damage = 110;
             Item.knockBack = 1f;
             Item.rare = ItemRarityID.Red;
-            Item.value = CalamityGlobalItem.Rarity10BuyPrice;
+            Item.value = CalamityGlobalItem.RarityRedBuyPrice;
         }
         public override void AddRecipes()
         {

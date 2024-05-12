@@ -31,7 +31,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
             Item.damage = 150;
             Item.knockBack = 1f;
             Item.rare = ModContent.RarityType<PureGreen>();
-            Item.value = CalamityGlobalItem.Rarity12BuyPrice;
+            Item.value = CalamityGlobalItem.RarityPureGreenBuyPrice;
         }
     }
     public class RuinousClickerProjectile : ClickerProjectileWhichCanShootOnClick

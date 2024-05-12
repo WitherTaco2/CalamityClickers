@@ -21,7 +21,7 @@ namespace CalamityClickers.Content.Items.Armor
         {
             Item.width = 27;
             Item.height = 22;
-            Item.value = CalamityGlobalItem.Rarity15BuyPrice;
+            Item.value = CalamityGlobalItem.RarityVioletBuyPrice;
             Item.rare = ModContent.RarityType<Violet>();
             Item.defense = 38;
         }

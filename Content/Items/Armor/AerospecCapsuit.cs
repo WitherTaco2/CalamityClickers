@@ -18,7 +18,7 @@ namespace CalamityClickers.Content.Items.Armor
         {
             Item.width = 22;
             Item.height = 22;
-            Item.value = CalamityGlobalItem.Rarity3BuyPrice;
+            Item.value = CalamityGlobalItem.RarityOrangeBuyPrice;
             Item.rare = ItemRarityID.Orange;
             Item.defense = 5;
         }
