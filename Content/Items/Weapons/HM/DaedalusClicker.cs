@@ -103,7 +103,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             int buffType = Projectile.ai[0] == 0f ? BuffID.Frostburn : BuffID.OnFire;
-            int buffType = Projectile.ai[0] == 0f ? BuffID.Frostburn2 : BuffID.OnFire;
+            //int buffType = Projectile.ai[0] == 0f ? BuffID.Frostburn2 : BuffID.OnFire;
             target.AddBuff(buffType, 90);
         }
     }
