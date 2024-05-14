@@ -1,1 +1,3 @@
 Update 0.5 - 
+
+Fixed Daedalus Clicker hasn't clicker effect
