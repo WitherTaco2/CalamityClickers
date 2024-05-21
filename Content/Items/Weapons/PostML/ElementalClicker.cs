@@ -52,7 +52,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient<TerraClicker>()
+                .AddIngredient<FloraClicker>()
                 .AddIngredient(ItemID.LunarBar, 5)
                 .AddIngredient<LifeAlloy>(5)
                 .AddIngredient<GalacticaSingularity>(5)

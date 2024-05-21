@@ -308,7 +308,7 @@ Items: {
 			AnahitasClicker.DisplayName: Anahita's Clicker
 			AquaticClicker.DisplayName: Aquatic Clicker
 			EarthenClicker.DisplayName: Earthen Clicker
-			TerraClicker.DisplayName: Terra Clicker
+			FloraClicker.DisplayName: Flora Clicker
 			ElementalClicker.DisplayName: Elemental Clicker
 			FeralClicker.DisplayName: Feral Clicker
 			ProfanedClicker.DisplayName: Profaned Clicker
@@ -367,7 +367,7 @@ Projectiles: {
 		CryoClickerProjectile.DisplayName: Cryo Bomb
 		MusicalClickerProjectile.DisplayName: Musical Note
 		EarthenClickerProjectile.DisplayName: Crunch
-		TerraClickerProjectile.DisplayName: Terra Aura
+		FloraClickerProjectile.DisplayName: Flora Aura
 		ElementalClickerProjectile.DisplayName: Elemental Aura
 		FeralClickerProjectile.DisplayName: Burning Green Ichor
 		ProfanedClickerProjectile.DisplayName: Profaned Explosion

@@ -1,9 +1,11 @@
-﻿using CalamityMod.Items;
+﻿using CalamityMod;
+using CalamityMod.Items;
 using CalamityMod.Items.Materials;
 using CalamityMod.Particles;
 using ClickerClass;
 using ClickerClass.Items.Weapons.Clickers;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -11,7 +13,8 @@ using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Weapons.HM
 {
-    public class TerraClicker : ModdedClickerWeapon
+    [LegacyName("TerraClicker")]
+    public class FloraClicker : ModdedClickerWeapon
     {
         public static string ClickerEffect { get; internal set; } = string.Empty;
         public override float Radius => 3.5f;
@@ -21,7 +24,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         {
             ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "TerraAura", 14, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
-                Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<TerraClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
+                Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<FloraClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
             });
         }
         public override void SetDefaultsExtra()
@@ -34,6 +37,10 @@ namespace CalamityClickers.Content.Items.Weapons.HM
             Item.rare = ItemRarityID.Yellow;
             Item.value = CalamityGlobalItem.RarityYellowBuyPrice;
         }
+        public override void PostDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
+        {
+            Item.DrawItemGlowmaskSingleFrame(spriteBatch, rotation, ModContent.Request<Texture2D>(Texture + "_Glow").Value);
+        }
         public override void AddRecipes()
         {
             CreateRecipe()
@@ -44,7 +51,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
                 .Register();
         }
     }
-    public class TerraClickerProjectile : ModdedClickerProjectile
+    public class FloraClickerProjectile : ModdedClickerProjectile
     {
         public override void SetDefaultsExtra()
         {
