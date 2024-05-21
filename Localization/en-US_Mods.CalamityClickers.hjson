@@ -377,6 +377,7 @@ Projectiles: {
 		AureusClickerProjectile.DisplayName: Aureus Blast
 		RuinousClickerProjectile.DisplayName: Ruinous Portal
 		RuinousClickerProjectileSoul.DisplayName: Ruinous Clicker Projectile Soul
+		DaedalusClickerProjectile.DisplayName: Daedalus Clicker Projectile
 	}
 
 	Rogue.PlagueClickerProjectile.DisplayName: Plague Clicker Projectile
