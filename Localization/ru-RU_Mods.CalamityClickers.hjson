@@ -1,0 +1,398 @@
+ClickEffect: {
+	WildMagicNew: {
+		Name: Нестабильная Магия
+		Description: Рандомным образом действует как любой возможный эффект клика
+	}
+
+	SeaBubble: {
+		Name: Морской Пузырь
+		Description: Создает один Пузырь, который медленно атакует и улетает
+	}
+
+	Sandstorm: {
+		Name: Песчаная Буря
+		Description: Создаёт взрыв песчаной бури
+	}
+
+	Mushy: {
+		Name: Мягкий
+		Description: Вы получаете бафф «Мягкий» на 2 секунды
+	}
+
+	BloodyExplosion: {
+		Name: Кровавый Взрыв
+		Description: Создает кровавый взрыв, накладывает «Кипящяя Кровь»
+	}
+
+	BrainExplosion: {
+		Name: Взрыв Мозга
+		Description: Создает взрыв гнилого мозга, накладывает «Гниющий Мозг»
+	}
+
+	FeatherRain: {
+		Name: Перьевой Дождь
+		Description: Вызывает падение взрывных перьев с неба на месте курсора мыши
+	}
+
+	SlimePuppet: {
+		Name: Склизкая Марионетка
+		Description: Создает шарик слизи, который через короткий промежуток времени совершает небольшой рывок к курсору
+	}
+
+	GaussFlux: {
+		Name: Гаусовый Поток
+		Description: Создает магнитную зону турбулентности
+	}
+
+	CoolFlake: {
+		Name: Прохладный Дождик
+		Description: Создает миньона Снежинку. Может быть призвана только одна. Обновляет длительность существующей снежинки
+	}
+
+	BrimstoneInferno: {
+		Name: Серный Инферно
+		Description: Создает взрыв в виде сатанинской печати. накладывает «Серное Пламя»
+	}
+
+	DaedalusCrystals: {
+		Name: Снаряды Дедала
+		Description: Создает самонаводящиеся снаряды Дедала
+	}
+
+	RedLightning: {
+		Name: Древние Красные Молнии
+		Description: Вызывает четыре разряда молнии с неба
+	}
+
+	CryoBomb: {
+		Name: Крио Бомба
+		Description: Создает Криобомбу на месте курсора. Щеклните по ней что бы взорвать её на осколки
+	}
+
+	AnahitasVoice: {
+		Name: Голос Анахиты
+		Description: Создает круг из Музыкальных Нот
+	}
+
+	Crunch: {
+		Name: Излом
+		Description: Ломает Броню у ближайших врагов на 3 секунды
+	}
+
+	TerraAura: {
+		Name: Терра Аура
+		Description: Вызывает разрушительную ауру, которая длится 3 секунды
+	}
+
+	ElementalAura: {
+		Name: Элементальная Аура
+		Description: Вызывает разрушительную элементальную ауру, которая длится 2 секунды. Накладывает «Смесь Стихий» на 1 секунду
+	}
+
+	GreenInfection: {
+		Name: Ихоровая Инфекция
+		Description: Выпускает потоков самонаводящихся Ихора, которые отравляют врагов
+	}
+
+	ProfanedInferno: {
+		Name: Оскверненный Инферно
+		Description: Вызывает взрыв Священной вспышки. Накладывает «Священное Пламя» на 3 секунды
+	}
+
+	TarragonThorns: {
+		Name: Шипы Эстрагона
+		Description: Выращевает 8 шипов в разных направлениях
+	}
+
+	BasicAutoclicker: {
+		Name: Базовый Автоклик
+		Description: Включает Автоклик со скоростью 7,5 кликов в секунду. Щелкните правой кнопкой мыши, чтобы регулировать
+	}
+
+	BloodBlasts: {
+		Description: Вызывает появление 8 кровавых снарядов рядом с игроком и выстрелевает во все стороны
+		Name: Взрывы Крови
+	}
+
+	ChaosFlame: {
+		Name: Пламя Хаоса
+		Description: Создайте небольшое пламя, похожее на портал. Накладывает «Серное Пламя»
+	}
+
+	StarRain: {
+		Description: Вызывает падение 4 астральных звезд с неба на месте курсора
+		Name: Звёздный Дождь
+	}
+
+	AureusBlast: {
+		Name: Арийцевый Заряд
+		Description: Стреляет зарядом Ауреуса по каждому ближайшему врагу вокруг позиции курсора. Также лучше работает для одиночной цели
+	}
+
+	Entropy: {
+		Name: Энтропия
+		Description: Создаёт большой энергетический взрыв в позиции курсора
+	}
+
+	PlagueBees: {
+		Name: Чумные Осы
+		Description: Призывает множество распростронителей Чумы. Накладывет «Чуму»
+	}
+
+	Eruption: {
+		Name: Извержение
+		Description: Создает Кратор
+	}
+
+	Lifestealing: {
+		Name: Клик Вампира
+		Description: Исцеляет 2 хп за клик
+	}
+
+	GhastlyPortal: {
+		Name: Жуткий портал
+		Description: Вызывает призрачный портал, который зовёт потревожаные души в ответ на ваши клик
+	}
+}
+
+Items: {
+	Armor: {
+		Capsuit: {
+			AerospecCapsuit: {
+				DisplayName: Аэроспектовый Вр-Шлем
+				Tooltip:
+					'''
+					Увеличение урона от клика на 8%
+					Радиус досигаемости клика увеличен на 15%
+					'''
+				SetBonus:
+					'''
+					Получение более 25 урона за один удар приведет к падению с неба множества самонаводящихся перьев
+					Позволяет падать быстрее и отключает урон от падения
+					5% повышение шанса критического удара клика
+					'''
+			}
+
+			StatigelCapsuit: {
+				DisplayName: Статигелевый Вр-Шлем
+				Tooltip:
+					'''
+					10% увеличение урона от клика
+					7% повышение шанса критического удара клика
+					Радиус досигаемости клика увеличен на 25%
+					'''
+				SetBonus:
+					'''
+					Когда вы получаете более 100 урона за один удар, вы становитесь невосприимчивы к урону на длительный период времени
+					Предоставляет дополнительный прыжок и увеличенную высоту прыжка
+					12% повышение скорости прыжка
+					'''
+			}
+
+			DaedalusCapsuit: {
+				DisplayName: Вр-Шлем Дедала
+				Tooltip:
+					'''
+					Увеличение урона от клика на 8%
+					7% повышение шанса критического удара клика
+					Радиус досигаемости клика увеличен на 25%
+					'''
+				SetBonus:
+					'''
+					[Clicker effect]
+					5% увеличение урона клика
+					'''
+			}
+
+			HydrothermicCapsuit: {
+				DisplayName: Гидротермический Вр-Шлем
+				Tooltip:
+					'''
+					Урон от клика увеличен на 12%.
+					10% повышение шанса критического удара от клика
+					Радиус досигаемости клика увеличен на 55%
+					'''
+				SetBonus:
+					'''
+					Эффект «Инферно» при уровне жизни ниже 50%.
+					Вы производите пылающий взрыв, когда вас бьют
+					Атаки клика при попадании вызывают наносящие урон и исцеляющие сферы.
+					5% увеличение урона клика
+					'''
+			}
+
+			TarragonCapsuit: {
+				DisplayName: Таррагоновый Вр-Шлем
+				Tooltip:
+					'''
+					10% увеличение урона клика
+					5% повышение шанса критического удара клика
+					Радиус досигаемости клика увеличен на 25%
+					5% увеличение Игнорирования урона
+					'''
+				SetBonus:
+					'''
+					Увеличена дальность подбора сердца.
+					У врагов есть шанс выбросить дополнительные сердца после смерти
+					10% повышение шанса критического удара клика
+					'''
+			}
+
+			BloodflareCrimeraCapsuit: {
+				DisplayName: Вр-Шлем из Душ Кровавой Вспышки
+				Tooltip:
+					'''
+					На 10% увеличен урон клика и шанс критического удара клика.
+					Радиус клика увеличен на 35%
+					'''
+				SetBonus:
+					'''
+					Значительно увеличена регенерация жизни, эквивалентная Багровой броне.
+					У врагов ниже 50% здоровья при ударе выпадают сердца
+					Этот эффект имеет время восстановления 5 секунд.
+					Уменьшает количество кликов, необходимых для эффекта клика, в зависимости от вашей текущей жизни.
+					Максимум вы получаете 20% снижения
+					'''
+			}
+
+			GodSlayerCapsuit: {
+				DisplayName: Вр-Шлем Богоубийцы
+				Tooltip:
+					'''
+					На 14% увеличен урон клика и шанс критического удара.
+					Радиус досигаемости клика увеличен на 45%
+					На 10 % уменьшено количество кликов, необходимых для эффекта клика. 
+					'''
+				SetBonus:
+					'''
+					Нажмите {0}, чтобы каждый клик запускал все активные эффекты щелчка с уменьшенным уроном на 2 секунды
+					«Разгон» имеет время восстановления 60 секунд
+					'''
+			}
+
+			AuricTeslaRadarCapsuit: {
+				DisplayName: Ауритовый Тесла Вр-Шлем с Радаром
+				Tooltip:
+					'''
+					На 30% увеличен урон клика и шанс критического удара
+					100% увеличение радиуса досигаемости клика
+					На 10 % уменьшено количество кликов, необходимых для эффекта клика 
+					'''
+				SetBonus: Эффекты клика Таррагоновый, Кровавой Вспышки и Богоубийцы
+			}
+		}
+
+		Vanity: {
+			SilvaCapsuit: {
+				DisplayName: Вр-Шлем Сильвы
+				Tooltip: ""
+			}
+		}
+	}
+
+	Weapons: {
+		Clicker: {
+			SeaRemainClicker.DisplayName: Кликер из Морских Останков
+			ScourgeClicker.DisplayName: Кликер из Плети
+			MushyClicker.DisplayName: Мягкий Кликер
+			RottenClicker.DisplayName: Гниющий Кликер
+			FleshyClicker.DisplayName: Кликер из Плоти
+			AeroClicker.DisplayName: Аэро Кликер
+			GooClicker.DisplayName: Гуоклер
+			GaussClicker.DisplayName: Гаусовый Кликер
+			CryoClicker.DisplayName: Обмёрзший Кликер
+			BrimstoneClicker.DisplayName: Серный Кликер
+			DaedalusClicker.DisplayName: Кликер Дедала
+			RedLightningClicker.DisplayName: Кликер Красно-кровавых Молний
+			FrostysClicker.DisplayName: Холодный Кликер
+			AnahitasClicker.DisplayName: Кликер Анахиты
+			AquaticClicker.DisplayName: Акватический Кликер
+			EarthenClicker.DisplayName: Земледробящяя Кнопка
+			// FloraClicker.DisplayName: Flora Clicker
+			ElementalClicker.DisplayName: Элеменый Кликер
+			FeralClicker.DisplayName: Полтэр Кликер
+			ProfanedClicker.DisplayName: Оскверняющий Кликер
+			BloomClicker.DisplayName: Светящийся Кликер
+			WulfrumClicker.DisplayName: Вульфрумовый Кликер
+			BloodGodsClicker.DisplayName: Кликер из Крови Богов
+			ClickerOfCalamity.DisplayName: Кликер Бедствия
+			CosmicStarClicker.DisplayName: Кликер из Космических Останков
+			AureusClicker.DisplayName: Кликер Ареуса
+			MeldClicker.DisplayName: Литой Кликер
+			PlagueClicker.DisplayName: Заражённый Кликер
+			ScoriaClicker.DisplayName: Термический Кликер
+			PolterplasmClicker.DisplayName: ПолтэрПлазмовый Кликер
+			BloodstoneClicker.DisplayName: Кликер из Кровавого Камня
+			RuinousClicker.DisplayName: Кликер из Руин
+		}
+	}
+
+	Accessories: {
+		DOG: {
+			Tooltip:
+				'''
+				Урон от клика увеличен на 30%.
+				Радиус досигаемости клика увеличен на 50%
+				На 20 % уменьшено количество кликов, необходимых для эффекта клика.
+				Нажатие клавиши «Аксессуар нажимателя» переключит автоматический Нажатие
+				Пока включен Автоклик, частота кликов немного снижается.
+				Нажатие клавиши «Наводка нажимателя» переключит аим, автоматически нацеливаясь на ближайших врагов. 
+				Если цель умирает или теряется, по возможности будет выбрана новая ближайшая цель.
+				'Пожиратель ваших кадров и нервов'
+				'''
+			DisplayName: Пожиратель F.p.S.
+		}
+
+		FingerOfBloodGod: {
+			Tooltip:
+				'''
+				Ваш первый щелчок вне боя автоматически активирует эффект клика.
+				Активирует эффект клика когда ты не имеешь перезарядку
+				После активации даётся 5 секунд перезарядки
+				'''
+			DisplayName: Палец Кровавого бога
+		}
+	}
+}
+
+Projectiles: {
+	Clicker: {
+		SeaRemainClickerProjectile.DisplayName: Морской Пузырь
+		ScourgeClickerProjectile.DisplayName: Песчаный Взрыв
+		FleshyClickerProjectile.DisplayName: Кровавый Взрыв
+		RottenClickerProjectile.DisplayName: Взрыв Мозга
+		GooClickerProjectile.DisplayName: Склизкая Марионетка
+		GaussClickerProjectile.DisplayName: Поток Гауса
+		BrimstoneClickerProjectile.DisplayName: Серная Печать
+		CryoClickerProjectile.DisplayName: Крио Бомба
+		MusicalClickerProjectile.DisplayName: Музыкальная Нота
+		EarthenClickerProjectile.DisplayName: Излом
+		// FloraClickerProjectile.DisplayName: Flora Aura
+		ElementalClickerProjectile.DisplayName: Элементальная Аура
+		FeralClickerProjectile.DisplayName: Ихоровая Инфекция
+		ProfanedClickerProjectile.DisplayName: Оскверненный взрыв
+		ExoClickerProjectile.DisplayName: Экзо Взрыв
+		ClickerOfCalamityProjectile.DisplayName: Пламя Хаоса
+		BloodGodsClickerProjectile.DisplayName: Поток Крови Бога
+		AureusClickerProjectile.DisplayName: Арийцевый Заряд
+		RuinousClickerProjectile.DisplayName: Портал из Руин
+		RuinousClickerProjectileSoul.DisplayName: Падшие Души
+		// DaedalusClickerProjectile.DisplayName: Daedalus Clicker Projectile
+	}
+
+	Rogue.PlagueClickerProjectile.DisplayName: Эффект Чумного Кликера
+}
+
+Buffs: {
+	GodSlayerOverclockBuff: {
+		DisplayName: Перезарядка Богоубийцы
+		Description: Каждый ваш щелчёк активирует Эффекты
+	}
+}
+
+UI: {
+	Cooldowns: {
+		GodSlayerOverclockCooldown: God Slayer Overclock Cooldown
+		// FingerOfBloodGodCooldown: Finger of Blood God Cooldown
+	}
+}

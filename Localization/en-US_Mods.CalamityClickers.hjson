@@ -331,7 +331,6 @@ Items: {
 		DOG: {
 			Tooltip:
 				'''
-				'Devourer of Games'
 				30% increased clicker damage
 				50% increased clicker radius
 				20% reduced the amount of clicks required for a click effect
@@ -339,6 +338,7 @@ Items: {
 				While auto click is enabled, click rates are slightly decreased
 				Pressing the 'Clicker Aim Assist' key will toggle aimbot, targeting nearby enemies automatically. 
 				If the target dies or is lost, a new nearby target will be selected if possible.
+				'Devourer of Games'
 				'''
 			DisplayName: D.o.G.
 		}
@@ -347,8 +347,8 @@ Items: {
 			Tooltip:
 				'''
 				Your first click when out of combat will automatically trigger its clicker effect.
-				Has chance every click to extra trigger the clicker effect
-				Chance based on click amount for clicker effect
+				Trigger extra clicker effect while you not have cooldown
+				After trigger you gets 5 second of cooldown
 				'''
 			DisplayName: Finger Of Blood God
 		}
@@ -390,4 +390,9 @@ Buffs: {
 	}
 }
 
-UI.Cooldowns.GodSlayerOverclockCooldown: God Slayer Overclock Cooldown
+UI: {
+	Cooldowns: {
+		GodSlayerOverclockCooldown: God Slayer Overclock Cooldown
+		FingerOfBloodGodCooldown: Finger of Blood God Cooldown
+	}
+}

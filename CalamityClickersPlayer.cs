@@ -77,9 +77,11 @@ namespace CalamityClickers
                     {
                         if (clickerPlayer.HasClickEffect(name, out ClickEffect effect))
                         {
-                            if ((fingerOfBG && Main.rand.NextBool(effect.Amount / 2)))
+                            if (fingerOfBG && !Player.HasCooldown(FingerOfBloodGodCooldown.ID))
+                            {
                                 effect.Action?.Invoke(Player, source, position, type, damage, knockback);
-
+                                Player.AddCooldown(FingerOfBloodGodCooldown.ID, 60 * 5);
+                            }
                         }
                     }
                 }
