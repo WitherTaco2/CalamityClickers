@@ -377,7 +377,7 @@ Projectiles: {
 		AureusClickerProjectile.DisplayName: Aureus Blast
 		RuinousClickerProjectile.DisplayName: Ruinous Portal
 		RuinousClickerProjectileSoul.DisplayName: Ruinous Clicker Projectile Soul
-		DaedalusClickerProjectile.DisplayName: Daedalus Clicker Projectile
+		DaedalusClickerProjectile.DisplayName: Daedalus Crystals
 	}
 
 	Rogue.PlagueClickerProjectile.DisplayName: Plague Clicker Projectile
@@ -387,6 +387,11 @@ Buffs: {
 	GodSlayerOverclockBuff: {
 		DisplayName: God Slayer Overclock
 		Description: You can every click trigger all active click effects with reduced damage
+	}
+
+	WulfrumClickerBuff: {
+		Description: You now has autoclicker
+		DisplayName: Wulfrum Clicker Mode Visualization
 	}
 }
 

@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Weapons.PreHM
 {
@@ -38,6 +39,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
             if (player.HeldItem.type == Item.type && autoClicker)
             {
                 ClickerCompat.SetAutoReuseEffect(player, 8);
+                player.AddBuff(ModContent.BuffType<WulfrumClickerBuff>(), 3);
             }
         }
         public override bool AltFunctionUse(Player player)
@@ -53,10 +55,6 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
             }
             return base.UseItem(player);
         }
-        /*public override void RightClick(Player player)
-        {
-            autoClicker = !autoClicker;
-        }*/
         public override void AddRecipes()
         {
             CreateRecipe()
@@ -64,6 +62,14 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
                 .AddIngredient<EnergyCore>()
                 .AddTile(TileID.Anvils)
                 .Register();
+        }
+    }
+    public class WulfrumClickerBuff : ModBuff
+    {
+        public override void SetStaticDefaults()
+        {
+            Main.debuff[base.Type] = true;
+            Main.buffNoSave[base.Type] = true;
         }
     }
 }

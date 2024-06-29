@@ -367,7 +367,7 @@ Projectiles: {
 		CryoClickerProjectile.DisplayName: Крио Бомба
 		MusicalClickerProjectile.DisplayName: Музыкальная Нота
 		EarthenClickerProjectile.DisplayName: Излом
-		// FloraClickerProjectile.DisplayName: Flora Aura
+		FloraClickerProjectile.DisplayName: Аура Флоры
 		ElementalClickerProjectile.DisplayName: Элементальная Аура
 		FeralClickerProjectile.DisplayName: Ихоровая Инфекция
 		ProfanedClickerProjectile.DisplayName: Оскверненный взрыв
@@ -377,7 +377,7 @@ Projectiles: {
 		AureusClickerProjectile.DisplayName: Арийцевый Заряд
 		RuinousClickerProjectile.DisplayName: Портал из Руин
 		RuinousClickerProjectileSoul.DisplayName: Падшие Души
-		// DaedalusClickerProjectile.DisplayName: Daedalus Clicker Projectile
+		DaedalusClickerProjectile.DisplayName: Кристалы Дедала
 	}
 
 	Rogue.PlagueClickerProjectile.DisplayName: Эффект Чумного Кликера
@@ -388,11 +388,16 @@ Buffs: {
 		DisplayName: Перезарядка Богоубийцы
 		Description: Каждый ваш щелчёк активирует Эффекты
 	}
+
+	WulfrumClickerBuff: {
+		Discription: У тебя теперь есть Автокликер
+		DisplayName: Визуализация режима Фульмумового Кликера
+	}
 }
 
 UI: {
 	Cooldowns: {
-		GodSlayerOverclockCooldown: God Slayer Overclock Cooldown
-		// FingerOfBloodGodCooldown: Finger of Blood God Cooldown
+		GodSlayerOverclockCooldown: Перезарядка разгона Убийцы Богов
+		FingerOfBloodGodCooldown: Перезарядка Пальца Кровавого Бога
 	}
 }

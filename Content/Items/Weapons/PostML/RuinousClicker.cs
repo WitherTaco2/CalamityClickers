@@ -49,7 +49,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
             Projectile.DamageType = ModContent.GetInstance<ClickerDamage>();
             //Projectile.usesLocalNPCImmunity = true;
             //Projectile.localNPCHitCooldown = 60;
-            base.Projectile.alpha = 255;
+            //base.Projectile.alpha = 255;
         }
         public override void AIExtra()
         {
