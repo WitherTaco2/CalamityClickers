@@ -348,7 +348,7 @@ Items: {
 				'''
 				Your first click when out of combat will automatically trigger its clicker effect.
 				Trigger extra clicker effect while you not have cooldown
-				After trigger you gets 5 second of cooldown
+				After trigger you gets 10 second of cooldown
 				'''
 			DisplayName: Finger Of Blood God
 		}
@@ -400,4 +400,18 @@ UI: {
 		GodSlayerOverclockCooldown: God Slayer Overclock Cooldown
 		FingerOfBloodGodCooldown: Finger of Blood God Cooldown
 	}
+
+	Enchantments: {
+		Lecherous: {
+			DisplayName: Lecherous
+			Description: Spawns a resilient brimstone monster that spinning around the cursor that interferes with your homing weapons. It releases a bunch of hearts on death.
+		}
+
+		Lecherous2: {
+			DisplayName: Lecherous
+			Description: Spawns a resilient brimstone monster that spinning around the cursor that interferes with your homing weapons. It releases a bunch of hearts on death.
+		}
+	}
 }
+
+NPCs.LecherousOrbClicker.DisplayName: Lecherous Orb Clicker

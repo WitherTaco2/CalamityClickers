@@ -19,6 +19,8 @@ namespace CalamityClickers
         public bool godSlayerClicker = false;
 
         public bool fingerOfBG;
+
+        public bool enchLecherous;
         public override void ResetEffects()
         {
             daedalusClicker = false;
@@ -27,6 +29,8 @@ namespace CalamityClickers
             godSlayerClicker = false;
 
             fingerOfBG = false;
+
+            enchLecherous = false;
         }
         public override void PostUpdateEquips()
         {
@@ -80,7 +84,7 @@ namespace CalamityClickers
                             if (fingerOfBG && !Player.HasCooldown(FingerOfBloodGodCooldown.ID))
                             {
                                 effect.Action?.Invoke(Player, source, position, type, damage, knockback);
-                                Player.AddCooldown(FingerOfBloodGodCooldown.ID, 60 * 5);
+                                Player.AddCooldown(FingerOfBloodGodCooldown.ID, 60 * 10);
                             }
                         }
                     }

@@ -348,7 +348,7 @@ Items: {
 				'''
 				Ваш первый щелчок вне боя автоматически активирует эффект клика.
 				Активирует эффект клика когда ты не имеешь перезарядку
-				После активации даётся 5 секунд перезарядки
+				После активации даётся 10 секунд перезарядки
 				'''
 			DisplayName: Палец Кровавого бога
 		}
@@ -390,7 +390,7 @@ Buffs: {
 	}
 
 	WulfrumClickerBuff: {
-		Discription: У тебя теперь есть Автокликер
+		// Description: You now has autoclicker
 		DisplayName: Визуализация режима Фульмумового Кликера
 	}
 }
@@ -400,4 +400,18 @@ UI: {
 		GodSlayerOverclockCooldown: Перезарядка разгона Убийцы Богов
 		FingerOfBloodGodCooldown: Перезарядка Пальца Кровавого Бога
 	}
+
+	Enchantments: {
+		Lecherous: {
+			// DisplayName: Lecherous
+			// Description: Spawns a resilient brimstone monster that spinning around the cursor that interferes with your homing weapons. It releases a bunch of hearts on death.
+		}
+
+		Lecherous2: {
+			// DisplayName: Lecherous
+			// Description: Spawns a resilient brimstone monster that spinning around the cursor that interferes with your homing weapons. It releases a bunch of hearts on death.
+		}
+	}
 }
+
+// NPCs.LecherousOrbClicker.DisplayName: Lecherous Orb Clicker

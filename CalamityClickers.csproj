@@ -10,8 +10,6 @@
     <None Remove="content\items\weapons\List.txt" />
   </ItemGroup>
   <ItemGroup>
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="CalamityMod">
       <HintPath>CalamityMod.dll</HintPath>
     </Reference>

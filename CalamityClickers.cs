@@ -1,5 +1,4 @@
-using CalamityClickers.Content.Cooldowns;
-using CalamityMod.Cooldowns;
+using CalamityClickers.Commons;
 using System;
 using Terraria.ModLoader;
 
@@ -11,7 +10,8 @@ namespace CalamityClickers
         public override void Load()
         {
             mod = this;
-            CooldownRegistry.Register<GodSlayerOverclockCooldown>(GodSlayerOverclockCooldown.ID);
+            //CooldownRegistry.Register<GodSlayerOverclockCooldown>(GodSlayerOverclockCooldown.ID);
+            CalamityClickersLoading.Load();
         }
         public override void Unload()
         {
@@ -27,7 +27,7 @@ namespace CalamityClickers
             {
                 string message = args[0] as string;
 
-                if (message == "RegisterPostMoonlordClickerEffect")
+                if (message == "RegisterPostMoonlordClickerEffect" || message == "RegisterPostMLClickerEffect")
                 {
                     var name = args[1] as string;
                     if (name == null)

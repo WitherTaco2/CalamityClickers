@@ -1,5 +1,6 @@
 Update 0.5 - 
 
+Added Lecherous enchantment to Clickers
 Added Russian localization
 Wulfrum Clicker now visualized autoclicker mode by buff
 Fixed Daedalus Clicker hasn't clicker effect
