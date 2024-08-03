@@ -153,6 +153,16 @@ ClickEffect: {
 		Name: Жуткий портал
 		Description: Вызывает призрачный портал, который зовёт потревожаные души в ответ на ваши клик
 	}
+
+	StratusMoon: {
+		// Name: Stratus Moon
+		// Description: $Mods.ClickerClass.Common.Unknown
+	}
+
+	NightmareMagic: {
+		// Name: Nightmare Magic
+		// Description: Randomly acts as any possible click effect
+	}
 }
 
 Items: {
@@ -324,6 +334,8 @@ Items: {
 			PolterplasmClicker.DisplayName: ПолтэрПлазмовый Кликер
 			BloodstoneClicker.DisplayName: Кликер из Кровавого Камня
 			RuinousClicker.DisplayName: Кликер из Руин
+			// NightmareClicker.DisplayName: Nightmare Clicker
+			// StratusClicker.DisplayName: Stratus Clicker
 		}
 	}
 
@@ -378,6 +390,7 @@ Projectiles: {
 		RuinousClickerProjectile.DisplayName: Портал из Руин
 		RuinousClickerProjectileSoul.DisplayName: Падшие Души
 		DaedalusClickerProjectile.DisplayName: Кристалы Дедала
+		// StratusClickerProjectile.DisplayName: Stratus Clicker Projectile
 	}
 
 	Rogue.PlagueClickerProjectile.DisplayName: Эффект Чумного Кликера

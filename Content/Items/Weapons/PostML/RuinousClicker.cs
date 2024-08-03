@@ -1,4 +1,5 @@
-﻿using CalamityMod.Items;
+﻿using CalamityMod;
+using CalamityMod.Items;
 using CalamityMod.Projectiles.Magic;
 using CalamityMod.Projectiles.Rogue;
 using CalamityMod.Rarities;
@@ -28,7 +29,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
             AddEffect(Item, ClickerEffect);
             SetDust(Item, DustID.GemRuby);
 
-            Item.damage = 150;
+            Item.damage = 170;
             Item.knockBack = 1f;
             Item.rare = ModContent.RarityType<PureGreen>();
             Item.value = CalamityGlobalItem.RarityPureGreenBuyPrice;
@@ -37,6 +38,12 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
     public class RuinousClickerProjectile : ClickerProjectileWhichCanShootOnClick
     {
         public override string Texture => ModContent.GetInstance<GhastlyBlast>().Texture;
+
+        public override void SetStaticDefaults()
+        {
+            ProjectileID.Sets.TrailCacheLength[base.Projectile.type] = 8;
+            ProjectileID.Sets.TrailingMode[base.Projectile.type] = 0;
+        }
         public override void SetDefaultsExtra()
         {
             Projectile.width = Projectile.height = 60;
@@ -66,10 +73,20 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
         public override bool? CanHitNPC(NPC target) => false;
         public override bool CanHitPlayer(Player target) => false;
         public override bool CanHitPvp(Player target) => false;
-        public override bool PreDraw(ref Color lightColor) => ModContent.GetInstance<GhastlyBlast>().PreDraw(ref lightColor);
+        //public override bool PreDraw(ref Color lightColor) => ModContent.GetInstance<GhastlyBlast>().PreDraw(ref lightColor);
         //public override Color? GetAlpha(Color lightColor) => Color.White;
-        public override Color? GetAlpha(Color lightColor) => ModContent.GetInstance<GhastlyBlast>().GetAlpha(lightColor);
+        //public override Color? GetAlpha(Color lightColor) => ModContent.GetInstance<GhastlyBlast>().GetAlpha(lightColor);
         //public override Color? GetAlpha(Color lightColor) => new Color(255, 255, 255, 255);
+        public override bool PreDraw(ref Color lightColor)
+        {
+            CalamityUtils.DrawAfterimagesCentered(base.Projectile, ProjectileID.Sets.TrailingMode[base.Projectile.type], lightColor);
+            return false;
+        }
+
+        public override Color? GetAlpha(Color lightColor)
+        {
+            return new Color(255 - base.Projectile.alpha, 255 - base.Projectile.alpha, 255 - base.Projectile.alpha, 255 - base.Projectile.alpha);
+        }
     }
     public class RuinousClickerProjectileSoul : LostSoulFriendly, ILocalizedModType
     {

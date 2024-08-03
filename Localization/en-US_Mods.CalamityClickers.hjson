@@ -153,6 +153,16 @@ ClickEffect: {
 		Name: Ghastly Portal
 		Description: Summon Ghastly Portal which summon homing souls in response to your clicks
 	}
+
+	StratusMoon: {
+		Name: Stratus Moon
+		Description: Create moons and then towards your cursor
+	}
+
+	NightmareMagic: {
+		Name: Nightmare Magic
+		Description: Randomly acts as any possible click effect
+	}
 }
 
 Items: {
@@ -324,6 +334,8 @@ Items: {
 			PolterplasmClicker.DisplayName: Polterplasm Clicker
 			BloodstoneClicker.DisplayName: Bloodstone Clicker
 			RuinousClicker.DisplayName: Ruinous Clicker
+			NightmareClicker.DisplayName: Nightmare Clicker
+			StratusClicker.DisplayName: Stratus Clicker
 		}
 	}
 
@@ -378,6 +390,7 @@ Projectiles: {
 		RuinousClickerProjectile.DisplayName: Ruinous Portal
 		RuinousClickerProjectileSoul.DisplayName: Ruinous Clicker Projectile Soul
 		DaedalusClickerProjectile.DisplayName: Daedalus Crystals
+		StratusClickerProjectile.DisplayName: Stratus Clicker Projectile
 	}
 
 	Rogue.PlagueClickerProjectile.DisplayName: Plague Clicker Projectile

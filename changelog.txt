@@ -2,5 +2,8 @@ Update 0.5 -
 
 Added Lecherous enchantment to Clickers
 Added Russian localization
+Added Stratus Clicker. Post-Polterghast clicker which crafts with using Ruinous Soul, Lumenyl and Exodium Cluster
+Added Nightmare Clicker. Post-DoG upgrade of Witch Clicker which contain clicker effects until DoG
+Buffed Ruinous Clicker (damage 150 -> 170)
 Wulfrum Clicker now visualized autoclicker mode by buff
 Fixed Daedalus Clicker hasn't clicker effect
