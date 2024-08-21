@@ -7,3 +7,4 @@ Added Nightmare Clicker. Post-DoG upgrade of Witch Clicker which contain clicker
 Buffed Ruinous Clicker (damage 150 -> 170)
 Wulfrum Clicker now visualized autoclicker mode by buff
 Fixed Daedalus Clicker hasn't clicker effect
+Fixed Cooldown Localization

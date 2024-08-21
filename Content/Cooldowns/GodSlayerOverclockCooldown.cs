@@ -8,7 +8,7 @@ namespace CalamityClickers.Content.Cooldowns
     {
         public new static string ID => nameof(GodSlayerOverclockCooldown);
         public override bool ShouldDisplay => true;
-        public override LocalizedText DisplayName => Language.GetOrRegister("Mods.Clamity.UI.Cooldowns." + GodSlayerOverclockCooldown.ID);
+        public override LocalizedText DisplayName => Language.GetOrRegister("Mods.CalamityClickers.UI.Cooldowns." + GodSlayerOverclockCooldown.ID);
         public override string Texture => "CalamityClickers/Content/Cooldowns/GodSlayerOverclockCooldown";
         public override Color OutlineColor => new Color(252, 109, 202);
         public override Color CooldownStartColor => new Color(154, 140, 191);
