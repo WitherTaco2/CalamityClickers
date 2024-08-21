@@ -36,7 +36,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
             AddEffect(Item, ClickerEffect);
             SetDust(Item, 176);
 
-            Item.damage = 150;
+            Item.damage = 190;
             Item.knockBack = 1f;
             Item.rare = ModContent.RarityType<PureGreen>();
             Item.value = CalamityGlobalItem.RarityPureGreenBuyPrice;
@@ -71,7 +71,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
             Projectile.tileCollide = false;
             Projectile.penetrate = -1;
             Projectile.extraUpdates = 2;
-            Projectile.timeLeft = 180 * Projectile.MaxUpdates;
+            Projectile.timeLeft = 220 * Projectile.MaxUpdates;
             Projectile.ignoreWater = true;
             Projectile.usesLocalNPCImmunity = true;
             Projectile.localNPCHitCooldown = Projectile.MaxUpdates * 13;
@@ -88,7 +88,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
                 if (mousePlayer.TryGetMousePosition(out Vector2 mouseWorld))
                 {
                     Vector2 vector = mouseWorld - Projectile.Center;
-                    float speed = 10f;
+                    float speed = 13f;
                     float mag = vector.Length();
                     if (mag > speed)
                     {

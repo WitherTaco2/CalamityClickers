@@ -155,13 +155,18 @@ ClickEffect: {
 	}
 
 	StratusMoon: {
-		// Name: Stratus Moon
-		// Description: $Mods.ClickerClass.Common.Unknown
+		Name: Луна Стратуса
+		Description: Создает луны, а затем направляет в сторону вашего курсора
 	}
 
 	NightmareMagic: {
-		// Name: Nightmare Magic
-		// Description: Randomly acts as any possible click effect
+		Name: Кошмарная магия
+		Description: Случайно срабатывает как любой возможный эффект клика
+	}
+
+	Totality2: {
+		Name: Totality
+		Description: Создаёт миниатюрное затмение, многократно стреляя множеством самонаводящихся снарядов
 	}
 }
 
@@ -302,40 +307,41 @@ Items: {
 
 	Weapons: {
 		Clicker: {
-			SeaRemainClicker.DisplayName: Кликер из Морских Останков
-			ScourgeClicker.DisplayName: Кликер из Плети
-			MushyClicker.DisplayName: Мягкий Кликер
-			RottenClicker.DisplayName: Гниющий Кликер
-			FleshyClicker.DisplayName: Кликер из Плоти
-			AeroClicker.DisplayName: Аэро Кликер
+			SeaRemainClicker.DisplayName: Курсор из Морских Останков
+			ScourgeClicker.DisplayName: Курсор из Плети
+			MushyClicker.DisplayName: Мягкий Курсор
+			RottenClicker.DisplayName: Гниющий Курсор
+			FleshyClicker.DisplayName: Курсор из Плоти
+			AeroClicker.DisplayName: Аэро Курсор
 			GooClicker.DisplayName: Гуоклер
-			GaussClicker.DisplayName: Гаусовый Кликер
-			CryoClicker.DisplayName: Обмёрзший Кликер
-			BrimstoneClicker.DisplayName: Серный Кликер
-			DaedalusClicker.DisplayName: Кликер Дедала
-			RedLightningClicker.DisplayName: Кликер Красно-кровавых Молний
-			FrostysClicker.DisplayName: Холодный Кликер
-			AnahitasClicker.DisplayName: Кликер Анахиты
-			AquaticClicker.DisplayName: Акватический Кликер
+			GaussClicker.DisplayName: Гаусовый Курсор
+			CryoClicker.DisplayName: Обмёрзший Курсор
+			BrimstoneClicker.DisplayName: Серный Курсор
+			DaedalusClicker.DisplayName: Курсор Дедала
+			RedLightningClicker.DisplayName: Курсор Красно-кровавых Молний
+			FrostysClicker.DisplayName: Холодный Курсор
+			AnahitasClicker.DisplayName: Курсор Анахиты
+			AquaticClicker.DisplayName: Акватический Курсор
 			EarthenClicker.DisplayName: Земледробящяя Кнопка
-			// FloraClicker.DisplayName: Flora Clicker
-			ElementalClicker.DisplayName: Элеменый Кликер
-			FeralClicker.DisplayName: Полтэр Кликер
-			ProfanedClicker.DisplayName: Оскверняющий Кликер
-			BloomClicker.DisplayName: Светящийся Кликер
-			WulfrumClicker.DisplayName: Вульфрумовый Кликер
-			BloodGodsClicker.DisplayName: Кликер из Крови Богов
-			ClickerOfCalamity.DisplayName: Кликер Бедствия
-			CosmicStarClicker.DisplayName: Кликер из Космических Останков
-			AureusClicker.DisplayName: Кликер Ареуса
-			MeldClicker.DisplayName: Литой Кликер
-			PlagueClicker.DisplayName: Заражённый Кликер
-			ScoriaClicker.DisplayName: Термический Кликер
-			PolterplasmClicker.DisplayName: ПолтэрПлазмовый Кликер
-			BloodstoneClicker.DisplayName: Кликер из Кровавого Камня
-			RuinousClicker.DisplayName: Кликер из Руин
-			// NightmareClicker.DisplayName: Nightmare Clicker
-			// StratusClicker.DisplayName: Stratus Clicker
+			FloraClicker.DisplayName: Курсор флоры
+			ElementalClicker.DisplayName: Элеменый Курсор
+			FeralClicker.DisplayName: Полтэр Курсор
+			ProfanedClicker.DisplayName: Оскверняющий Курсор
+			BloomClicker.DisplayName: Светящийся Курсор
+			WulfrumClicker.DisplayName: Вульфрумовый Курсор
+			BloodGodsClicker.DisplayName: Курсор из Крови Богов
+			ClickerOfCalamity.DisplayName: Курсор Бедствия
+			CosmicStarClicker.DisplayName: Курсор из Космических Останков
+			AureusClicker.DisplayName: Курсор Ареуса
+			MeldClicker.DisplayName: Литой Курсор
+			PlagueClicker.DisplayName: Заражённый Курсор
+			ScoriaClicker.DisplayName: Термический Курсор
+			PolterplasmClicker.DisplayName: ПолтэрПлазмовый Курсор
+			BloodstoneClicker.DisplayName: Курсор из Кровавого Камня
+			RuinousClicker.DisplayName: Курсор из Руин
+			NightmareClicker.DisplayName: Кошмарный Курсор
+			StratusClicker.DisplayName: Курсор Стратуса
+			DarksunClicker.DisplayName: Курсор темного солнца
 		}
 	}
 
@@ -388,12 +394,13 @@ Projectiles: {
 		BloodGodsClickerProjectile.DisplayName: Поток Крови Бога
 		AureusClickerProjectile.DisplayName: Арийцевый Заряд
 		RuinousClickerProjectile.DisplayName: Портал из Руин
-		RuinousClickerProjectileSoul.DisplayName: Падшие Души
-		DaedalusClickerProjectile.DisplayName: Кристалы Дедала
-		// StratusClickerProjectile.DisplayName: Stratus Clicker Projectile
+		RuinousClickerProjectileSoul.DisplayName: Падшая Душа
+		DaedalusClickerProjectile.DisplayName: Кристала Дедала
+		StratusClickerProjectile.DisplayName: Луна стратуса
+		DarksunClickerProjectile.DisplayName: Темное солнце
 	}
 
-	Rogue.PlagueClickerProjectile.DisplayName: Эффект Чумного Кликера
+	Rogue.PlagueClickerProjectile.DisplayName: Чумные пчелы
 }
 
 Buffs: {
@@ -403,8 +410,8 @@ Buffs: {
 	}
 
 	WulfrumClickerBuff: {
-		// Description: You now has autoclicker
-		DisplayName: Визуализация режима Фульмумового Кликера
+		Description: Теперь ты имеешь автокликер
+		DisplayName: Визуализация режима Фульмумового Курсора
 	}
 }
 

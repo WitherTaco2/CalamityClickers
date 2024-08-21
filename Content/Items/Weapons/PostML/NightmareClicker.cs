@@ -44,7 +44,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
             AddEffect(Item, ClickerEffect);
             SetDust(Item, DustID.SolarFlare);
 
-            Item.damage = 220;
+            Item.damage = 250;
             Item.knockBack = 1f;
             Item.rare = ModContent.RarityType<DarkBlue>();
             Item.value = CalamityGlobalItem.RarityDarkBlueBuyPrice;

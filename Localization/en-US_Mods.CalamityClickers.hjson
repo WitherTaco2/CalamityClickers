@@ -163,6 +163,11 @@ ClickEffect: {
 		Name: Nightmare Magic
 		Description: Randomly acts as any possible click effect
 	}
+
+	Totality2: {
+		Name: Totality
+		Description: Creates a miniature eclipse, repeatedly firing out a lot of homing projectiles
+	}
 }
 
 Items: {
@@ -336,6 +341,7 @@ Items: {
 			RuinousClicker.DisplayName: Ruinous Clicker
 			NightmareClicker.DisplayName: Nightmare Clicker
 			StratusClicker.DisplayName: Stratus Clicker
+			DarksunClicker.DisplayName: Darksun Clicker
 		}
 	}
 
@@ -388,12 +394,13 @@ Projectiles: {
 		BloodGodsClickerProjectile.DisplayName: Blood God's Blast
 		AureusClickerProjectile.DisplayName: Aureus Blast
 		RuinousClickerProjectile.DisplayName: Ruinous Portal
-		RuinousClickerProjectileSoul.DisplayName: Ruinous Clicker Projectile Soul
+		RuinousClickerProjectileSoul.DisplayName: Ruinous Soul
 		DaedalusClickerProjectile.DisplayName: Daedalus Crystals
-		StratusClickerProjectile.DisplayName: Stratus Clicker Projectile
+		StratusClickerProjectile.DisplayName: Stratus Moon
+		DarksunClickerProjectile.DisplayName: Dark sun
 	}
 
-	Rogue.PlagueClickerProjectile.DisplayName: Plague Clicker Projectile
+	Rogue.PlagueClickerProjectile.DisplayName: Plague Bees
 }
 
 Buffs: {
