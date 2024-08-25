@@ -168,6 +168,21 @@ ClickEffect: {
 		Name: Totality
 		Description: Создаёт миниатюрное затмение, многократно стреляя множеством самонаводящихся снарядов
 	}
+
+	NebulaStars: {
+		Name: Звезды туманности
+		Description: Призывает круг из звезд туманности, которые самонаводяться спустя время
+	}
+
+	Stardust: {
+		Name: Stardust Звездная пыть
+		Description: Высвобождает звездную пыль
+	}
+
+	ItzClick: {
+		Name: Это Клик
+		Description: Накладывает мощнейшый дебафф, который наносит урон
+	}
 }
 
 Items: {
@@ -342,6 +357,9 @@ Items: {
 			NightmareClicker.DisplayName: Кошмарный Курсор
 			StratusClicker.DisplayName: Курсор Стратуса
 			DarksunClicker.DisplayName: Курсор темного солнца
+			ClickerOfGods.DisplayName: Курсор Богов
+			StarblightClicker.DisplayName: Курсор звездных останков
+			ItsClicker.DisplayName: Это Курсор
 		}
 	}
 
@@ -371,6 +389,8 @@ Items: {
 			DisplayName: Палец Кровавого бога
 		}
 	}
+
+	SFXButtonCalamity.DisplayName: SFX Кнопка Каламити
 }
 
 Projectiles: {
@@ -398,6 +418,8 @@ Projectiles: {
 		DaedalusClickerProjectile.DisplayName: Кристала Дедала
 		StratusClickerProjectile.DisplayName: Луна стратуса
 		DarksunClickerProjectile.DisplayName: Темное солнце
+		ClickerOfGodsProjectile.DisplayName: Звезда туманности
+		AstralClickerProjectile.DisplayName: Астральная пыль
 	}
 
 	Rogue.PlagueClickerProjectile.DisplayName: Чумные пчелы
@@ -412,6 +434,11 @@ Buffs: {
 	WulfrumClickerBuff: {
 		Description: Теперь ты имеешь автокликер
 		DisplayName: Визуализация режима Фульмумового Курсора
+	}
+
+	ItsClickerDebuff: {
+		// DisplayName: Its Clicker Debuff
+		// Description: Mods.CalamityClickers.Buffs.ItsClickerDebuff.Description
 	}
 }
 

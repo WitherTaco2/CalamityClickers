@@ -1,4 +1,4 @@
-displayName = Calamity Clickers (In Development)
+displayName = Calamity Clickers
 author = WitherTaco
-version = 0.5.1
+version = 0.5.3
 modReferences = CalamityMod, ClickerClass

@@ -140,6 +140,10 @@ namespace CalamityClickers
             {
                 itemLoot.Add(ModContent.ItemType<RuinousClicker>(), 4);
             }
+            if (item.type == ModContent.ItemType<DevourerofGodsBag>())
+            {
+                itemLoot.Add(ModContent.ItemType<ClickerOfGods>(), 4);
+            }
         }
     }
 }

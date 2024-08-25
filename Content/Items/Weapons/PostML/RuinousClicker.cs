@@ -17,6 +17,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
         public static string ClickerEffect { get; internal set; } = string.Empty;
         public override float Radius => 7.5f;
         public override Color RadiusColor => new Color(245, 143, 155);
+        public override bool SetBorderTexture => true;
         public override void SetStaticDefaultsExtra()
         {
             ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "GhastlyPortal", 25, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)

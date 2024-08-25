@@ -18,6 +18,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
         public static string ClickerEffect { get; internal set; } = string.Empty;
         public override float Radius => 8f;
         public override Color RadiusColor => new Color(225, 165, 53);
+        public override bool SetBorderTexture => true;
         public override void SetStaticDefaultsExtra()
         {
             ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "NightmareMagic", 5, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
@@ -44,7 +45,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
             AddEffect(Item, ClickerEffect);
             SetDust(Item, DustID.SolarFlare);
 
-            Item.damage = 250;
+            Item.damage = 300;
             Item.knockBack = 1f;
             Item.rare = ModContent.RarityType<DarkBlue>();
             Item.value = CalamityGlobalItem.RarityDarkBlueBuyPrice;

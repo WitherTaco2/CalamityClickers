@@ -168,6 +168,21 @@ ClickEffect: {
 		Name: Totality
 		Description: Creates a miniature eclipse, repeatedly firing out a lot of homing projectiles
 	}
+
+	NebulaStars: {
+		Name: Nebula Stars
+		Description: Summon circle of stars that homes after a few time
+	}
+
+	Stardust: {
+		Name: Stardust
+		Description: Release a stardust around cursor
+	}
+
+	ItzClick: {
+		Name: Itz Click
+		Description: Inflict very powerful damage over time debuff
+	}
 }
 
 Items: {
@@ -342,6 +357,9 @@ Items: {
 			NightmareClicker.DisplayName: Nightmare Clicker
 			StratusClicker.DisplayName: Stratus Clicker
 			DarksunClicker.DisplayName: Darksun Clicker
+			ClickerOfGods.DisplayName: Clicker of Gods
+			StarblightClicker.DisplayName: Starblight Clicker
+			ItsClicker.DisplayName: Its Clicker
 		}
 	}
 
@@ -371,6 +389,8 @@ Items: {
 			DisplayName: Finger Of Blood God
 		}
 	}
+
+	SFXButtonCalamity.DisplayName: SFX Button Calamity
 }
 
 Projectiles: {
@@ -398,6 +418,8 @@ Projectiles: {
 		DaedalusClickerProjectile.DisplayName: Daedalus Crystals
 		StratusClickerProjectile.DisplayName: Stratus Moon
 		DarksunClickerProjectile.DisplayName: Dark sun
+		ClickerOfGodsProjectile.DisplayName: Nebula Star
+		AstralClickerProjectile.DisplayName: Astral Dust
 	}
 
 	Rogue.PlagueClickerProjectile.DisplayName: Plague Bees
@@ -412,6 +434,11 @@ Buffs: {
 	WulfrumClickerBuff: {
 		Description: You now has autoclicker
 		DisplayName: Wulfrum Clicker Mode Visualization
+	}
+
+	ItsClickerDebuff: {
+		DisplayName: Its Clicker Debuff
+		Description: Mods.CalamityClickers.Buffs.ItsClickerDebuff.Description
 	}
 }
 

@@ -3,6 +3,7 @@ using CalamityMod.Items;
 using CalamityMod.Items.Armor.Aerospec;
 using CalamityMod.Items.Materials;
 using ClickerClass;
+using ClickerClass.Items;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -10,7 +11,7 @@ using Terraria.ModLoader;
 namespace CalamityClickers.Content.Items.Armor
 {
     [AutoloadEquip(EquipType.Head)]
-    public class AerospecCapsuit : ModItem, ILocalizedModType
+    public class AerospecCapsuit : ClickerItem, ILocalizedModType
     {
         public new string LocalizationCategory => "Items.Armor.Capsuit";
 

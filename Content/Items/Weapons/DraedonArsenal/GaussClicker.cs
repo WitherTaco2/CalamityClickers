@@ -10,7 +10,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace CalamityClickers.Content.Items.Weapons.HM
+namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
 {
     public class GaussClicker : ModdedClickerWeapon
     {

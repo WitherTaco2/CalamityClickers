@@ -30,8 +30,8 @@ Astral Biome enemy drop after Astrum Aureus
 
 +Meld Construct Set
 +Astrum Deus drop
-Astral Set (Astral Bar)
-Astrageldon Set (Catalyst Addon)
++Astral Set (Astral Bar)
+*Astrageldon Set (Catalyst Addon)
 
 =====
 Post-ML
@@ -40,24 +40,26 @@ Post-ML
 
 +Polterghast drop
 +Polterplasme Clicker. Direct upgrade of Spectre Clicker
-*Stratus Set (Lumenyl + Ruinous Soul + Exodium Cluster)
++Stratus Set (Lumenyl + Ruinous Soul + Exodium Cluster)
 Eidolon/Primordial wyrm drop (last depths layer)
 *Old Duke drop. Creates toxic cloud like Old Duke
 
-*Devourer of Gods drop
++Devourer of Gods drop
 *Cosmilite Set (Cosmilite Bar)
-*Darksun Clicker. Direct upgrade of Eclipse Clicker with using Darksun Fragments
-*Nightmare Clicker. Direct upgrade of Witch Clicker + Burning Super Death Clicker. Post-ML clicker with random clicker effect (Like witch clicker)
++Darksun Clicker. Direct upgrade of Eclipse Clicker with using Darksun Fragments
++Nightmare Clicker. Direct upgrade of Witch Clicker + Burning Super Death Clicker. Post-ML clicker with random clicker effect (Like witch clicker)
 
-Yharon drop
+*Yharon drop
 Something from Auric Bar (i don t know what make)
 
-Exo Mech drop
-Miracle (Exo) Clicker (Miracle Matter)
-Calamitas drop. Need something unique effect based on losing HP
+Enchanted Metal Set. (Clamity Addon)
+*Exo Mech drop
+*Miracle (Exo) Clicker (Miracle Matter)
+*Calamitas drop. Need something unique effect based on losing HP
+Calamity`s Exhumed Clicker
 Goozma drop (Hunt of the Old God)
 Chromatic Mass Set (Hunt of the Old God)
-My own developer (Shadowspec) clicker
++My own developer (Shadowspec) clicker
 
 =====
 Other Clicker ideas
@@ -68,8 +70,10 @@ Combination of Critter Clicker, Magnet Clicker and other utility clickers
 Draedon Arsenal
 
 Nuclear Clicker (Cosmilite tier)
+Shooker Clocker with homing electrobolts
 
 =====
 Equip
 
 SS Medal (Upgrade of S Medal)
++SFX Button Calamity

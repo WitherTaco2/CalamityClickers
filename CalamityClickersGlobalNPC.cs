@@ -1,4 +1,5 @@
 ﻿using CalamityClickers.Content.Items.Armor;
+using CalamityClickers.Content.Items.Misc;
 using CalamityClickers.Content.Items.Weapons.HM;
 using CalamityClickers.Content.Items.Weapons.PostML;
 using CalamityClickers.Content.Items.Weapons.PreHM;
@@ -11,6 +12,7 @@ using CalamityMod.NPCs.CalClone;
 using CalamityMod.NPCs.Crabulon;
 using CalamityMod.NPCs.Cryogen;
 using CalamityMod.NPCs.DesertScourge;
+using CalamityMod.NPCs.DevourerofGods;
 using CalamityMod.NPCs.HiveMind;
 using CalamityMod.NPCs.Leviathan;
 using CalamityMod.NPCs.NormalNPCs;
@@ -31,6 +33,43 @@ namespace CalamityClickers
 {
     public class CalamityClickersGlobalNPC : GlobalNPC
     {
+        public override bool InstancePerEntity => true;
+        public int wither = 0;
+
+        public override GlobalNPC Clone(NPC from, NPC to)
+        {
+            CalamityClickersGlobalNPC myClone = (CalamityClickersGlobalNPC)base.Clone(from, to);
+            myClone.wither = wither;
+            return myClone;
+        }
+
+        public override void UpdateLifeRegen(NPC npc, ref int damage)
+        {
+            if (wither > 0)
+            {
+                int baseBrimstoneFlamesDoTValue = npc.lifeMax / 100;
+                ApplyDPSDebuff(baseBrimstoneFlamesDoTValue, baseBrimstoneFlamesDoTValue / 5, ref npc.lifeRegen, ref damage);
+            }
+        }
+
+        public void ApplyDPSDebuff(int lifeRegenValue, int damageValue, ref int lifeRegen, ref int damage)
+        {
+            if (lifeRegen > 0)
+                lifeRegen = 0;
+
+            lifeRegen -= lifeRegenValue;
+
+            if (damage < damageValue)
+                damage = damageValue;
+        }
+
+        public override void PostAI(NPC npc)
+        {
+            if (wither > 0)
+                wither--;
+
+        }
+
         public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)
         {
             LeadingConditionRule mainRule = npcLoot.DefineNormalOnlyDropSet();
@@ -166,6 +205,10 @@ namespace CalamityClickers
             {
                 mainRule.Add(ModContent.ItemType<RuinousClicker>(), 4);
             }
+            if (npc.type == ModContent.NPCType<DevourerofGodsHead>())
+            {
+                mainRule.Add(ModContent.ItemType<ClickerOfGods>(), 4);
+            }
 
         }
         public override void ModifyShop(NPCShop shop)
@@ -179,6 +222,10 @@ namespace CalamityClickers
             if (type == NPCID.Clothier)
             {
                 shop.AddWithCustomValue(ModContent.ItemType<SilvaCapsuit>(), Item.buyPrice(gold: 8), new Condition(CalamityUtils.GetText("Condition.PostDoG"), () => DownedBossSystem.downedDoG));
+            }
+            if (type == NPCID.PartyGirl)
+            {
+                shop.Add<SFXButtonCalamity>(Condition.BloodMoon);
             }
         }
     }

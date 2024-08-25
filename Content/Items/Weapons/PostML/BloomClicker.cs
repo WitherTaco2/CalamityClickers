@@ -3,6 +3,7 @@ using CalamityMod.Items.Materials;
 using CalamityMod.Projectiles.Rogue;
 using CalamityMod.Rarities;
 using ClickerClass;
+using ClickerClass.Items.Weapons.Clickers;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
@@ -53,7 +54,8 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient<UelibloomBar>(12)
+                .AddIngredient<PointyClicker>()
+                .AddIngredient<UelibloomBar>(8)
                 .AddTile(TileID.LunarCraftingStation)
                 .Register();
         }

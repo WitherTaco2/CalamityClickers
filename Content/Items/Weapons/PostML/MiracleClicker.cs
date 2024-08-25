@@ -7,10 +7,10 @@ using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Weapons.PostML
 {
-    public class ExoClicker
+    public class MiracleClicker
     {
     }
-    public class ExoClickerProjectile : ModdedClickerProjectile
+    public class MiracleClickerProjectile : ModdedClickerProjectile
     {
         public int frameX = 0;
         public int frameY = 0;

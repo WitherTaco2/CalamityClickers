@@ -11,6 +11,7 @@ namespace CalamityClickers
     {
         public static ClickerPlayer Clicker(this Player player) => player.GetModPlayer<ClickerPlayer>();
         public static CalamityClickersPlayer CalClicker(this Player player) => player.GetModPlayer<CalamityClickersPlayer>();
+        public static CalamityClickersGlobalNPC CalClicker(this NPC npc) => npc.GetGlobalNPC<CalamityClickersGlobalNPC>();
         public static Player Owner(this Projectile proj) => Main.player[proj.owner];
         public static string RegisterClickEffect(Mod mod, string internalName, int amount, Color color, Action<Player, EntitySource_ItemUse_WithAmmo, Vector2, int, int, float> action, bool preHardMode = false, bool postMoonLord = false, object[] nameArgs = null, object[] descriptionArgs = null)
         {

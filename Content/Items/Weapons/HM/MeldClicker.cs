@@ -17,6 +17,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         public static string ClickerEffect { get; internal set; } = string.Empty;
         public override float Radius => 6f;
         public override Color RadiusColor => new Color(117, 255, 159);
+        public override bool SetBorderTexture => true;
         public override void SetStaticDefaultsExtra()
         {
             ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "Entropy", 15, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)

@@ -36,7 +36,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
             AddEffect(Item, ClickerEffect);
             SetDust(Item, DustID.SolarFlare);
 
-            Item.damage = 250;
+            Item.damage = 300;
             Item.knockBack = 1f;
             Item.rare = ModContent.RarityType<DarkBlue>();
             Item.value = CalamityGlobalItem.RarityDarkBlueBuyPrice;
@@ -107,6 +107,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
 
         public override bool PreDraw(ref Color lightColor)
         {
+            //TextureAssets.Item[1]
             Texture2D texture = effect.Value.Value;
             Main.EntitySpriteDraw(texture, Projectile.Center - Main.screenPosition, null, new Color(255, 255, 255, 0) * ((0.65f + pulse) * (0.01f * Projectile.timeLeft)), rotation, new Vector2(58, 58), 1.35f + pulse, SpriteEffects.None, 0);
             return true;

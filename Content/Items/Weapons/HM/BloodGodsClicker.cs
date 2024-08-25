@@ -15,6 +15,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         public static string ClickerEffect { get; internal set; } = string.Empty;
         public override float Radius => 5.9f;
         public override Color RadiusColor => new Color(111, 169, 241);
+        public override bool SetBorderTexture => true;
 
         public static readonly int BlastAmount = 5;
         public override void SetStaticDefaultsExtra()
