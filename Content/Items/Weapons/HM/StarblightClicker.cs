@@ -23,7 +23,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         {
             ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "Stardust", 9, () => RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
-                Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<AstralClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
+                Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<StarblightClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
 
             });
         }
@@ -45,7 +45,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
                 .Register();
         }
     }
-    public class AstralClickerProjectile : ModdedClickerProjectile
+    public class StarblightClickerProjectile : ModdedClickerProjectile
     {
         public bool Spawned
         {

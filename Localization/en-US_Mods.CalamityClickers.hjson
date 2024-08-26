@@ -183,6 +183,26 @@ ClickEffect: {
 		Name: Itz Click
 		Description: Inflict very powerful damage over time debuff
 	}
+
+	MiceCatalyst: {
+		Name: Mice Catalyst
+		Description: $Mods.ClickerClass.Common.Unknown
+	}
+
+	PhoenixWrath: {
+		Name: Phoenix Wrath
+		Description: Call in a wrath of Phoenixes to blast the area with flames. Inflict Dragonfire
+	}
+
+	StellarScythe: {
+		Name: Stellar Scythe
+		Description: $Mods.ClickerClass.Common.Unknown
+	}
+
+	NuclearExplosion: {
+		Name: Nuclear Explosion
+		Description: BOOM!
+	}
 }
 
 Items: {
@@ -360,6 +380,10 @@ Items: {
 			ClickerOfGods.DisplayName: Clicker of Gods
 			StarblightClicker.DisplayName: Starblight Clicker
 			ItsClicker.DisplayName: Its Clicker
+			PhoenixClicker.DisplayName: Phoenix Clicker
+			MiceCatalystClicker.DisplayName: Mice Catalyst Clicker
+			StellarClicker.DisplayName: Stellar Clicker
+			NuclearClicker.DisplayName: Nuclear Clicker
 		}
 	}
 
@@ -388,6 +412,16 @@ Items: {
 				'''
 			DisplayName: Finger Of Blood God
 		}
+
+		BeetleClickingGlove: {
+			DisplayName: Beetle Clicking Glove
+			Tooltip:
+				'''
+				{$Mods.ClickerClass.Items.RegalClickingGlove.Tooltip}
+				25% increased click damage when under 20% life
+				Inflict debaff whith power based on how fast you clicks
+				'''
+		}
 	}
 
 	SFXButtonCalamity.DisplayName: SFX Button Calamity
@@ -409,7 +443,6 @@ Projectiles: {
 		ElementalClickerProjectile.DisplayName: Elemental Aura
 		FeralClickerProjectile.DisplayName: Burning Green Ichor
 		ProfanedClickerProjectile.DisplayName: Profaned Explosion
-		ExoClickerProjectile.DisplayName: Exo Explosion
 		ClickerOfCalamityProjectile.DisplayName: Chaos Flame
 		BloodGodsClickerProjectile.DisplayName: Blood God's Blast
 		AureusClickerProjectile.DisplayName: Aureus Blast
@@ -417,9 +450,16 @@ Projectiles: {
 		RuinousClickerProjectileSoul.DisplayName: Ruinous Soul
 		DaedalusClickerProjectile.DisplayName: Daedalus Crystals
 		StratusClickerProjectile.DisplayName: Stratus Moon
-		DarksunClickerProjectile.DisplayName: Dark sun
+		DarksunClickerProjectile.DisplayName: Dark Sun
 		ClickerOfGodsProjectile.DisplayName: Nebula Star
-		AstralClickerProjectile.DisplayName: Astral Dust
+		StarblightClickerProjectile.DisplayName: Astral Dust
+		MiceCatalystClickerProjectile.DisplayName: Mice Catalyst Nebula
+		MiracleClickerProjectile.DisplayName: Exo Explosion
+		PhoenixClickerProjectile.DisplayName: Phoenix
+		PhoenixClickerProjectile2.DisplayName: Phoenix Breath
+		ExoClickerProjectile.DisplayName: Exo Explosion
+		StellarClickerProjectile.DisplayName: Stellar Scythe
+		NuclearClickerBoom.DisplayName: Nuclear Explosion
 	}
 
 	Rogue.PlagueClickerProjectile.DisplayName: Plague Bees

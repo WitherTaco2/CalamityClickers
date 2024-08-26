@@ -1,7 +1,10 @@
 ﻿using CalamityMod;
+using CalamityMod.Items;
+using CalamityMod.Rarities;
 using ClickerClass;
 using ClickerClass.Items.Accessories;
 using ClickerClass.Items.Tools;
+using ClickerClass.Items.Weapons.Clickers;
 using ClickerClass.Projectiles;
 using System;
 using System.Collections.Generic;
@@ -24,6 +27,12 @@ namespace CalamityClickers.Commons
             {
                 item.useTime = 3;
                 item.tileBoost += 1;
+            }
+            if (item.type == ModContent.ItemType<TheClicker>())
+            {
+                item.damage = 600;
+                item.rare = ModContent.RarityType<HotPink>();
+                item.value = CalamityGlobalItem.RarityHotPinkBuyPrice;
             }
         }
         public override void UpdateAccessory(Item item, Player player, bool hideVisual)

@@ -1,9 +1,10 @@
 + - fully addded
 * - added sprite (without code)
+If i made several clickers in this can me a few + at some time (like ++ for two weapons)
 
 =====
-
 Pre-HM
+
 Sea Prism Set (Pearl Shard + Sea Prism + Navystone)
 Sea king's shop
 Acid Set (Acidwood + Sulphuric Scale)
@@ -12,17 +13,18 @@ from Depth's chest
 =====
 HM
 
-Forbidden Set (Forbidden Fragment + Any Adamantite Bar)
+*Forbidden Set (Forbidden Fragment + Any Adamantite Bar)
 Pyrogen Drop (Clamity Addon)
 T2 Acid Set
-Hardmode Giant Clam drop + direct Clamitas's upgrade (Clamity Addon)
+Hardmode Giant Clam drop 
 
 +Calamitas Clone Drop
+Clamitas set (Clamity Addon) //Giant Clam`s set upgrade
 
-Sandstorm Set (Grand Scale) Crafted with using clicker from Forbidden Set
+Sandstorm Set (Grand Scale) // Forbidden Set upgrade
 
 +Astrum Aureus drop
-Astral Biome enemy drop after Astrum Aureus
++Astral Biome enemy drop after Astrum Aureus
 
 +Scoria Set (Scoria Bar)
 +Plaguebringer Goliath drop
@@ -31,7 +33,8 @@ Astral Biome enemy drop after Astrum Aureus
 +Meld Construct Set
 +Astrum Deus drop
 +Astral Set (Astral Bar)
-*Astrageldon Set (Catalyst Addon)
+*Astrageldon Set (Catalyst Addon) //Slime God set + Astral Biome drop
+Bereft Vassal Set (Infernum Mod)
 
 =====
 Post-ML
@@ -50,7 +53,7 @@ Eidolon/Primordial wyrm drop (last depths layer)
 +Nightmare Clicker. Direct upgrade of Witch Clicker + Burning Super Death Clicker. Post-ML clicker with random clicker effect (Like witch clicker)
 
 *Yharon drop
-Something from Auric Bar (i don t know what make)
++Something from Auric Bar (i don t know what make)
 
 Enchanted Metal Set. (Clamity Addon)
 *Exo Mech drop
@@ -69,11 +72,11 @@ Combination of Critter Clicker, Magnet Clicker and other utility clickers
 =====
 Draedon Arsenal
 
-Nuclear Clicker (Cosmilite tier)
-Shooker Clocker with homing electrobolts
++Nuclear Clicker (Cosmilite tier)
+*Shocker Clocker with homing electrobolts (Aerialite tier)
 
 =====
 Equip
 
-SS Medal (Upgrade of S Medal)
+*SS Medal (Upgrade of S Medal)
 +SFX Button Calamity

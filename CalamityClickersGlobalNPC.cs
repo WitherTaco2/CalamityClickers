@@ -2,9 +2,14 @@
 using CalamityClickers.Content.Items.Misc;
 using CalamityClickers.Content.Items.Weapons.HM;
 using CalamityClickers.Content.Items.Weapons.PostML;
+using CalamityClickers.Content.Items.Weapons.PostML.DoG;
+using CalamityClickers.Content.Items.Weapons.PostML.Polterghast;
+using CalamityClickers.Content.Items.Weapons.PostML.Providance;
+using CalamityClickers.Content.Items.Weapons.PostML.Yharon;
 using CalamityClickers.Content.Items.Weapons.PreHM;
 using CalamityMod;
 using CalamityMod.NPCs.AquaticScourge;
+using CalamityMod.NPCs.Astral;
 using CalamityMod.NPCs.AstrumAureus;
 using CalamityMod.NPCs.AstrumDeus;
 using CalamityMod.NPCs.Bumblebirb;
@@ -22,8 +27,10 @@ using CalamityMod.NPCs.Polterghast;
 using CalamityMod.NPCs.Providence;
 using CalamityMod.NPCs.Ravager;
 using CalamityMod.NPCs.TownNPCs;
+using CalamityMod.NPCs.Yharon;
 using ClickerClass.Items;
 using ClickerClass.Items.Weapons.Clickers;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
@@ -35,11 +42,14 @@ namespace CalamityClickers
     {
         public override bool InstancePerEntity => true;
         public int wither = 0;
+        public int clickDebuff = 0;
+        public int clickDebuffOwner = -1;
 
         public override GlobalNPC Clone(NPC from, NPC to)
         {
             CalamityClickersGlobalNPC myClone = (CalamityClickersGlobalNPC)base.Clone(from, to);
             myClone.wither = wither;
+            myClone.clickDebuff = clickDebuff;
             return myClone;
         }
 
@@ -48,6 +58,12 @@ namespace CalamityClickers
             if (wither > 0)
             {
                 int baseBrimstoneFlamesDoTValue = npc.lifeMax / 100;
+                ApplyDPSDebuff(baseBrimstoneFlamesDoTValue, baseBrimstoneFlamesDoTValue / 5, ref npc.lifeRegen, ref damage);
+            }
+            if (clickDebuff > 0 && clickDebuffOwner != -1)
+            {
+                Player player = Main.player[clickDebuffOwner];
+                int baseBrimstoneFlamesDoTValue = (int)(player.Clicker().clickerPerSecond * 5);
                 ApplyDPSDebuff(baseBrimstoneFlamesDoTValue, baseBrimstoneFlamesDoTValue / 5, ref npc.lifeRegen, ref damage);
             }
         }
@@ -67,7 +83,14 @@ namespace CalamityClickers
         {
             if (wither > 0)
                 wither--;
+            if (clickDebuff > 0)
+                clickDebuff--;
 
+        }
+        public override void DrawEffects(NPC npc, ref Color drawColor)
+        {
+            if (wither > 0)
+                ItsClickerDebuff.DrawEffects(npc, ref drawColor);
         }
 
         public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)
@@ -136,6 +159,11 @@ namespace CalamityClickers
                 case NPCID.StardustWormHead:     // Milkyway Weaver
                     npcLoot.Add(ItemDropRule.NormalvsExpert(ModContent.ItemType<MiceFragment>(), 8, 7));
                     break;
+            }
+            if (npc.type == ModContent.NPCType<StellarCulex>())
+            {
+                //mainRule.Add(ModContent.ItemType<StellarClicker>(), 7);
+                npcLoot.AddIf(() => DownedBossSystem.downedAstrumAureus, ModContent.ItemType<StellarClicker>(), 7);
             }
 
 
@@ -208,6 +236,10 @@ namespace CalamityClickers
             if (npc.type == ModContent.NPCType<DevourerofGodsHead>())
             {
                 mainRule.Add(ModContent.ItemType<ClickerOfGods>(), 4);
+            }
+            if (npc.type == ModContent.NPCType<Yharon>())
+            {
+                mainRule.Add(ModContent.ItemType<PhoenixClicker>(), 4);
             }
 
         }

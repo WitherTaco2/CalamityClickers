@@ -82,12 +82,13 @@ namespace CalamityClickers.Content.Items.Weapons.HM
 
         public override void SetStaticDefaults()
         {
+            base.SetStaticDefaults();
             Main.projFrames[Projectile.type] = 3;
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 4;
             ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
         }
 
-        public override void SetDefaults()
+        public override void SetDefaultsExtra()
         {
             Projectile.width = 20;
             Projectile.height = 20;

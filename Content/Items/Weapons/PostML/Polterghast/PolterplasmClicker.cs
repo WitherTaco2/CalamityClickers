@@ -4,7 +4,7 @@ using ClickerClass.Items.Weapons.Clickers;
 using Microsoft.Xna.Framework;
 using Terraria.ID;
 
-namespace CalamityClickers.Content.Items.Weapons.PostML
+namespace CalamityClickers.Content.Items.Weapons.PostML.Polterghast
 {
     public class PolterplasmClicker : ModdedClickerWeapon
     {

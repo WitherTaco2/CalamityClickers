@@ -38,7 +38,7 @@ namespace CalamityClickers.Content.Items.Weapons
                 //Projectile.Kill();
             }
 
-            SafePostAI();
+            SafeAI();
         }
 
         public virtual void SafePreAI()
@@ -46,14 +46,11 @@ namespace CalamityClickers.Content.Items.Weapons
 
         }
 
-        public virtual void SafePostAI()
+        public virtual void SafeAI()
         {
 
         }
 
-        public virtual void OnClick()
-        {
-
-        }
+        public abstract void OnClick();
     }
 }

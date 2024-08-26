@@ -10,7 +10,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace CalamityClickers.Content.Items.Weapons.PostML
+namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
 {
     public class ClickerOfGods : ModdedClickerWeapon
     {
@@ -27,7 +27,6 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
                     Projectile.NewProjectile(source, position + Vector2.UnitX.RotatedBy(MathHelper.TwoPi / 7 * i) * 10, Vector2.UnitX.RotatedBy(MathHelper.TwoPi / 7 * i) * 3, ModContent.ProjectileType<ClickerOfGodsProjectile>(), damage / 3, knockBack, player.whoAmI);
                 }
             }, postMoonLord: true);
-            CalamityClickersUtils.RegisterBlacklistedClickEffect(ClickerEffect);
         }
         public override void SetDefaultsExtra()
         {

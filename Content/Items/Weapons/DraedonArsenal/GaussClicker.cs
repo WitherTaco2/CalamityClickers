@@ -50,11 +50,11 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
                 Register();
         }
     }
-    public class GaussClickerProjectile : ModProjectile, ILocalizedModType
+    public class GaussClickerProjectile : ModdedClickerProjectile, ILocalizedModType
     {
-        public new string LocalizationCategory => "Projectiles.Clicker";
-        public override string Texture => "CalamityMod/Projectiles/InvisibleProj";
-        public override void SetDefaults()
+        //public new string LocalizationCategory => "Projectiles.Clicker";
+        //public override string Texture => "CalamityMod/Projectiles/InvisibleProj";
+        public override void SetDefaultsExtra()
         {
             Projectile.width = 100;
             Projectile.height = 100;
@@ -64,7 +64,7 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
             Projectile.timeLeft = 180;
             Projectile.usesIDStaticNPCImmunity = true;
             Projectile.idStaticNPCHitCooldown = 30;
-            Projectile.DamageType = ModContent.GetInstance<ClickerDamage>();
+            //Projectile.DamageType = ModContent.GetInstance<ClickerDamage>();
         }
         public float Time
         {

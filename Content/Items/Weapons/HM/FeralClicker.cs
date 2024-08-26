@@ -94,10 +94,8 @@ namespace CalamityClickers.Content.Items.Weapons.HM
             set => Projectile.localAI[0] = value;
         }
 
-        public override void SetDefaults()
+        public override void SetDefaultsExtra()
         {
-            base.SetDefaults();
-
             Projectile.width = 10;
             Projectile.height = 10;
             Projectile.aiStyle = -1;
@@ -114,7 +112,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
 
             for (int k = 0; k < 5; k++)
             {
-                Dust dust = Dust.NewDustDirect(Projectile.Center, 10, 10, 157, Main.rand.NextFloat(-3f, 3f), Main.rand.NextFloat(-3f, 3f), 255, default, 1f);
+                Dust dust = Dust.NewDustDirect(Projectile.Center, 10, 10, DustID.ChlorophyteWeapon, Main.rand.NextFloat(-3f, 3f), Main.rand.NextFloat(-3f, 3f), 255, default, 1f);
                 dust.noGravity = true;
             }
         }
@@ -135,7 +133,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
                 WobbleTimer = 0;
             }
 
-            int index = Dust.NewDust(Projectile.Center, Projectile.width, Projectile.height, 157, 0f, 0f, 255, default(Color), 1f);
+            int index = Dust.NewDust(Projectile.Center, Projectile.width, Projectile.height, DustID.ChlorophyteWeapon, 0f, 0f, 255, default(Color), 1f);
             Dust dust = Main.dust[index];
             dust.position.X = Projectile.Center.X;
             dust.position.Y = Projectile.Center.Y;

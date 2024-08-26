@@ -10,7 +10,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace CalamityClickers.Content.Items.Weapons.PostML
+namespace CalamityClickers.Content.Items.Weapons.PostML.Polterghast
 {
     public class RuinousClicker : ModdedClickerWeapon
     {
@@ -42,8 +42,8 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
 
         public override void SetStaticDefaults()
         {
-            ProjectileID.Sets.TrailCacheLength[base.Projectile.type] = 8;
-            ProjectileID.Sets.TrailingMode[base.Projectile.type] = 0;
+            ProjectileID.Sets.TrailCacheLength[Projectile.type] = 8;
+            ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
         }
         public override void SetDefaultsExtra()
         {
@@ -80,13 +80,13 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
         //public override Color? GetAlpha(Color lightColor) => new Color(255, 255, 255, 255);
         public override bool PreDraw(ref Color lightColor)
         {
-            CalamityUtils.DrawAfterimagesCentered(base.Projectile, ProjectileID.Sets.TrailingMode[base.Projectile.type], lightColor);
+            CalamityUtils.DrawAfterimagesCentered(Projectile, ProjectileID.Sets.TrailingMode[Projectile.type], lightColor);
             return false;
         }
 
         public override Color? GetAlpha(Color lightColor)
         {
-            return new Color(255 - base.Projectile.alpha, 255 - base.Projectile.alpha, 255 - base.Projectile.alpha, 255 - base.Projectile.alpha);
+            return new Color(255 - Projectile.alpha, 255 - Projectile.alpha, 255 - Projectile.alpha, 255 - Projectile.alpha);
         }
     }
     public class RuinousClickerProjectileSoul : LostSoulFriendly, ILocalizedModType

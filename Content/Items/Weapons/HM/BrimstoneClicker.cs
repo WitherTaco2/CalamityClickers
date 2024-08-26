@@ -42,18 +42,15 @@ namespace CalamityClickers.Content.Items.Weapons.HM
                 .Register();
         }
     }
-    public class BrimstoneClickerProjectile : ModProjectile, ILocalizedModType
+    public class BrimstoneClickerProjectile : ModdedClickerProjectile
     {
-        public new string LocalizationCategory => "Projectiles.Clicker";
-        public override string Texture => "CalamityMod/Projectiles/InvisibleProj";
-
         public bool Spawned
         {
             get => Projectile.ai[0] == 1f;
             set => Projectile.ai[0] = value ? 1f : 0f;
         }
 
-        public override void SetDefaults()
+        public override void SetDefaultsExtra()
         {
             Projectile.width = 250;
             Projectile.height = 250;
@@ -65,7 +62,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
             Projectile.extraUpdates = 3;
             Projectile.usesLocalNPCImmunity = true;
             Projectile.localNPCHitCooldown = 30;
-            Projectile.DamageType = ModContent.GetInstance<ClickerDamage>();
+            //Projectile.DamageType = ModContent.GetInstance<ClickerDamage>();
         }
         public override void AI()
         {

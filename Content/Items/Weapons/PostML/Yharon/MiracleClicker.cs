@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace CalamityClickers.Content.Items.Weapons.PostML
+namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
 {
     public class MiracleClicker
     {

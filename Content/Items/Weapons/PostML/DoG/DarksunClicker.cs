@@ -16,7 +16,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace CalamityClickers.Content.Items.Weapons.PostML
+namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
 {
     public class DarksunClicker : ModdedClickerWeapon
     {
@@ -102,7 +102,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
 
         public override Color? GetAlpha(Color lightColor)
         {
-            return new Color(255, 255, 255, 255) * (0.1f + (0.005f * Projectile.timeLeft));
+            return new Color(255, 255, 255, 255) * (0.1f + 0.005f * Projectile.timeLeft);
         }
 
         public override bool PreDraw(ref Color lightColor)

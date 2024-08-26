@@ -183,6 +183,26 @@ ClickEffect: {
 		Name: Это Клик
 		Description: Накладывает мощнейшый дебафф, который наносит урон
 	}
+
+	MiceCatalyst: {
+		// Name: Mice Catalyst
+		// Description: $Mods.ClickerClass.Common.Unknown
+	}
+
+	PhoenixWrath: {
+		// Name: Phoenix Wrath
+		// Description: Call in a wrath of Phoenixes to blast the area with flames. Inflict Dragonfire
+	}
+
+	StellarScythe: {
+		// Name: Stellar Scythe
+		// Description: $Mods.ClickerClass.Common.Unknown
+	}
+
+	NuclearExplosion: {
+		// Name: Nuclear Explosion
+		// Description: BOOM!
+	}
 }
 
 Items: {
@@ -360,6 +380,10 @@ Items: {
 			ClickerOfGods.DisplayName: Курсор Богов
 			StarblightClicker.DisplayName: Курсор звездных останков
 			ItsClicker.DisplayName: Это Курсор
+			// PhoenixClicker.DisplayName: Phoenix Clicker
+			// MiceCatalystClicker.DisplayName: Mice Catalyst Clicker
+			// StellarClicker.DisplayName: Stellar Clicker
+			// NuclearClicker.DisplayName: Nuclear Clicker
 		}
 	}
 
@@ -388,6 +412,16 @@ Items: {
 				'''
 			DisplayName: Палец Кровавого бога
 		}
+
+		BeetleClickingGlove: {
+			DisplayName: Жучья кликающая перчатка
+			Tooltip:
+				'''
+				{$Mods.ClickerClass.Items.RegalClickingGlove.Tooltip}
+				25% увеличенного урона клика когда у вас меньше 20% очков жизни
+				Накладывает дебафф, который зависит от того, насколько ты быстро кликаешь
+				'''
+		}
 	}
 
 	SFXButtonCalamity.DisplayName: SFX Кнопка Каламити
@@ -409,7 +443,6 @@ Projectiles: {
 		ElementalClickerProjectile.DisplayName: Элементальная Аура
 		FeralClickerProjectile.DisplayName: Ихоровая Инфекция
 		ProfanedClickerProjectile.DisplayName: Оскверненный взрыв
-		ExoClickerProjectile.DisplayName: Экзо Взрыв
 		ClickerOfCalamityProjectile.DisplayName: Пламя Хаоса
 		BloodGodsClickerProjectile.DisplayName: Поток Крови Бога
 		AureusClickerProjectile.DisplayName: Арийцевый Заряд
@@ -419,7 +452,14 @@ Projectiles: {
 		StratusClickerProjectile.DisplayName: Луна стратуса
 		DarksunClickerProjectile.DisplayName: Темное солнце
 		ClickerOfGodsProjectile.DisplayName: Звезда туманности
-		AstralClickerProjectile.DisplayName: Астральная пыль
+		StarblightClickerProjectile.DisplayName: Астральная пыль
+		MiceCatalystClickerProjectile.DisplayName: Туманносить из Катализатора мыши
+		MiracleClickerProjectile.DisplayName: Экзо взрыв
+		PhoenixClickerProjectile.DisplayName: Феникс
+		PhoenixClickerProjectile2.DisplayName: Дыхание феникса
+		ExoClickerProjectile.DisplayName: Экзо Взрыв
+		// StellarClickerProjectile.DisplayName: Stellar Scythe
+		// NuclearClickerBoom.DisplayName: Nuclear Explosion
 	}
 
 	Rogue.PlagueClickerProjectile.DisplayName: Чумные пчелы

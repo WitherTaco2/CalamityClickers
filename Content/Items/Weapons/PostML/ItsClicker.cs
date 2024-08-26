@@ -3,6 +3,7 @@ using CalamityMod;
 using CalamityMod.Items;
 using CalamityMod.Items.Materials;
 using CalamityMod.Particles;
+using CalamityMod.Rarities;
 using CalamityMod.Tiles.Furniture.CraftingStations;
 using ClickerClass;
 using Microsoft.Xna.Framework;
@@ -16,7 +17,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
     public class ItsClicker : ModdedClickerWeapon
     {
         public static string ClickerEffect { get; internal set; } = string.Empty;
-        public override float Radius => 100f;
+        public override float Radius => 8;
         public override Color RadiusColor => Color.LightGray;
         public override bool SetBorderTexture => true;
         public override void SetStaticDefaultsExtra()
@@ -36,8 +37,8 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
 
             Item.damage = 600;
             Item.knockBack = 1f;
-            Item.rare = ItemRarityID.Cyan;
-            Item.value = CalamityGlobalItem.RarityCyanBuyPrice;
+            Item.rare = ModContent.RarityType<HotPink>();
+            Item.value = CalamityGlobalItem.RarityHotPinkBuyPrice;
 
             Item.Calamity().devItem = true;
         }
@@ -74,7 +75,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
             if (Main.rand.NextBool())
             {
                 Vector2 npcSize = npc.Center + new Vector2(Main.rand.NextFloat(-npc.width / 2, npc.width / 2), Main.rand.NextFloat(-npc.height / 2, npc.height / 2));
-                SparkParticle spark = new SparkParticle(npcSize, Main.rand.NextVector2Square(-5, 5), false, Main.rand.Next(11, 13), Main.rand.NextFloat(0.2f, 0.5f), Color.Black);
+                SparkParticle spark = new SparkParticle(npcSize, Main.rand.NextVector2Square(-2.5f, 2.5f), false, Main.rand.Next(11, 13), Main.rand.NextFloat(0.2f, 0.5f), Color.Gray);
                 GeneralParticleHandler.SpawnParticle(spark);
             }
         }

@@ -1,5 +1,9 @@
 ﻿using CalamityClickers.Content.Items.Weapons.HM;
 using CalamityClickers.Content.Items.Weapons.PostML;
+using CalamityClickers.Content.Items.Weapons.PostML.DoG;
+using CalamityClickers.Content.Items.Weapons.PostML.Polterghast;
+using CalamityClickers.Content.Items.Weapons.PostML.Providance;
+using CalamityClickers.Content.Items.Weapons.PostML.Yharon;
 using CalamityClickers.Content.Items.Weapons.PreHM;
 using CalamityMod;
 using CalamityMod.Items.TreasureBags;
@@ -25,10 +29,6 @@ namespace CalamityClickers
                     clickerItem.itemClickEffects.Remove(ClickEffect.WildMagic);
                     ClickerCompat.AddEffect(item, CalamityClickersEffects.WildMagic);
                 }
-            }
-            if (item.type == ModContent.ItemType<TheClicker>())
-            {
-                item.damage = 600;
             }
         }
         public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -143,6 +143,10 @@ namespace CalamityClickers
             if (item.type == ModContent.ItemType<DevourerofGodsBag>())
             {
                 itemLoot.Add(ModContent.ItemType<ClickerOfGods>(), 4);
+            }
+            if (item.type == ModContent.ItemType<YharonBag>())
+            {
+                itemLoot.Add(ModContent.ItemType<PhoenixClicker>(), 4);
             }
         }
     }

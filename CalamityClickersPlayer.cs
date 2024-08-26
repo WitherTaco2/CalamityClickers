@@ -19,6 +19,7 @@ namespace CalamityClickers
         public bool godSlayerClicker = false;
 
         public bool fingerOfBG;
+        public bool beetleClickingGlove;
 
         public bool enchLecherous;
         public override void ResetEffects()
@@ -29,6 +30,7 @@ namespace CalamityClickers
             godSlayerClicker = false;
 
             fingerOfBG = false;
+            beetleClickingGlove = false;
 
             enchLecherous = false;
         }

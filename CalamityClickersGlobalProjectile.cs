@@ -1,6 +1,8 @@
-﻿using CalamityMod.NPCs.NormalNPCs;
+﻿using CalamityClickers.Content.Items.Accessories;
+using CalamityMod.NPCs.NormalNPCs;
 using CalamityMod.Projectiles;
 using CalamityMod.Projectiles.Healing;
+using ClickerClass.Projectiles;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -23,6 +25,11 @@ namespace CalamityClickers
                     if (CalamityGlobalProjectile.CanSpawnLifeStealProjectile(healMultiplier, healAmount))
                         CalamityGlobalProjectile.SpawnLifeStealProjectile(projectile, player, healAmount, ModContent.ProjectileType<HydrothermicHealOrb>(), 1200f, 2f);
                 }
+            }
+            if (player.CalClicker().beetleClickingGlove && projectile.type == ModContent.ProjectileType<ClickDamage>())
+            {
+                target.AddBuff(ModContent.BuffType<BeetleClickingGloveDebuff>(), 120);
+                target.CalClicker().clickDebuffOwner = projectile.owner;
             }
         }
     }
