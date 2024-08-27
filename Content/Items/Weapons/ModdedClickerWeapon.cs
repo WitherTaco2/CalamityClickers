@@ -9,7 +9,7 @@ using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Weapons
 {
-    public abstract class ModdedClickerWeapon : ClickerItem, ILocalizedModType, IModType
+    public abstract class ModdedClickerWeapon : ClickerWeapon, ILocalizedModType, IModType
     {
         public new string LocalizationCategory => "Items.Weapons.Clicker";
         //public static string ClickerEffect { get; internal set; } = string.Empty;

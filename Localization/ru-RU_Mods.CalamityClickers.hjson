@@ -186,7 +186,7 @@ ClickEffect: {
 
 	MiceCatalyst: {
 		// Name: Mice Catalyst
-		// Description: $Mods.ClickerClass.Common.Unknown
+		// Description: Summon a catalyst cloud that creates projectiles which homes to mouse position
 	}
 
 	PhoenixWrath: {
@@ -196,12 +196,17 @@ ClickEffect: {
 
 	StellarScythe: {
 		// Name: Stellar Scythe
-		// Description: $Mods.ClickerClass.Common.Unknown
+		// Description: Creates a scythe that change velocity direction to mouse position
 	}
 
 	NuclearExplosion: {
 		// Name: Nuclear Explosion
 		// Description: BOOM!
+	}
+
+	DaedalusLightning: {
+		// Name: Daedalus Lightning
+		// Description: Attracts power of Daedalus from sky (creates lightnings)
 	}
 }
 
@@ -479,6 +484,11 @@ Buffs: {
 	ItsClickerDebuff: {
 		// DisplayName: Its Clicker Debuff
 		// Description: Mods.CalamityClickers.Buffs.ItsClickerDebuff.Description
+	}
+
+	BeetleClickingGloveDebuff: {
+		// Description: Mods.CalamityClickers.Buffs.BeetleClickingGloveDebuff.Description
+		// DisplayName: Beetle Clicking Glove Debuff
 	}
 }
 
