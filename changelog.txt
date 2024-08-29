@@ -1,7 +1,11 @@
 Update 0.6 - "Dragons and Gods" Update
 
 Added outline cursor textures for some weapons
+
 Added SFX Button Calamity with Calamity Bell sound
+Added SFX Button Auric with auric ore hit sound
+Added SFX Button Astral with mostly astral enemy hit sound
+
 Added Starbright Clicker. Clicker which crafted from Astral Bars
 Added Stellar Clicker. Drop from Stellar Culex (Astral biome enemy) after Astrum Aureus
 Added Clicker of Gods. Devourer of Gods drop

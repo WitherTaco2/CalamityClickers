@@ -429,7 +429,9 @@ Items: {
 		}
 	}
 
-	SFXButtonCalamity.DisplayName: SFX Кнопка Каламити
+	SFXButtonCalamity.DisplayName: SFX Кнопка - Каламити
+	SFXButtonAstral.DisplayName: SFX Кнопка - Астрал
+	SFXButtonAuric.DisplayName: S F X Кнопка - Аурик
 }
 
 Projectiles: {
@@ -512,3 +514,5 @@ UI: {
 }
 
 // NPCs.LecherousOrbClicker.DisplayName: Lecherous Orb Clicker
+
+Misc.RecipeGroup.AnyNormalSFXButton: Любая обычная SFX кнопка

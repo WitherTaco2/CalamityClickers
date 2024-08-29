@@ -2,6 +2,7 @@
 using CalamityMod.Tiles.Furniture.CraftingStations;
 using ClickerClass.Items;
 using ClickerClass.Items.Accessories;
+using ClickerClass.Items.Misc;
 using ClickerClass.Items.Tools;
 using ClickerClass.Items.Weapons.Clickers;
 using Terraria;
@@ -12,10 +13,27 @@ namespace CalamityClickers.Commons
 {
     public class CalamityClickersRecipeSystem : ModSystem
     {
+        public int AnyNormalSFXButton;
         public override void AddRecipeGroups()
         {
             //RecipeGroup firefly = RecipeGroup.recipeGroups[Calamity.Fireflies];
             //firefly.ValidItems.Add(ModContent.ItemType<TwinklerItem>());
+
+            {
+                RecipeGroup group = new RecipeGroup(() => LangHelper.GetText("Misc.RecipeGroup.AnyNormalSFXButton"), new int[]
+                {
+                ModContent.ItemType<SFXButtonA>(),
+                ModContent.ItemType<SFXButtonB>(),
+                ModContent.ItemType<SFXButtonC>(),
+                ModContent.ItemType<SFXButtonD>(),
+                ModContent.ItemType<SFXButtonE>(),
+                ModContent.ItemType<SFXButtonF>(),
+                ModContent.ItemType<SFXButtonG>(),
+                ModContent.ItemType<SFXButtonH>()
+                });
+                AnyNormalSFXButton = RecipeGroup.RegisterGroup("AnyNormalSFXButton", group);
+            }
+
 
             if (RecipeGroup.recipeGroupIDs.ContainsKey("LunarHamaxe"))
             {
