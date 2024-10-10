@@ -18,6 +18,7 @@ using CalamityMod.NPCs.Crabulon;
 using CalamityMod.NPCs.Cryogen;
 using CalamityMod.NPCs.DesertScourge;
 using CalamityMod.NPCs.DevourerofGods;
+using CalamityMod.NPCs.ExoMechs.Ares;
 using CalamityMod.NPCs.HiveMind;
 using CalamityMod.NPCs.Leviathan;
 using CalamityMod.NPCs.NormalNPCs;
@@ -241,6 +242,15 @@ namespace CalamityClickers
             {
                 mainRule.Add(ModContent.ItemType<PhoenixClicker>(), 4);
             }
+            if (npc.type == ModContent.NPCType<AresBody>())
+            {
+                bool AresLoot(DropAttemptInfo info) => info.npc.type == ModContent.NPCType<AresBody>() || DownedBossSystem.downedAres;
+                mainRule.Add(ItemDropRule.ByCondition(DropHelper.If(AresLoot), ModContent.ItemType<MechanicalClicker>()));
+            }
+            /*if (npc.type == ModContent.NPCType<SupremeCalamitas>())
+            {
+                mainRule.Add(ModContent.ItemType<>(), 4);
+            }*/
 
         }
         public override void ModifyShop(NPCShop shop)

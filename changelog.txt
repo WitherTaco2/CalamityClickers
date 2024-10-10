@@ -1,4 +1,4 @@
-Update 0.6 - "Dragons and Gods" Update
+Update 0.6 - "D&G (Dragons and Gods)" Update
 
 Added outline cursor textures for some weapons
 
@@ -12,13 +12,15 @@ Added Clicker of Gods. Devourer of Gods drop
 Added Nuclear Clicker. New clicker for Draedon Arsenal on Cosmilite-tier which creates BIG explosion on click effect
 Added Phoenix Clicker. Yharon drop which summon wraths of son of yharon
 Added Mice Catalyst Clicker. Yharon-tier weapon (made from Auric Bars)
+Added Mechanical Clicker. Ares's drop
+Added Miracle Clicker. Exo-related weapon (Post-Exo Mech)
 Added Its Clicker. WitherTaco's (My) Developer (shadowspec) clicker with percentage damage over time debuff
 
 Bloom Clicker now requare Pointy Clicker and 8 Uelibloom Bars instead of 12 Uelibloom Bars
 Bloodstone Clicker now affected by Lifesteal Cooldown
 Bloodstone Clicker now requare Hemo Clicker in recipe
 Bloodstone Clicker now has Hemo Clicker's effect
-The Clicker now has Hot Pink rarity and value
+The Clicker now has Hot Pink rarity and sell value
 
 Fixed Aerospec Capsuit don't have "-Clicker Item-" tag
 Fixed Daedalus Capsuit don't have armor set

@@ -148,6 +148,15 @@ namespace CalamityClickers
             {
                 itemLoot.Add(ModContent.ItemType<PhoenixClicker>(), 4);
             }
+            if (item.type == ModContent.ItemType<DraedonBag>())
+            {
+                var ares = itemLoot.DefineConditionalDropSet(() => DownedBossSystem.downedAres);
+                ares.Add(ModContent.ItemType<MechanicalClicker>());
+            }
+            /*if (item.type == ModContent.ItemType<CalamitasCoffer>())
+            {
+                itemLoot.Add(ModContent.ItemType<>(), 4);
+            }*/
         }
     }
 }
