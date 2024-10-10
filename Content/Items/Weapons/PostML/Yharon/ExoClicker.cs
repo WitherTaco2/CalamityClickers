@@ -10,7 +10,7 @@ using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
 {
-    public class MechanicalClicker : ModdedClickerWeapon
+    public class ExoClicker : ModdedClickerWeapon
     {
         public static string ClickerEffect { get; internal set; } = string.Empty;
         public override float Radius => 8f;
@@ -20,10 +20,10 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
         {
             ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "ExoCrystal", 15, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 7; i++)
                 {
-                    Vector2 vec = Vector2.UnitY.RotatedByRandom(0.1f);
-                    int p = Projectile.NewProjectile(source, position - vec * Main.rand.NextFloat(200, 300), vec * 10, ModContent.ProjectileType<ExoCrystalArrow>(), damage / 3, knockBack / 2, player.whoAmI);
+                    Vector2 vec = Vector2.UnitY.RotatedByRandom(0.75f);
+                    int p = Projectile.NewProjectile(source, position - vec * Main.rand.NextFloat(500, 1000), vec * 10, ModContent.ProjectileType<ExoCrystalArrow>(), damage / 3, knockBack / 2, player.whoAmI);
                     Main.projectile[p].DamageType = ModContent.GetInstance<ClickerDamage>();
                 }
             }, postMoonLord: true);
@@ -34,7 +34,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
             AddEffect(Item, ClickerEffect);
             SetDust(Item, DustType);
 
-            Item.damage = 450;
+            Item.damage = 420;
             Item.knockBack = 1f;
             Item.rare = ModContent.RarityType<Violet>();
             Item.value = CalamityGlobalItem.RarityVioletBuyPrice;

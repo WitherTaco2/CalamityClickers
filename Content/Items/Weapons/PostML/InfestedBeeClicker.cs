@@ -15,7 +15,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
         public static string ClickerEffect { get; internal set; } = string.Empty;
         public override float Radius => 6f;
         public override Color RadiusColor => new Color(154, 186, 74);
-
+        public override bool SetBorderTexture => true;
         public override void SetStaticDefaultsExtra()
         {
             ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "PlagueBees2", 12, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)

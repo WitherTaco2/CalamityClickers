@@ -37,8 +37,9 @@ namespace CalamityClickers.Content.Items.Weapons.HM
             Item.value = CalamityGlobalItem.RarityYellowBuyPrice;
         }
     }
-    public class PlagueClickerProjectile : PlaguenadeBee
+    public class PlagueClickerProjectile : PlaguenadeBee, ILocalizedModType
     {
+        public new string LocalizationCategory => "Projectiles.Clicker";
         public override string Texture => ModContent.GetInstance<PlaguenadeBee>().Texture;
         public override void SetDefaults()
         {

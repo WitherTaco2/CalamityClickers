@@ -1,4 +1,4 @@
-﻿using CalamityMod.Items.Materials;
+﻿using CalamityMod.Items.Placeables.Ores;
 using CalamityMod.Tiles.Furniture.CraftingStations;
 using ClickerClass;
 using ClickerClass.Items.Misc;
@@ -30,7 +30,7 @@ namespace CalamityClickers.Content.Items.Misc
         {
             CreateRecipe()
                 .AddRecipeGroup("AnyNormalSFXButton")
-                .AddIngredient<AuricBar>()
+                .AddIngredient<AuricOre>(10)
                 .AddTile<CosmicAnvil>()
                 .Register();
         }

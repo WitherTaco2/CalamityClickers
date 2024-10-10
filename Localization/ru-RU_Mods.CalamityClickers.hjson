@@ -185,28 +185,43 @@ ClickEffect: {
 	}
 
 	MiceCatalyst: {
-		// Name: Mice Catalyst
-		// Description: Summon a catalyst cloud that creates projectiles which homes to mouse position
+		Name: Каталист Мыши
+		Description: Призовите облако катализатора, которое создает снаряды, летящие к положении мыши
 	}
 
 	PhoenixWrath: {
-		// Name: Phoenix Wrath
-		// Description: Call in a wrath of Phoenixes to blast the area with flames. Inflict Dragonfire
+		Name: Дух феникса
+		Description: Вызывает духов Фениксов, охватывая всё вокруг пламенем. Накладывает Драконье пламя
 	}
 
 	StellarScythe: {
-		// Name: Stellar Scythe
-		// Description: Creates a scythe that change velocity direction to mouse position
+		Name: Звездная коса
+		Description: Создает косу, которая изменяет направление скорости в зависимости от положения мыши
 	}
 
 	NuclearExplosion: {
-		// Name: Nuclear Explosion
-		// Description: BOOM!
+		Name: Ядерный взрыв
+		Description: БУУУУМ!
 	}
 
 	DaedalusLightning: {
-		// Name: Daedalus Lightning
-		// Description: Attracts power of Daedalus from sky (creates lightnings)
+		Name: Daedalus Lightning Молния Дэдала
+		Description: Притягивает силу Дедала с неба (создает молнии)
+	}
+
+	PlagueBees2: {
+		Name: "{$Mods.CalamityClickers.ClickEffect.PlagueBees.Name}"
+		Description: "{$Mods.CalamityClickers.ClickEffect.PlagueBees.Description}"
+	}
+
+	ExoCrystal: {
+		Name: Экзо Кристал
+		Description: Вызывает падение экзо кристалов с небес
+	}
+
+	Exomination: {
+		Name: Exomination Экзоминация
+		Description: Взрывает все в большом радиусе при помощи экзо энергии
 	}
 }
 
@@ -385,10 +400,13 @@ Items: {
 			ClickerOfGods.DisplayName: Курсор Богов
 			StarblightClicker.DisplayName: Курсор звездных останков
 			ItsClicker.DisplayName: Это Курсор
-			// PhoenixClicker.DisplayName: Phoenix Clicker
-			// MiceCatalystClicker.DisplayName: Mice Catalyst Clicker
-			// StellarClicker.DisplayName: Stellar Clicker
-			// NuclearClicker.DisplayName: Nuclear Clicker
+			PhoenixClicker.DisplayName: Курсор Феникса
+			MiceCatalystClicker.DisplayName: Курсор катализатора мыши
+			StellarClicker.DisplayName: Звездный Курсор
+			NuclearClicker.DisplayName: Ядерный Курсор
+			InfestedBeeClicker.DisplayName: Курсор зараженной пчелы
+			ExoClicker.DisplayName: Экзо Курсор
+			MiracleClicker.DisplayName: Чудо-Курсор
 		}
 	}
 
@@ -431,7 +449,8 @@ Items: {
 
 	SFXButtonCalamity.DisplayName: SFX Кнопка - Каламити
 	SFXButtonAstral.DisplayName: SFX Кнопка - Астрал
-	SFXButtonAuric.DisplayName: S F X Кнопка - Аурик
+	SFXButtonAuric.DisplayName: SFX Кнопка - Аурик
+	SFXButtonExhume.DisplayName: SFX Кнопка - Эксгумирование
 }
 
 Projectiles: {
@@ -464,12 +483,10 @@ Projectiles: {
 		MiracleClickerProjectile.DisplayName: Экзо взрыв
 		PhoenixClickerProjectile.DisplayName: Феникс
 		PhoenixClickerProjectile2.DisplayName: Дыхание феникса
-		ExoClickerProjectile.DisplayName: Экзо Взрыв
-		// StellarClickerProjectile.DisplayName: Stellar Scythe
-		// NuclearClickerBoom.DisplayName: Nuclear Explosion
+		StellarClickerProjectile.DisplayName: Звездная коса
+		NuclearClickerBoom.DisplayName: Ядерный взрыв
+		PlagueClickerProjectile.DisplayName: Чумная пчела
 	}
-
-	Rogue.PlagueClickerProjectile.DisplayName: Чумные пчелы
 }
 
 Buffs: {
@@ -479,18 +496,18 @@ Buffs: {
 	}
 
 	WulfrumClickerBuff: {
-		Description: Теперь ты имеешь автокликер
 		DisplayName: Визуализация режима Фульмумового Курсора
+		Description: Теперь ты имеешь автокликер
 	}
 
 	ItsClickerDebuff: {
-		// DisplayName: Its Clicker Debuff
-		// Description: Mods.CalamityClickers.Buffs.ItsClickerDebuff.Description
+		DisplayName: Истинное Иссушение
+		Description: Вы думали что здесь будет локализованное описание. NO!
 	}
 
 	BeetleClickingGloveDebuff: {
-		// Description: Mods.CalamityClickers.Buffs.BeetleClickingGloveDebuff.Description
-		// DisplayName: Beetle Clicking Glove Debuff
+		DisplayName: Сила жучиной кликающей перчатки
+		Description: Вы думали что здесь будет локализованное описание. NO!
 	}
 }
 
@@ -514,5 +531,4 @@ UI: {
 }
 
 // NPCs.LecherousOrbClicker.DisplayName: Lecherous Orb Clicker
-
 Misc.RecipeGroup.AnyNormalSFXButton: Любая обычная SFX кнопка

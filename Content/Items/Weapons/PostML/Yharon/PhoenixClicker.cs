@@ -19,6 +19,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
         public override float Radius => 8f;
         public override Color RadiusColor => new Color(255, 213, 75);
         public override int DustType => DustID.GoldFlame;
+        public override bool SetBorderTexture => true;
         public override void SetStaticDefaultsExtra()
         {
             ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "PhoenixWrath", 12, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)

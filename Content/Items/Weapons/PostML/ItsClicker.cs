@@ -19,7 +19,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
         public static string ClickerEffect { get; internal set; } = string.Empty;
         public override float Radius => 8;
         public override Color RadiusColor => Color.LightGray;
-        public override bool SetBorderTexture => true;
+        //public override bool SetBorderTexture => true;
         public override void SetStaticDefaultsExtra()
         {
             ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "ItzClick", 1, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)

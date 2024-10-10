@@ -2,6 +2,7 @@
 using CalamityMod.CustomRecipes;
 using CalamityMod.Items;
 using CalamityMod.Items.Materials;
+using CalamityMod.Items.Weapons.DraedonsArsenal;
 using CalamityMod.Projectiles.BaseProjectiles;
 using CalamityMod.Rarities;
 using CalamityMod.Tiles.Furniture.CraftingStations;
@@ -10,6 +11,7 @@ using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using Terraria;
+using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -26,6 +28,7 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
         {
             ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "NuclearExplosion", 25, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
+                SoundEngine.PlaySound(TeslaCannon.FireSound, position);
                 for (int i = 0; i < 7; i++)
                 {
                     Projectile explosion = Projectile.NewProjectileDirect(source, position, Vector2.Zero, ModContent.ProjectileType<NuclearClickerBoom>(), damage / 5, knockBack, player.whoAmI);

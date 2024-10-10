@@ -1,4 +1,5 @@
-﻿using CalamityClickers.Content.NPCs;
+﻿using CalamityClickers.Content.Items.Misc;
+using CalamityClickers.Content.NPCs;
 using CalamityMod;
 using CalamityMod.NPCs.Other;
 using CalamityMod.UI.CalamitasEnchants;
@@ -15,6 +16,7 @@ namespace CalamityClickers.Commons
         public static void Load()
         {
             LoadEnchantments();
+            EnchantmentManager.ItemUpgradeRelationship[ModContent.ItemType<SFXButtonCalamity>()] = ModContent.ItemType<SFXButtonExhume>();
         }
         public static void LoadEnchantments()
         {

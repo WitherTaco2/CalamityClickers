@@ -245,7 +245,7 @@ namespace CalamityClickers
             if (npc.type == ModContent.NPCType<AresBody>())
             {
                 bool AresLoot(DropAttemptInfo info) => info.npc.type == ModContent.NPCType<AresBody>() || DownedBossSystem.downedAres;
-                mainRule.Add(ItemDropRule.ByCondition(DropHelper.If(AresLoot), ModContent.ItemType<MechanicalClicker>()));
+                mainRule.Add(ItemDropRule.ByCondition(DropHelper.If(AresLoot), ModContent.ItemType<ExoClicker>()));
             }
             /*if (npc.type == ModContent.NPCType<SupremeCalamitas>())
             {

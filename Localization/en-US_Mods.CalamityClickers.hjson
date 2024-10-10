@@ -208,6 +208,21 @@ ClickEffect: {
 		Name: Daedalus Lightning
 		Description: Attracts power of Daedalus from sky (creates lightnings)
 	}
+
+	PlagueBees2: {
+		Name: "{$Mods.CalamityClickers.ClickEffect.PlagueBees.Name}"
+		Description: "{$Mods.CalamityClickers.ClickEffect.PlagueBees.Description}"
+	}
+
+	ExoCrystal: {
+		Name: Exo Crystal
+		Description: Fall the exo crystals from the sky
+	}
+
+	Exomination: {
+		Name: Exomination
+		Description: Explodes in a larger radius by exo energy
+	}
 }
 
 Items: {
@@ -389,6 +404,9 @@ Items: {
 			MiceCatalystClicker.DisplayName: Mice Catalyst Clicker
 			StellarClicker.DisplayName: Stellar Clicker
 			NuclearClicker.DisplayName: Nuclear Clicker
+			InfestedBeeClicker.DisplayName: Infested Bee Clicker
+			ExoClicker.DisplayName: Exo Clicker
+			MiracleClicker.DisplayName: Miracle Clicker
 		}
 	}
 
@@ -432,6 +450,7 @@ Items: {
 	SFXButtonCalamity.DisplayName: SFX Button - Calamity
 	SFXButtonAstral.DisplayName: SFX Button - Astral
 	SFXButtonAuric.DisplayName: SFX Button - Auric
+	SFXButtonExhume.DisplayName: SFX Button - Exhume
 }
 
 Projectiles: {
@@ -464,12 +483,10 @@ Projectiles: {
 		MiracleClickerProjectile.DisplayName: Exo Explosion
 		PhoenixClickerProjectile.DisplayName: Phoenix
 		PhoenixClickerProjectile2.DisplayName: Phoenix Breath
-		ExoClickerProjectile.DisplayName: Exo Explosion
 		StellarClickerProjectile.DisplayName: Stellar Scythe
 		NuclearClickerBoom.DisplayName: Nuclear Explosion
+		PlagueClickerProjectile.DisplayName: Plague Bee
 	}
-
-	Rogue.PlagueClickerProjectile.DisplayName: Plague Bees
 }
 
 Buffs: {
@@ -479,18 +496,18 @@ Buffs: {
 	}
 
 	WulfrumClickerBuff: {
-		Description: You now has autoclicker
 		DisplayName: Wulfrum Clicker Mode Visualization
+		Description: You now has autoclicker
 	}
 
 	ItsClickerDebuff: {
-		DisplayName: Its Clicker Debuff
-		Description: Mods.CalamityClickers.Buffs.ItsClickerDebuff.Description
+		DisplayName: True Wither
+		Description: You think this debuff has tooltip. NO!
 	}
 
 	BeetleClickingGloveDebuff: {
-		Description: Mods.CalamityClickers.Buffs.BeetleClickingGloveDebuff.Description
-		DisplayName: Beetle Clicking Glove Debuff
+		DisplayName: Beetle Clicking Glove Power
+		Description: You think this debuff has tooltip. NO!
 	}
 }
 

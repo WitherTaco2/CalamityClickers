@@ -151,7 +151,7 @@ namespace CalamityClickers
             if (item.type == ModContent.ItemType<DraedonBag>())
             {
                 var ares = itemLoot.DefineConditionalDropSet(() => DownedBossSystem.downedAres);
-                ares.Add(ModContent.ItemType<MechanicalClicker>());
+                ares.Add(ModContent.ItemType<ExoClicker>());
             }
             /*if (item.type == ModContent.ItemType<CalamitasCoffer>())
             {

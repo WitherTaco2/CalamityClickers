@@ -1,5 +1,6 @@
 ﻿using CalamityMod.Items;
 using CalamityMod.Items.Materials;
+using CalamityMod.NPCs.SlimeGod;
 using CalamityMod.Tiles.Furniture.CraftingStations;
 using ClickerClass;
 using Microsoft.Xna.Framework;
@@ -21,6 +22,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
         {
             ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "SlimePuppet", 6, new Color(243, 79, 174), delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
+                SoundEngine.PlaySound(SlimeGodCore.PossessionSound, position);
                 Projectile.NewProjectile(source, position, Vector2.UnitX.RotatedByRandom(MathHelper.ToRadians(180)), ModContent.ProjectileType<GooClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
             }, true);
         }
