@@ -15,7 +15,7 @@ Added Nuclear Clicker. New clicker for Draedon Arsenal on Cosmilite-tier which c
 Added Phoenix Clicker. Yharon drop which summon wraths of son of yharon
 Added Mice Catalyst Clicker. Auric-tier weapon
 Added Exo Clicker. Ares's (Exo Mech's) drop
-Added Miracle Clicker. Exo-related weapon (Post-Exo Mech)
+Added Miracle Clicker. Miracle Matter-related weapon (Post-Exo Mech)
 Added Its Clicker. WitherTaco's (My) Developer (shadowspec) clicker with percentage damage over time debuff
 
 Bloom Clicker now requare Pointy Clicker and 8 Uelibloom Bars instead of 12 Uelibloom Bars
