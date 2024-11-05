@@ -532,3 +532,14 @@ UI: {
 
 // NPCs.LecherousOrbClicker.DisplayName: Lecherous Orb Clicker
 Misc.RecipeGroup.AnyNormalSFXButton: Любая обычная SFX кнопка
+
+Configs: {
+	CalamityClickersConfig: {
+		// DisplayName: Calamity Clickers Config
+
+		LegecyClickerTextures: {
+			// Label: Legecy Clicker Textures
+			// Tooltip: ""
+		}
+	}
+}

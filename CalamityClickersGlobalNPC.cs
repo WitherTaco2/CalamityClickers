@@ -268,6 +268,8 @@ namespace CalamityClickers
             if (type == NPCID.PartyGirl)
             {
                 shop.Add<SFXButtonCalamity>(Condition.BloodMoon);
+                shop.Add<SFXButtonAstral>(CalamityConditions.InAstral);
+                shop.Add<SFXButtonAuric>(CalamityConditions.DownedYharon);
             }
         }
     }

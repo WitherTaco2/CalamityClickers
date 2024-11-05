@@ -19,6 +19,9 @@ Also mod has changes in clicker class and calamity
 7. Clicker class items can be used in recipe groups (Like Mice Hamaxe in Grax recipe)
 8. Adapted calamity changes to clicker class items (like The Scroller unique effect or buff of mice tools)
 
+Special Thanks:
+Puka1611 and Trudle for greatest clicker resprite
+Aeolus for minor helping
 
 QNA?
 Q: Why he is beta?

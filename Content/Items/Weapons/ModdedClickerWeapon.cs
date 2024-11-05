@@ -2,7 +2,9 @@
 using ClickerClass.Items;
 using ClickerClass.Projectiles;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
+using System.Reflection;
 using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
@@ -15,10 +17,41 @@ namespace CalamityClickers.Content.Items.Weapons
         //public static string ClickerEffect { get; internal set; } = string.Empty;
         public override LocalizedText Tooltip => Language.GetOrRegister("Mods.ClickerClass.Common.Tooltips.Clicker");
         public virtual bool SetBorderTexture => false;
+        public override string Texture
+        {
+            get
+            {
+                if (ModContent.RequestIfExists<Texture2D>(base.Texture + "_Legecy", out var _) && CalamityClickersConfig.Instance.LegecyClickerTextures)
+                    return base.Texture + "_Legecy";
+                return base.Texture;
+            }
+        }
+        public string BorderTexture
+        {
+            get
+            {
+                if (ModContent.RequestIfExists<Texture2D>(Texture + "_Outline", out var _))
+                    return Texture + "_Outline";
+                return null;
+            }
+        }
         public override void SetStaticDefaults()
         {
             base.SetStaticDefaults();
-            ClickerSystem.RegisterClickerWeapon(this, SetBorderTexture ? (Texture + "_Outline") : null);
+            //if (BorderTexture is null)
+            //    Mod.Logger.Debug(this.Name + "'s outline returns null");
+            //Mod.Logger.Debug(this.Name + ": " + BorderTexture ?? "");
+            ClickerSystem.RegisterClickerWeapon(this, BorderTexture);
+            //Mod.Logger.Debug(this.Name + " has in ClickerWeaponBorderTexture: " + ClickerSystem.GetPathToBorderTexture(Item.type));
+            if (BorderTexture != null)
+            {
+                PropertyInfo b = typeof(ClickerSystem).GetProperty("ClickerWeaponBorderTexture", BindingFlags.Static | BindingFlags.NonPublic);
+                var v = ((Dictionary<int, string>)b.GetValue(ModContent.GetInstance<ClickerSystem>()));
+                v.Add(Item.type, BorderTexture);
+                b.SetValue(ModContent.GetInstance<ClickerSystem>(), v);
+
+            }
+
             SetStaticDefaultsExtra();
 
         }

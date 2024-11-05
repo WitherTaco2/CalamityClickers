@@ -1,6 +1,4 @@
-﻿using CalamityMod.Items.Materials;
-using CalamityMod.Tiles.Furniture.CraftingStations;
-using ClickerClass;
+﻿using ClickerClass;
 using ClickerClass.Items.Misc;
 using System;
 using Terraria;
@@ -26,13 +24,13 @@ namespace CalamityClickers.Content.Items.Misc
             ClickerSystem.RegisterSFXButton(this, (Action<int>)PlaySound); //The cast is necessary here to avoid a warning
         }
 
-        public override void AddRecipes()
+        /*public override void AddRecipes()
         {
             CreateRecipe()
                 .AddRecipeGroup("AnyNormalSFXButton")
                 .AddIngredient<StarblightSoot>(10)
                 .AddTile<CosmicAnvil>()
                 .Register();
-        }
+        }*/
     }
 }

@@ -23,7 +23,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
                 for (int i = 0; i < 7; i++)
                 {
                     Vector2 vec = Vector2.UnitY.RotatedByRandom(0.75f);
-                    int p = Projectile.NewProjectile(source, position - vec * Main.rand.NextFloat(500, 1000), vec * 10, ModContent.ProjectileType<ExoCrystalArrow>(), damage / 3, knockBack / 2, player.whoAmI);
+                    int p = Projectile.NewProjectile(source, position - vec * Main.rand.NextFloat(500, 1000), vec * 20, ModContent.ProjectileType<ExoCrystalArrow>(), damage / 3, knockBack / 2, player.whoAmI);
                     Main.projectile[p].DamageType = ModContent.GetInstance<ClickerDamage>();
                 }
             }, postMoonLord: true);
