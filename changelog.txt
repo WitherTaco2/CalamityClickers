@@ -1,4 +1,4 @@
-Update 0.6 - "D&G (Dragons and Gods)" Update
+Update 1.0 - D&G "Final" Update
 
 Added outline cursor textures for some weapons
 
@@ -16,6 +16,7 @@ Added Phoenix Clicker. Yharon drop which summon wraths of son of yharon
 Added Mice Catalyst Clicker. Auric-tier weapon
 Added Exo Clicker. Ares's (Exo Mech's) drop
 Added Miracle Clicker. Miracle Matter-related weapon (Post-Exo Mech)
+Added Cruel Clicker. Supreme Witch, Calamitas drop
 Added Its Clicker. WitherTaco's (My) Developer (shadowspec) clicker with percentage damage over time debuff
 
 Bloom Clicker now requare Pointy Clicker and 8 Uelibloom Bars instead of 12 Uelibloom Bars
@@ -23,7 +24,12 @@ Bloodstone Clicker now affected by Lifesteal Cooldown
 Bloodstone Clicker now requare Hemo Clicker in recipe
 Bloodstone Clicker now has Hemo Clicker's effect
 The Clicker now has Hot Pink rarity and sell value
-Added some sounds for clicker effects
+Added sounds for some clicker effects
+Astrum Deus now drops Mice Fragments
 
 Fixed Aerospec Capsuit don't have "-Clicker Item-" tag
 Fixed Daedalus Capsuit don't have armor set
+Fixed Astrum Deus both worms drops clickers in normal mode
+
+Note: 
+D&G - Dragons & Gods

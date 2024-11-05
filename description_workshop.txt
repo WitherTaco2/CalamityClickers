@@ -1,20 +1,17 @@
 Calamity Clicker is addon which adds new clickers where used calamity materials or dropped from calamity bosses. This addon also planned add more post-Moonlord content up to Shadowspec-tier
 
-Currect development progress: 
-Pre-hardmode clickers - almost completed
-Hardmode clickers - DONE
-Post-Moonlord clickers - made up to post-Devourer of Gods
-Draedon Arsenal clickers - only Mythril-tier correctly (i need ideas)
-Armor - completed
-Accessories - almost completed (need more ideas for accessories)
-
+Furute progress path:
+Complete Draedon Arsenal clickers set
+Add some forgotted clickers (like Old Duke's Clicker)
+Clickers for other addons (Like Bereft Vassal's Clicker for Infernum Mode)
+Donor Clickers?
 
 Also mod has changes in clicker class and calamity
 1. Now reducing the click amount for click effect recalculated: real click amount percent = 1 / (2 - actual click amount percent)
 2. 'The Clicker' and 'Quintessence Clicker' moved into Endgame Stage. (He is OP) The Clicker now crafted with using Shadowspec Bars. Making Quintessence Clicker now allow only after defeating Exo Mechs and Calamitas
 3. Galactica Singularity now uses Mice Fragments in craft
 4. Any Lunar Pillar enemies now drops mice fragments (less chance when other fragments but drops by any this event enemies)
-5. Gamer Crate now uses Purified Gel in craft
+5. Gamer Crate now uses Purified Gel in craft (make accessory after Slime God)
 6. Calamity's Starter Bag contain starter clicker (Tin or Copper)
 7. Clicker class items can be used in recipe groups (Like Mice Hamaxe in Grax recipe)
 8. Adapted calamity changes to clicker class items (like The Scroller unique effect or buff of mice tools)
@@ -23,9 +20,6 @@ Special Thanks:
 Puka1611 and Trudle for greatest clicker resprite
 Aeolus for minor helping
 
-QNA?
-Q: Why he is beta?
-A: I don't want to release it completely, but to release updates step by step. So you can already test what I have ready
+[h1]My discord server:[url=https://discord.gg/7auk3bDb3K] Link[/url][/h1]
 
-Q; WitherTaco, Why you don't update a Clicker Addom
-A: I think Calamity Clickers mod is a stand-alone product. Moreover, this is my experiment on how my modding skills have changed
+[h1]You can support me on [url=https://ko-fi.com/withertaco] Ko-fi[/url][/h1]

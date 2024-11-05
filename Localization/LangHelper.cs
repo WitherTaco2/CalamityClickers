@@ -26,7 +26,7 @@ namespace CalamityClickers
         {
             return Language.GetOrRegister($"Mods.{mod.Name}.{key}");
         }
-        public static LocalizedText GetLocalizedText(string key)
+        internal static LocalizedText GetLocalizedText(string key)
         {
             return GetLocalizedText(CalamityClickers.mod, key);
         }

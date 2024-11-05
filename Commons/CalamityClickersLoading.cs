@@ -1,4 +1,4 @@
-﻿using CalamityClickers.Content.Items.Misc;
+﻿using CalamityClickers.Content.Items.Misc.SFXButton;
 using CalamityClickers.Content.NPCs;
 using CalamityMod;
 using CalamityMod.NPCs.Other;

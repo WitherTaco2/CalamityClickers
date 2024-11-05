@@ -1,5 +1,5 @@
 ﻿using CalamityClickers.Content.Items.Armor;
-using CalamityClickers.Content.Items.Misc;
+using CalamityClickers.Content.Items.Misc.SFXButton;
 using CalamityClickers.Content.Items.Weapons.HM;
 using CalamityClickers.Content.Items.Weapons.PostML;
 using CalamityClickers.Content.Items.Weapons.PostML.DoG;
@@ -218,7 +218,13 @@ namespace CalamityClickers
             }
             if (npc.type == ModContent.NPCType<AstrumDeusHead>())
             {
-                mainRule.Add(ModContent.ItemType<CosmicStarClicker>(), 4);
+                var lastWorm = npcLoot.DefineConditionalDropSet(info => !AstrumDeusHead.ShouldNotDropThings(info.npc));
+
+                lastWorm.Add(DropHelper.NormalVsExpertQuantity(ModContent.ItemType<MiceFragment>(), 1, 16, 24, 20, 32));
+
+                var normalOnly = new LeadingConditionRule(new Conditions.NotExpert());
+                lastWorm.Add(normalOnly);
+                normalOnly.Add(ModContent.ItemType<CosmicStarClicker>(), 4);
             }
 
 
@@ -264,6 +270,7 @@ namespace CalamityClickers
             if (type == NPCID.Clothier)
             {
                 shop.AddWithCustomValue(ModContent.ItemType<SilvaCapsuit>(), Item.buyPrice(gold: 8), new Condition(CalamityUtils.GetText("Condition.PostDoG"), () => DownedBossSystem.downedDoG));
+                shop.AddWithCustomValue(ModContent.ItemType<ReaverCapsuit>(), Item.buyPrice(gold: 4), new Condition(LangHelper.GetLocalizedText("Condition.PostPlant"), () => NPC.downedPlantBoss));
             }
             if (type == NPCID.PartyGirl)
             {

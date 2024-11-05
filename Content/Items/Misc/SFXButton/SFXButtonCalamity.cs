@@ -3,7 +3,7 @@ using ClickerClass.Items.Misc;
 using System;
 using Terraria.Audio;
 
-namespace CalamityClickers.Content.Items.Misc
+namespace CalamityClickers.Content.Items.Misc.SFXButton
 {
     public class SFXButtonCalamity : SFXButtonBase
     {
@@ -20,7 +20,7 @@ namespace CalamityClickers.Content.Items.Misc
         {
             base.SetStaticDefaults();
 
-            ClickerSystem.RegisterSFXButton(this, (Action<int>)PlaySound); //The cast is necessary here to avoid a warning
+            ClickerSystem.RegisterSFXButton(this, PlaySound); //The cast is necessary here to avoid a warning
         }
     }
 }
