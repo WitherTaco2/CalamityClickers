@@ -2,34 +2,39 @@ Update 1.0 - D&G "Final" Update
 
 Added outline cursor textures for some weapons
 
+New SFX Buttons:
 Added SFX Button Calamity with Calamity Bell sound
 Added SFX Button Auric with auric ore hit sound
 Added SFX Button Astral with mostly astral enemy hit sound
 Added SFX Button Exhumed with exhume sound
 
+New Clickers:
 Added Starbright Clicker. Clicker which crafted from Astral Bars
 Added Stellar Clicker. Drop from Stellar Culex (Astral biome enemy) after Astrum Aureus
 Added Infested Bee Clicker. Upgraded version of Plague Clicker
 Added Clicker of Gods. Devourer of Gods drop
+Added Cosmilite Clicker. Clicker what crafts from pure Cosmilite Bars
 Added Nuclear Clicker. New clicker for Draedon Arsenal on Cosmilite-tier which creates BIG explosion on click effect
 Added Phoenix Clicker. Yharon drop which summon wraths of son of yharon
-Added Mice Catalyst Clicker. Auric-tier weapon
+Added Mice Catalyst Clicker. Auric Bar-tier weapon
 Added Exo Clicker. Ares's (Exo Mech's) drop
 Added Miracle Clicker. Miracle Matter-related weapon (Post-Exo Mech)
-Added Cruel Clicker. Supreme Witch, Calamitas drop
+Added Cruel Clicker. Supreme Witch, Calamitas's drop
 Added Its Clicker. WitherTaco's (My) Developer (shadowspec) clicker with percentage damage over time debuff
 
-Resprited every clicker (thanks Puka1611 and Trudle)
+Changes:
+Resprited every clicker and added config with legecy sprites (thanks Puka1611 and Trudle)
 Bloom Clicker now requare Pointy Clicker and 8 Uelibloom Bars instead of 12 Uelibloom Bars
-Bloodstone Clicker now affected by Lifesteal Cooldown
+Bloodstone Clicker now uses Lifesteal Cooldown
 Bloodstone Clicker now requare Hemo Clicker in recipe
 Bloodstone Clicker now has Hemo Clicker's effect
 The Clicker now has Hot Pink rarity and sell value
 Added sounds for some clicker effects
-Astrum Deus now drops Mice Fragments
+Astrum Deus now drops Mice Fragments like other fragments
 
+Bug Fixes:
 Fixed Aerospec Capsuit don't have "-Clicker Item-" tag
-Fixed Daedalus Capsuit don't have armor set
+Fixed Daedalus Capsuit don't have armor set bonus
 Fixed Astrum Deus both worms drops clickers in normal mode
 
 Note: 
