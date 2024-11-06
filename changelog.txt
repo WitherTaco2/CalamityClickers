@@ -19,6 +19,7 @@ Added Miracle Clicker. Miracle Matter-related weapon (Post-Exo Mech)
 Added Cruel Clicker. Supreme Witch, Calamitas drop
 Added Its Clicker. WitherTaco's (My) Developer (shadowspec) clicker with percentage damage over time debuff
 
+Resprited every clicker (thanks Puka1611 and Trudle)
 Bloom Clicker now requare Pointy Clicker and 8 Uelibloom Bars instead of 12 Uelibloom Bars
 Bloodstone Clicker now affected by Lifesteal Cooldown
 Bloodstone Clicker now requare Hemo Clicker in recipe

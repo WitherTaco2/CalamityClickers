@@ -543,3 +543,5 @@ Configs: {
 		}
 	}
 }
+
+// Condition.PostPlant: After defeating Plantera
