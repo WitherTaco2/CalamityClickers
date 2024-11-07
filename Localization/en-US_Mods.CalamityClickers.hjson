@@ -223,6 +223,21 @@ ClickEffect: {
 		Name: Exomination
 		Description: Explodes in a larger radius by exo energy
 	}
+
+	Distort: {
+		Name: Distort
+		Description: $Mods.ClickerClass.Common.Unknown
+	}
+
+	Hurt: {
+		Name: Hurt
+		Description: $Mods.ClickerClass.Common.Unknown
+	}
+
+	LecherousOrb: {
+		Name: Lecherous Orb
+		Description: $Mods.ClickerClass.Common.Unknown
+	}
 }
 
 Items: {
@@ -357,6 +372,11 @@ Items: {
 				DisplayName: Silva Capsuit
 				Tooltip: ""
 			}
+
+			ReaverCapsuit: {
+				DisplayName: Reaver Capsuit
+				Tooltip: ""
+			}
 		}
 	}
 
@@ -407,6 +427,9 @@ Items: {
 			InfestedBeeClicker.DisplayName: Infested Bee Clicker
 			ExoClicker.DisplayName: Exo Clicker
 			MiracleClicker.DisplayName: Miracle Clicker
+			CosmiliteClicker.DisplayName: Cosmilite Clicker
+			СruelClicker.DisplayName: Сruel Clicker
+			CruelClicker.DisplayName: Cruel Clicker
 		}
 	}
 
@@ -486,6 +509,9 @@ Projectiles: {
 		StellarClickerProjectile.DisplayName: Stellar Scythe
 		NuclearClickerBoom.DisplayName: Nuclear Explosion
 		PlagueClickerProjectile.DisplayName: Plague Bee
+		CosmiliteClickerProjectile.DisplayName: Cosmilite Clicker Projectile
+		СruelClickerProjectile.DisplayName: Сruel Clicker Projectile
+		CruelClickerProjectile.DisplayName: Cruel Clicker Projectile
 	}
 }
 
@@ -543,4 +569,5 @@ Configs: {
 		}
 	}
 }
+
 Condition.PostPlant: After defeating Plantera

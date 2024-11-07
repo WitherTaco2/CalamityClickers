@@ -27,6 +27,7 @@ using CalamityMod.NPCs.PlaguebringerGoliath;
 using CalamityMod.NPCs.Polterghast;
 using CalamityMod.NPCs.Providence;
 using CalamityMod.NPCs.Ravager;
+using CalamityMod.NPCs.SupremeCalamitas;
 using CalamityMod.NPCs.TownNPCs;
 using CalamityMod.NPCs.Yharon;
 using ClickerClass.Items;
@@ -253,10 +254,10 @@ namespace CalamityClickers
                 bool AresLoot(DropAttemptInfo info) => info.npc.type == ModContent.NPCType<AresBody>() || DownedBossSystem.downedAres;
                 mainRule.Add(ItemDropRule.ByCondition(DropHelper.If(AresLoot), ModContent.ItemType<ExoClicker>()));
             }
-            /*if (npc.type == ModContent.NPCType<SupremeCalamitas>())
+            if (npc.type == ModContent.NPCType<SupremeCalamitas>())
             {
-                mainRule.Add(ModContent.ItemType<>(), 4);
-            }*/
+                mainRule.Add(ModContent.ItemType<CruelClicker>(), 4);
+            }
 
         }
         public override void ModifyShop(NPCShop shop)

@@ -223,6 +223,21 @@ ClickEffect: {
 		Name: Exomination Экзоминация
 		Description: Взрывает все в большом радиусе при помощи экзо энергии
 	}
+
+	Distort: {
+		// Name: Distort
+		// Description: $Mods.ClickerClass.Common.Unknown
+	}
+
+	Hurt: {
+		// Name: Hurt
+		// Description: $Mods.ClickerClass.Common.Unknown
+	}
+
+	LecherousOrb: {
+		// Name: Lecherous Orb
+		// Description: $Mods.ClickerClass.Common.Unknown
+	}
 }
 
 Items: {
@@ -357,6 +372,11 @@ Items: {
 				DisplayName: Вр-Шлем Сильвы
 				Tooltip: ""
 			}
+
+			ReaverCapsuit: {
+				// DisplayName: Reaver Capsuit
+				// Tooltip: ""
+			}
 		}
 	}
 
@@ -407,6 +427,9 @@ Items: {
 			InfestedBeeClicker.DisplayName: Курсор зараженной пчелы
 			ExoClicker.DisplayName: Экзо Курсор
 			MiracleClicker.DisplayName: Чудо-Курсор
+			// CosmiliteClicker.DisplayName: Cosmilite Clicker
+			// СruelClicker.DisplayName: Сruel Clicker
+			// CruelClicker.DisplayName: Cruel Clicker
 		}
 	}
 
@@ -486,6 +509,9 @@ Projectiles: {
 		StellarClickerProjectile.DisplayName: Звездная коса
 		NuclearClickerBoom.DisplayName: Ядерный взрыв
 		PlagueClickerProjectile.DisplayName: Чумная пчела
+		// CosmiliteClickerProjectile.DisplayName: Cosmilite Clicker Projectile
+		// СruelClickerProjectile.DisplayName: Сruel Clicker Projectile
+		// CruelClickerProjectile.DisplayName: Cruel Clicker Projectile
 	}
 }
 

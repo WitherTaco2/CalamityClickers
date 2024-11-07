@@ -153,10 +153,10 @@ namespace CalamityClickers
                 var ares = itemLoot.DefineConditionalDropSet(() => DownedBossSystem.downedAres);
                 ares.Add(ModContent.ItemType<ExoClicker>());
             }
-            /*if (item.type == ModContent.ItemType<CalamitasCoffer>())
+            if (item.type == ModContent.ItemType<CalamitasCoffer>())
             {
-                itemLoot.Add(ModContent.ItemType<>(), 4);
-            }*/
+                itemLoot.Add(ModContent.ItemType<CruelClicker>(), 4);
+            }
         }
     }
 }
