@@ -5,7 +5,7 @@ Complete Draedon Arsenal clickers set
 Add some forgotted clickers (like Old Duke's Clicker)
 Clickers for other addons (Like Bereft Vassal's Clicker for Infernum Mode)
 Donor Clickers?
-Make Renames and Reworks of clickers
+Make Renames and Reworks of clickers?
 
 Also mod has changes in clicker class and calamity
 1. Now reducing the click amount for click effect recalculated: real click amount percent = 1 / (2 - actual click amount percent)

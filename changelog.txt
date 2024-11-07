@@ -1,6 +1,7 @@
 Update 1.0 - D&G "Final" Update
 
 Added outline cursor textures for some weapons
+Added drawing on player for D.o.G.
 
 New SFX Buttons:
 Added SFX Button Calamity with Calamity Bell sound

@@ -11,6 +11,7 @@ using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Accessories
 {
+    [AutoloadEquip(EquipType.Waist)]
     public class DOG : ClickerItem, ILocalizedModType, IModType
     {
         public new string LocalizationCategory => "Items.Accessories";
