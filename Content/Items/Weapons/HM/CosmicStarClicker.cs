@@ -12,12 +12,12 @@ namespace CalamityClickers.Content.Items.Weapons.HM
 {
     public class CosmicStarClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string StarRain { get; internal set; } = string.Empty;
         public override float Radius => 6f;
         public override Color RadiusColor => new Color(123, 99, 130);
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "StarRain", 15, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            StarRain = ClickerSystem.RegisterClickEffect(Mod, "StarRain", 15, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 for (int i = 0; i < 4; i++)
                 {
@@ -28,7 +28,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, StarRain);
             SetDust(Item, ModContent.DustType<AstralBasic>());
 
             Item.damage = 95;

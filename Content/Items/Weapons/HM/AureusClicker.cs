@@ -16,12 +16,12 @@ namespace CalamityClickers.Content.Items.Weapons.HM
 {
     public class AureusClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string AureusBlast { get; internal set; } = string.Empty;
         public override float Radius => 4f;
         public override Color RadiusColor => new Color(123, 99, 130);
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "AureusBlast", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            AureusBlast = ClickerSystem.RegisterClickEffect(Mod, "AureusBlast", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 SoundEngine.PlaySound(SoundID.Item10, position);
 
@@ -67,7 +67,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, AureusBlast);
             SetDust(Item, ModContent.DustType<AstralBasic>());
 
             Item.damage = 66;

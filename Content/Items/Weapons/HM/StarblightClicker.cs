@@ -15,13 +15,13 @@ namespace CalamityClickers.Content.Items.Weapons.HM
 {
     public class StarblightClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string Stardust { get; internal set; } = string.Empty;
         public override float Radius => 6f;
         public override Color RadiusColor => Color.Lerp(new Color(109, 242, 196), new Color(237, 93, 83), MathF.Sin(Main.GlobalTimeWrappedHourly * 2) / 2 + 0.5f);
         public override bool SetBorderTexture => true;
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "Stardust", 9, () => RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            Stardust = ClickerSystem.RegisterClickEffect(Mod, "Stardust", 9, () => RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<StarblightClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
 
@@ -29,7 +29,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, Stardust);
             SetDust(Item, ModContent.DustType<AstralOrange>());
 
             Item.damage = 95;

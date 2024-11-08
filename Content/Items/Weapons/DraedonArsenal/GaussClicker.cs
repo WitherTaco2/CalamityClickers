@@ -14,19 +14,19 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
 {
     public class GaussClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string GaussFlux { get; internal set; } = string.Empty;
         public override float Radius => 3.4f;
         public override Color RadiusColor => new Color(88, 81, 85);
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "GaussFlux", 8, new Color(206, 255, 31), delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            GaussFlux = ClickerSystem.RegisterClickEffect(Mod, "GaussFlux", 8, new Color(206, 255, 31), delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<GaussClickerProjectile>(), damage / 2, 0f, player.whoAmI, 0);
             });
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, GaussFlux);
 
             Item.damage = 35;
             Item.knockBack = 1.5f;

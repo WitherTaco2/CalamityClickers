@@ -19,7 +19,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ScourgeClicker.ClickerEffect);
+            AddEffect(Item, ScourgeClicker.Sandstorm);
             //SetDust(Item, ModContent.DustType<BrimstoneFlameClickers>());
 
             Item.damage = 23;

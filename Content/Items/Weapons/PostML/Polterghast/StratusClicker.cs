@@ -16,12 +16,12 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Polterghast
 {
     public class StratusClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string StratusMoon { get; internal set; } = string.Empty;
         public override float Radius => 7.5f;
         public override Color RadiusColor => new Color(123, 228, 234);
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "StratusMoon", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            StratusMoon = CalamityClickersUtils.RegisterClickEffect(Mod, "StratusMoon", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 for (int i = 0; i < 7; i++)
                 {
@@ -33,7 +33,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Polterghast
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, StratusMoon);
             SetDust(Item, 176);
 
             Item.damage = 190;

@@ -11,12 +11,12 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
 {
     public class RedLightningClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string ItzClick { get; internal set; } = string.Empty;
         public override float Radius => 6.1f;
         public override Color RadiusColor => Color.Red;
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "RedLightning", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            ItzClick = CalamityClickersUtils.RegisterClickEffect(Mod, "RedLightning", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 for (int n = 0; n < 4; n++)
                 {
@@ -40,7 +40,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, ItzClick);
             SetDust(Item, DustID.RedTorch);
 
             Item.damage = 130;

@@ -12,19 +12,19 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
 {
     public class ScourgeClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string Sandstorm { get; internal set; } = string.Empty;
         public override float Radius => 2f;
         public override Color RadiusColor => new Color(124, 81, 60);
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "Sandstorm", 8, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            Sandstorm = ClickerSystem.RegisterClickEffect(Mod, "Sandstorm", 8, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<ScourgeClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
             }, true);
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, Sandstorm);
             SetDust(Item, 288);
 
             Item.damage = 6;

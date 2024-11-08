@@ -15,13 +15,13 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Providance
 {
     public class BloomClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string TarragonThorns { get; internal set; } = string.Empty;
         public override float Radius => 7f;
         public override Color RadiusColor => new Color(67, 99, 83);
 
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "TarragonThorns", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            TarragonThorns = CalamityClickersUtils.RegisterClickEffect(Mod, "TarragonThorns", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 float random = Main.rand.Next(30, 90);
                 float spread = random * 0.0174f;
@@ -43,7 +43,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Providance
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, TarragonThorns);
             SetDust(Item, DustID.CursedTorch);
 
             Item.damage = 145;

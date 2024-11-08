@@ -11,12 +11,12 @@ namespace CalamityClickers.Content.Items.Weapons.HM
 {
     public class PlagueClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string PlagueBees { get; internal set; } = string.Empty;
         public override float Radius => 6f;
         public override Color RadiusColor => new Color(154, 186, 74);
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "PlagueBees", 15, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            PlagueBees = ClickerSystem.RegisterClickEffect(Mod, "PlagueBees", 15, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 for (int projIndex = 0; projIndex < 20; projIndex++)
                 {
@@ -28,7 +28,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, PlagueBees);
             SetDust(Item, 220);
 
             Item.damage = 86;

@@ -12,7 +12,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
 {
     public class BloodGodsClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string BloodBlasts { get; internal set; } = string.Empty;
         public override float Radius => 5.9f;
         public override Color RadiusColor => new Color(111, 169, 241);
         public override bool SetBorderTexture => true;
@@ -20,7 +20,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         public static readonly int BlastAmount = 5;
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "BloodBlasts", 7, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            BloodBlasts = ClickerSystem.RegisterClickEffect(Mod, "BloodBlasts", 7, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 //Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<BloodGodFlareClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
                 SoundEngine.PlaySound(SoundID.Item24, position);
@@ -50,7 +50,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, BloodBlasts);
             SetDust(Item, DustID.IceTorch);
 
             Item.damage = 60;

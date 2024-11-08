@@ -13,20 +13,20 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Providance
 {
     public class ProfanedClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string ProfanedInferno { get; internal set; } = string.Empty;
         public override float Radius => 7f;
         public override Color RadiusColor => new Color(255, 255, 150);
 
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "ProfanedInferno", 7, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            ProfanedInferno = CalamityClickersUtils.RegisterClickEffect(Mod, "ProfanedInferno", 7, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<ProfanedClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
             }, postMoonLord: true);
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, ProfanedInferno);
             SetDust(Item, ModContent.DustType<HolyFireDust>());
 
             Item.damage = 140;

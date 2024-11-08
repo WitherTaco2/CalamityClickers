@@ -14,13 +14,13 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
 {
     public class ClickerOfGods : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string NebulaStars { get; internal set; } = string.Empty;
         public override float Radius => 8f;
         public override Color RadiusColor => Color.Lerp(new Color(39, 151, 171), new Color(252, 109, 202), MathF.Sin(Main.GlobalTimeWrappedHourly * 2) / 2 + 0.5f);
         public override int DustType => Main.rand.NextBool() ? DustID.GemSapphire : DustID.GemAmethyst;
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "NebulaStars", 7, () => RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            NebulaStars = CalamityClickersUtils.RegisterClickEffect(Mod, "NebulaStars", 7, () => RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 for (int i = 0; i < 7; i++)
                 {
@@ -30,7 +30,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, NebulaStars);
             SetDust(Item, DustType);
 
             Item.damage = 300;

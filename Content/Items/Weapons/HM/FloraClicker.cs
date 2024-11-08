@@ -16,20 +16,20 @@ namespace CalamityClickers.Content.Items.Weapons.HM
     [LegacyName("TerraClicker")]
     public class FloraClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string TerraAura { get; internal set; } = string.Empty;
         public override float Radius => 3.5f;
         public override Color RadiusColor => new Color(141, 203, 50);
 
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "TerraAura", 14, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            TerraAura = ClickerSystem.RegisterClickEffect(Mod, "TerraAura", 14, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<FloraClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
             });
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, TerraAura);
             SetDust(Item, DustID.TerraBlade);
 
             Item.damage = 64;

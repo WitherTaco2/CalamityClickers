@@ -15,14 +15,14 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
 {
     public class PhoenixClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string PhoenixWrath { get; internal set; } = string.Empty;
         public override float Radius => 8f;
         public override Color RadiusColor => new Color(255, 213, 75);
         public override int DustType => DustID.GoldFlame;
         public override bool SetBorderTexture => true;
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "PhoenixWrath", 12, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            PhoenixWrath = CalamityClickersUtils.RegisterClickEffect(Mod, "PhoenixWrath", 12, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 int offSet = player.direction * 350;
                 float direction = player.direction * 3f;
@@ -30,11 +30,11 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
                 Projectile.NewProjectile(source, new Vector2(position.X - offSet, position.Y - 225), new Vector2(direction, 0f), ModContent.ProjectileType<PhoenixClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
                 Projectile.NewProjectile(source, new Vector2(position.X + offSet, position.Y - 200), new Vector2(-direction, 0f), ModContent.ProjectileType<PhoenixClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
             }, postMoonLord: true);
-            CalamityClickersUtils.RegisterBlacklistedClickEffect(ClickerEffect);
+            CalamityClickersUtils.RegisterBlacklistedClickEffect(PhoenixWrath);
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, PhoenixWrath);
             SetDust(Item, DustType);
 
             Item.damage = 400;

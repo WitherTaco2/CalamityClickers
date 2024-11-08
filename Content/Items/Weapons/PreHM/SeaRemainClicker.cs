@@ -12,19 +12,19 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
 {
     public class SeaRemainClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string SeaBubble { get; internal set; } = string.Empty;
         public override float Radius => 2f;
         public override Color RadiusColor => new Color(25, 79, 150);
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "SeaBubble", 8, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            SeaBubble = ClickerSystem.RegisterClickEffect(Mod, "SeaBubble", 8, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<SeaRemainClickerProjectile>(), damage * 2, knockBack, player.whoAmI, 1);
             }, true);
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, SeaBubble);
 
             Item.damage = 6;
             Item.knockBack = 1f;

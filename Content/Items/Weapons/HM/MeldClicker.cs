@@ -14,13 +14,13 @@ namespace CalamityClickers.Content.Items.Weapons.HM
 {
     public class MeldClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string Entropy { get; internal set; } = string.Empty;
         public override float Radius => 6f;
         public override Color RadiusColor => new Color(117, 255, 159);
         public override bool SetBorderTexture => true;
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "Entropy", 15, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            Entropy = ClickerSystem.RegisterClickEffect(Mod, "Entropy", 15, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 SoundEngine.PlaySound(DeadSunsWind.Explosion with { Pitch = 0.75f }, position);
                 int index = Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<DeadSunExplosion>(), damage * 3, 4f, player.whoAmI, 150, 5);
@@ -29,7 +29,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, Entropy);
             SetDust(Item, DustID.Obsidian);
 
             Item.damage = 95;

@@ -14,7 +14,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
 {
     public class ElementalClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string ElementalAura { get; internal set; } = string.Empty;
         public override float Radius => 6f;
         //public override Color RadiusColor => Color.White;
         public override Color RadiusColor
@@ -34,14 +34,14 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
         }
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "ElementalAura", 10, () => RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            ElementalAura = CalamityClickersUtils.RegisterClickEffect(Mod, "ElementalAura", 10, () => RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<ElementalClickerProjectile>(), damage * 2, knockBack, player.whoAmI, Main.rand.Next(4));
             }, postMoonLord: true);
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, ElementalAura);
             //SetColor(Item, color());
 
             Item.damage = 110;

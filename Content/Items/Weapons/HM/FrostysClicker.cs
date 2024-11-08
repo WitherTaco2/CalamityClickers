@@ -10,13 +10,13 @@ namespace CalamityClickers.Content.Items.Weapons.HM
 {
     public class FrostysClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string CoolFlake { get; internal set; } = string.Empty;
         public override float Radius => 5.5f;
         public override Color RadiusColor => new Color(122, 190, 255);
         public override bool SetBorderTexture => true;
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "CoolFlake", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            CoolFlake = ClickerSystem.RegisterClickEffect(Mod, "CoolFlake", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 player.AddBuff(BuffID.CoolWhipPlayerBuff, 4 * 60);
                 if (player.ownedProjectileCounts[ProjectileID.CoolWhipProj] < 1)
@@ -28,7 +28,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, CoolFlake);
             SetDust(Item, DustID.SnowBlock);
 
             Item.damage = 53;

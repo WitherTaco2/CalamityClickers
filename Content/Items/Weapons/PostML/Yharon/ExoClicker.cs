@@ -12,13 +12,13 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
 {
     public class ExoClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string ExoCrystal { get; internal set; } = string.Empty;
         public override float Radius => 8f;
         public override Color RadiusColor => Color.Lerp(Main.DiscoColor, Color.Gray, 0.5f);
         public override int DustType => DustID.Stone;
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "ExoCrystal", 15, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            ExoCrystal = CalamityClickersUtils.RegisterClickEffect(Mod, "ExoCrystal", 15, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 for (int i = 0; i < 7; i++)
                 {
@@ -27,11 +27,11 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
                     Main.projectile[p].DamageType = ModContent.GetInstance<ClickerDamage>();
                 }
             }, postMoonLord: true);
-            CalamityClickersUtils.RegisterBlacklistedClickEffect(ClickerEffect);
+            CalamityClickersUtils.RegisterBlacklistedClickEffect(ExoCrystal);
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, ExoCrystal);
             SetDust(Item, DustType);
 
             Item.damage = 420;

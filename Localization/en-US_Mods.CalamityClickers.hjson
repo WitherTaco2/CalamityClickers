@@ -1,17 +1,18 @@
 ClickEffect: {
-	WildMagicNew: {
-		Name: Wild Magic
-		Description: Randomly acts as any possible click effect
-	}
-
-	SeaBubble: {
-		Name: Sea Bubble
-		Description: Creates one bubble which slowly hit and flying away
+	#Pre-Hardmode
+	BasicAutoclicker: {
+		Name: Basic Autoclicker
+		Description: Allow autoclick with 7.5 click per second. Right Click to toggle this
 	}
 
 	Sandstorm: {
 		Name: Sandstorm
 		Description: Creates sandstorm explosion
+	}
+
+	SeaBubble: {
+		Name: Sea Bubble
+		Description: Creates one bubble which slowly hit and flying away
 	}
 
 	Mushy: {
@@ -20,8 +21,8 @@ ClickEffect: {
 	}
 
 	BloodyExplosion: {
-		Name: Bloody Explosion
-		Description: Creates an bloody explosion, inflict Burning Blood
+		Name: Bloody Splash
+		Description: Creates an splash explosion, inflict Burning Blood
 	}
 
 	BrainExplosion: {
@@ -39,14 +40,10 @@ ClickEffect: {
 		Description: Creates a slime ball which will make a short dash towards the cursor after a short period of time
 	}
 
+	# Hardmode
 	GaussFlux: {
 		Name: Gauss Flux
 		Description: Creates a turbulent magnetic force
-	}
-
-	CoolFlake: {
-		Name: Cool Flake
-		Description: Creates Snowflake minion. Only one exist. Updates a lifetime of existing snowflake
 	}
 
 	BrimstoneInferno: {
@@ -54,24 +51,19 @@ ClickEffect: {
 		Description: Creates an explosion in the form of satanic sigil. Inflict a Brimstone Flames
 	}
 
-	DaedalusCrystals: {
-		Name: Daedalus Crystals
-		Description: Creates a homing daedalus bolts
-	}
-
-	RedLightning: {
-		Name: Red Lightning
-		Description: Creates a four lighning from sky
-	}
-
 	CryoBomb: {
 		Name: Cryo Bomb
 		Description: Creates a cryobomb aroud cursor that can be clicked to release shards
 	}
 
-	AnahitasVoice: {
-		Name: Anahita's Voice
-		Description: Creates a circle of music notes
+	DaedalusCrystals: {
+		Name: Daedalus Crystals
+		Description: Creates a homing daedalus bolts
+	}
+
+	DaedalusLightning: {
+		Name: Daedalus Lightning
+		Description: Attracts power of Daedalus from sky (creates lightnings)
 	}
 
 	Crunch: {
@@ -79,14 +71,15 @@ ClickEffect: {
 		Description: Inflict Armor Crunch for 3 seconds for nearest enemies
 	}
 
+	ChaosFlame: {
+		Name: Chaos Flame
+		Description: Create small portal-like flame. Inflict Brimstone Flames
+	}
+
+	#Post-Plantera
 	TerraAura: {
 		Name: Terra Aura
 		Description: Create a damaging aura which last 3 seconds
-	}
-
-	ElementalAura: {
-		Name: Elemental Aura
-		Description: Create a damaging elemental aura which last 2 seconds. Inflict Elemental Mix for 1 second
 	}
 
 	GreenInfection: {
@@ -94,34 +87,19 @@ ClickEffect: {
 		Description: Fires {0} burning green ichor streams that home in at enemies
 	}
 
-	ProfanedInferno: {
-		Name: Profaned Inferno
-		Description: Create holy flare explosion. Inflict Holy Flames for 3 seconds
+	AnahitasVoice: {
+		Name: Anahita's Voice
+		Description: Creates a circle of music notes
 	}
 
-	TarragonThorns: {
-		Name: Tarragon Thorns
-		Description: Grown thorns in 8 directions
+	WildMagicNew: {
+		Name: Wild Magic
+		Description: Randomly acts as any possible click effect
 	}
 
-	BasicAutoclicker: {
-		Name: Basic Autoclicker
-		Description: Allow autoclick with 7.5 click per second. Right Click to toggle this
-	}
-
-	BloodBlasts: {
-		Description: Causes 8 blood blast projectiles to be summoned near the player and shoot across the screen
-		Name: Blood Blasts
-	}
-
-	ChaosFlame: {
-		Name: Chaos Flame
-		Description: Create small portal-like flame. Inflict Brimstone Flames
-	}
-
-	StarRain: {
-		Description: Shoots 4 astral stars from sky into mouse cursor position
-		Name: Star Rain
+	CoolFlake: {
+		Name: Cool Flake
+		Description: Creates Snowflake minion. Only one exist. Updates a lifetime of existing snowflake
 	}
 
 	AureusBlast: {
@@ -129,11 +107,12 @@ ClickEffect: {
 		Description: Shoots a aureus blast for every nearest enemies around cursor position. Also clicker effect adapted for single target
 	}
 
-	Entropy: {
-		Name: Entropy
-		Description: Create big meld energy explosion on cursor postion
+	StellarScythe: {
+		Name: Stellar Scythe
+		Description: Creates a scythe that change velocity direction to mouse position
 	}
 
+	# Post-Golem
 	PlagueBees: {
 		Name: Plague Bees
 		Description: Summon a lot of plague seekers. Inflict Plague
@@ -144,11 +123,56 @@ ClickEffect: {
 		Description: Creates a explosion damaging area
 	}
 
-	Lifestealing: {
-		Name: Lifestealing
-		Description: Heal 2 hp on click
+	StarRain: {
+		Description: Shoots 4 astral stars from sky into mouse cursor position
+		Name: Star Rain
 	}
 
+	Stardust: {
+		Name: Stardust
+		Description: Release a stardust around cursor
+	}
+
+	Entropy: {
+		Name: Entropy
+		Description: Create big meld energy explosion on cursor postion
+	}
+
+	BloodBlasts: {
+		Description: Causes 8 blood blast projectiles to be summoned near the player and shoot across the screen
+		Name: Blood Blasts
+	}
+
+	# Post-Moonlord
+	# Early Stage
+
+	ElementalAura: {
+		Name: Elemental Aura
+		Description: Create a damaging elemental aura which last 2 seconds. Inflict Elemental Mix for 1 second
+	}
+
+	PlagueBees2: {
+		Name: "{$Mods.CalamityClickers.ClickEffect.PlagueBees.Name}"
+		Description: "{$Mods.CalamityClickers.ClickEffect.PlagueBees.Description}"
+	}
+
+	RedLightning: {
+		Name: Red Lightning
+		Description: Creates a four lighning from sky
+	}
+
+	#Post-Providence
+	ProfanedInferno: {
+		Name: Profaned Inferno
+		Description: Create holy flare explosion. Inflict Holy Flames for 3 seconds
+	}
+
+	TarragonThorns: {
+		Name: Tarragon Thorns
+		Description: Grown thorns in 8 directions
+	}
+
+	# Post-Polterghast
 	GhastlyPortal: {
 		Name: Ghastly Portal
 		Description: Summon Ghastly Portal which summon homing souls in response to your clicks
@@ -157,6 +181,22 @@ ClickEffect: {
 	StratusMoon: {
 		Name: Stratus Moon
 		Description: Create moons and then towards your cursor
+	}
+
+	Lifestealing: {
+		Name: Lifestealing
+		Description: Heal 2 hp on click
+	}
+
+	# Post-DoG
+	NebulaStars: {
+		Name: Nebula Stars
+		Description: Summon circle of stars that homes after a few time
+	}
+
+	Distort: {
+		Name: Distort
+		Description: Warps spacetime around the cursor, summoning a flurry pf piercing knives, that shoot in reacting to your next click
 	}
 
 	NightmareMagic: {
@@ -169,49 +209,20 @@ ClickEffect: {
 		Description: Creates a miniature eclipse, repeatedly firing out a lot of homing projectiles
 	}
 
-	NebulaStars: {
-		Name: Nebula Stars
-		Description: Summon circle of stars that homes after a few time
-	}
-
-	Stardust: {
-		Name: Stardust
-		Description: Release a stardust around cursor
-	}
-
-	ItzClick: {
-		Name: Itz Click
-		Description: Inflict very powerful damage over time debuff
-	}
-
-	MiceCatalyst: {
-		Name: Mice Catalyst
-		Description: Summon a catalyst cloud that creates projectiles which homes to mouse position
-	}
-
-	PhoenixWrath: {
-		Name: Phoenix Wrath
-		Description: Call in a wrath of Phoenixes to blast the area with flames. Inflict Dragonfire
-	}
-
-	StellarScythe: {
-		Name: Stellar Scythe
-		Description: Creates a scythe that change velocity direction to mouse position
-	}
-
 	NuclearExplosion: {
 		Name: Nuclear Explosion
 		Description: BOOM!
 	}
 
-	DaedalusLightning: {
-		Name: Daedalus Lightning
-		Description: Attracts power of Daedalus from sky (creates lightnings)
+	# Post-Yharon
+	PhoenixWrath: {
+		Name: Phoenix Wrath
+		Description: Call in a wrath of Phoenixes to blast the area with flames. Inflict Dragonfire
 	}
 
-	PlagueBees2: {
-		Name: "{$Mods.CalamityClickers.ClickEffect.PlagueBees.Name}"
-		Description: "{$Mods.CalamityClickers.ClickEffect.PlagueBees.Description}"
+	MiceCatalyst: {
+		Name: Mice Catalyst
+		Description: Summon a catalyst cloud that creates projectiles which homes to mouse position
 	}
 
 	ExoCrystal: {
@@ -224,19 +235,15 @@ ClickEffect: {
 		Description: Explodes in a larger radius by exo energy
 	}
 
-	Distort: {
-		Name: Distort
-		Description: Warps spacetime around the cursor, summoning a flurry pf piercing knives, that shoot in reacting to your next click
-	}
-
-	Hurt: {
-		Name: Hurt
-		Description: $Mods.ClickerClass.Common.Unknown
-	}
-
 	LecherousOrb: {
 		Name: Lecherous Orb
 		Description: Creates Lecherous Orb that accumulates life power but starting cost 20 life.
+	}
+
+	# Endgame
+	ItzClick: {
+		Name: Itz Click
+		Description: Inflict very powerful damage over time debuff
 	}
 }
 
@@ -368,13 +375,13 @@ Items: {
 		}
 
 		Vanity: {
-			SilvaCapsuit: {
-				DisplayName: Silva Capsuit
+			ReaverCapsuit: {
+				DisplayName: Reaver Capsuit
 				Tooltip: ""
 			}
 
-			ReaverCapsuit: {
-				DisplayName: Reaver Capsuit
+			SilvaCapsuit: {
+				DisplayName: Silva Capsuit
 				Tooltip: ""
 			}
 		}
@@ -382,53 +389,62 @@ Items: {
 
 	Weapons: {
 		Clicker: {
-			SeaRemainClicker.DisplayName: Sea Remain Clicker
+			#Pre-hardmode
+			WulfrumClicker.DisplayName: Wulfrum Clicker
 			ScourgeClicker.DisplayName: Scourge Clicker
+			SeaRemainClicker.DisplayName: Sea Remain Clicker
 			MushyClicker.DisplayName: Mushy Clicker
 			RottenClicker.DisplayName: Rotten Clicker
 			FleshyClicker.DisplayName: Fleshy Clicker
 			AeroClicker.DisplayName: Aero Clicker
 			GooClicker.DisplayName: Gooclicker
-			GaussClicker.DisplayName: Gauss Clicker
+			# Hardmode
 			CryoClicker.DisplayName: Cryo Clicker
-			BrimstoneClicker.DisplayName: Brimstone Clicker
-			DaedalusClicker.DisplayName: Daedalus Clicker
-			RedLightningClicker.DisplayName: Red Lightning Clicker
-			FrostysClicker.DisplayName: Frosty's Clicker
-			AnahitasClicker.DisplayName: Anahita's Clicker
 			AquaticClicker.DisplayName: Aquatic Clicker
 			EarthenClicker.DisplayName: Earthen Clicker
-			FloraClicker.DisplayName: Flora Clicker
-			ElementalClicker.DisplayName: Elemental Clicker
+			GaussClicker.DisplayName: Gauss Clicker
+			BrimstoneClicker.DisplayName: Brimstone Clicker
+			DaedalusClicker.DisplayName: Daedalus Clicker
+			ClickerOfCalamity.DisplayName: Clicker of Calamity
+			#Post-Plantera
 			FeralClicker.DisplayName: Feral Clicker
+			FloraClicker.DisplayName: Flora Clicker
+			AnahitasClicker.DisplayName: Anahita's Clicker
+			AureusClicker.DisplayName: Aureus Clicker
+			StellarClicker.DisplayName: Stellar Clicker
+			FrostysClicker.DisplayName: Frosty's Clicker
+			# Post-Golem
+			ScoriaClicker.DisplayName: Scoria Clicker
+			BloodGodsClicker.DisplayName: Blood God's Clicker
+			PlagueClicker.DisplayName: Plague Clicker
+			MeldClicker.DisplayName: Meld Clicker
+			CosmicStarClicker.DisplayName: Cosmic Star Clicker
+			StarblightClicker.DisplayName: Starblight Clicker
+			# Post-Moonlord
+			PolterplasmClicker.DisplayName: Polterplasm Clicker
+			ElementalClicker.DisplayName: Elemental Clicker
+			InfestedBeeClicker.DisplayName: Infested Bee Clicker
+			RedLightningClicker.DisplayName: Red Lightning Clicker
+			# Post-Providence
 			ProfanedClicker.DisplayName: Profaned Clicker
 			BloomClicker.DisplayName: Bloom Clicker
-			WulfrumClicker.DisplayName: Wulfrum Clicker
-			BloodGodsClicker.DisplayName: Blood God's Clicker
-			ClickerOfCalamity.DisplayName: Clicker of Calamity
-			CosmicStarClicker.DisplayName: Cosmic Star Clicker
-			AureusClicker.DisplayName: Aureus Clicker
-			MeldClicker.DisplayName: Meld Clicker
-			PlagueClicker.DisplayName: Plague Clicker
-			ScoriaClicker.DisplayName: Scoria Clicker
-			PolterplasmClicker.DisplayName: Polterplasm Clicker
 			BloodstoneClicker.DisplayName: Bloodstone Clicker
+			# Post-Polterghast
 			RuinousClicker.DisplayName: Ruinous Clicker
-			NightmareClicker.DisplayName: Nightmare Clicker
 			StratusClicker.DisplayName: Stratus Clicker
-			DarksunClicker.DisplayName: Darksun Clicker
+			# Post-DoG
 			ClickerOfGods.DisplayName: Clicker of Gods
-			StarblightClicker.DisplayName: Starblight Clicker
-			ItsClicker.DisplayName: Its Clicker
+			CosmiliteClicker.DisplayName: Cosmilite Clicker
+			NightmareClicker.DisplayName: Nightmare Clicker
+			DarksunClicker.DisplayName: Darksun Clicker
+			NuclearClicker.DisplayName: Nuclear Clicker
+			# Post-Yharon
 			PhoenixClicker.DisplayName: Phoenix Clicker
 			MiceCatalystClicker.DisplayName: Mice Catalyst Clicker
-			StellarClicker.DisplayName: Stellar Clicker
-			NuclearClicker.DisplayName: Nuclear Clicker
-			InfestedBeeClicker.DisplayName: Infested Bee Clicker
 			ExoClicker.DisplayName: Exo Clicker
 			MiracleClicker.DisplayName: Miracle Clicker
-			CosmiliteClicker.DisplayName: Cosmilite Clicker
 			CruelClicker.DisplayName: Cruel Clicker
+			ItsClicker.DisplayName: Its Clicker
 		}
 	}
 
@@ -508,9 +524,8 @@ Projectiles: {
 		StellarClickerProjectile.DisplayName: Stellar Scythe
 		NuclearClickerBoom.DisplayName: Nuclear Explosion
 		PlagueClickerProjectile.DisplayName: Plague Bee
-		CosmiliteClickerProjectile.DisplayName: Cosmilite Clicker Projectile
-		СruelClickerProjectile.DisplayName: Сruel Clicker Projectile
-		CruelClickerProjectile.DisplayName: Cruel Clicker Projectile
+		CosmiliteClickerProjectile.DisplayName: Cosmic Knive
+		CruelClickerProjectile.DisplayName: Lecherous Orb
 	}
 }
 

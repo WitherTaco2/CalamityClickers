@@ -12,12 +12,12 @@ namespace CalamityClickers.Content.Items.Weapons.HM
 {
     public class ScoriaClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string Eruption { get; internal set; } = string.Empty;
         public override float Radius => 5f;
         public override Color RadiusColor => new Color(224, 108, 29);
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "Eruption", 7, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            Eruption = ClickerSystem.RegisterClickEffect(Mod, "Eruption", 7, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 int index = Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<ForbiddenSunburst>(), damage, 0.5f, player.whoAmI);
                 Main.projectile[index].DamageType = ModContent.GetInstance<ClickerDamage>();
@@ -25,7 +25,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, Eruption);
             SetDust(Item, DustID.Flare);
 
             Item.damage = 80;

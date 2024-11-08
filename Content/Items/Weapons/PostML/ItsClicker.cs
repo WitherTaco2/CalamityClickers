@@ -16,23 +16,23 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
 {
     public class ItsClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string ItzClick { get; internal set; } = string.Empty;
         public override float Radius => 8;
         public override Color RadiusColor => Color.LightGray;
         //public override bool SetBorderTexture => true;
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "ItzClick", 1, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            ItzClick = ClickerSystem.RegisterClickEffect(Mod, "ItzClick", 1, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 NPC npc = CalamityUtils.ClosestNPCAt(position, 500, true, true);
                 if (npc != null)
                     npc.AddBuff(ModContent.BuffType<ItsClickerDebuff>(), 30);
             });
-            CalamityClickersUtils.RegisterBlacklistedClickEffect(ClickerEffect);
+            CalamityClickersUtils.RegisterBlacklistedClickEffect(ItzClick);
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, ItzClick);
             SetDust(Item, DustID.Obsidian);
 
             Item.damage = 600;

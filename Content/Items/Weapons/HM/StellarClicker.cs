@@ -12,12 +12,12 @@ namespace CalamityClickers.Content.Items.Weapons.HM
 {
     public class StellarClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string Stardust { get; internal set; } = string.Empty;
         public override float Radius => 4.1f;
         public override Color RadiusColor => new Color(109, 242, 196);
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "StellarScythe", 7, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            Stardust = ClickerSystem.RegisterClickEffect(Mod, "StellarScythe", 7, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 SoundEngine.PlaySound(SoundID.Item71, position);
                 Projectile.NewProjectile(source, position, Vector2.UnitX.RotatedByRandom(MathHelper.TwoPi) * 5, ModContent.ProjectileType<StellarClickerProjectile>(), damage, knockBack, player.whoAmI);
@@ -25,7 +25,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, Stardust);
             SetDust(Item, ModContent.DustType<AstralBasic>());
 
             Item.damage = 67;

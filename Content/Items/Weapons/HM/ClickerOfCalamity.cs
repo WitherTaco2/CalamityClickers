@@ -17,19 +17,19 @@ namespace CalamityClickers.Content.Items.Weapons.HM
 {
     public class ClickerOfCalamity : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string ChaosFlame { get; internal set; } = string.Empty;
         public override float Radius => 3.75f;
         public override Color RadiusColor => Color.Lerp(Color.Red, Color.Orange, MathF.Sin(Main.GlobalTimeWrappedHourly * 4) / 2 + 0.5f);
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "ChaosFlame", 5, () => RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            ChaosFlame = ClickerSystem.RegisterClickEffect(Mod, "ChaosFlame", 5, () => RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<ClickerOfCalamityProjectile>(), damage * 3 / 2, knockBack, player.whoAmI);
             });
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, ChaosFlame);
             SetDust(Item, ModContent.DustType<BrimstoneFlameClickers>());
 
             Item.damage = 40;

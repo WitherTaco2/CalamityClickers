@@ -22,14 +22,14 @@ namespace CalamityClickers.Commons
             {
                 RecipeGroup group = new RecipeGroup(() => LangHelper.GetText("Misc.RecipeGroup.AnyNormalSFXButton"), new int[]
                 {
-                ModContent.ItemType<SFXButtonA>(),
-                ModContent.ItemType<SFXButtonB>(),
-                ModContent.ItemType<SFXButtonC>(),
-                ModContent.ItemType<SFXButtonD>(),
-                ModContent.ItemType<SFXButtonE>(),
-                ModContent.ItemType<SFXButtonF>(),
-                ModContent.ItemType<SFXButtonG>(),
-                ModContent.ItemType<SFXButtonH>()
+                    ModContent.ItemType<SFXButtonA>(),
+                    ModContent.ItemType<SFXButtonB>(),
+                    ModContent.ItemType<SFXButtonC>(),
+                    ModContent.ItemType<SFXButtonD>(),
+                    ModContent.ItemType<SFXButtonE>(),
+                    ModContent.ItemType<SFXButtonF>(),
+                    ModContent.ItemType<SFXButtonG>(),
+                    ModContent.ItemType<SFXButtonH>()
                 });
                 AnyNormalSFXButton = RecipeGroup.RegisterGroup("AnyNormalSFXButton", group);
             }

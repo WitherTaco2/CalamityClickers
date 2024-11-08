@@ -13,7 +13,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
 {
     public class CruelClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string LecherousOrb { get; internal set; } = string.Empty;
         //public static string ClickerEffect2 { get; internal set; } = string.Empty;
         public override float Radius => 9f;
         public override Color RadiusColor => new Color(176, 28, 80);
@@ -30,16 +30,16 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
             }, postMoonLord: true);
             CalamityClickersUtils.RegisterBlacklistedClickEffect(ClickerEffect);*/
 
-            ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "LecherousOrb", 20, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            LecherousOrb = CalamityClickersUtils.RegisterClickEffect(Mod, "LecherousOrb", 20, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position + Main.rand.NextVector2Circular(200, 200), Main.rand.NextVector2CircularEdge(1, 1), ModContent.ProjectileType<CruelClickerProjectile>(), damage, knockBack, player.whoAmI);
                 player.Hurt(PlayerDeathReason.ByCustomReason(" has been sacrificed"), 20, 1, dodgeable: false, scalingArmorPenetration: 1f, knockback: 0);
             }, postMoonLord: true);
-            CalamityClickersUtils.RegisterBlacklistedClickEffect(ClickerEffect);
+            CalamityClickersUtils.RegisterBlacklistedClickEffect(LecherousOrb);
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, LecherousOrb);
             SetDust(Item, DustType);
 
             Item.damage = 550;

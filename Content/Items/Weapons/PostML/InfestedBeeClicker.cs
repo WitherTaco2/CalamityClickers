@@ -12,13 +12,13 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
 {
     public class InfestedBeeClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string PlagueBees2 { get; internal set; } = string.Empty;
         public override float Radius => 6f;
         public override Color RadiusColor => new Color(154, 186, 74);
         public override bool SetBorderTexture => true;
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "PlagueBees2", 12, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            PlagueBees2 = CalamityClickersUtils.RegisterClickEffect(Mod, "PlagueBees2", 12, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 for (int projIndex = 0; projIndex < 20; projIndex++)
                 {
@@ -31,7 +31,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
 
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, PlagueBees2);
             AddEffect(Item, ClickEffect.StickyHoney);
             //SetColor(Item, color());
 

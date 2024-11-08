@@ -14,20 +14,20 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Polterghast
 {
     public class RuinousClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string GhastlyPortal { get; internal set; } = string.Empty;
         public override float Radius => 7.5f;
         public override Color RadiusColor => new Color(245, 143, 155);
         public override bool SetBorderTexture => true;
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "GhastlyPortal", 25, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            GhastlyPortal = CalamityClickersUtils.RegisterClickEffect(Mod, "GhastlyPortal", 25, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<RuinousClickerProjectile>(), damage, knockBack, player.whoAmI);
             }, postMoonLord: true);
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, GhastlyPortal);
             SetDust(Item, DustID.GemRuby);
 
             Item.damage = 170;
@@ -99,7 +99,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Polterghast
     public class RuinousClickerProjectileSoul : LostSoulFriendly, ILocalizedModType
     {
         public new string LocalizationCategory => "Projectiles.Clicker";
-        public override string Texture => ModContent.GetInstance<LostSoulFriendly>().Texture;
+        //public override string Texture => ModContent.GetInstance<LostSoulFriendly>().Texture;
         public override void SetDefaults()
         {
             base.SetDefaults();

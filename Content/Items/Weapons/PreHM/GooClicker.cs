@@ -15,12 +15,12 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
 {
     public class GooClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string SlimePuppet { get; internal set; } = string.Empty;
         public override float Radius => 2.8f;
         public override Color RadiusColor => Color.Lerp(new Color(91, 123, 205), new Color(195, 70, 124), MathF.Sin(Main.GlobalTimeWrappedHourly * 3) * 0.5f + 0.5f);
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "SlimePuppet", 6, new Color(243, 79, 174), delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            SlimePuppet = ClickerSystem.RegisterClickEffect(Mod, "SlimePuppet", 6, new Color(243, 79, 174), delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 SoundEngine.PlaySound(SlimeGodCore.PossessionSound, position);
                 Projectile.NewProjectile(source, position, Vector2.UnitX.RotatedByRandom(MathHelper.ToRadians(180)), ModContent.ProjectileType<GooClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
@@ -28,7 +28,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, SlimePuppet);
 
             Item.damage = 13;
             Item.knockBack = 1f;

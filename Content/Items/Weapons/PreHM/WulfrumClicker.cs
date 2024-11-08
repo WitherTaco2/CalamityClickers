@@ -11,12 +11,12 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
 {
     public class WulfrumClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string BasicAutoclicker { get; internal set; } = string.Empty;
         public override float Radius => 1.5f;
         public override Color RadiusColor => new Color(160, 237, 0);
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "BasicAutoclicker", 1, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            BasicAutoclicker = ClickerSystem.RegisterClickEffect(Mod, "BasicAutoclicker", 1, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
 
             }, true);
@@ -24,7 +24,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, BasicAutoclicker);
             SetDust(Item, 229);
 
             Item.damage = 4;

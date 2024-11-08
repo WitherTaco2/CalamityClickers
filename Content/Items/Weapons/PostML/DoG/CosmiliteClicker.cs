@@ -13,13 +13,13 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
 {
     public class CosmiliteClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string Distort { get; internal set; } = string.Empty;
         public override float Radius => 8f;
         public override Color RadiusColor => Color.Lerp(new Color(38, 148, 237), new Color(217, 46, 223), MathF.Sin(Main.GlobalTimeWrappedHourly) / 2 + 0.5f);
 
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "Distort", 12, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            Distort = CalamityClickersUtils.RegisterClickEffect(Mod, "Distort", 12, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 for (int i = 0; i < 5; i++)
                 {
@@ -30,7 +30,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, Distort);
             SetDust(Item, DustType);
 
             Item.damage = 320;
@@ -49,7 +49,8 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
     public class CosmiliteClickerProjectile : ModdedClickerProjectile
     {
         public static int MaxTimeleft = 600;
-        public static int PreClickFly = 60;
+        public static int AfterClickFly = 60;
+        public static int SlowDawn = 30;
         public override bool UseInvisibleProjectile => false;
         public override void SetStaticDefaults()
         {
@@ -78,17 +79,10 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
         }
         public override void AI()
         {
-            if (Projectile.timeLeft < MaxTimeleft - PreClickFly)
+            /*if (Projectile.timeLeft < MaxTimeleft - PreClickFly)
             {
                 if (Projectile.ai[1] != 1)
                 {
-                    if (Projectile.Owner().ItemAnimationActive)
-                    {
-
-                        Projectile.velocity = (Main.MouseWorld - Projectile.Center).SafeNormalize(Vector2.Zero) * 20;
-                        Projectile.rotation = Projectile.velocity.ToRotation();
-                        Projectile.ai[1] = 1;
-                    }
 
                 }
                 else
@@ -100,7 +94,24 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
             }
             else
             {
-                Projectile.rotation += (1f - (MaxTimeleft - Projectile.timeLeft) / MaxTimeleft) * MathHelper.PiOver4 * Projectile.ai[0] * Utils.GetLerpValue(MaxTimeleft - PreClickFly, MaxTimeleft, Projectile.timeLeft);
+            }*/
+
+            if (Projectile.ai[0] > 0)
+            {
+                Projectile.ai[0]--;
+            }
+            else
+            {
+                if (Projectile.Owner().ItemAnimationActive)
+                {
+                    Projectile.velocity = (Main.MouseWorld - Projectile.Center).SafeNormalize(Vector2.Zero) * 15;
+                    Projectile.rotation = Projectile.velocity.ToRotation();
+                    Projectile.ai[0] = AfterClickFly;
+                }
+            }
+            if (Projectile.ai[0] < SlowDawn)
+            {
+                Projectile.rotation += (1f - (MaxTimeleft - Projectile.timeLeft) / MaxTimeleft) * MathHelper.PiOver4 * Projectile.ai[0] * Utils.GetLerpValue(MaxTimeleft - AfterClickFly, MaxTimeleft, Projectile.timeLeft);
                 Projectile.velocity *= 0.97f;
             }
         }

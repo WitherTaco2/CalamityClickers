@@ -15,14 +15,14 @@ namespace CalamityClickers.Content.Items.Weapons.HM
 {
     public class FeralClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string GreenInfection { get; internal set; } = string.Empty;
         public override float Radius => 3.75f;
         public override Color RadiusColor => new Color(54, 164, 66);
 
         public static readonly int StreamAmount = 8;
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "GreenInfection", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            GreenInfection = ClickerSystem.RegisterClickEffect(Mod, "GreenInfection", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 //Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<TerraClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
                 bool spawnEffects = true;
@@ -37,7 +37,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, GreenInfection);
             SetDust(Item, 157);
 
             Item.damage = 60;

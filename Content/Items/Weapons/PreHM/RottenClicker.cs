@@ -13,19 +13,19 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
 {
     public class RottenClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string BrainExplosion { get; internal set; } = string.Empty;
         public override float Radius => 2.5f;
         public override Color RadiusColor => new Color(91, 71, 127);
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "BrainExplosion", 7, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            BrainExplosion = ClickerSystem.RegisterClickEffect(Mod, "BrainExplosion", 7, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<RottenClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
             }, true);
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, BrainExplosion);
             SetDust(Item, DustID.Demonite);
 
             Item.damage = 10;

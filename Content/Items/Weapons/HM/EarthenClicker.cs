@@ -12,19 +12,19 @@ namespace CalamityClickers.Content.Items.Weapons.HM
 {
     public class EarthenClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string Crunch { get; internal set; } = string.Empty;
         public override float Radius => 2.95f;
         public override Color RadiusColor => new Color(152, 152, 155);
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "Crunch", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            Crunch = ClickerSystem.RegisterClickEffect(Mod, "Crunch", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<EarthenClickerProjectile>(), damage, knockBack, player.whoAmI);
             });
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, Crunch);
 
             Item.damage = 22;
             Item.knockBack = 2f;

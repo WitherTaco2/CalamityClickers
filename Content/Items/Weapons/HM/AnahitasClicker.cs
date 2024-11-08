@@ -11,14 +11,14 @@ namespace CalamityClickers.Content.Items.Weapons.HM
 {
     public class AnahitasClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string AnahitasVoice { get; internal set; } = string.Empty;
         public override float Radius => 3.4f;
         //public override Color RadiusColor => new Color(67, 207, 130);
         public override Color RadiusColor => new Color(146, 179, 245);
 
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "AnahitasVoice", 10, new Color(206, 255, 31), delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            AnahitasVoice = ClickerSystem.RegisterClickEffect(Mod, "AnahitasVoice", 10, new Color(206, 255, 31), delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 float extraRot = Main.rand.NextBool() ? (MathHelper.TwoPi / 12) : 0;
                 for (int i = 0; i < 6; i++)
@@ -30,7 +30,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, AnahitasVoice);
 
             Item.damage = 53;
             Item.knockBack = 1f;

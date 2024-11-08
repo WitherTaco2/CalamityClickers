@@ -13,19 +13,19 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
 {
     public class FleshyClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string BloodyExplosion { get; internal set; } = string.Empty;
         public override float Radius => 2.5f;
         public override Color RadiusColor => new Color(153, 54, 63);
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "BloodyExplosion", 7, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            BloodyExplosion = ClickerSystem.RegisterClickEffect(Mod, "BloodyExplosion", 7, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<FleshyClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
             }, true);
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, BloodyExplosion);
             SetDust(Item, DustID.CrimtaneWeapons);
 
             Item.damage = 10;
