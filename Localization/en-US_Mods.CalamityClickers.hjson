@@ -226,7 +226,7 @@ ClickEffect: {
 
 	Distort: {
 		Name: Distort
-		Description: $Mods.ClickerClass.Common.Unknown
+		Description: Warps spacetime around the cursor, summoning a flurry pf piercing knives, that shoot in reacting to your next click
 	}
 
 	Hurt: {
@@ -236,7 +236,7 @@ ClickEffect: {
 
 	LecherousOrb: {
 		Name: Lecherous Orb
-		Description: $Mods.ClickerClass.Common.Unknown
+		Description: Creates Lecherous Orb that accumulates life power but starting cost 20 life.
 	}
 }
 
@@ -428,7 +428,6 @@ Items: {
 			ExoClicker.DisplayName: Exo Clicker
 			MiracleClicker.DisplayName: Miracle Clicker
 			CosmiliteClicker.DisplayName: Cosmilite Clicker
-			СruelClicker.DisplayName: Сruel Clicker
 			CruelClicker.DisplayName: Cruel Clicker
 		}
 	}

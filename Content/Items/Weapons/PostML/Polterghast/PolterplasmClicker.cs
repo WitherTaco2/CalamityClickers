@@ -4,7 +4,6 @@ using ClickerClass.Items.Weapons.Clickers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -34,7 +33,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Polterghast
             spriteBatch.Draw(t, baseDrawPosition, frame, drawColor, 0f, Vector2.Zero, baseScale, SpriteEffects.None, 0f);
 
         }
-        public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
+        /*public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
         {
             if (!CalamityClickersConfig.Instance.LegecyClickerTextures)
             {
@@ -54,7 +53,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Polterghast
                 return true;
             }
             return PreDrawInInventory(spriteBatch, position, frame, drawColor, itemColor, origin, scale);
-        }
+        }*/
         public override void AddRecipes()
         {
             CreateRecipe()

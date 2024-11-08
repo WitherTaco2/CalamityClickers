@@ -1,4 +1,6 @@
-﻿using CalamityMod.Items.Materials;
+﻿using CalamityMod.Items;
+using CalamityMod.Items.Materials;
+using CalamityMod.Rarities;
 using CalamityMod.Tiles.Furniture.CraftingStations;
 using ClickerClass;
 using Microsoft.Xna.Framework;
@@ -25,6 +27,16 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
                 }
             }, postMoonLord: true);
             //CalamityClickersUtils.RegisterBlacklistedClickEffect(ClickerEffect);
+        }
+        public override void SetDefaultsExtra()
+        {
+            AddEffect(Item, ClickerEffect);
+            SetDust(Item, DustType);
+
+            Item.damage = 320;
+            Item.knockBack = 1f;
+            Item.rare = ModContent.RarityType<DarkBlue>();
+            Item.value = CalamityGlobalItem.RarityDarkBlueBuyPrice;
         }
         public override void AddRecipes()
         {
@@ -56,6 +68,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
             Projectile.localNPCHitCooldown = 60;
             Projectile.penetrate = -1;
             Projectile.DamageType = ModContent.GetInstance<ClickerDamage>();
+            Projectile.scale = 1.2f;
         }
         public override void OnSpawn(IEntitySource source)
         {
@@ -67,12 +80,19 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
         {
             if (Projectile.timeLeft < MaxTimeleft - PreClickFly)
             {
-                if (Projectile.Owner().ItemAnimationActive && Projectile.ai[1] != 1)
+                if (Projectile.ai[1] != 1)
                 {
-                    Projectile.velocity = (Main.MouseWorld - Projectile.Center).SafeNormalize(Vector2.Zero) * 10;
-                    Projectile.rotation = Projectile.velocity.ToRotation();
-                    Projectile.ai[1] = 1;
+                    if (Projectile.Owner().ItemAnimationActive)
+                    {
+
+                        Projectile.velocity = (Main.MouseWorld - Projectile.Center).SafeNormalize(Vector2.Zero) * 20;
+                        Projectile.rotation = Projectile.velocity.ToRotation();
+                        Projectile.ai[1] = 1;
+                    }
+
                 }
+                else
+                    Projectile.velocity *= 0.97f;
                 if (Projectile.wet)
                 {
 
@@ -80,7 +100,8 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
             }
             else
             {
-                Projectile.rotation += (1f - (MaxTimeleft - Projectile.timeLeft) / MaxTimeleft) * MathHelper.PiOver4 * Projectile.ai[0];
+                Projectile.rotation += (1f - (MaxTimeleft - Projectile.timeLeft) / MaxTimeleft) * MathHelper.PiOver4 * Projectile.ai[0] * Utils.GetLerpValue(MaxTimeleft - PreClickFly, MaxTimeleft, Projectile.timeLeft);
+                Projectile.velocity *= 0.97f;
             }
         }
     }

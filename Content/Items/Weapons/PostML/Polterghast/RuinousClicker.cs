@@ -67,7 +67,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Polterghast
             {
                 Dust dust = Dust.NewDustPerfect(Projectile.Center, DustID.GemRuby, Vector2.UnitY.RotatedBy(MathHelper.TwoPi) * 5, Scale: Main.rand.NextFloat(1, 1.5f));
                 dust.noGravity = true;
-                Projectile.frameCounter = 0
+                Projectile.frameCounter = 0;
             }
         }
         public override void ShootOnClick()

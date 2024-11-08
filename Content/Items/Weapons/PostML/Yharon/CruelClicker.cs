@@ -7,7 +7,6 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.DataStructures;
-using Terraria.GameContent;
 using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
@@ -48,22 +47,22 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
             Item.rare = ModContent.RarityType<Violet>();
             Item.value = CalamityGlobalItem.RarityVioletBuyPrice;
         }
-        private void DrawingAnimation(SpriteBatch spriteBatch, Vector2 baseDrawPosition, Rectangle frame, float baseScale, Color drawColor)
+        /*private void DrawingAnimation(SpriteBatch spriteBatch, Vector2 baseDrawPosition, float baseScale, Color drawColor)
         {
             //if (Item.velocity.X != 0f)
             //    return;
-            Texture2D t = ModContent.Request<Texture2D>(Texture + "/" + ((int)Main.GlobalTimeWrappedHourly % 9).ToString()).Value;
+            Texture2D t = ModContent.Request<Texture2D>(Texture + "/" + ((int)(Main.GlobalTimeWrappedHourly * 3) % 9).ToString()).Value;
 
-            spriteBatch.Draw(t, baseDrawPosition, frame, drawColor, 0f, Vector2.Zero, baseScale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(t, baseDrawPosition, null, Color.White, 0f, Vector2.Zero, baseScale, SpriteEffects.None, 0f);
 
         }
         public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
         {
             if (!CalamityClickersConfig.Instance.LegecyClickerTextures)
             {
-                Rectangle frame = TextureAssets.Item[Item.type].Value.Frame();
-                DrawingAnimation(spriteBatch, Item.position - Main.screenPosition, frame, scale, lightColor);
-                return true;
+                //Rectangle frame = TextureAssets.Item[Item.type].Value.Frame();
+                DrawingAnimation(spriteBatch, Item.position - Main.screenPosition, scale, lightColor);
+                return false;
             }
             return base.PreDrawInWorld(spriteBatch, lightColor, alphaColor, ref rotation, ref scale, whoAmI);
         }
@@ -73,11 +72,28 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
             {
                 //Rectangle frame = TextureAssets.Item[Item.type].Value.Frame();
                 Item.velocity.X = 0f;
-                DrawingAnimation(spriteBatch, Item.position - frame.Size() * 0.25f, frame, scale, drawColor);
+                DrawingAnimation(spriteBatch, Item.position - frame.Size() * 0.25f, scale, drawColor);
                 return true;
             }
             return PreDrawInInventory(spriteBatch, position, frame, drawColor, itemColor, origin, scale);
+        }*/
+
+        /*public override void PostDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
+        {
+            if (!CalamityClickersConfig.Instance.LegecyClickerTextures)
+            {
+                //Item.DrawItemGlowmaskSingleFrame(spriteBatch, Item.rot)
+            }
+
+
         }
+        public override void PostDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
+        {
+            if (!CalamityClickersConfig.Instance.LegecyClickerTextures)
+            {
+                Item.DrawItemGlowmaskSingleFrame(spriteBatch, rotation, ModContent.Request<Texture2D>(Texture + "/" + ((int)(Main.GlobalTimeWrappedHourly * 3) % 9).ToString()).Value);
+            }
+        }*/
     }
     public class CruelClickerProjectile : ClickableClickerProjectile
     {
@@ -95,7 +111,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
             Projectile.DamageType = ModContent.GetInstance<ClickerDamage>();
             Projectile.penetrate = 1;
             Projectile.tileCollide = false;
-            Projectile.timeLeft = 300;
+            Projectile.timeLeft = 800;
         }
         public ref float Frame => ref Projectile.localAI[0];
         public ref float Time => ref Projectile.ai[0];
@@ -134,7 +150,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
         }
         public override void OnClick()
         {
-            int num = (int)MathHelper.Lerp(0f, 7f, Utils.GetLerpValue(15f, 240f, Time, clamped: true));
+            int num = (int)MathHelper.Lerp(0f, 4f, Utils.GetLerpValue(15f, 600f, Time, clamped: true));
             for (int i = 0; i < num; i++)
             {
                 Item.NewItem(Projectile.GetSource_FromThis(), Projectile.Hitbox, 58);
