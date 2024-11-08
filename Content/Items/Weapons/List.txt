@@ -34,7 +34,7 @@ Sandstorm Set (Grand Scale) // Forbidden Set upgrade
 +Astrum Deus drop
 +Astral Set (Astral Bar)
 *Astrageldon Set (Catalyst Addon) //Slime God set + Astral Biome drop
-Bereft Vassal Set (Infernum Mod)
+*Bereft Vassal Set (Infernum Mod)
 
 =====
 Post-ML
@@ -48,17 +48,17 @@ Eidolon/Primordial wyrm drop (last depths layer)
 *Old Duke drop. Creates toxic cloud like Old Duke
 
 +Devourer of Gods drop
-*Cosmilite Set (Cosmilite Bar)
++Cosmilite Set (Cosmilite Bar)
 +Darksun Clicker. Direct upgrade of Eclipse Clicker with using Darksun Fragments
 +Nightmare Clicker. Direct upgrade of Witch Clicker + Burning Super Death Clicker. Post-ML clicker with random clicker effect (Like witch clicker)
 
-*Yharon drop
++Yharon drop
 +Something from Auric Bar (i don t know what make)
 
 Enchanted Metal Set. (Clamity Addon)
 +Exo Mech drop
 +Miracle (Exo) Clicker (Miracle Matter)
-*Calamitas drop. Need something unique effect based on losing HP
++Calamitas drop. Need something unique effect based on losing HP
 Calamity`s Exhumed Clicker
 Goozma drop (Hunt of the Old God)
 Chromatic Mass Set (Hunt of the Old God)
@@ -72,8 +72,8 @@ Combination of Critter Clicker, Magnet Clicker and other utility clickers
 =====
 Draedon Arsenal
 
-+Nuclear Clicker (Cosmilite tier)
 *Shocker Clocker with homing electrobolts (Aerialite tier)
++Nuclear Clicker (Cosmilite tier)
 
 =====
 Equip

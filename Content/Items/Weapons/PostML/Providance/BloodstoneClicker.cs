@@ -102,6 +102,10 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Providance
             Projectile.ai[2] = target.whoAmI;
             EnemyOffset = Projectile.Center - target.Center;
         }
+        public override bool? CanHitNPC(NPC target)
+        {
+            return Projectile.ai[2] != -1;
+        }
         public override void SendExtraAI(BinaryWriter writer)
         {
             writer.Write(EnemyOffset.X);
@@ -110,10 +114,6 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Providance
         public override void ReceiveExtraAI(BinaryReader reader)
         {
             EnemyOffset = new Vector2(reader.ReadSingle(), reader.ReadSingle());
-        }
-        public override bool? CanHitNPC(NPC target)
-        {
-            return Projectile.ai[2] != -1;
         }
     }
 }

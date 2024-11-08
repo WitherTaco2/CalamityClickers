@@ -17,6 +17,16 @@ namespace CalamityClickers.Content.Items.Weapons
         //public static string ClickerEffect { get; internal set; } = string.Empty;
         public override LocalizedText Tooltip => Language.GetOrRegister("Mods.ClickerClass.Common.Tooltips.Clicker");
         public virtual bool SetBorderTexture => false;
+        public override LocalizedText DisplayName
+        {
+            get
+            {
+                string key = base.DisplayName.Key + "Legecy";
+                if (Language.Exists(key) && CalamityClickersConfig.Instance.LegecyClickerTextures)
+                    return Language.GetText(key);
+                return base.DisplayName;
+            }
+        }
         public override string Texture
         {
             get

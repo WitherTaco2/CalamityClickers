@@ -39,7 +39,7 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         }
         public override void PostDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
         {
-            Item.DrawItemGlowmaskSingleFrame(spriteBatch, rotation, ModContent.Request<Texture2D>(Texture + (CalamityClickersConfig.Instance.LegecyClickerTextures ? "_Legecy" : "") + "_Glow").Value);
+            Item.DrawItemGlowmaskSingleFrame(spriteBatch, rotation, ModContent.Request<Texture2D>(Texture + "_Glow").Value);
         }
         public override void AddRecipes()
         {

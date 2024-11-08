@@ -32,7 +32,7 @@ Bloodstone Clicker now uses Lifesteal Cooldown.
 Bloodstone Clicker now requare Hemo Clicker in recipe.
 Bloodstone Clicker reworked. Now summon blood knives what inflicts debuffs when latched.
 The Clicker now has Hot Pink rarity and respective sell value.
-Renamed from Fleshy Clicker clicker effect from Explosion to Splash
+A lot of Clicker renames (old saves by using legecy clicker texture config) and some clicker effect renames
 Added sounds for some clicker effects.
 Astrum Deus now drops Mice Fragments like other fragments.
 

@@ -134,7 +134,7 @@ ClickEffect: {
 	}
 
 	Entropy: {
-		Name: Entropy
+		Name: Head Death
 		Description: Create big meld energy explosion on cursor postion
 	}
 
@@ -225,9 +225,9 @@ ClickEffect: {
 		Description: Summon a catalyst cloud that creates projectiles which homes to mouse position
 	}
 
-	ExoCrystal: {
-		Name: Exo Crystal
-		Description: Fall the exo crystals from the sky
+	MiniExoTwins: {
+		Name: Mini Exo Twins
+		Description: Summon mini Artemis and Mini Apollo to temporarily barrage your enemies 
 	}
 
 	Exomination: {
@@ -390,58 +390,148 @@ Items: {
 	Weapons: {
 		Clicker: {
 			#Pre-hardmode
-			WulfrumClicker.DisplayName: Wulfrum Clicker
-			ScourgeClicker.DisplayName: Scourge Clicker
-			SeaRemainClicker.DisplayName: Sea Remain Clicker
-			MushyClicker.DisplayName: Mushy Clicker
-			RottenClicker.DisplayName: Rotten Clicker
-			FleshyClicker.DisplayName: Fleshy Clicker
-			AeroClicker.DisplayName: Aero Clicker
-			GooClicker.DisplayName: Gooclicker
+			WulfrumClicker: { 
+				DisplayName: Wulfrum Pressing Device
+				DisplayNameLegecy: Wulfrum Clicker
+			}
+			ScourgeClicker: { 
+				DisplayName: Deserted Mandible
+				DisplayNameLegecy: Scourge Clicker
+			}
+			SeaRemainClicker: { 
+				DisplayName: Pearl Clutcher
+				DisplayNameLegecy: Sea Remain Clicker
+			}
+			MushyClicker: { 
+				DisplayName: Fungal Clasp
+				DisplayNameLegecy:Mushy Clicker
+			}
+			RottenClicker: { 
+				DisplayName: Jet Black
+				DisplayNameLegecy: Rotten Clicker
+			}
+			FleshyClicker: { 
+				DisplayName: Metacarpal
+				DisplayNameLegecy: Fleshy Clicker
+			}
+			AeroClicker: { 
+				DisplayName: Skypoint
+				DisplayNameLegecy: Aero Clicker
+			}
+			GooClicker: { 
+				DisplayName: Blob Commander
+				DisplayNameLegecy: Gooclicker
+			}
 			# Hardmode
-			CryoClicker.DisplayName: Cryo Clicker
-			AquaticClicker.DisplayName: Aquatic Clicker
-			EarthenClicker.DisplayName: Earthen Clicker
+			CryoClicker: { 
+				DisplayName: Boreal Grasp
+				DisplayNameLegecy: Cryo Clicker
+			}
+			AquaticClicker: { 
+				DisplayName: Bleached Mandible
+				DisplayNameLegecy: Aquatic Clicker
+			}
+			EarthenClicker: { 
+				DisplayName: Ore Press
+				DisplayNameLegecy: Earthen Clicker
+			}
 			GaussClicker.DisplayName: Gauss Clicker
-			BrimstoneClicker.DisplayName: Brimstone Clicker
-			DaedalusClicker.DisplayName: Daedalus Clicker
-			ClickerOfCalamity.DisplayName: Clicker of Calamity
+			BrimstoneClicker: { 
+				DisplayName: Ignic Clicker
+				DisplayNameLegecy: Brimstone Clicker
+			}
+			DaedalusClicker: { 
+				DisplayName: Starspark Pointer
+				DisplayNameLegecy: Daedalus Clicker
+			}
+			ClickerOfCalamity: { 
+				DisplayName: Wretched Fervor
+				DisplayNameLegecy: Clicker of Calamity
+			}
 			#Post-Plantera
-			FeralClicker.DisplayName: Feral Clicker
-			FloraClicker.DisplayName: Flora Clicker
-			AnahitasClicker.DisplayName: Anahita's Clicker
+			FeralClicker: { 
+				DisplayName: Feral Poiner
+				DisplayNameLegecy: Feral Clicker
+			}
+			FloraClicker: { 
+				DisplayName: Edemic Petal
+				DisplayNameLegecy: Flora Clicker
+			}
+			AnahitasClicker: { 
+				DisplayName: Distant Melody
+				DisplayNameLegecy: Anahita's Clicker
+			}
 			AureusClicker.DisplayName: Aureus Clicker
 			StellarClicker.DisplayName: Stellar Clicker
 			FrostysClicker.DisplayName: Frosty's Clicker
 			# Post-Golem
 			ScoriaClicker.DisplayName: Scoria Clicker
-			BloodGodsClicker.DisplayName: Blood God's Clicker
-			PlagueClicker.DisplayName: Plague Clicker
-			MeldClicker.DisplayName: Meld Clicker
+			BloodGodsClicker: { 
+				DisplayName: Hecatomb
+				DisplayNameLegecy: Blood God's Clicker
+			}
+			PlagueClicker: { 
+				DisplayName: Plagued Clicker
+				DisplayNameLegecy: Plague Clicker
+			}
+			MeldClicker: { 
+				DisplayName: Dark Spot
+				DisplayNameLegecy: Meld Clicker
+			}
 			CosmicStarClicker.DisplayName: Cosmic Star Clicker
 			StarblightClicker.DisplayName: Starblight Clicker
 			# Post-Moonlord
-			PolterplasmClicker.DisplayName: Polterplasm Clicker
-			ElementalClicker.DisplayName: Elemental Clicker
+			PolterplasmClicker: { 
+				DisplayName: Beyonder's Grasp
+				DisplayNameLegecy: Polterplasm Clicker
+			}
+			ElementalClicker: { 
+				DisplayName: Verandia Elementulip
+				DisplayNameLegecy: Elemental Clicker
+			}
 			InfestedBeeClicker.DisplayName: Infested Bee Clicker
-			RedLightningClicker.DisplayName: Red Lightning Clicker
+			RedLightningClicker: { 
+				DisplayName: Stormstruck Talon
+				DisplayNameLegecy: Red Lightning Clicker
+			}
 			# Post-Providence
-			ProfanedClicker.DisplayName: Profaned Clicker
-			BloomClicker.DisplayName: Bloom Clicker
-			BloodstoneClicker.DisplayName: Bloodstone Clicker
+			ProfanedClicker: { 
+				DisplayName: Profaned Rapturer
+				DisplayNameLegecy: Profaned Clicker
+			}
+			BloomClicker: { 
+				DisplayName: Twisted Ovary
+				DisplayNameLegecy: Bloom Clicker
+			}
+			BloodstoneClicker: { 
+				DisplayName: Hemophilic Dagger
+				DisplayNameLegecy: Bloodstone Clicker
+			}
 			# Post-Polterghast
-			RuinousClicker.DisplayName: Ruinous Clicker
-			StratusClicker.DisplayName: Stratus Clicker
+			RuinousClicker: { 
+				DisplayName: Ghastly Glicker
+				DisplayNameLegecy: Ruinous Clicker
+			}
+			StratusClicker: { 
+				DisplayName: Bellatrix
+				DisplayNameLegecy: Stratus Clicker
+			}
 			# Post-DoG
 			ClickerOfGods.DisplayName: Clicker of Gods
-			CosmiliteClicker.DisplayName: Cosmilite Clicker
+			CosmiliteClicker: { 
+				DisplayName: Dimension Ripper
+				DisplayNameLegecy: Cosmilite Clicker
+			}
 			NightmareClicker.DisplayName: Nightmare Clicker
 			DarksunClicker.DisplayName: Darksun Clicker
 			NuclearClicker.DisplayName: Nuclear Clicker
 			# Post-Yharon
 			PhoenixClicker.DisplayName: Phoenix Clicker
 			MiceCatalystClicker.DisplayName: Mice Catalyst Clicker
-			ExoClicker.DisplayName: Exo Clicker
+			ExoClicker: { 
+				DisplayName: Resonant Power Plug
+				DisplayNameLegecy: Exo Clicker
+			}
 			MiracleClicker.DisplayName: Miracle Clicker
 			CruelClicker.DisplayName: Cruel Clicker
 			ItsClicker.DisplayName: Its Clicker

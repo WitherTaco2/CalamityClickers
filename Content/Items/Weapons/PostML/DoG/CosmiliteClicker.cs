@@ -41,7 +41,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient<CosmiliteBar>(8)
+                .AddIngredient<CosmiliteBar>(12)
                 .AddTile<CosmicAnvil>()
                 .Register();
         }
