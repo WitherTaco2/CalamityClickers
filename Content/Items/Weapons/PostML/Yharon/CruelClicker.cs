@@ -42,7 +42,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
             AddEffect(Item, LecherousOrb);
             SetDust(Item, DustType);
 
-            Item.damage = 550;
+            Item.damage = 850;
             Item.knockBack = 1f;
             Item.rare = ModContent.RarityType<Violet>();
             Item.value = CalamityGlobalItem.RarityVioletBuyPrice;

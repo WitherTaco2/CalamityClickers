@@ -24,7 +24,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
             {
                 for (int i = 0; i < 7; i++)
                 {
-                    Projectile.NewProjectile(source, position + Vector2.UnitX.RotatedBy(MathHelper.TwoPi / 7 * i) * 10, Vector2.UnitX.RotatedBy(MathHelper.TwoPi / 7 * i) * 3, ModContent.ProjectileType<ClickerOfGodsProjectile>(), damage / 3, knockBack, player.whoAmI);
+                    Projectile.NewProjectile(source, position + Vector2.UnitX.RotatedBy(MathHelper.TwoPi / 7 * i) * 10, Vector2.UnitX.RotatedBy(MathHelper.TwoPi / 7 * i) * 3, ModContent.ProjectileType<ClickerOfGodsProjectile>(), damage / 2, knockBack, player.whoAmI);
                 }
             }, postMoonLord: true);
         }
@@ -33,7 +33,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
             AddEffect(Item, NebulaStars);
             SetDust(Item, DustType);
 
-            Item.damage = 300;
+            Item.damage = 330;
             Item.knockBack = 1f;
             Item.rare = ModContent.RarityType<DarkBlue>();
             Item.value = CalamityGlobalItem.RarityDarkBlueBuyPrice;

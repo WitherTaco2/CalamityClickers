@@ -37,7 +37,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
             AddEffect(Item, PhoenixWrath);
             SetDust(Item, DustType);
 
-            Item.damage = 400;
+            Item.damage = 620;
             Item.knockBack = 1f;
             Item.rare = ModContent.RarityType<Violet>();
             Item.value = CalamityGlobalItem.RarityVioletBuyPrice;

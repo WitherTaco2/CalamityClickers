@@ -65,7 +65,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Polterghast
             Projectile.frameCounter++;
             if (Projectile.frameCounter >= 3)
             {
-                Dust dust = Dust.NewDustPerfect(Projectile.Center, DustID.GemRuby, Vector2.UnitY.RotatedBy(MathHelper.TwoPi) * 5, Scale: Main.rand.NextFloat(1, 1.5f));
+                Dust dust = Dust.NewDustPerfect(Projectile.Center, DustID.GemRuby, Vector2.UnitY.RotatedByRandom(MathHelper.TwoPi) * 5, Scale: Main.rand.NextFloat(1, 1.5f));
                 dust.noGravity = true;
                 Projectile.frameCounter = 0;
             }

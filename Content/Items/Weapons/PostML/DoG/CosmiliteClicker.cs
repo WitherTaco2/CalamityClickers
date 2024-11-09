@@ -33,7 +33,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
             AddEffect(Item, Distort);
             SetDust(Item, DustType);
 
-            Item.damage = 320;
+            Item.damage = 350;
             Item.knockBack = 1f;
             Item.rare = ModContent.RarityType<DarkBlue>();
             Item.value = CalamityGlobalItem.RarityDarkBlueBuyPrice;
@@ -104,7 +104,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
             {
                 if (Projectile.Owner().ItemAnimationActive)
                 {
-                    Projectile.velocity = (Main.MouseWorld - Projectile.Center).SafeNormalize(Vector2.Zero) * 15;
+                    Projectile.velocity = (Main.MouseWorld - Projectile.Center).SafeNormalize(Vector2.UnitX) * 15;
                     Projectile.rotation = Projectile.velocity.ToRotation();
                     Projectile.ai[0] = AfterClickFly;
                 }
@@ -112,7 +112,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
             if (Projectile.ai[0] < SlowDawn)
             {
                 Projectile.rotation += (1f - (MaxTimeleft - Projectile.timeLeft) / MaxTimeleft) * MathHelper.PiOver4 * Projectile.ai[0] * Utils.GetLerpValue(MaxTimeleft - AfterClickFly, MaxTimeleft, Projectile.timeLeft);
-                Projectile.velocity *= 0.97f;
+                Projectile.velocity *= 0.92f;
             }
         }
     }

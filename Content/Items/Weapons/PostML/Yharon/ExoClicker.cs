@@ -19,17 +19,12 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
         public override int DustType => DustID.Stone;
         public override void SetStaticDefaultsExtra()
         {
-            MiniExoTwins = CalamityClickersUtils.RegisterClickEffect(Mod, "MiniExoTwins", 15, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            MiniExoTwins = CalamityClickersUtils.RegisterClickEffect(Mod, "MiniExoTwins", 15, () => RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
-                /*for (int i = 0; i < 7; i++)
+                float rand = Main.rand.NextFloat(MathHelper.TwoPi);
+                for (int i = 0; i < 2; i++)
                 {
-                    Vector2 vec = Vector2.UnitY.RotatedByRandom(0.75f);
-                    int p = Projectile.NewProjectile(source, position - vec * Main.rand.NextFloat(500, 1000), vec * 20, ModContent.ProjectileType<ExoCrystalArrow>(), damage / 3, knockBack / 2, player.whoAmI);
-                    Main.projectile[p].DamageType = ModContent.GetInstance<ClickerDamage>();
-                }*/
-                for (int i = 0; i < 1; i++)
-                {
-                    int index = Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<ExoClickerProjectile>(), damage, knockBack, player.whoAmI, i);
+                    int index = Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<ExoClickerProjectile>(), damage, knockBack, player.whoAmI, i, rand);
                 }
             }, postMoonLord: true);
             CalamityClickersUtils.RegisterBlacklistedClickEffect(MiniExoTwins);
@@ -56,11 +51,13 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
         {
             Projectile.width = Projectile.height = 50;
             Projectile.aiStyle = -1;
+            Projectile.friendly = true;
             Projectile.tileCollide = false;
             Projectile.ignoreWater = true;
             Projectile.timeLeft = 300;
             Projectile.usesLocalNPCImmunity = true;
-            Projectile.localNPCHitCooldown = 30;
+            Projectile.localNPCHitCooldown = 5;
+            //Projectile.extraUpdates = 2;
         }
         public Vector2 LastPos = Vector2.Zero;
         public override void OnSpawn(IEntitySource source)
@@ -70,16 +67,16 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
         }
         public override void AI()
         {
-            int time = (int)(Main.GlobalTimeWrappedHourly) % 100;
+            int time = 100 - (int)(Projectile.timeLeft) % 100; //Time is up
             if (time < 70)
             {
-                double perc = Utils.Lerp(0, MathHelper.TwoPi * 3, Utils.GetLerpValue(0, 70, time, true));
-                Projectile.Center = Vector2.Lerp(LastPos, Main.MouseWorld, MathF.Pow(time / 70, 0.31f)) + Vector2.UnitX.RotatedBy(perc) * 100;
-                Projectile.rotation = (Main.MouseWorld - Projectile.Center).ToRotation();
+                double perc = Utils.Lerp(0, MathHelper.TwoPi * 2, MathF.Pow(Utils.GetLerpValue(0, 70, time, true), 0.21f));
+                Projectile.Center = Vector2.Lerp(LastPos, Main.MouseWorld, MathHelper.Clamp(0f, 1f, MathF.Pow(time / 25, 0.31f))) + Vector2.UnitX.RotatedBy(perc + MathHelper.Pi * Projectile.frame + Projectile.ai[1]) * 100;
+                Projectile.rotation = (Main.MouseWorld - Projectile.Center).ToRotation() + MathHelper.PiOver2;
             }
             else
             {
-                Projectile.Center += Vector2.UnitX.RotatedBy(Projectile.rotation) * 10;
+                Projectile.Center += Vector2.UnitX.RotatedBy(Projectile.rotation - MathHelper.PiOver2) * 25 * MathF.Pow(1f - Utils.GetLerpValue(70, 99, time, true), 0.45f);
             }
             if (time == 99)
             {

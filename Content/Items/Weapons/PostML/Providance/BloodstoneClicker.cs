@@ -25,18 +25,24 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Providance
         {
             Lifestealing = CalamityClickersUtils.RegisterClickEffect(Mod, "Lifestealing", 1, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
-                if (player.moonLeech || player.HasCooldown(LifeSteal.ID))
+                //
+                if (player.moonLeech || player.HasCooldown(LifeSteal.ID) /*|| !player*/)
                     return;
+                NPC npc = CalamityUtils.ClosestNPCAt(position, 32, true, true);
+                if (npc != null || !npc.active)
+                    if (npc.HasBuff<MarkedforDeath>())
+                    {
 
-                player.statLife += 2;
-                player.HealEffect(2);
-                player.AddCooldown(LifeSteal.ID, 20);
+                        player.statLife += 2;
+                        player.HealEffect(2);
+                        player.AddCooldown(LifeSteal.ID, 20);
+                    }
 
             }, postMoonLord: true);
-            BloodyKnives = CalamityClickersUtils.RegisterClickEffect(Mod, "BloodyKnives", 1, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            BloodyKnives = CalamityClickersUtils.RegisterClickEffect(Mod, "BloodyKnives", 20, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 for (int i = 0; i < 8; i++)
-                    Projectile.NewProjectile(source, position, Vector2.UnitX.RotatedBy(MathHelper.TwoPi / 8 * i) * 10, ModContent.ProjectileType<BloodstoneClickerProjectile>(), damage / 4, knockBack, player.whoAmI);
+                    Projectile.NewProjectile(source, position, Vector2.UnitX.RotatedBy(MathHelper.TwoPi / 8 * i) * 10, ModContent.ProjectileType<BloodstoneClickerProjectile>(), damage, knockBack, player.whoAmI);
             }, postMoonLord: true);
         }
         public override void SetDefaultsExtra()
@@ -46,7 +52,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Providance
             //AddEffect(Item, ClickEffect.Linger);
             SetDust(Item, DustID.Blood);
 
-            Item.damage = 150;
+            Item.damage = 170;
             Item.knockBack = 1f;
             Item.rare = ModContent.RarityType<Turquoise>();
             Item.value = CalamityGlobalItem.RarityTurquoiseBuyPrice;
@@ -55,7 +61,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Providance
         {
             CreateRecipe()
                 .AddIngredient<HemoClicker>()
-                .AddIngredient<BloodstoneCore>(8)
+                .AddIngredient<BloodstoneCore>(5)
                 .AddTile(TileID.LunarCraftingStation)
                 .Register();
         }
@@ -63,17 +69,18 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Providance
     public class BloodstoneClickerProjectile : ModdedClickerProjectile
     {
         public override bool UseInvisibleProjectile => false;
+        public static int MaxTimeLeft = 300;
         public override void SetDefaultsExtra()
         {
             Projectile.width = Projectile.height = 30;
             Projectile.aiStyle = -1;
             Projectile.penetrate = -1;
+            Projectile.timeLeft = MaxTimeLeft;
             Projectile.ignoreWater = true;
             Projectile.tileCollide = false;
-            Projectile.timeLeft = 600;
             Projectile.friendly = true;
             Projectile.usesIDStaticNPCImmunity = true;
-            Projectile.idStaticNPCHitCooldown = 30;
+            Projectile.idStaticNPCHitCooldown = 5;
         }
         public Vector2 EnemyOffset = Vector2.Zero;
         public override void OnSpawn(IEntitySource source)
@@ -86,15 +93,19 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Providance
             {
                 NPC npc = Main.npc[(int)Projectile.ai[2]];
                 if (npc is null || !npc.active)
+                {
                     Projectile.ai[2] = -1;
+                    return;
+                }
                 Projectile.Center = npc.Center + EnemyOffset;
                 npc.AddBuff(ModContent.BuffType<BurningBlood>(), 30);
                 npc.AddBuff(ModContent.BuffType<MarkedforDeath>(), 30);
             }
             else
             {
-                CalamityUtils.HomeInOnNPC(Projectile, true, 1200, 10, 1.02f);
+                CalamityUtils.HomeInOnNPC(Projectile, true, 1200, 5, 40f);
             }
+            Projectile.rotation = Projectile.velocity.ToRotation();
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
@@ -104,7 +115,8 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Providance
         }
         public override bool? CanHitNPC(NPC target)
         {
-            return Projectile.ai[2] != -1;
+            //return base.CanHitNPC(target);
+            return /*target.Hitbox.Intersects(Projectile.Hitbox) &&*/ Projectile.ai[2] == -1 && Projectile.timeLeft < MaxTimeLeft - 30;
         }
         public override void SendExtraAI(BinaryWriter writer)
         {

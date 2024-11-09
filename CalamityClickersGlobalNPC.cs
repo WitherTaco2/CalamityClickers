@@ -196,7 +196,7 @@ namespace CalamityClickers
             }
             if (npc.type == ModContent.NPCType<CalamitasClone>())
             {
-                mainRule.Add(ModContent.ItemType<BloodGodsClicker>(), 4);
+                mainRule.Add(ModContent.ItemType<ClickerOfCalamity>(), 4);
             }
             if (npc.type == ModContent.NPCType<Leviathan>() || npc.type == ModContent.NPCType<Anahita>())
             {

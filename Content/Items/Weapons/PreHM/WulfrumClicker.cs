@@ -20,7 +20,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
             {
 
             }, true);
-            CalamityClickersUtils.RegisterBlacklistedClickEffect(ClickerEffect);
+            CalamityClickersUtils.RegisterBlacklistedClickEffect(BasicAutoclicker);
         }
         public override void SetDefaultsExtra()
         {

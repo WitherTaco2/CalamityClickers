@@ -1,17 +1,18 @@
 ClickEffect: {
-	WildMagicNew: {
-		Name: Нестабильная Магия
-		Description: Рандомным образом действует как любой возможный эффект клика
-	}
-
-	SeaBubble: {
-		Name: Морской Пузырь
-		Description: Создает один Пузырь, который медленно атакует и улетает
+	#Pre-Hardmode
+	BasicAutoclicker: {
+		Name: Базовый Автоклик
+		Description: Включает Автоклик со скоростью 7,5 кликов в секунду. Щелкните правой кнопкой мыши, чтобы регулировать
 	}
 
 	Sandstorm: {
 		Name: Песчаная Буря
 		Description: Создаёт взрыв песчаной бури
+	}
+
+	SeaBubble: {
+		Name: Морской Пузырь
+		Description: Создает один Пузырь, который медленно атакует и улетает
 	}
 
 	Mushy: {
@@ -39,14 +40,10 @@ ClickEffect: {
 		Description: Создает шарик слизи, который через короткий промежуток времени совершает небольшой рывок к курсору
 	}
 
+	# Hardmode
 	GaussFlux: {
 		Name: Гаусовый Поток
 		Description: Создает магнитную зону турбулентности
-	}
-
-	CoolFlake: {
-		Name: Прохладный Дождик
-		Description: Создает миньона Снежинку. Может быть призвана только одна. Обновляет длительность существующей снежинки
 	}
 
 	BrimstoneInferno: {
@@ -54,24 +51,19 @@ ClickEffect: {
 		Description: Создает взрыв в виде сатанинской печати. накладывает «Серное Пламя»
 	}
 
-	DaedalusCrystals: {
-		Name: Снаряды Дедала
-		Description: Создает самонаводящиеся снаряды Дедала
-	}
-
-	RedLightning: {
-		Name: Древние Красные Молнии
-		Description: Вызывает четыре разряда молнии с неба
-	}
-
 	CryoBomb: {
 		Name: Крио Бомба
 		Description: Создает Криобомбу на месте курсора. Щеклните по ней что бы взорвать её на осколки
 	}
 
-	AnahitasVoice: {
-		Name: Голос Анахиты
-		Description: Создает круг из Музыкальных Нот
+	DaedalusCrystals: {
+		Name: Снаряды Дедала
+		Description: Создает самонаводящиеся снаряды Дедала
+	}
+
+	DaedalusLightning: {
+		Name: Daedalus Lightning Молния Дэдала
+		Description: Притягивает силу Дедала с неба (создает молнии)
 	}
 
 	Crunch: {
@@ -79,14 +71,15 @@ ClickEffect: {
 		Description: Ломает Броню у ближайших врагов на 3 секунды
 	}
 
+	ChaosFlame: {
+		Name: Пламя Хаоса
+		Description: Создайте небольшое пламя, похожее на портал. Накладывает «Серное Пламя»
+	}
+
+	#Post-Plantera
 	TerraAura: {
 		Name: Терра Аура
 		Description: Вызывает разрушительную ауру, которая длится 3 секунды
-	}
-
-	ElementalAura: {
-		Name: Элементальная Аура
-		Description: Вызывает разрушительную элементальную ауру, которая длится 2 секунды. Накладывает «Смесь Стихий» на 1 секунду
 	}
 
 	GreenInfection: {
@@ -94,34 +87,19 @@ ClickEffect: {
 		Description: Выпускает потоков самонаводящихся Ихора, которые отравляют врагов
 	}
 
-	ProfanedInferno: {
-		Name: Оскверненный Инферно
-		Description: Вызывает взрыв Священной вспышки. Накладывает «Священное Пламя» на 3 секунды
+	AnahitasVoice: {
+		Name: Голос Анахиты
+		Description: Создает круг из Музыкальных Нот
 	}
 
-	TarragonThorns: {
-		Name: Шипы Эстрагона
-		Description: Выращевает 8 шипов в разных направлениях
+	WildMagicNew: {
+		Name: Нестабильная Магия
+		Description: Рандомным образом действует как любой возможный эффект клика
 	}
 
-	BasicAutoclicker: {
-		Name: Базовый Автоклик
-		Description: Включает Автоклик со скоростью 7,5 кликов в секунду. Щелкните правой кнопкой мыши, чтобы регулировать
-	}
-
-	BloodBlasts: {
-		Description: Вызывает появление 8 кровавых снарядов рядом с игроком и выстрелевает во все стороны
-		Name: Взрывы Крови
-	}
-
-	ChaosFlame: {
-		Name: Пламя Хаоса
-		Description: Создайте небольшое пламя, похожее на портал. Накладывает «Серное Пламя»
-	}
-
-	StarRain: {
-		Description: Вызывает падение 4 астральных звезд с неба на месте курсора
-		Name: Звёздный Дождь
+	CoolFlake: {
+		Name: Прохладный Дождик
+		Description: Создает миньона Снежинку. Может быть призвана только одна. Обновляет длительность существующей снежинки
 	}
 
 	AureusBlast: {
@@ -129,11 +107,12 @@ ClickEffect: {
 		Description: Стреляет зарядом Ауреуса по каждому ближайшему врагу вокруг позиции курсора. Также лучше работает для одиночной цели
 	}
 
-	Entropy: {
-		Name: Энтропия
-		Description: Создаёт большой энергетический взрыв в позиции курсора
+	StellarScythe: {
+		Name: Звездная коса
+		Description: Создает косу, которая изменяет направление скорости в зависимости от положения мыши
 	}
 
+	# Post-Golem
 	PlagueBees: {
 		Name: Чумные Осы
 		Description: Призывает множество распростронителей Чумы. Накладывет «Чуму»
@@ -144,11 +123,56 @@ ClickEffect: {
 		Description: Создает Кратор
 	}
 
-	Lifestealing: {
-		Name: Клик Вампира
-		Description: Исцеляет 2 хп за клик
+	StarRain: {
+		Name: Звёздный Дождь
+		Description: Вызывает падение 4 астральных звезд с неба на месте курсора
 	}
 
+	Stardust: {
+		Name: Stardust Звездная пыть
+		Description: Высвобождает звездную пыль
+	}
+
+	Entropy: {
+		Name: Энтропия
+		Description: Создаёт большой энергетический взрыв в позиции курсора
+	}
+
+	BloodBlasts: {
+		Name: Взрывы Крови
+		Description: Вызывает появление 8 кровавых снарядов рядом с игроком и выстрелевает во все стороны
+	}
+
+	# Post-Moonlord
+	# Early Stage
+	
+	ElementalAura: {
+		Name: Элементальная Аура
+		Description: Вызывает разрушительную элементальную ауру, которая длится 2 секунды. Накладывает «Смесь Стихий» на 1 секунду
+	}
+
+	PlagueBees2: {
+		Name: "{$Mods.CalamityClickers.ClickEffect.PlagueBees.Name}"
+		Description: "{$Mods.CalamityClickers.ClickEffect.PlagueBees.Description}"
+	}
+
+	RedLightning: {
+		Name: Древние Красные Молнии
+		Description: Вызывает четыре разряда молнии с неба
+	}
+
+	#Post-Providence
+	ProfanedInferno: {
+		Name: Оскверненный Инферно
+		Description: Вызывает взрыв Священной вспышки. Накладывает «Священное Пламя» на 3 секунды
+	}
+
+	TarragonThorns: {
+		Name: Шипы Эстрагона
+		Description: Выращевает 8 шипов в разных направлениях
+	}
+
+	# Post-Polterghast
 	GhastlyPortal: {
 		Name: Жуткий портал
 		Description: Вызывает призрачный портал, который зовёт потревожаные души в ответ на ваши клик
@@ -157,6 +181,27 @@ ClickEffect: {
 	StratusMoon: {
 		Name: Луна Стратуса
 		Description: Создает луны, а затем направляет в сторону вашего курсора
+	}
+
+	Lifestealing: {
+		Name: Клик Вампира
+		Description: Исцеляет 2 хп за клик
+	}
+
+	BloodyKnives: {
+		// Name: Bloody Knives
+		// Description: Creates a knives, what stucks on hit and inflict Burning Blood and Marked for Death.
+	}
+
+	# Post-DoG
+	NebulaStars: {
+		Name: Звезды туманности
+		Description: Призывает круг из звезд туманности, которые самонаводяться спустя время
+	}
+
+	Distort: {
+		// Name: Distort
+		// Description: Warps spacetime around the cursor, summoning a flurry pf piercing knives, that shoot in reacting to your next click.
 	}
 
 	NightmareMagic: {
@@ -169,19 +214,15 @@ ClickEffect: {
 		Description: Создаёт миниатюрное затмение, многократно стреляя множеством самонаводящихся снарядов
 	}
 
-	NebulaStars: {
-		Name: Звезды туманности
-		Description: Призывает круг из звезд туманности, которые самонаводяться спустя время
+	NuclearExplosion: {
+		Name: Ядерный взрыв
+		Description: БУУУУМ!
 	}
 
-	Stardust: {
-		Name: Stardust Звездная пыть
-		Description: Высвобождает звездную пыль
-	}
-
-	ItzClick: {
-		Name: Это Клик
-		Description: Накладывает мощнейшый дебафф, который наносит урон
+	# Post-Yharon
+	PhoenixWrath: {
+		Name: Дух феникса
+		Description: Вызывает духов Фениксов, охватывая всё вокруг пламенем. Накладывает Драконье пламя
 	}
 
 	MiceCatalyst: {
@@ -189,34 +230,9 @@ ClickEffect: {
 		Description: Призовите облако катализатора, которое создает снаряды, летящие к положении мыши
 	}
 
-	PhoenixWrath: {
-		Name: Дух феникса
-		Description: Вызывает духов Фениксов, охватывая всё вокруг пламенем. Накладывает Драконье пламя
-	}
-
-	StellarScythe: {
-		Name: Звездная коса
-		Description: Создает косу, которая изменяет направление скорости в зависимости от положения мыши
-	}
-
-	NuclearExplosion: {
-		Name: Ядерный взрыв
-		Description: БУУУУМ!
-	}
-
-	DaedalusLightning: {
-		Name: Daedalus Lightning Молния Дэдала
-		Description: Притягивает силу Дедала с неба (создает молнии)
-	}
-
-	PlagueBees2: {
-		Name: "{$Mods.CalamityClickers.ClickEffect.PlagueBees.Name}"
-		Description: "{$Mods.CalamityClickers.ClickEffect.PlagueBees.Description}"
-	}
-
-	ExoCrystal: {
-		Name: Экзо Кристал
-		Description: Вызывает падение экзо кристалов с небес
+	MiniExoTwins: {
+		Name: Мини Экзо-близнецы
+		Description: Призывает мини-Артемиды и мини-Аполлона атакующих вокруг курсора
 	}
 
 	Exomination: {
@@ -224,19 +240,15 @@ ClickEffect: {
 		Description: Взрывает все в большом радиусе при помощи экзо энергии
 	}
 
-	Distort: {
-		// Name: Distort
-		// Description: Warps spacetime around the cursor, summoning a flurry pf piercing knives, that shoot in reacting to your next click
-	}
-
-	Hurt: {
-		// Name: Hurt
-		// Description: $Mods.ClickerClass.Common.Unknown
-	}
-
 	LecherousOrb: {
-		// Name: Lecherous Orb
-		// Description: Creates Lecherous Orb that accumulates life power but starting cost 20 life.
+		Name: Lecherous Orb Похотливая сфера
+		Description: Создает Похотливую сферу, который наполняется жизненной силой, но создание тратит 20 очков жизни
+	}
+
+	# Endgame
+	ItzClick: {
+		Name: Это Клик
+		Description: Накладывает мощнейшый дебафф, который наносит урон
 	}
 }
 
@@ -368,67 +380,202 @@ Items: {
 		}
 
 		Vanity: {
+			ReaverCapsuit: {
+				DisplayName: Вр-Шлем разорителя
+				// Tooltip: ""
+			}
+
 			SilvaCapsuit: {
 				DisplayName: Вр-Шлем Сильвы
 				Tooltip: ""
-			}
-
-			ReaverCapsuit: {
-				// DisplayName: Reaver Capsuit
-				// Tooltip: ""
 			}
 		}
 	}
 
 	Weapons: {
 		Clicker: {
-			SeaRemainClicker.DisplayName: Курсор из Морских Останков
-			ScourgeClicker.DisplayName: Курсор из Плети
-			MushyClicker.DisplayName: Мягкий Курсор
-			RottenClicker.DisplayName: Гниющий Курсор
-			FleshyClicker.DisplayName: Курсор из Плоти
-			AeroClicker.DisplayName: Аэро Курсор
-			GooClicker.DisplayName: Гуоклер
+			#Pre-hardmode
+			WulfrumClicker: {
+				DisplayName: Фульфрумовый девайс для нажатий
+				DisplayNameLegecy: Вульфрумовый Курсор
+			}
+
+			ScourgeClicker: {
+				DisplayName: Пустынная челюсть
+				DisplayNameLegecy: Курсор из Плети
+			}
+
+			SeaRemainClicker: {
+				DisplayName: Жемчужная хватка
+				DisplayNameLegecy: Курсор из Морских Останков
+			}
+
+			MushyClicker: {
+				DisplayName: Грибковая пряжка
+				DisplayNameLegecy: Мягкий Курсор
+			}
+
+			RottenClicker: {
+				DisplayName: Черный как смола
+				DisplayNameLegecy: Гниющий Курсор
+			}
+
+			FleshyClicker: {
+				DisplayName: Пястная кость
+				DisplayNameLegecy: Курсор из Плоти
+			}
+
+			AeroClicker: {
+				DisplayName: Небесная точка
+				DisplayNameLegecy: Аэро Курсор
+			}
+
+			GooClicker: {
+				DisplayName: Командир блёбов
+				DisplayNameLegecy: Гуокурсор
+			}
+
+			# Hardmode
+			CryoClicker: {
+				DisplayName: Северная хватка
+				DisplayNameLegecy: Крио Курсор
+			}
+
+			AquaticClicker: {
+				DisplayName: Обесцвеченная челюсть
+				DisplayNameLegecy: Акватический Курсор
+			}
+
+			EarthenClicker: {
+				DisplayName: Пресс для руд
+				DisplayNameLegecy: Земледробящий Курсор
+			}
+
 			GaussClicker.DisplayName: Гаусовый Курсор
-			CryoClicker.DisplayName: Обмёрзший Курсор
-			BrimstoneClicker.DisplayName: Серный Курсор
-			DaedalusClicker.DisplayName: Курсор Дедала
-			RedLightningClicker.DisplayName: Курсор Красно-кровавых Молний
-			FrostysClicker.DisplayName: Холодный Курсор
-			AnahitasClicker.DisplayName: Курсор Анахиты
-			AquaticClicker.DisplayName: Акватический Курсор
-			EarthenClicker.DisplayName: Земледробящяя Кнопка
-			FloraClicker.DisplayName: Курсор флоры
-			ElementalClicker.DisplayName: Элеменый Курсор
-			FeralClicker.DisplayName: Полтэр Курсор
-			ProfanedClicker.DisplayName: Оскверняющий Курсор
-			BloomClicker.DisplayName: Светящийся Курсор
-			WulfrumClicker.DisplayName: Вульфрумовый Курсор
-			BloodGodsClicker.DisplayName: Курсор из Крови Богов
-			ClickerOfCalamity.DisplayName: Курсор Бедствия
-			CosmicStarClicker.DisplayName: Курсор из Космических Останков
+
+			BrimstoneClicker: {
+				DisplayName: Кликер Игниса
+				DisplayNameLegecy: Серный Курсор
+			}
+
+			DaedalusClicker: {
+				DisplayName: Указатель звездной искры
+				DisplayNameLegecy: Курсор Дедала
+			}
+
+			ClickerOfCalamity: {
+				DisplayName: Жалкий пыл
+				DisplayNameLegecy: Курсор Бедствия
+			}
+
+			#Post-Plantera
+			FeralClicker: {
+				DisplayName: Дикий указатель
+				DisplayNameLegecy: Дикий Курсор
+			}
+
+			FloraClicker: {
+				DisplayName: Лепесток Эдема
+				DisplayNameLegecy: Курсор флоры
+			}
+
+			AnahitasClicker: {
+				DisplayName: Далёкая мелодия
+				DisplayNameLegecy: Курсор Анахиты
+			}
+
 			AureusClicker.DisplayName: Курсор Ареуса
-			MeldClicker.DisplayName: Литой Курсор
-			PlagueClicker.DisplayName: Заражённый Курсор
+			StellarClicker.DisplayName: Звездный Курсор
+			FrostysClicker.DisplayName: Холодный Курсор
+			# Post-Golem
 			ScoriaClicker.DisplayName: Термический Курсор
-			PolterplasmClicker.DisplayName: ПолтэрПлазмовый Курсор
-			BloodstoneClicker.DisplayName: Курсор из Кровавого Камня
-			RuinousClicker.DisplayName: Курсор из Руин
-			NightmareClicker.DisplayName: Кошмарный Курсор
-			StratusClicker.DisplayName: Курсор Стратуса
-			DarksunClicker.DisplayName: Курсор темного солнца
-			ClickerOfGods.DisplayName: Курсор Богов
+
+			BloodGodsClicker: {
+				DisplayName: Гекатомба
+				DisplayNameLegecy: Курсор из Крови Богов
+			}
+
+			PlagueClicker: {
+				DisplayName: Измученный курсор
+				DisplayNameLegecy: Заражённый Курсор
+			}
+
+			MeldClicker: {
+				DisplayName: Темное пятно
+				DisplayNameLegecy: Литой Курсор
+			}
+
+			CosmicStarClicker.DisplayName: Курсор из Космических Останков
 			StarblightClicker.DisplayName: Курсор звездных останков
-			ItsClicker.DisplayName: Это Курсор
+
+			# Post-Moonlord
+			PolterplasmClicker: {
+				DisplayName: Запредельная досягаемость
+				DisplayNameLegecy: Полтэрплазмовый Курсор
+			}
+
+			ElementalClicker: {
+				DisplayName: Элементулип Веранды
+				DisplayNameLegecy: Элементальный Курсор
+			}
+
+			InfestedBeeClicker.DisplayName: Курсор зараженной пчелы
+
+			RedLightningClicker: {
+				DisplayName: Пораженный бурей Коготь
+				DisplayNameLegecy: Курсор Красно-кровавых Молний
+			}
+
+			# Post-Providence
+			ProfanedClicker: {
+				DisplayName: Освкернённое восхищение
+				DisplayNameLegecy: Осквернённый Курсор
+			}
+
+			BloomClicker: {
+				DisplayName: Перекрученная двойственность
+				DisplayNameLegecy: Цветущий Курсор
+			}
+
+			BloodstoneClicker: {
+				DisplayName: Гемофильный кинжал
+				DisplayNameLegecy: Курсор из Кровавого Камня
+			}
+
+			# Post-Polterghast
+			RuinousClicker: {
+				DisplayName: Страшный Курсор
+				DisplayNameLegecy: Губительный Курсор
+			}
+
+			StratusClicker: {
+				DisplayName: Беллатриса
+				DisplayNameLegecy: Курсор Стратуса
+			}
+
+			# Post-DoG
+			ClickerOfGods.DisplayName: Курсор Богов
+
+			CosmiliteClicker: {
+				DisplayName: Потрошитель измерений
+				DisplayNameLegecy: Космилитовый Курсор
+			}
+
+			NightmareClicker.DisplayName: Курсор Кошмаров
+			DarksunClicker.DisplayName: Курсор темного солнца
+			NuclearClicker.DisplayName: Ядерный Курсор
+			# Post-Yharon
 			PhoenixClicker.DisplayName: Курсор Феникса
 			MiceCatalystClicker.DisplayName: Курсор катализатора мыши
-			StellarClicker.DisplayName: Звездный Курсор
-			NuclearClicker.DisplayName: Ядерный Курсор
-			InfestedBeeClicker.DisplayName: Курсор зараженной пчелы
-			ExoClicker.DisplayName: Экзо Курсор
+
+			ExoClicker: {
+				DisplayName: Резонансная вилка питания
+				DisplayNameLegecy: Экзо Курсор
+			}
+
 			MiracleClicker.DisplayName: Чудо-Курсор
-			// CosmiliteClicker.DisplayName: Cosmilite Clicker
-			// CruelClicker.DisplayName: Cruel Clicker
+			CruelClicker.DisplayName: Жестокий Курсор
+			ItsClicker.DisplayName: Вот это Курсор
 		}
 	}
 
@@ -508,9 +655,10 @@ Projectiles: {
 		StellarClickerProjectile.DisplayName: Звездная коса
 		NuclearClickerBoom.DisplayName: Ядерный взрыв
 		PlagueClickerProjectile.DisplayName: Чумная пчела
-		// CosmiliteClickerProjectile.DisplayName: Cosmilite Clicker Projectile
-		// СruelClickerProjectile.DisplayName: Сruel Clicker Projectile
-		// CruelClickerProjectile.DisplayName: Cruel Clicker Projectile
+		// CosmiliteClickerProjectile.DisplayName: Cosmic Knive
+		// CruelClickerProjectile.DisplayName: Lecherous Orb
+		// BloodstoneClickerProjectile.DisplayName: Bloodstone Clicker Projectile
+		// ExoClickerProjectile.DisplayName: Exo Clicker Projectile
 	}
 }
 
