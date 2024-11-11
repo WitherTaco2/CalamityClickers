@@ -174,7 +174,7 @@ ClickEffect: {
 
 	# Post-Polterghast
 	GhastlyPortal: {
-		Name: Ghastly Portal
+		Name: Call to the Beyond
 		Description: Summon Ghastly Portal which summon homing souls in response to your clicks.
 	}
 
@@ -201,7 +201,7 @@ ClickEffect: {
 
 	Distort: {
 		Name: Distort
-		Description: Warps spacetime around the cursor, summoning a flurry pf piercing knives, that shoot in reacting to your next click.
+		Description: Warps spacetime around the cursor, summoning a flurry pf piercing knives, that shoot in reacting to your clicks.
 	}
 
 	NightmareMagic: {
@@ -231,7 +231,7 @@ ClickEffect: {
 	}
 
 	MiniExoTwins: {
-		Name: Mini Exo Twins
+		Name: Olympic Call
 		Description: Summon mini Artemis and Mini Apollo to attack around cursor.
 	}
 

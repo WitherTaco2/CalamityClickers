@@ -51,6 +51,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
         {
             Projectile.width = Projectile.height = 50;
             Projectile.aiStyle = -1;
+            Projectile.penetrate = -1;
             Projectile.friendly = true;
             Projectile.tileCollide = false;
             Projectile.ignoreWater = true;
@@ -97,6 +98,11 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
         {
             CalamityUtils.DrawAfterimagesCentered(Projectile, -1, lightColor);
             return false;
+        }
+        public override bool? CanHitNPC(NPC target)
+        {
+            int time = 100 - (int)(Projectile.timeLeft) % 100; //Time is up
+            return time >= 70;
         }
     }
 }

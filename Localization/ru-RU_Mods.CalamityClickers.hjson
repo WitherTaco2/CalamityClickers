@@ -174,7 +174,7 @@ ClickEffect: {
 
 	# Post-Polterghast
 	GhastlyPortal: {
-		Name: Жуткий портал
+		Name: Призыв к Запредельному
 		Description: Вызывает призрачный портал, который зовёт потревожаные души в ответ на ваши клик
 	}
 
@@ -184,13 +184,13 @@ ClickEffect: {
 	}
 
 	Lifestealing: {
-		Name: Клик Вампира
+		Name: Похищение жизни
 		Description: Исцеляет 2 хп за клик
 	}
 
 	BloodyKnives: {
-		// Name: Bloody Knives
-		// Description: Creates a knives, what stucks on hit and inflict Burning Blood and Marked for Death.
+		Name: Кровавые ножи
+		Description: Создает ножи, которые вонзаются при ударе, накладывая Жгучую кровь и Отмеченный на смерть
 	}
 
 	# Post-DoG
@@ -200,8 +200,8 @@ ClickEffect: {
 	}
 
 	Distort: {
-		// Name: Distort
-		// Description: Warps spacetime around the cursor, summoning a flurry pf piercing knives, that shoot in reacting to your next click.
+		Name: Искажение
+		Description: Искривляет пространство-время вокруг курсора, вызывая шквал колющих ножей, которые реагируют в ответ на ваши клики.
 	}
 
 	NightmareMagic: {
@@ -210,7 +210,7 @@ ClickEffect: {
 	}
 
 	Totality2: {
-		Name: Totality
+		Name: Супер тотальность
 		Description: Создаёт миниатюрное затмение, многократно стреляя множеством самонаводящихся снарядов
 	}
 
@@ -231,17 +231,17 @@ ClickEffect: {
 	}
 
 	MiniExoTwins: {
-		Name: Мини Экзо-близнецы
+		Name: Олимпийский призыв
 		Description: Призывает мини-Артемиды и мини-Аполлона атакующих вокруг курсора
 	}
 
 	Exomination: {
-		Name: Exomination Экзоминация
+		Name: Экзоминация
 		Description: Взрывает все в большом радиусе при помощи экзо энергии
 	}
 
 	LecherousOrb: {
-		Name: Lecherous Orb Похотливая сфера
+		Name: Похотливая сфера
 		Description: Создает Похотливую сферу, который наполняется жизненной силой, но создание тратит 20 очков жизни
 	}
 
