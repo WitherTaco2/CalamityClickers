@@ -13,6 +13,10 @@ namespace CalamityClickers.Content.Items.Accessories
     public class BeetleClickingGlove : ClickerItem, ILocalizedModType, IModType
     {
         public new string LocalizationCategory => "Items.Accessories";
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return false;
+        }
         public override void SetDefaults()
         {
             Item.width = 20;

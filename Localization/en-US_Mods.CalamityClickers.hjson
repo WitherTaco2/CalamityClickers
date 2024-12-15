@@ -250,6 +250,12 @@ ClickEffect: {
 		Name: Itz Click
 		Description: Inflict very powerful damage over time debuff.
 	}
+
+	# Equip
+	BurnOrBliss: {
+		Name: Burn or Bliss
+		Description: Releases a burst of damaging normal, spicy and white chocolate
+	}
 }
 
 Items: {
@@ -611,7 +617,21 @@ Items: {
 				'''
 				{$Mods.ClickerClass.Items.RegalClickingGlove.Tooltip}
 				25% increased click damage when under 20% life
-				Inflict debaff whith power based on how fast you clicks
+				Inflict debuff whith power based on how fast you clicks
+				'''
+		}
+
+		BloodyChocCookies: {
+			DisplayName: Bloody Choc n' Cookies
+			Tooltip:
+				'''
+				While equipped, cookies will periodically spawn within your clicker radius
+				Click the cookie to gain bonus clicker damage, radius, and life regeneration
+				Has chance to replace cookie to Bloody Cookie that increase click damage, crit, and rage regeneration instead
+				Gain up to 15% clicker damage based on your amount of clicks within a second
+				Every 15 clicks releases a burst of damaging normal, spicy or white chocolate
+				Spicy chocolate inflict Brimstone Flames and deal more damage than other types
+				White chocolate homes to owner player in small radius and heal 4 health on contact
 				'''
 		}
 	}
@@ -659,7 +679,10 @@ Projectiles: {
 		CruelClickerProjectile.DisplayName: Lecherous Orb
 		BloodstoneClickerProjectile.DisplayName: Bloodstone Clicker Projectile
 		ExoClickerProjectile.DisplayName: Exo Clicker Projectile
+		BloodyChocCookiesProjectileChocolate.DisplayName: Bloody Choc Cookies Projectile Chocolate
 	}
+
+	BloodyChocCookiesProjectileCookie.DisplayName: Bloody Choc Cookies Projectile Cookie
 }
 
 Buffs: {
@@ -681,6 +704,11 @@ Buffs: {
 	BeetleClickingGloveDebuff: {
 		DisplayName: Beetle Clicking Glove Power
 		Description: You think this debuff has tooltip. NO!
+	}
+
+	BloodyChocCookiesBuff: {
+		DisplayName: Bloody Cookie
+		Description: Increases your click damage and crit and rage regeneration
 	}
 }
 
@@ -704,7 +732,15 @@ UI: {
 }
 
 NPCs.LecherousOrbClicker.DisplayName: Lecherous Orb Clicker
-Misc.RecipeGroup.AnyNormalSFXButton: Any Normal SFX Button
+
+Misc: {
+	RecipeGroup.AnyNormalSFXButton: Any Normal SFX Button
+
+	Death: {
+		BloodyClicker0: "{0} has eat more cookies than can digest"
+		BloodyClicker1: "{0} died of diabetes"
+	}
+}
 
 Configs: {
 	CalamityClickersConfig: {

@@ -1,3 +1,12 @@
-Update 1.0.0.2 - 
+Update 1.1.0.0 - 
+
+New Content:
+Added Bloody Choc n' Cookies. Upgraded version of Chocolate Milk n' Cookies that has new two types of chocolate chips (Spicy - more damaging and White - healing) and new Bloody cookie (damage player but gets more powerful buff)
+
+Reworks:
+
+Removes:
+Removed Beetle Clicking Glove. Maybe later rework it
 
 Bug Fixes:
+Fixed mini Artemi and Apollo pearcing

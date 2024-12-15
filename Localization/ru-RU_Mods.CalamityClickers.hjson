@@ -250,6 +250,12 @@ ClickEffect: {
 		Name: Это Клик
 		Description: Накладывает мощнейшый дебафф, который наносит урон
 	}
+
+	# Equip
+	BurnOrBliss: {
+		Name: Ожог или блаженство
+		Description: Выпускает взрыв наносящего урон обычно, острового или белого шоколада
+	}
 }
 
 Items: {
@@ -614,6 +620,20 @@ Items: {
 				Накладывает дебафф, который зависит от того, насколько ты быстро кликаешь
 				'''
 		}
+
+		BloodyChocCookies: {
+			DisplayName: Кровавый шоколад с печеньем
+			Tooltip:
+				'''
+				При надевании, в радиусе вашего курсора будет периодически появляться печенье
+				Кликните на печенье, чтобы увеличить урон кликов, радиус курсора и регенерацию здоровья
+				Имеет шанц на замену печенья Кровавым печеньем, который вместо этого увеличивает урон клика и шанц критического удара кликера, а также регенарцию ярости
+				Увеличивает урон кликов до 15% в зависимости от количества совершённых кликов в секунду
+				Каждые 15 кликов высвобождает взрыв урона от обычно, острового или белого шоколада
+				Острый шоколад накладывает Серное пламя и наност больше урона чем другие типы
+				Белый шоколад притягивается к играку в небольшом радиусе и востанавливает 4 жизни при контакте
+				'''
+		}
 	}
 
 	SFXButtonCalamity.DisplayName: SFX Кнопка - Каламити
@@ -659,7 +679,10 @@ Projectiles: {
 		// CruelClickerProjectile.DisplayName: Lecherous Orb
 		// BloodstoneClickerProjectile.DisplayName: Bloodstone Clicker Projectile
 		// ExoClickerProjectile.DisplayName: Exo Clicker Projectile
+		// BloodyChocCookiesProjectileChocolate.DisplayName: Bloody Choc Cookies Projectile Chocolate
 	}
+
+	// BloodyChocCookiesProjectileCookie.DisplayName: Bloody Choc Cookies Projectile Cookie
 }
 
 Buffs: {
@@ -681,6 +704,11 @@ Buffs: {
 	BeetleClickingGloveDebuff: {
 		DisplayName: Сила жучиной кликающей перчатки
 		Description: Вы думали что здесь будет локализованное описание. NO!
+	}
+
+	BloodyChocCookiesBuff: {
+		DisplayName: Кровавое печенье
+		Description: Увеличивает твой урон кликов и шанц критического удара кликеров, а также регенерацию ярости
 	}
 }
 
@@ -704,7 +732,15 @@ UI: {
 }
 
 // NPCs.LecherousOrbClicker.DisplayName: Lecherous Orb Clicker
-Misc.RecipeGroup.AnyNormalSFXButton: Любая обычная SFX кнопка
+
+Misc: {
+	RecipeGroup.AnyNormalSFXButton: Любая обычная SFX кнопка
+
+	Death: {
+		BloodyClicker0: "{0} съел больше печенья чем мог переварить"
+		BloodyClicker1: "{0} умер от сахарного диабета"
+	}
+}
 
 Configs: {
 	CalamityClickersConfig: {
