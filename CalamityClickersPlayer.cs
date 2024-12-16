@@ -1,6 +1,6 @@
-﻿using CalamityClickers.Content.Buffs;
-using CalamityClickers.Content.Cooldowns;
+﻿using CalamityClickers.Content.Cooldowns;
 using CalamityClickers.Content.Items.Accessories;
+using CalamityClickers.Content.Items.Armor;
 using CalamityClickers.Content.Items.Weapons;
 using CalamityMod;
 using CalamityMod.Items.Accessories;
@@ -9,13 +9,13 @@ using ClickerClass;
 using ClickerClass.Buffs;
 using ClickerClass.Core.Netcode.Packets;
 using ClickerClass.Items;
+using ClickerClass.Projectiles;
 using ClickerClass.Utilities;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
-using Terraria.GameInput;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -29,16 +29,22 @@ namespace CalamityClickers
 
         public bool daedalusClicker = false;
         public bool ataxiaClicker = false;
+        public bool tarragonClicker = false;
+        public int tarragonClickerPower = 0;
+        public int tarragonClickerTime = 0;
         public bool bloodflareClicker = false;
         public bool godSlayerClicker = false;
+        public int godSlayerClickerPower = 0;
+        public int godSlayerClickerCritCounter = 0;
 
-        public bool fingerOfBG;
-        public bool beetleClickingGlove;
-        public bool bloodyChocolate;
+        public bool fingerOfBG = false;
+        public bool beetleClickingGlove = false;
+        public bool bloodyChocolate = false;
         public Item bloodyChocolateItem = null;
         public int bloodyChocolateCookieCD = 0;
 
-        public bool bloodyCookieBuff;
+        public bool bloodyCookieBuff = false;
+        public bool godSlayerClickerBuff = false;
 
         public bool enchLecherous;
         public override void ResetEffects()
@@ -49,6 +55,7 @@ namespace CalamityClickers
 
             daedalusClicker = false;
             ataxiaClicker = false;
+            tarragonClicker = false;
             bloodflareClicker = false;
             godSlayerClicker = false;
 
@@ -58,12 +65,12 @@ namespace CalamityClickers
             bloodyChocolateItem = null;
 
             bloodyCookieBuff = false;
+            godSlayerClickerBuff = false;
 
             enchLecherous = false;
         }
         public override void PostUpdateEquips()
         {
-            ClickerPlayer cplayer = Player.Clicker();
             if (bloodflareClicker)
             {
                 float num1 = (Player.statLife / Player.statLifeMax2);
@@ -71,6 +78,24 @@ namespace CalamityClickers
 
                 //ClickerCompat.SetClickerRadiusAdd(Player, bloodflareRadius);
             }
+
+            //Tarragon
+            if (tarragonClickerTime > 0)
+                tarragonClickerTime--;
+            else
+                tarragonClickerPower = 0;
+            if (tarragonClicker)
+            {
+                Player.statDefense += tarragonClickerPower;
+                Player.endurance += 0.02f * tarragonClickerPower;
+            }
+
+            //God Slayer
+            if (godSlayerClicker)
+                Player.GetCritChance<ClickerDamage>() += godSlayerClickerPower;
+            else
+                godSlayerClickerPower = 0;
+
             Item heldItem = Player.HeldItem;
             if (ClickerSystem.IsClickerWeapon(heldItem, out ClickerItemCore clickerItem))
             {
@@ -188,7 +213,7 @@ namespace CalamityClickers
 
                 if (Player.whoAmI == Main.myPlayer)
                 {
-                    if (cplayer.clickerInRange && cplayer.clickerSelected)
+                    if (Player.Clicker().clickerInRange && Player.Clicker().clickerSelected)
                     {
 
                         for (int i = 0; i < Main.maxProjectiles; i++)
@@ -373,13 +398,57 @@ namespace CalamityClickers
             }
             return base.Shoot(item, source, position, velocity, type, damage, knockback);
         }
-        public override void ProcessTriggers(TriggersSet triggersSet)
+        public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (CalamityKeybinds.ArmorSetBonusHotKey.JustPressed && godSlayerClicker && !Player.HasCooldown(GodSlayerOverclockCooldown.ID))
+            if (proj.type == ModContent.ProjectileType<ClickDamage>())
             {
-                Player.AddCooldown(GodSlayerOverclockCooldown.ID, 60 * 60);
-                Player.AddBuff(ModContent.BuffType<GodSlayerOverclockBuff>(), 3 * 60);
+                if (ataxiaClicker)
+                {
+                    target.AddBuff(ModContent.BuffType<HydrothermicCapsuitDebuff>(), (int)MathHelper.Clamp(target.CalClicker().hydrothermicBoil + 6, 5 * 60, 20 * 60));
+                }
+                if (tarragonClicker && !Player.HasCooldown(TarragonClickerCooldown.ID))
+                {
+                    tarragonClickerPower++;
+                    if (tarragonClickerPower > 50)
+                        tarragonClickerPower = 50;
+                    tarragonClickerTime += 60;
+                    if (tarragonClickerTime > 50 * 60)
+                        tarragonClickerTime = 50 * 60;
+                }
+                if (godSlayerClicker && !godSlayerClickerBuff)
+                {
+                    if (!hit.Crit)
+                        godSlayerClickerPower++;
+                    else
+                    {
+                        godSlayerClickerPower = 0;
+                        if (!Player.HasCooldown(UltraboostCooldown.ID))
+                        {
+                            godSlayerClickerCritCounter++;
+                            if (godSlayerClickerCritCounter > 50)
+                            {
+                                Player.AddBuff(ModContent.BuffType<GodSlayerCapsuitBuff>(), 5 * 60);
+                                Player.AddCooldown(UltraboostCooldown.ID, 30 * 60);
+                                godSlayerClickerCritCounter = 0;
+                            }
+                        }
+                    }
+                }
             }
+        }
+        public override void ModifyHitNPCWithProj(Projectile proj, NPC target, ref NPC.HitModifiers modifiers)
+        {
+            if (proj.DamageType is ClickerDamage)
+            {
+                //if (godSlayerClicker)
+                if (godSlayerClickerBuff)
+                    modifiers.SetCrit();
+            }
+        }
+        public override void OnHurt(Player.HurtInfo info)
+        {
+            tarragonClickerPower = 0;
+            Player.AddCooldown(TarragonClickerCooldown.ID, 10 * 60);
         }
     }
 }

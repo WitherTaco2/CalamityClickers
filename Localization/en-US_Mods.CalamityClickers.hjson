@@ -277,7 +277,7 @@ Items: {
 			}
 
 			StatigelCapsuit: {
-				DisplayName: Statigel Capsuit
+				DisplayName: Statigel Headband
 				Tooltip:
 					'''
 					10% increased clicker damage
@@ -293,7 +293,7 @@ Items: {
 			}
 
 			DaedalusCapsuit: {
-				DisplayName: Daedalus Capsuit
+				DisplayName: Daedalus Visor
 				Tooltip:
 					'''
 					8% increased clicker damage
@@ -308,7 +308,7 @@ Items: {
 			}
 
 			HydrothermicCapsuit: {
-				DisplayName: Hydrothermic Capsuit
+				DisplayName: Hydrothermic Headsets
 				Tooltip:
 					'''
 					12% increased clicker damage
@@ -319,13 +319,17 @@ Items: {
 					'''
 					Inferno effect when below 50% life
 					You emit a blazing explosion when you are hit
-					Clicker attacks summon damaging and healing flare orbs on hit
+					Inflict a 'Hydrothermic Boil' by clicker weapons
+					'Hydrothermic Boil' is DoT debuff with 50 base damage over time
+					Hitting by clicker weapons increase debuff dps by 5 and expand time by 0.1 second
+					up to 500 dps and 20 second of time
+					Debuff acts as Heat debuff
 					5% increased clicker damage
 					'''
 			}
 
 			TarragonCapsuit: {
-				DisplayName: Tarragon Capsuit
+				DisplayName: Tarragon Biomask
 				Tooltip:
 					'''
 					10% increased clicker damage
@@ -337,12 +341,14 @@ Items: {
 					'''
 					Increased heart pickup range
 					Enemies have a chance to drop extra hearts on death
-					10% increased clicker critical strike chance
+					Hitting enemies by clicker weapons increase defence by 1 and damage reduction by 0.2% and expand buff time by 1 second
+					up to 50 defence, 10% damage reduction and 20 second of time
+					Getting hit resets buff, gets 10 second to cooldown and summon 5 barks
 					'''
 			}
 
 			BloodflareCrimeraCapsuit: {
-				DisplayName: Bloodflare Crimera Capsuit
+				DisplayName: Bloodflare Clickmera Skull
 				Tooltip:
 					'''
 					10% increased clicker damage and clicker critical strike chance
@@ -359,7 +365,7 @@ Items: {
 			}
 
 			GodSlayerCapsuit: {
-				DisplayName: God Slayer Capsuit
+				DisplayName: God Slayer Cloaker Hood
 				Tooltip:
 					'''
 					14% increased clicker damage and critical strike chance
@@ -368,13 +374,15 @@ Items: {
 					'''
 				SetBonus:
 					'''
-					Press {0} to allow every click trigger all active click effects with reduced damage for 2 seconds
-					'Overclock' has 60 second cooldown
+					Increases click critical chance by 1% by each consecutive non-critical hit
+					Bonus resets after dealing critical hit
+					After dealing 50 critical hits by clicker weapons, the user gives an 'Ultraboost' that guarants critical hits
+					'Ultraboost' has 30 second of cooldown
 					'''
 			}
 
 			AuricTeslaRadarCapsuit: {
-				DisplayName: Auric Tesla Radar Capsuit
+				DisplayName: Auric Tesla Gamer Mask
 				Tooltip:
 					'''
 					30% increased clicker damage and critical strike chance
@@ -716,6 +724,7 @@ UI: {
 	Cooldowns: {
 		GodSlayerOverclockCooldown: God Slayer Overclock Cooldown
 		FingerOfBloodGodCooldown: Finger of Blood God Cooldown
+		TarragonClickerCooldown: Tarragon Clicker Defence Cooldown
 	}
 
 	Enchantments: {

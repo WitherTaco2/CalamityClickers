@@ -319,7 +319,11 @@ Items: {
 					'''
 					Эффект «Инферно» при уровне жизни ниже 50%.
 					Вы производите пылающий взрыв, когда вас бьют
-					Атаки клика при попадании вызывают наносящие урон и исцеляющие сферы.
+					Inflict a 'Hydrothermic Boil' by clicker weapons
+					'Hydrothermic Boil' is DoT debuff with 50 base damage over time
+					Hitting by clicker weapons increase debuff dps by 5 and expand time by 0.1 second
+					up to 500 dps and 20 second of time
+					Debuff acts as Heat debuff
 					5% увеличение урона клика
 					'''
 			}
@@ -337,7 +341,9 @@ Items: {
 					'''
 					Увеличена дальность подбора сердца.
 					У врагов есть шанс выбросить дополнительные сердца после смерти
-					10% повышение шанса критического удара клика
+					Hitting enemies by clicker weapons increase defence by 1 and damage reduction by 0.2% and expand time by 1 second
+					up to 50 defence, 10% damage reduction and 20 second of time
+					Getting hit resets buff and summon 5 barks
 					'''
 			}
 
@@ -368,8 +374,10 @@ Items: {
 					'''
 				SetBonus:
 					'''
-					Нажмите {0}, чтобы каждый клик запускал все активные эффекты щелчка с уменьшенным уроном на 2 секунды
-					«Разгон» имеет время восстановления 60 секунд
+					Increases click critical chance by 1% by each consecutive non-critical hit
+					Bonus resets after dealing critical hit
+					After dealing 50 critical hits by clicker weapons, the user gives an 'Ultraboost' that guarants critical hits
+					'Ultraboost' has 30 second of cooldown
 					'''
 			}
 

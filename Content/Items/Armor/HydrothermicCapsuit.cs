@@ -61,4 +61,23 @@ namespace CalamityClickers.Content.Items.Armor
                 Register();
         }
     }
+    public class HydrothermicCapsuitDebuff : ModBuff
+    {
+        public override void SetStaticDefaults()
+        {
+            Main.debuff[Type] = true;
+            Main.pvpBuff[Type] = true;
+            Main.buffNoSave[Type] = true;
+            //BuffID.Sets.LongerExpertDebuff[Type] = true;
+        }
+
+        public override void Update(NPC npc, ref int buffIndex)
+        {
+            if (npc.CalClicker().hydrothermicBoil < npc.buffTime[buffIndex])
+                npc.CalClicker().hydrothermicBoil = npc.buffTime[buffIndex];
+            npc.DelBuff(buffIndex);
+            buffIndex--;
+        }
+
+    }
 }

@@ -8,6 +8,7 @@ using CalamityClickers.Content.Items.Weapons.PostML.Providance;
 using CalamityClickers.Content.Items.Weapons.PostML.Yharon;
 using CalamityClickers.Content.Items.Weapons.PreHM;
 using CalamityMod;
+using CalamityMod.NPCs;
 using CalamityMod.NPCs.AquaticScourge;
 using CalamityMod.NPCs.Astral;
 using CalamityMod.NPCs.AstrumAureus;
@@ -44,6 +45,8 @@ namespace CalamityClickers
     {
         public override bool InstancePerEntity => true;
         public int wither = 0;
+        public int hydrothermicBoil = 0;
+        public int hydrothermicBoilPower = 50;
         public int clickDebuff = 0;
         public int clickDebuffOwner = -1;
 
@@ -51,16 +54,111 @@ namespace CalamityClickers
         {
             CalamityClickersGlobalNPC myClone = (CalamityClickersGlobalNPC)base.Clone(from, to);
             myClone.wither = wither;
+            myClone.hydrothermicBoil = hydrothermicBoil;
+            myClone.hydrothermicBoilPower = hydrothermicBoilPower;
             myClone.clickDebuff = clickDebuff;
             return myClone;
         }
 
         public override void UpdateLifeRegen(NPC npc, ref int damage)
         {
+            // Debuff vulnerabilities and resistances.
+            // Damage multiplier calcs.
+            // Worms that are vulnerable to debuffs and Slime God slimes take reduced damage from vulnerabilities.
+            bool wormBoss = CalamityLists.DesertScourgeIDs.Contains(npc.type) || CalamityLists.EaterofWorldsIDs.Contains(npc.type) || CalamityLists.PerforatorIDs.Contains(npc.type) ||
+                CalamityLists.AquaticScourgeIDs.Contains(npc.type) || CalamityLists.AstrumDeusIDs.Contains(npc.type) || CalamityLists.StormWeaverIDs.Contains(npc.type);
+            bool slimeGod = CalamityLists.SlimeGodIDs.Contains(npc.type);
+
+            bool slimed = npc.drippingSlime || npc.drippingSparkleSlime;
+            double heatDamageMult = slimed ? ((wormBoss || slimeGod) ? CalamityGlobalNPC.VulnerableToDoTDamageMult_Worms_SlimeGod : CalamityGlobalNPC.VulnerableToDoTDamageMult) : CalamityGlobalNPC.BaseDoTDamageMult;
+            if (npc.Calamity().VulnerableToHeat.HasValue)
+            {
+                if (npc.Calamity().VulnerableToHeat.Value)
+                    heatDamageMult *= slimed ? ((wormBoss || slimeGod) ? 1.25 : 1.5) : ((wormBoss || slimeGod) ? CalamityGlobalNPC.VulnerableToDoTDamageMult_Worms_SlimeGod : CalamityGlobalNPC.VulnerableToDoTDamageMult);
+                else
+                    heatDamageMult *= slimed ? ((wormBoss || slimeGod) ? 0.66 : 0.5) : 0.5;
+            }
+
+            double coldDamageMult = CalamityGlobalNPC.BaseDoTDamageMult;
+            if (npc.Calamity().VulnerableToCold.HasValue)
+            {
+                if (npc.Calamity().VulnerableToCold.Value)
+                    coldDamageMult *= wormBoss ? CalamityGlobalNPC.VulnerableToDoTDamageMult_Worms_SlimeGod : CalamityGlobalNPC.VulnerableToDoTDamageMult;
+                else
+                    coldDamageMult *= 0.5;
+            }
+
+            double sicknessDamageMult = npc.Calamity().irradiated > 0 ? (wormBoss ? CalamityGlobalNPC.VulnerableToDoTDamageMult_Worms_SlimeGod : CalamityGlobalNPC.VulnerableToDoTDamageMult) : CalamityGlobalNPC.BaseDoTDamageMult;
+            if (npc.Calamity().VulnerableToSickness.HasValue)
+            {
+                if (npc.Calamity().VulnerableToSickness.Value)
+                    sicknessDamageMult *= npc.Calamity().irradiated > 0 ? (wormBoss ? 1.25 : 1.5) : (wormBoss ? CalamityGlobalNPC.VulnerableToDoTDamageMult_Worms_SlimeGod : CalamityGlobalNPC.VulnerableToDoTDamageMult);
+                else
+                    sicknessDamageMult *= npc.Calamity().irradiated > 0 ? (wormBoss ? 0.66 : 0.5) : 0.5;
+            }
+
+            bool increasedElectricityDamage = npc.wet || npc.honeyWet || npc.lavaWet || npc.dripping;
+            double electricityDamageMult = increasedElectricityDamage ? (wormBoss ? CalamityGlobalNPC.VulnerableToDoTDamageMult_Worms_SlimeGod : CalamityGlobalNPC.VulnerableToDoTDamageMult) : CalamityGlobalNPC.BaseDoTDamageMult;
+            if (npc.Calamity().VulnerableToElectricity.HasValue)
+            {
+                if (npc.Calamity().VulnerableToElectricity.Value)
+                    electricityDamageMult *= increasedElectricityDamage ? (wormBoss ? 1.25 : 1.5) : (wormBoss ? CalamityGlobalNPC.VulnerableToDoTDamageMult_Worms_SlimeGod : CalamityGlobalNPC.VulnerableToDoTDamageMult);
+                else
+                    electricityDamageMult *= increasedElectricityDamage ? (wormBoss ? 0.66 : 0.5) : 0.5;
+            }
+
+            double waterDamageMult = CalamityGlobalNPC.BaseDoTDamageMult;
+            if (npc.Calamity().VulnerableToWater.HasValue)
+            {
+                if (npc.Calamity().VulnerableToWater.Value)
+                    waterDamageMult *= wormBoss ? CalamityGlobalNPC.VulnerableToDoTDamageMult_Worms_SlimeGod : CalamityGlobalNPC.VulnerableToDoTDamageMult;
+                else
+                    waterDamageMult *= 0.5;
+            }
+
+            if (npc.Calamity().IncreasedColdEffects_EskimoSet)
+                coldDamageMult += 0.25;
+            if (npc.Calamity().IncreasedColdEffects_CryoStone)
+                coldDamageMult += 0.5;
+
+            if (npc.Calamity().IncreasedElectricityEffects_Transformer)
+                electricityDamageMult += 0.5;
+
+            if (npc.Calamity().IncreasedHeatEffects_Fireball)
+                heatDamageMult += 0.25;
+            if (npc.Calamity().IncreasedHeatEffects_FlameWakerBoots)
+                heatDamageMult += 0.25;
+            if (npc.Calamity().IncreasedHeatEffects_CinnamonRoll)
+                heatDamageMult += 0.5;
+            if (npc.Calamity().IncreasedHeatEffects_HellfireTreads)
+                heatDamageMult += 0.5;
+
+            if (npc.Calamity().IncreasedSicknessEffects_ToxicHeart)
+                sicknessDamageMult += 0.5;
+
+            if (npc.Calamity().IncreasedSicknessAndWaterEffects_EvergreenGin)
+            {
+                sicknessDamageMult += 0.25;
+                waterDamageMult += 0.25;
+            }
+
+            // Subtract 1 for the vanilla damage multiplier because it's already dealing DoT in the vanilla regen code.
+            double vanillaHeatDamageMult = heatDamageMult - CalamityGlobalNPC.BaseDoTDamageMult;
+            double vanillaColdDamageMult = coldDamageMult - CalamityGlobalNPC.BaseDoTDamageMult;
+            double vanillaSicknessDamageMult = sicknessDamageMult - CalamityGlobalNPC.BaseDoTDamageMult;
+
+
             if (wither > 0)
             {
                 int baseBrimstoneFlamesDoTValue = npc.lifeMax / 100;
                 ApplyDPSDebuff(baseBrimstoneFlamesDoTValue, baseBrimstoneFlamesDoTValue / 5, ref npc.lifeRegen, ref damage);
+            }
+            if (hydrothermicBoil > 0)
+            {
+                int baseCrushDepthDoTValue = (int)(hydrothermicBoilPower * heatDamageMult);
+                if (hydrothermicBoilPower > (int)(500 * heatDamageMult))
+                    hydrothermicBoilPower = (int)(500 * heatDamageMult);
+                ApplyDPSDebuff(baseCrushDepthDoTValue, baseCrushDepthDoTValue / 2, ref npc.lifeRegen, ref damage);
             }
             if (clickDebuff > 0 && clickDebuffOwner != -1)
             {
@@ -87,6 +185,11 @@ namespace CalamityClickers
                 wither--;
             if (clickDebuff > 0)
                 clickDebuff--;
+
+            if (hydrothermicBoil > 0)
+                hydrothermicBoil--;
+            else
+                hydrothermicBoilPower = 50;
 
         }
         public override void DrawEffects(NPC npc, ref Color drawColor)

@@ -57,7 +57,8 @@ namespace CalamityClickers.Content.Items.Armor
 
             //Tarragon
             player.Calamity().tarraSet = true;
-            player.GetCritChance<ClickerDamage>() += 10;
+            //player.GetCritChance<ClickerDamage>() += 10;
+            player.GetModPlayer<CalamityClickersPlayer>().tarragonClicker = true;
 
             //Bloodflare
             player.Calamity().bloodflareSet = true;

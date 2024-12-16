@@ -7,7 +7,9 @@ using CalamityMod.Rarities;
 using CalamityMod.Tiles.Furniture.CraftingStations;
 using ClickerClass;
 using ClickerClass.Items;
+using ClickerClass.Items.Armors;
 using Terraria;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Armor
@@ -68,6 +70,20 @@ namespace CalamityClickers.Content.Items.Armor
                 AddIngredient<AscendantSpiritEssence>(2).
                 AddTile<CosmicAnvil>().
                 Register();
+        }
+    }
+    public class GodSlayerCapsuitBuff : ModBuff
+    {
+        public override LocalizedText Description => base.Description.WithFormatArgs(OverclockHelmet.SetBonusEffectDecrease);
+
+        public override void SetStaticDefaults()
+        {
+            Main.buffNoSave[Type] = false;
+        }
+
+        public override void Update(Player player, ref int buffIndex)
+        {
+            player.CalClicker().godSlayerClickerBuff = true;
         }
     }
 }
