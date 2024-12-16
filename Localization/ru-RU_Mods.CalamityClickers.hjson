@@ -61,11 +61,6 @@ ClickEffect: {
 		Description: Создает самонаводящиеся снаряды Дедала
 	}
 
-	DaedalusLightning: {
-		Name: Daedalus Lightning Молния Дэдала
-		Description: Притягивает силу Дедала с неба (создает молнии)
-	}
-
 	Crunch: {
 		Name: Излом
 		Description: Ломает Броню у ближайших врагов на 3 секунды
@@ -252,6 +247,11 @@ ClickEffect: {
 	}
 
 	# Equip
+	DaedalusLightning: {
+		Name: Молния Дэдала
+		Description: Притягивает силу Дедала с неба (создает молнии)
+	}
+
 	BurnOrBliss: {
 		Name: Ожог или блаженство
 		Description: Выпускает взрыв наносящего урон обычно, острового или белого шоколада
@@ -277,7 +277,7 @@ Items: {
 			}
 
 			StatigelCapsuit: {
-				DisplayName: Статигелевый Вр-Шлем
+				DisplayName: Статигелевая повязка
 				Tooltip:
 					'''
 					10% увеличение урона от клика
@@ -293,7 +293,7 @@ Items: {
 			}
 
 			DaedalusCapsuit: {
-				DisplayName: Вр-Шлем Дедала
+				DisplayName: Защитный козырек Дедала
 				Tooltip:
 					'''
 					Увеличение урона от клика на 8%
@@ -308,7 +308,7 @@ Items: {
 			}
 
 			HydrothermicCapsuit: {
-				DisplayName: Гидротермический Вр-Шлем
+				DisplayName: Гидротермическая гарнитура
 				Tooltip:
 					'''
 					Урон от клика увеличен на 12%.
@@ -329,7 +329,7 @@ Items: {
 			}
 
 			TarragonCapsuit: {
-				DisplayName: Таррагоновый Вр-Шлем
+				DisplayName: Таррагоновая био-маска
 				Tooltip:
 					'''
 					10% увеличение урона клика
@@ -348,7 +348,7 @@ Items: {
 			}
 
 			BloodflareCrimeraCapsuit: {
-				DisplayName: Вр-Шлем из Душ Кровавой Вспышки
+				DisplayName: Череп кликмеры Кровавой вспышки
 				Tooltip:
 					'''
 					На 10% увеличен урон клика и шанс критического удара клика.
@@ -365,7 +365,7 @@ Items: {
 			}
 
 			GodSlayerCapsuit: {
-				DisplayName: Вр-Шлем Богоубийцы
+				DisplayName: Капишон Богоубийцы
 				Tooltip:
 					'''
 					На 14% увеличен урон клика и шанс критического удара.
@@ -382,7 +382,7 @@ Items: {
 			}
 
 			AuricTeslaRadarCapsuit: {
-				DisplayName: Ауритовый Тесла Вр-Шлем с Радаром
+				DisplayName: Ауритовая Тесла Маска Играка
 				Tooltip:
 					'''
 					На 30% увеличен урон клика и шанс критического удара

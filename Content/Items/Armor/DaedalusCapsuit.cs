@@ -24,7 +24,8 @@ namespace CalamityClickers.Content.Items.Armor
             {
                 for (int k = 0; k < 3; k++)
                 {
-                    Projectile proj = Projectile.NewProjectileDirect(source, position - Main.rand.NextVector2Square(-10, 10) - new Vector2(0, 500), new Vector2(0, 5), ModContent.ProjectileType<DaedalusLightning>(), damage, knockBack, player.whoAmI);
+                    float rot = Main.rand.NextFloat(-0.1f, 0.1f);
+                    Projectile proj = Projectile.NewProjectileDirect(source, position - new Vector2(0, 500).RotatedBy(rot), new Vector2(0, 10).RotatedBy(rot), ModContent.ProjectileType<DaedalusLightning>(), damage * 2, knockBack, player.whoAmI);
                     proj.DamageType = ModContent.GetInstance<ClickerDamage>();
                 }
             });
@@ -74,6 +75,25 @@ namespace CalamityClickers.Content.Items.Armor
                 AddIngredient<EssenceofEleum>().
                 AddTile(TileID.MythrilAnvil).
                 Register();
+        }
+    }
+    public class DaedalusCapsuitProjectile : DaedalusLightning, ILocalizedModType
+    {
+        public new string LocalizationCategory => "Projectiles.Clicker";
+        public override string Texture => ModContent.GetInstance<DaedalusLightning>().Texture;
+        public override void SetStaticDefaults()
+        {
+            base.SetStaticDefaults();
+            ProjectileID.Sets.MinionShot[Type] = false;
+        }
+        public override void SetDefaults()
+        {
+            base.SetDefaults();
+            Projectile.ArmorPenetration = 50;
+        }
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            Projectile.damage -= (int)(Projectile.damage * 0.2f);
         }
     }
 }

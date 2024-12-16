@@ -4,6 +4,9 @@ New Content:
 Added Bloody Choc n' Cookies. Upgraded version of Chocolate Milk n' Cookies that has new two types of chocolate chips (Spicy - more damaging and White - healing) and new Bloody cookie (damage player but gets more powerful buff)
 
 Reworks:
+Reworked Hydrotermic Headset (old Hydrotermic Capsuit). Now inflict a stackable DoT head debuff on direct click damage
+Reworked Tarragon Biomask (old Tarragon Capsuit). Clicking on enemies gets a defence and damage reduction and resets after getting hit
+Reworked God Slayer Cloaker Hood (old God Slayer Capsuit). Hitting with non-crit damage increase crit chance and resets after dealing crit damage. Also after 50th crit gets buff that guaranteed crit chance and gets cooldown
 
 Removes:
 Removed Beetle Clicking Glove. Maybe later rework it

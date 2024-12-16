@@ -61,11 +61,6 @@ ClickEffect: {
 		Description: Creates a homing daedalus bolts.
 	}
 
-	DaedalusLightning: {
-		Name: Daedalus Lightning
-		Description: Attracts power of Daedalus from sky. (creates lightnings)
-	}
-
 	Crunch: {
 		Name: Crunch
 		Description: Inflict Armor Crunch for 3 seconds for nearest enemies.
@@ -252,6 +247,11 @@ ClickEffect: {
 	}
 
 	# Equip
+	DaedalusLightning: {
+		Name: Daedalus Lightning
+		Description: Attracts power of Daedalus from sky. (creates lightnings)
+	}
+
 	BurnOrBliss: {
 		Name: Burn or Bliss
 		Description: Releases a burst of damaging normal, spicy and white chocolate
