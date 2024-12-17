@@ -2,7 +2,9 @@
 using CalamityClickers.Content.Items.Accessories;
 using CalamityClickers.Content.Items.Armor;
 using CalamityClickers.Content.Items.Weapons;
+using CalamityClickers.Content.Projectiles;
 using CalamityMod;
+using CalamityMod.CalPlayer;
 using CalamityMod.Items.Accessories;
 using CalamityMod.Items.Weapons.Melee;
 using ClickerClass;
@@ -32,6 +34,9 @@ namespace CalamityClickers
         public bool tarragonClicker = false;
         public int tarragonClickerPower = 0;
         public int tarragonClickerTime = 0;
+        public Item intergelacticClicker = null;
+        public int CurrentRockDamage;
+        public bool HideAsteroids;
         public bool bloodflareClicker = false;
         public bool godSlayerClicker = false;
         public int godSlayerClickerPower = 0;
@@ -56,6 +61,7 @@ namespace CalamityClickers
             daedalusClicker = false;
             ataxiaClicker = false;
             tarragonClicker = false;
+            intergelacticClicker = null;
             bloodflareClicker = false;
             godSlayerClicker = false;
 
@@ -90,6 +96,35 @@ namespace CalamityClickers
                 //float power = 1f - 1f / (1f + 0.02f * tarragonClickerPower);
                 //Player.endurance += power;
                 Player.endurance += 0.02f * tarragonClickerPower;
+            }
+
+            //Intergelactic or Auric Tesla+
+            if (intergelacticClicker != null)
+            {
+                CalamityPlayer obj = Player.Calamity();
+                //Player.AddBuff(ModContent.BuffType<AstrageldonRocksSetbonus>(), 12);
+                int num = ModContent.ProjectileType<AstralRocksProjectile>();
+                float num2 = Player.GetTotalDamage(intergelacticClicker.DamageType).Multiplicative - 1f;
+                int damage = (CurrentRockDamage = (int)(120f * (Player.GetTotalDamage(DamageClass.Generic).Multiplicative + num2)));
+                if (Player.ownedProjectileCounts[num] <= 0 && Player.whoAmI == Main.myPlayer)
+                {
+                    Projectile.NewProjectileDirect(Player.GetSource_Accessory(intergelacticClicker), Player.Center, Vector2.One, num, damage, 10f, Player.whoAmI);
+                }
+
+                if (!obj.auricSet && Main.netMode != 2)
+                {
+                    float amount = Math.Min(Player.velocity.Length() / 30f, 1f);
+                    Lighting.AddLight(Player.Center, Vector3.Lerp(new Vector3(0.125f, 0.005f, 0.3f), new Vector3(0.85f, 0.09f, 0.82f), amount) * 3f);
+                    /*int consequent = Math.Max((int)(40f - base.Player.velocity.Length() * 6f), 4);
+                    if (Main.rand.NextBool(consequent))
+                    {
+                        LegacyParticleSystem.PostDrawPlayers.NewParticle(new AstrageldonSparkle(base.Player.position + new Vector2(Main.rand.Next(base.Player.width), Main.rand.Next(base.Player.height)), base.Player.velocity * -0.4f, AstrageldonSparkle.RandomColor(Main.rand), Main.rand.NextFloat(0.4f, 0.75f)));
+                    }*/
+                }
+                else
+                {
+                    Lighting.AddLight(Player.Center, new Vector3(0.2f, 1.5f, 2f));
+                }
             }
 
             //God Slayer
