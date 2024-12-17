@@ -361,6 +361,7 @@ Items: {
 					This effect has a 5 second cooldown
 					Reduces the amount of clicks required for a click effect based on your currect life
 					Maximum you gain 20% of reducing
+					Hitting an enemies with clicker weapon increase health regen time
 					'''
 			}
 
@@ -688,6 +689,7 @@ Projectiles: {
 		BloodstoneClickerProjectile.DisplayName: Bloodstone Clicker Projectile
 		ExoClickerProjectile.DisplayName: Exo Clicker Projectile
 		BloodyChocCookiesProjectileChocolate.DisplayName: Bloody Choc Cookies Projectile Chocolate
+		DaedalusCapsuitProjectile.DisplayName: Daedalus Capsuit Projectile
 	}
 
 	BloodyChocCookiesProjectileCookie.DisplayName: Bloody Choc Cookies Projectile Cookie
@@ -718,6 +720,16 @@ Buffs: {
 		DisplayName: Bloody Cookie
 		Description: Increases your click damage and crit and rage regeneration
 	}
+
+	GodSlayerCapsuitBuff: {
+		DisplayName: God Slayer Capsuit Buff
+		Description: Mods.CalamityClickers.Buffs.GodSlayerCapsuitBuff.Description
+	}
+
+	HydrothermicCapsuitDebuff: {
+		DisplayName: Hydrothermic Capsuit Debuff
+		Description: Mods.CalamityClickers.Buffs.HydrothermicCapsuitDebuff.Description
+	}
 }
 
 UI: {
@@ -725,6 +737,7 @@ UI: {
 		GodSlayerOverclockCooldown: God Slayer Overclock Cooldown
 		FingerOfBloodGodCooldown: Finger of Blood God Cooldown
 		TarragonClickerCooldown: Tarragon Clicker Defence Cooldown
+		UltraboostCooldown: Ultraboost Cooldown
 	}
 
 	Enchantments: {

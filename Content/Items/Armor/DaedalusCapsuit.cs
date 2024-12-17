@@ -25,7 +25,7 @@ namespace CalamityClickers.Content.Items.Armor
                 for (int k = 0; k < 3; k++)
                 {
                     float rot = Main.rand.NextFloat(-0.1f, 0.1f);
-                    Projectile proj = Projectile.NewProjectileDirect(source, position - new Vector2(0, 500).RotatedBy(rot), new Vector2(0, 10).RotatedBy(rot), ModContent.ProjectileType<DaedalusLightning>(), damage * 2, knockBack, player.whoAmI);
+                    Projectile proj = Projectile.NewProjectileDirect(source, position - new Vector2(0, 500).RotatedBy(rot), new Vector2(0, 10).RotatedBy(rot), ModContent.ProjectileType<DaedalusCapsuitProjectile>(), damage * 2, knockBack, player.whoAmI, rot, Main.rand.Next(100));
                     proj.DamageType = ModContent.GetInstance<ClickerDamage>();
                 }
             });
@@ -90,6 +90,7 @@ namespace CalamityClickers.Content.Items.Armor
         {
             base.SetDefaults();
             Projectile.ArmorPenetration = 50;
+            Projectile.DamageType = ModContent.GetInstance<ClickerDamage>();
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {

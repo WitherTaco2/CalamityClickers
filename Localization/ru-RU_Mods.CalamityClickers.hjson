@@ -361,6 +361,7 @@ Items: {
 					Этот эффект имеет время восстановления 5 секунд.
 					Уменьшает количество кликов, необходимых для эффекта клика, в зависимости от вашей текущей жизни.
 					Максимум вы получаете 20% снижения
+					Hitting an enemies with clicker weapon increase health regen time
 					'''
 			}
 
@@ -688,6 +689,7 @@ Projectiles: {
 		// BloodstoneClickerProjectile.DisplayName: Bloodstone Clicker Projectile
 		// ExoClickerProjectile.DisplayName: Exo Clicker Projectile
 		// BloodyChocCookiesProjectileChocolate.DisplayName: Bloody Choc Cookies Projectile Chocolate
+		// DaedalusCapsuitProjectile.DisplayName: Daedalus Capsuit Projectile
 	}
 
 	// BloodyChocCookiesProjectileCookie.DisplayName: Bloody Choc Cookies Projectile Cookie
@@ -718,12 +720,23 @@ Buffs: {
 		DisplayName: Кровавое печенье
 		Description: Увеличивает твой урон кликов и шанц критического удара кликеров, а также регенерацию ярости
 	}
+
+	GodSlayerCapsuitBuff: {
+		// DisplayName: God Slayer Capsuit Buff
+		// Description: Mods.CalamityClickers.Buffs.GodSlayerCapsuitBuff.Description
+	}
+
+	HydrothermicCapsuitDebuff: {
+		// DisplayName: Hydrothermic Capsuit Debuff
+		// Description: Mods.CalamityClickers.Buffs.HydrothermicCapsuitDebuff.Description
+	}
 }
 
 UI: {
 	Cooldowns: {
 		GodSlayerOverclockCooldown: Перезарядка разгона Убийцы Богов
 		FingerOfBloodGodCooldown: Перезарядка Пальца Кровавого Бога
+		// TarragonClickerCooldown: Tarragon Clicker Defence Cooldown
 	}
 
 	Enchantments: {

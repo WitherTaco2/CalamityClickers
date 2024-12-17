@@ -87,6 +87,8 @@ namespace CalamityClickers
             if (tarragonClicker)
             {
                 Player.statDefense += tarragonClickerPower;
+                //float power = 1f - 1f / (1f + 0.02f * tarragonClickerPower);
+                //Player.endurance += power;
                 Player.endurance += 0.02f * tarragonClickerPower;
             }
 
@@ -414,6 +416,10 @@ namespace CalamityClickers
                     tarragonClickerTime += 60;
                     if (tarragonClickerTime > 50 * 60)
                         tarragonClickerTime = 50 * 60;
+                }
+                if (bloodflareClicker)
+                {
+                    Player.lifeRegenTime += 2;
                 }
                 if (godSlayerClicker && !godSlayerClickerBuff)
                 {
