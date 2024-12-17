@@ -392,6 +392,11 @@ Items: {
 					'''
 				SetBonus: Clicker Tarragon, Bloodflare and God Slayer effects
 			}
+
+			IntergelacticCapsuit: {
+				DisplayName: Intergelactic Capsuit
+				Tooltip: ""
+			}
 		}
 
 		Vanity: {
@@ -690,6 +695,8 @@ Projectiles: {
 		ExoClickerProjectile.DisplayName: Exo Clicker Projectile
 		BloodyChocCookiesProjectileChocolate.DisplayName: Bloody Choc Cookies Projectile Chocolate
 		DaedalusCapsuitProjectile.DisplayName: Daedalus Capsuit Projectile
+		AstralRocksProjectile.DisplayName: Astral Rocks Projectile
+		AstralRocksProjectileFly.DisplayName: Astral Rocks Projectile Fly
 	}
 
 	BloodyChocCookiesProjectileCookie.DisplayName: Bloody Choc Cookies Projectile Cookie

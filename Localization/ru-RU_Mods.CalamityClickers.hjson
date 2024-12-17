@@ -392,6 +392,11 @@ Items: {
 					'''
 				SetBonus: Эффекты клика Таррагоновый, Кровавой Вспышки и Богоубийцы
 			}
+
+			IntergelacticCapsuit: {
+				// DisplayName: Intergelactic Capsuit
+				// Tooltip: ""
+			}
 		}
 
 		Vanity: {
@@ -690,6 +695,8 @@ Projectiles: {
 		// ExoClickerProjectile.DisplayName: Exo Clicker Projectile
 		// BloodyChocCookiesProjectileChocolate.DisplayName: Bloody Choc Cookies Projectile Chocolate
 		// DaedalusCapsuitProjectile.DisplayName: Daedalus Capsuit Projectile
+		// AstralRocksProjectile.DisplayName: Astral Rocks Projectile
+		// AstralRocksProjectileFly.DisplayName: Astral Rocks Projectile Fly
 	}
 
 	// BloodyChocCookiesProjectileCookie.DisplayName: Bloody Choc Cookies Projectile Cookie
@@ -737,6 +744,7 @@ UI: {
 		GodSlayerOverclockCooldown: Перезарядка разгона Убийцы Богов
 		FingerOfBloodGodCooldown: Перезарядка Пальца Кровавого Бога
 		// TarragonClickerCooldown: Tarragon Clicker Defence Cooldown
+		// UltraboostCooldown: Ultraboost Cooldown
 	}
 
 	Enchantments: {

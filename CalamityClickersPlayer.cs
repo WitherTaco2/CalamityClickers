@@ -435,6 +435,14 @@ namespace CalamityClickers
             }
             return base.Shoot(item, source, position, velocity, type, damage, knockback);
         }
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            if (intergelacticClicker != null && !intergelacticClicker.IsAir)
+            {
+                if (ModLoader.TryGetMod("CatalystMod", out var catalyst))
+                    target.AddBuff(catalyst.Find<ModBuff>("AstralBlight").Type, 360);
+            }
+        }
         public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
         {
             if (proj.type == ModContent.ProjectileType<ClickDamage>())

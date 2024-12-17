@@ -1,6 +1,7 @@
 ﻿using CalamityClickers.Content.Items.Armor;
 using CalamityMod;
 using CalamityMod.CalPlayer;
+using ClickerClass;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ using Terraria.Utilities;
 
 namespace CalamityClickers.Content.Projectiles
 {
-    public class AstralRocksProjectile : ModProjectile
+    public class AstralRocksProjectile : ModProjectile, ILocalizedModType
     {
         public struct AstralRockRenderData
         {
@@ -77,8 +78,9 @@ namespace CalamityClickers.Content.Projectiles
 
         public float rotation2;
 
-        public int shotDelay;
+        //public int shotDelay;
 
+        public new string LocalizationCategory => "Projectiles.Clicker";
         public override void SetDefaults()
         {
             Projectile.width = 20;
@@ -135,6 +137,34 @@ namespace CalamityClickers.Content.Projectiles
                 Main.projectile[num2].frame = frame2;
             }
         }*/
+        public void ShootRocksClicker(Vector2 velocity, int ring, int rock)
+        {
+            Player player = Main.player[Projectile.owner];
+            CalamityPlayer val = player.Calamity();
+            //player.GetModPlayer<CatalystPlayer>();
+            UnifiedRandom unifiedRandom = new UnifiedRandom(player.name.GetHashCode());
+            int type = ModContent.ProjectileType<AstralRocksProjectileFly>();
+            int damage = (int)((float)Projectile.damage * 0.2f);
+
+            //List<>
+            switch (ring)
+            {
+                case 0:
+                    Vector3 vector = Vector3.Transform(new Vector3(Projectile.ai[0], 0f, 0f), Matrix.CreateFromYawPitchRoll(1f, -1f, rotation + MathF.PI / 4f * (float)rock));
+                    Vector2 position = player.Center + new Vector2(0f - vector.X, vector.Y);
+                    int frame = (val.auricSet ? AuricTeslaFrame : unifiedRandom.Next(8));
+                    int num = Projectile.NewProjectile(Projectile.GetSource_FromAI(), position, velocity.RotatedBy(Main.rand.NextFloat(-0.6f, 0.6f)), type, damage, Projectile.knockBack, Projectile.owner);
+                    Main.projectile[num].frame = frame;
+                    break;
+                case 1:
+                    Vector3 vector2 = Vector3.Transform(new Vector3(Projectile.ai[1], 0f, 0f), Matrix.CreateFromYawPitchRoll(-1f, -1f, rotation2 + MathF.PI / 4f * (float)(rock - 1)));
+                    Vector2 position2 = player.Center + new Vector2(0f - vector2.X, vector2.Y);
+                    int frame2 = (val.auricSet ? AuricTeslaFrame : unifiedRandom.Next(8));
+                    int num2 = Projectile.NewProjectile(Projectile.GetSource_FromAI(), position2, velocity.RotatedBy(Main.rand.NextFloat(-0.6f, 0.6f)), type, damage, Projectile.knockBack, Projectile.owner);
+                    Main.projectile[num2].frame = frame2;
+                    break;
+            }
+        }
 
         public override void AI()
         {
@@ -168,6 +198,10 @@ namespace CalamityClickers.Content.Projectiles
             num = 3f;
             if (player.direction == -1)
             {
+                /*Projectile.ai[0] += 3f;
+                Projectile.ai[0] -= num;
+                num *= 2f;
+                Projectile.ai[1] += num;*/
                 if (Projectile.ai[0] > 50f)
                 {
                     Projectile.ai[0] -= num;
@@ -193,6 +227,10 @@ namespace CalamityClickers.Content.Projectiles
             }
             else
             {
+                /*Projectile.ai[1] += 3f;
+                Projectile.ai[1] -= num;
+                num *= 2f;
+                Projectile.ai[0] += num;*/
                 if (Projectile.ai[1] > 50f)
                 {
                     Projectile.ai[1] -= num;
@@ -218,7 +256,7 @@ namespace CalamityClickers.Content.Projectiles
             }
 
             CalamityPlayer val = player.Calamity();
-            if (shotDelay > 0)
+            /*if (shotDelay > 0)
             {
                 Projectile.ai[0] = 0f;
                 Projectile.ai[1] = 0f;
@@ -233,15 +271,15 @@ namespace CalamityClickers.Content.Projectiles
                 }
 
                 return;
-            }
+            }*/
 
             Projectile.friendly = true;
-            /*if (val.wearingRogueArmor && Main.myPlayer == Projectile.owner)
+            if (Main.myPlayer == Projectile.owner)
             {
                 Item heldItem = player.HeldItem;
-                if (heldItem.DamageType == CatalystMod.Rogue && val.StealthStrikeAvailable() && player.itemTime > 0)
+                if (heldItem.DamageType == ModContent.GetInstance<ClickerDamage>() && player.itemTime > 0)
                 {
-                    player.GetModPlayer<RenderPlayer>().astralRockRenderData = null;
+                    //player.GetModPlayer<RenderPlayer>().astralRockRenderData = null;
                     if (Main.myPlayer == player.whoAmI)
                     {
                         num = heldItem.shootSpeed;
@@ -255,13 +293,51 @@ namespace CalamityClickers.Content.Projectiles
                             num = 28f;
                         }
 
-                        ShootRocksRogue(Vector2.Normalize(Main.MouseWorld - player.Center) * num);
+                        if (player.GetModPlayer<RenderPlayer>().astralRockRenderData != null && player.GetModPlayer<RenderPlayer>().astralRockRenderData.Count > 0)
+                        {
+                            int ring = Main.rand.Next(2);
+                            List<int> rocks = new List<int>();
+
+                            for (int i = ring * 8; i < 8 + ring * 8; i++)
+                            {
+                                if (player.GetModPlayer<RenderPlayer>().isRender[i])
+                                    rocks.Add(i);
+                            }
+
+                            if (ring == 0 && rocks.Count == 0)
+                            {
+                                ring = 1;
+                                rocks.Clear();
+                                for (int i = ring * 8; i < 8 + ring * 8; i++)
+                                {
+                                    if (player.GetModPlayer<RenderPlayer>().isRender[i])
+                                        rocks.Add(i);
+                                }
+                            }
+                            if (ring == 1 && rocks.Count == 0)
+                            {
+                                ring = 0;
+                                rocks.Clear();
+                                for (int i = ring * 8; i < 8 + ring * 8; i++)
+                                {
+                                    if (player.GetModPlayer<RenderPlayer>().isRender[i])
+                                        rocks.Add(i);
+                                }
+                            }
+                            if (rocks.Count > 0)
+                            {
+                                int num11 = (int)Main.rand.Next(rocks.Count);
+                                Main.NewText($"ring {ring} rock {rocks[num11]}");
+                                ShootRocksClicker(Vector2.Normalize(Main.MouseWorld - player.Center) * num, ring, rocks[num11]);
+                                player.GetModPlayer<RenderPlayer>().isRender[num11] = false;
+                            }
+                        }
                     }
 
-                    shotDelay = 120;
+                    //shotDelay = 120;
                     return;
                 }
-            }*/
+            }
 
             if (Main.netMode == 2)
             {
@@ -287,9 +363,9 @@ namespace CalamityClickers.Content.Projectiles
             //bool num2 = modPlayer.intergelacticClicker != null && modPlayer.intergelacticClicker.DamageType == DamageClass.Melee;
             RenderPlayer modPlayer2 = player.GetModPlayer<RenderPlayer>();
             modPlayer2.astralRockRenderData = new List<AstralRockRenderData>();
-            int num3 = 1;
+            //int num3 = 1;
 
-            for (int i = 1; i <= num3; i++)
+            for (int i = 1; i <= 1; i++)
             {
                 int num4 = 8 * i;
                 float num5 = rotation / (float)Math.Pow(i, 1.5);
@@ -349,23 +425,24 @@ namespace CalamityClickers.Content.Projectiles
         {
             writer.Write(rotation);
             writer.Write(rotation2);
-            writer.Write(shotDelay);
+            //writer.Write(shotDelay);
         }
 
         public override void ReceiveExtraAI(BinaryReader reader)
         {
             rotation = reader.ReadInt32();
             rotation2 = reader.ReadInt32();
-            shotDelay = reader.ReadInt32();
+            //shotDelay = reader.ReadInt32();
         }
 
         public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox)
         {
             Player player = Main.player[Projectile.owner];
             CalamityClickersPlayer modPlayer = player.GetModPlayer<CalamityClickersPlayer>();
-            int num = 1;
+            RenderPlayer rPlayer = player.GetModPlayer<RenderPlayer>();
+            //int num = 1;
 
-            for (int i = 1; i <= num; i++)
+            for (int i = 1; i <= 1; i++)
             {
                 int num2 = 8 * i;
                 float num3 = rotation / (float)Math.Pow(i, 1.5);
@@ -375,7 +452,7 @@ namespace CalamityClickers.Content.Projectiles
                     Vector3 vector = Vector3.Transform(new Vector3(Projectile.ai[0] * (float)i, 0f, 0f), Matrix.CreateFromYawPitchRoll(1f, -1f, num3 + MathF.PI * 2f / (float)num2 * (float)j));
                     if (Utils.CenteredRectangle(player.Center + new Vector2(0f - vector.X, vector.Y), new Vector2(Projectile.width, Projectile.width)).Intersects(targetHitbox))
                     {
-                        return true;
+                        return rPlayer.isRender[j];
                     }
                 }
 
@@ -384,7 +461,7 @@ namespace CalamityClickers.Content.Projectiles
                     Vector3 vector2 = Vector3.Transform(new Vector3(Projectile.ai[1] * (float)i, 0f, 0f), Matrix.CreateFromYawPitchRoll(-1f, -1f, num4 + MathF.PI * 2f / (float)num2 * (float)k));
                     if (Utils.CenteredRectangle(player.Center + new Vector2(0f - vector2.X, vector2.Y), new Vector2(Projectile.width, Projectile.width)).Intersects(targetHitbox))
                     {
-                        return true;
+                        return rPlayer.isRender[k + 8];
                     }
                 }
             }

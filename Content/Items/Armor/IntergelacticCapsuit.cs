@@ -1,6 +1,7 @@
 ﻿using CalamityClickers.Content.Projectiles;
 using CalamityMod;
 using CalamityMod.CalPlayer;
+using ClickerClass;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -8,18 +9,71 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Armor
 {
-    internal class IntergelacticCapsuit
+    [AutoloadEquip(EquipType.Head)]
+    public class IntergelacticCapsuit : ModItem, ILocalizedModType
     {
+        public new string LocalizationCategory => "Items.Armor.Capsuit";
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ModLoader.TryGetMod("CatalystMod", out var _);
+        }
+        public override void SetDefaults()
+        {
+            Item.width = 20;
+            Item.height = 20;
+            Item.defense = 18;
+            if (ModLoader.TryGetMod("CatalystMod", out var result))
+                Item.rare = result.Find<ModRarity>("SuperbossRarity").Type;
+            else
+                Item.rare = ItemRarityID.Yellow;
+            Item.value = Item.sellPrice(0, 30);
+            Item.DamageType = ModContent.GetInstance<ClickerDamage>();
+        }
+        public override void UpdateEquip(Player player)
+        {
+            player.GetDamage<ClickerDamage>() += 0.15f;
+            player.GetCritChance<ClickerDamage>() += 15;
+            player.Clicker().clickerRadius += 0.55f;
+
+        }
+
+        public override bool IsArmorSet(Item head, Item body, Item legs)
+        {
+            if (ModLoader.TryGetMod("CatalystMod", out var result))
+                return body.type == result.Find<ModItem>("IntergelacticBreastplate").Type && legs.type == result.Find<ModItem>("IntergelacticGreaves").Type;
+            else
+                return true;
+        }
+
+        public override void UpdateArmorSet(Player player)
+        {
+            player.setBonus = this.GetLocalizedValue("SetBonus");
+
+            player.CalClicker().intergelacticClicker = Item;
+        }
+
+        public override void AddRecipes()
+        {
+            if (ModLoader.TryGetMod("CatalystMod", out var result))
+            {
+                CreateRecipe().AddIngredient(ModContent.ItemType<StatigelCapsuit>()).AddIngredient(result.Find<ModItem>("MetanovaBar").Type, 6).AddTile(TileID.LunarCraftingStation)
+                    .Register();
+            }
+        }
+
     }
     public class RenderPlayer : ModPlayer
     {
         public float intergelacticRenderAlpha;
 
         public List<AstralRocksProjectile.AstralRockRenderData> astralRockRenderData;
+
+        public List<bool> isRender;
 
         public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
         {
@@ -77,19 +131,19 @@ namespace CalamityClickers.Content.Items.Armor
         {
             Func<Vector3, bool> func = (drawFront ? ((Func<Vector3, bool>)((Vector3 v) => v.Z < 0f)) : ((Func<Vector3, bool>)((Vector3 v) => v.Z >= 0f)));
             Texture2D value = TextureAssets.Projectile[ModContent.ProjectileType<AstralRocksProjectile>()].Value;
-            Vector2 center = info.Position + new Vector2(base.Player.width / 2, base.Player.height / 2);
+            Vector2 center = info.Position + new Vector2(Player.width / 2, Player.height / 2);
             int num = value.Height / 13;
             Rectangle rectangle = new Rectangle(0, 0, value.Width, num - 2);
             Vector2 origin = rectangle.Size() / 2f;
-            int num2 = 1;
+            //int num2 = 1;
 
-            CalamityPlayer val = CalamityUtils.Calamity(base.Player);
+            CalamityPlayer val = CalamityUtils.Calamity(Player);
             Color color = (val.auricSet ? new Color(93, 30, 120, 0) : new Color(135, 25, 150, 0)) * (0.2f + intergelacticRenderAlpha * 0.8f);
             Texture2D value2 = ModContent.Request<Texture2D>(ModContent.GetInstance<AstralRocksProjectile>().Texture + "_Glow").Value;
-            for (int i = 0; i < 16 * num2; i++)
+            for (int i = 0; i < 16; i++)
             {
                 AstralRocksProjectile.AstralRockRenderData astralRockRenderData = this.astralRockRenderData[i];
-                if (func(astralRockRenderData.offsetFromPlayer))
+                if (func(astralRockRenderData.offsetFromPlayer) && isRender[i])
                 {
                     float drawScale = astralRockRenderData.GetDrawScale(1f);
                     Vector2 drawPosition = astralRockRenderData.GetDrawPosition(center);
@@ -155,6 +209,18 @@ namespace CalamityClickers.Content.Items.Armor
 
             return true;
         }
+
+        public override void OnEnterWorld()
+        {
+            isRender = new List<bool>();
+            for (int i = 0; i < 16; i++)
+                isRender.Add(true);
+        }
+
+        /*public override void PostUpdateEquips()
+        {
+            Main.NewText(astralRockRenderData.Count);
+        }*/
     }
     public class PostDrawLayer : PlayerDrawLayer
     {
