@@ -693,13 +693,13 @@ Projectiles: {
 		CruelClickerProjectile.DisplayName: Lecherous Orb
 		BloodstoneClickerProjectile.DisplayName: Bloodstone Clicker Projectile
 		ExoClickerProjectile.DisplayName: Exo Clicker Projectile
-		BloodyChocCookiesProjectileChocolate.DisplayName: Bloody Choc Cookies Projectile Chocolate
-		DaedalusCapsuitProjectile.DisplayName: Daedalus Capsuit Projectile
-		AstralRocksProjectile.DisplayName: Astral Rocks Projectile
-		AstralRocksProjectileFly.DisplayName: Astral Rocks Projectile Fly
+		BloodyChocCookiesProjectileCookie.DisplayName: Bloody Cookie
+		BloodyChocCookiesProjectileChocolate.DisplayName: Chocolate Chip
+		DaedalusCapsuitProjectile.DisplayName: Daedalus Lightning
+		AstralRocksProjectile.DisplayName: Astral Rocks
+		AstralRocksProjectileFly.DisplayName: Astral Rock
 	}
 
-	BloodyChocCookiesProjectileCookie.DisplayName: Bloody Choc Cookies Projectile Cookie
 }
 
 Buffs: {
@@ -729,13 +729,13 @@ Buffs: {
 	}
 
 	GodSlayerCapsuitBuff: {
-		DisplayName: God Slayer Capsuit Buff
-		Description: Mods.CalamityClickers.Buffs.GodSlayerCapsuitBuff.Description
+		DisplayName: Hyperboost
+		Description: Clickers now always inflict crit
 	}
 
 	HydrothermicCapsuitDebuff: {
-		DisplayName: Hydrothermic Capsuit Debuff
-		Description: Mods.CalamityClickers.Buffs.HydrothermicCapsuitDebuff.Description
+		DisplayName: Hydrothermic Boil
+		Description: You don't know description
 	}
 }
 

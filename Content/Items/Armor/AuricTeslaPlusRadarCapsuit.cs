@@ -1,4 +1,4 @@
-using CalamityMod;
+﻿using CalamityMod;
 using CalamityMod.CalPlayer.Dashes;
 using CalamityMod.Items;
 using CalamityMod.Items.Armor.Auric;
@@ -6,14 +6,16 @@ using CalamityMod.Items.Materials;
 using CalamityMod.Rarities;
 using CalamityMod.Tiles.Furniture.CraftingStations;
 using ClickerClass;
-using ClickerClass.Items;
+using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Armor
 {
     [AutoloadEquip(EquipType.Head)]
-    public class AuricTeslaRadarCapsuit : ClickerItem, ILocalizedModType
+    public class AuricTeslaPlusRadarCapsuit : ModItem, ILocalizedModType
     {
         public new string LocalizationCategory => "Items.Armor.Capsuit";
 
@@ -23,26 +25,21 @@ namespace CalamityClickers.Content.Items.Armor
             Item.height = 22;
             Item.value = CalamityGlobalItem.RarityVioletBuyPrice;
             Item.rare = ModContent.RarityType<Violet>();
-            Item.defense = 38;
+            Item.defense = 42;
         }
-
         public override void UpdateEquip(Player player)
         {
-            //ClickerCompat.SetDamageAdd(player, 0.13f);
-            //ClickerCompat.SetClickerCritAdd(player, 13);
-            //ClickerCompat.SetClickerRadiusAdd(player, WitherTacoLib.Math.Radius(0.5f));
-            //ClickerCompat.SetClickerBonusPercentAdd(player, 0.1f);
-
             player.GetDamage<ClickerDamage>() += 0.3f;
             player.GetCritChance<ClickerDamage>() += 30;
             player.Clicker().clickerBonusPercent -= 0.1f;
             player.Clicker().clickerRadius += 1f;
         }
-
         public override bool IsArmorSet(Item head, Item body, Item legs)
         {
-            Mod calamity = ModLoader.GetMod("CalamityMod");
-            return body.type == ModContent.ItemType<AuricTeslaBodyArmor>() && legs.type == ModContent.ItemType<AuricTeslaCuisses>();
+            Mod catalyst = ModLoader.GetMod("CatalystMod");
+            Player player = Main.player[Main.myPlayer];
+            return (body.type == ModContent.ItemType<AuricTeslaBodyArmor>() && player.body == EquipLoader.GetEquipSlot(catalyst, "AuricBody", EquipType.Body))
+                && (legs.type == ModContent.ItemType<AuricTeslaCuisses>() && player.legs == EquipLoader.GetEquipSlot(catalyst, "AuricLegs", EquipType.Legs));
         }
 
         public override void UpdateArmorSet(Player player)
@@ -55,10 +52,8 @@ namespace CalamityClickers.Content.Items.Armor
             //player.GetDamage<ClickerDamage>() += 0.3f;
             //player.GetCritChance<ClickerDamage>() += 30;
 
-            //Tarragon
-            player.Calamity().tarraSet = true;
-            //player.GetCritChance<ClickerDamage>() += 10;
-            player.GetModPlayer<CalamityClickersPlayer>().setTarragonClicker = true;
+            //Intergelcatic
+            player.CalClicker().setIntergelacticClicker = Item;
 
             //Bloodflare
             player.Calamity().bloodflareSet = true;
@@ -78,21 +73,48 @@ namespace CalamityClickers.Content.Items.Armor
             player.Calamity().auricSet = true;
             player.thorns += 3f;
         }
-
-        public override void ArmorSetShadows(Player player)
+        public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            player.armorEffectDrawOutlines = true;
-        }
+            string text = Colors.AlphaDarken(new Color(112, 244, 244, 255)).Hex3();
+            for (int i = 0; i < tooltips.Count; i++)
+            {
+                if (!(tooltips[i].Mod == "Terraria"))
+                {
+                    continue;
+                }
 
+                if (tooltips[i].Name == "ItemName")
+                {
+                    string value2;
+                    string text2 = (value2 = Lang.GetItemName(Item.type).Value);
+                    value2 = value2 + "[c/" + text + ":+]";
+                    for (int j = text2.Length; j < tooltips[i].Text.Length; j++)
+                    {
+                        value2 += tooltips[i].Text[j];
+                    }
+
+                    tooltips[i].Text = value2;
+                    if (Item.social)
+                    {
+                        break;
+                    }
+                }
+                else if (tooltips[i].Name == "Defense")
+                {
+                    tooltips[i].Text = Item.defense + "[c/" + text + ":(+" + 4 + ")]" + Lang.tip[25];
+                }
+            }
+        }
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient<TarragonCapsuit>()
+                .AddIngredient<IntergelacticCapsuit>()
                 .AddIngredient<BloodflareCrimeraCapsuit>()
                 .AddIngredient<GodSlayerCapsuit>()
                 .AddIngredient<AuricBar>(12)
                 .AddTile<CosmicAnvil>()
                 .Register();
         }
+
     }
 }

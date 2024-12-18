@@ -1,4 +1,5 @@
-﻿using CalamityClickers.Content.Cooldowns;
+﻿using CalamityClickers.Commons.CatalystCrossmod;
+using CalamityClickers.Content.Cooldowns;
 using CalamityClickers.Content.Items.Accessories;
 using CalamityClickers.Content.Items.Armor;
 using CalamityClickers.Content.Items.Weapons;
@@ -11,10 +12,12 @@ using ClickerClass;
 using ClickerClass.Buffs;
 using ClickerClass.Core.Netcode.Packets;
 using ClickerClass.Items;
+using ClickerClass.Items.Accessories;
 using ClickerClass.Projectiles;
 using ClickerClass.Utilities;
 using Microsoft.Xna.Framework;
 using System;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -29,24 +32,26 @@ namespace CalamityClickers
 
         public bool clickerSelected = false;
 
-        public bool daedalusClicker = false;
-        public bool ataxiaClicker = false;
-        public bool tarragonClicker = false;
-        public int tarragonClickerPower = 0;
-        public int tarragonClickerTime = 0;
-        public Item intergelacticClicker = null;
+        public bool setDaedalusClicker = false;
+        public bool setHydrothermicClicker = false;
+        public bool setTarragonClicker = false;
+        public int setTarragonClickerPower = 0;
+        public int setTarragonClickerTime = 0;
+        public Item setIntergelacticClicker = null;
         public int CurrentRockDamage;
         public bool HideAsteroids;
-        public bool bloodflareClicker = false;
-        public bool godSlayerClicker = false;
-        public int godSlayerClickerPower = 0;
-        public int godSlayerClickerCritCounter = 0;
+        public int setIntergelacticTimer = 60;
+        public bool setBloodflareClicker = false;
+        public bool setGodSlayerClicker = false;
+        public int setGodSlayerClickerPower = 0;
+        public int setGodSlayerClickerCritCounter = 0;
 
-        public bool fingerOfBG = false;
-        public bool beetleClickingGlove = false;
-        public bool bloodyChocolate = false;
-        public Item bloodyChocolateItem = null;
-        public int bloodyChocolateCookieCD = 0;
+        public bool accFingerOfBG = false;
+        public bool accBeetleClickingGlove = false;
+        public bool accBloodyChocolate = false;
+        public Item accBloodyChocolateItem = null;
+        public int accBloodyChocolateCookieCD = 0;
+        public Item accSSMedal = null;
 
         public bool bloodyCookieBuff = false;
         public bool godSlayerClickerBuff = false;
@@ -58,17 +63,18 @@ namespace CalamityClickers
 
             clickerSelected = false;
 
-            daedalusClicker = false;
-            ataxiaClicker = false;
-            tarragonClicker = false;
-            intergelacticClicker = null;
-            bloodflareClicker = false;
-            godSlayerClicker = false;
+            setDaedalusClicker = false;
+            setHydrothermicClicker = false;
+            setTarragonClicker = false;
+            setIntergelacticClicker = null;
+            setBloodflareClicker = false;
+            setGodSlayerClicker = false;
 
-            fingerOfBG = false;
-            beetleClickingGlove = false;
-            bloodyChocolate = false;
-            bloodyChocolateItem = null;
+            accFingerOfBG = false;
+            accBeetleClickingGlove = false;
+            accBloodyChocolate = false;
+            accBloodyChocolateItem = null;
+            accSSMedal = null;
 
             bloodyCookieBuff = false;
             godSlayerClickerBuff = false;
@@ -77,7 +83,7 @@ namespace CalamityClickers
         }
         public override void PostUpdateEquips()
         {
-            if (bloodflareClicker)
+            if (setBloodflareClicker)
             {
                 float num1 = (Player.statLife / Player.statLifeMax2);
                 Player.Clicker().clickerBonusPercent += 0.2f * (1f - num1);
@@ -86,29 +92,30 @@ namespace CalamityClickers
             }
 
             //Tarragon
-            if (tarragonClickerTime > 0)
-                tarragonClickerTime--;
+            if (setTarragonClickerTime > 0)
+                setTarragonClickerTime--;
             else
-                tarragonClickerPower = 0;
-            if (tarragonClicker)
+                setTarragonClickerPower = 0;
+            if (setTarragonClicker)
             {
-                Player.statDefense += tarragonClickerPower;
-                //float power = 1f - 1f / (1f + 0.02f * tarragonClickerPower);
+                Player.statDefense += setTarragonClickerPower;
+                //float power = 1f - 1f / (1f + 0.02f * setTarragonClickerPower);
                 //Player.endurance += power;
-                Player.endurance += 0.02f * tarragonClickerPower;
+                Player.endurance += 0.002f * setTarragonClickerPower;
             }
 
             //Intergelactic or Auric Tesla+
-            if (intergelacticClicker != null)
+            if (setIntergelacticClicker != null)
             {
+                //Summon Asteroids
                 CalamityPlayer obj = Player.Calamity();
                 //Player.AddBuff(ModContent.BuffType<AstrageldonRocksSetbonus>(), 12);
                 int num = ModContent.ProjectileType<AstralRocksProjectile>();
-                float num2 = Player.GetTotalDamage(intergelacticClicker.DamageType).Multiplicative - 1f;
+                float num2 = Player.GetTotalDamage(setIntergelacticClicker.DamageType).Multiplicative - 1f;
                 int damage = (CurrentRockDamage = (int)(120f * (Player.GetTotalDamage(DamageClass.Generic).Multiplicative + num2)));
                 if (Player.ownedProjectileCounts[num] <= 0 && Player.whoAmI == Main.myPlayer)
                 {
-                    Projectile.NewProjectileDirect(Player.GetSource_Accessory(intergelacticClicker), Player.Center, Vector2.One, num, damage, 10f, Player.whoAmI);
+                    Projectile.NewProjectileDirect(Player.GetSource_Accessory(setIntergelacticClicker), Player.Center, Vector2.One, num, damage, 10f, Player.whoAmI);
                 }
 
                 if (!obj.auricSet && Main.netMode != 2)
@@ -125,24 +132,43 @@ namespace CalamityClickers
                 {
                     Lighting.AddLight(Player.Center, new Vector3(0.2f, 1.5f, 2f));
                 }
+
+                //Asteroid regen
+                if (setIntergelacticTimer > 0)
+                    setIntergelacticTimer--;
+                else
+                {
+                    RenderPlayer rPlayer = Player.GetModPlayer<RenderPlayer>();
+                    List<int> indexes = new List<int>();
+                    for (int i = 0; i < rPlayer.isRender.Count; i++)
+                    {
+                        if (rPlayer.isRender[i])
+                            indexes.Add(i);
+                    }
+                    if (indexes.Count < rPlayer.isRender.Count)
+                    {
+                        rPlayer.isRender[indexes[Main.rand.Next(indexes.Count)]] = true;
+                        setIntergelacticTimer = 60;
+                    }
+                }
             }
 
             //God Slayer
-            if (godSlayerClicker)
-                Player.GetCritChance<ClickerDamage>() += godSlayerClickerPower;
+            if (setGodSlayerClicker)
+                Player.GetCritChance<ClickerDamage>() += setGodSlayerClickerPower;
             else
-                godSlayerClickerPower = 0;
+                setGodSlayerClickerPower = 0;
 
             Item heldItem = Player.HeldItem;
             if (ClickerSystem.IsClickerWeapon(heldItem, out ClickerItemCore clickerItem))
             {
                 //EnableClickEffect(clickerItem.itemClickEffects);
                 clickerSelected = true;
-                if (bloodyChocolateItem != null && !bloodyChocolateItem.IsAir && clickerSelected)
+                if (accBloodyChocolateItem != null && !accBloodyChocolateItem.IsAir && clickerSelected)
                 {
                     Player.Clicker().accCookieItem = null;
-                    bloodyChocolateCookieCD++;
-                    if (Player.whoAmI == Main.myPlayer && bloodyChocolateCookieCD > 600)
+                    accBloodyChocolateCookieCD++;
+                    if (Player.whoAmI == Main.myPlayer && accBloodyChocolateCookieCD > 600)
                     {
                         int radius = (int)(95 * Player.Clicker().clickerRadius);
                         if (radius > 350)
@@ -153,9 +179,9 @@ namespace CalamityClickers
                         //Sqrt for bias outwards
                         Vector2 pos = Vector2.UnitY.RotatedByRandom(MathHelper.TwoPi) * radius * (float)Math.Sqrt(Main.rand.NextFloat(0.1f, 1f));
 
-                        Projectile.NewProjectile(Player.GetSource_Accessory(bloodyChocolateItem), pos + Player.Center, Vector2.Zero, ModContent.ProjectileType<BloodyChocCookiesProjectileCookie>(), 0, 0f, Player.whoAmI);
+                        Projectile.NewProjectile(Player.GetSource_Accessory(accBloodyChocolateItem), pos + Player.Center, Vector2.Zero, ModContent.ProjectileType<BloodyChocCookiesProjectileCookie>(), 0, 0f, Player.whoAmI);
 
-                        bloodyChocolateCookieCD = 0;
+                        accBloodyChocolateCookieCD = 0;
                     }
 
                     //Cookie Click
@@ -246,6 +272,105 @@ namespace CalamityClickers
                         }
 
                     }
+                }
+
+                //SS medal
+                if (clickerSelected && accSSMedal != null && !accSSMedal.IsAir)
+                {
+                    int ssMedalType = ModContent.ProjectileType<SSMedalProjectile>();
+                    int sMedalType1 = ModContent.ProjectileType<SMedalPro>();
+                    int sMedalType2 = ModContent.ProjectileType<SMedalPro2>();
+                    int sMedalType3 = ModContent.ProjectileType<SMedalPro3>();
+
+                    for (int i = 0; i < Main.maxProjectiles; i++)
+                    {
+                        Projectile proj = Main.projectile[i];
+
+                        if (proj.active && proj.owner == Player.whoAmI && proj.type == ssMedalType && proj.ModProjectile is SSMedalProjectile sMedal)
+                        {
+                            float len = (proj.Size / 2f).LengthSquared() * 0.78f; //Circle inside the projectile hitbox
+                            if (proj.DistanceSQ(Main.MouseWorld) < len)
+                            {
+                                sMedal.MouseoverAlpha = 1f;
+                                if (Player.Clicker().accFMedalAmount < FMedal.ChargeMeterMax)
+                                {
+                                    Player.Clicker().accFMedalAmount += 1;
+
+                                    for (int j = 0; j < Main.maxProjectiles; j++)
+                                    {
+                                        Projectile proj1 = Main.projectile[j];
+                                        if (proj1 != null && proj1.active)
+                                        {
+                                            if (proj1.owner == Main.myPlayer && proj1.type == sMedalType1 && proj1.ModProjectile is SMedalProBase sMedalBase)
+                                            {
+                                                sMedalBase.MouseoverAlpha = 1f;
+                                                Vector2 offset = new Vector2(Main.rand.Next(-20, 21), Main.rand.Next(-20, 21));
+                                                Dust dust = Dust.NewDustDirect(proj1.Center + offset, 8, 8, 88, Scale: 1.25f);
+                                                dust.noGravity = true;
+                                                dust.velocity = -offset * 0.05f;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                                if (Player.Clicker().accAMedalAmount < AMedal.ChargeMeterMax)
+                                {
+                                    Player.Clicker().accAMedalAmount += 1;
+                                    for (int j = 0; j < Main.maxProjectiles; j++)
+                                    {
+                                        Projectile proj1 = Main.projectile[j];
+                                        if (proj1 != null && proj1.active)
+                                        {
+                                            if (proj1.owner == Main.myPlayer && proj1.type == sMedalType2 && proj1.ModProjectile is SMedalProBase sMedalBase)
+                                            {
+                                                sMedalBase.MouseoverAlpha = 1f;
+                                                Vector2 offset = new Vector2(Main.rand.Next(-20, 21), Main.rand.Next(-20, 21));
+                                                Dust dust = Dust.NewDustDirect(proj1.Center + offset, 8, 8, 87, Scale: 1.25f);
+                                                dust.noGravity = true;
+                                                dust.velocity = -offset * 0.05f;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    /*
+                                    sMedal.MouseoverAlpha = 1f;
+                                    Vector2 offset = new Vector2(Main.rand.Next(-20, 21), Main.rand.Next(-20, 21));
+                                    Dust dust = Dust.NewDustDirect(Main.MouseWorld + offset, 8, 8, 87, Scale: 1.25f);
+                                    dust.noGravity = true;
+                                    dust.velocity = -offset * 0.05f;
+                                    */
+                                }
+                                if (Player.Clicker().accSMedalAmount < SMedal.ChargeMeterMax)
+                                {
+                                    Player.Clicker().accSMedalAmount += 1;
+                                    for (int j = 0; j < Main.maxProjectiles; j++)
+                                    {
+                                        Projectile proj1 = Main.projectile[j];
+                                        if (proj1 != null && proj1.active)
+                                        {
+                                            if (proj1.owner == Main.myPlayer && proj1.type == sMedalType3 && proj1.ModProjectile is SMedalProBase sMedalBase)
+                                            {
+                                                sMedalBase.MouseoverAlpha = 1f;
+                                                Vector2 offset = new Vector2(Main.rand.Next(-20, 21), Main.rand.Next(-20, 21));
+                                                Dust dust = Dust.NewDustDirect(proj1.Center + offset, 8, 8, 87, Scale: 1.25f);
+                                                dust.noGravity = true;
+                                                dust.velocity = -offset * 0.05f;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    /*
+                                    //sMedal.MouseoverAlpha = 1f;
+                                    Vector2 offset = new Vector2(Main.rand.Next(-20, 21), Main.rand.Next(-20, 21));
+                                    Dust dust = Dust.NewDustDirect(Main.MouseWorld + offset, 8, 8, 89, Scale: 1.25f);
+                                    dust.noGravity = true;
+                                    dust.velocity = -offset * 0.05f;
+                                    */
+                                }
+                            }
+                        }
+                    }
+
                 }
 
                 if (Player.whoAmI == Main.myPlayer)
@@ -423,7 +548,7 @@ namespace CalamityClickers
                     {
                         if (clickerPlayer.HasClickEffect(name, out ClickEffect effect))
                         {
-                            if (fingerOfBG && !Player.HasCooldown(FingerOfBloodGodCooldown.ID))
+                            if (accFingerOfBG && !Player.HasCooldown(FingerOfBloodGodCooldown.ID))
                             {
                                 effect.Action?.Invoke(Player, source, position, type, damage, knockback);
                                 Player.AddCooldown(FingerOfBloodGodCooldown.ID, 60 * 10);
@@ -437,7 +562,7 @@ namespace CalamityClickers
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (intergelacticClicker != null && !intergelacticClicker.IsAir)
+            if (setIntergelacticClicker != null && !setIntergelacticClicker.IsAir)
             {
                 if (ModLoader.TryGetMod("CatalystMod", out var catalyst))
                     target.AddBuff(catalyst.Find<ModBuff>("AstralBlight").Type, 360);
@@ -447,38 +572,38 @@ namespace CalamityClickers
         {
             if (proj.type == ModContent.ProjectileType<ClickDamage>())
             {
-                if (ataxiaClicker)
+                if (setHydrothermicClicker)
                 {
                     target.AddBuff(ModContent.BuffType<HydrothermicCapsuitDebuff>(), (int)MathHelper.Clamp(target.CalClicker().hydrothermicBoil + 6, 5 * 60, 20 * 60));
                 }
-                if (tarragonClicker && !Player.HasCooldown(TarragonClickerCooldown.ID))
+                if (setTarragonClicker && !Player.HasCooldown(TarragonClickerCooldown.ID))
                 {
-                    tarragonClickerPower++;
-                    if (tarragonClickerPower > 50)
-                        tarragonClickerPower = 50;
-                    tarragonClickerTime += 60;
-                    if (tarragonClickerTime > 50 * 60)
-                        tarragonClickerTime = 50 * 60;
+                    setTarragonClickerPower++;
+                    if (setTarragonClickerPower > 50)
+                        setTarragonClickerPower = 50;
+                    setTarragonClickerTime += 60;
+                    if (setTarragonClickerTime > 50 * 60)
+                        setTarragonClickerTime = 50 * 60;
                 }
-                if (bloodflareClicker)
+                if (setBloodflareClicker)
                 {
                     Player.lifeRegenTime += 2;
                 }
-                if (godSlayerClicker && !godSlayerClickerBuff)
+                if (setGodSlayerClicker && !godSlayerClickerBuff)
                 {
                     if (!hit.Crit)
-                        godSlayerClickerPower++;
+                        setGodSlayerClickerPower++;
                     else
                     {
-                        godSlayerClickerPower = 0;
+                        setGodSlayerClickerPower = 0;
                         if (!Player.HasCooldown(UltraboostCooldown.ID))
                         {
-                            godSlayerClickerCritCounter++;
-                            if (godSlayerClickerCritCounter > 50)
+                            setGodSlayerClickerCritCounter++;
+                            if (setGodSlayerClickerCritCounter > 50)
                             {
                                 Player.AddBuff(ModContent.BuffType<GodSlayerCapsuitBuff>(), 5 * 60);
                                 Player.AddCooldown(UltraboostCooldown.ID, 30 * 60);
-                                godSlayerClickerCritCounter = 0;
+                                setGodSlayerClickerCritCounter = 0;
                             }
                         }
                     }
@@ -496,8 +621,11 @@ namespace CalamityClickers
         }
         public override void OnHurt(Player.HurtInfo info)
         {
-            tarragonClickerPower = 0;
-            Player.AddCooldown(TarragonClickerCooldown.ID, 10 * 60);
+            if (!Player.HasCooldown(TarragonClickerCooldown.ID))
+            {
+                setTarragonClickerPower = 0;
+                Player.AddCooldown(TarragonClickerCooldown.ID, 10 * 60);
+            }
         }
     }
 }

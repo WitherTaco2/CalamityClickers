@@ -55,7 +55,7 @@ namespace CalamityClickers.Content.Items.Armor
 
             var modPlayer = player.Calamity();
             modPlayer.godSlayer = true;
-            player.GetModPlayer<CalamityClickersPlayer>().godSlayerClicker = true;
+            player.GetModPlayer<CalamityClickersPlayer>().setGodSlayerClicker = true;
             if (modPlayer.godSlayerDashHotKeyPressed || (player.dashDelay != 0 && modPlayer.LastUsedDashID == GodslayerArmorDash.ID))
             {
                 modPlayer.DeferredDashID = GodslayerArmorDash.ID;

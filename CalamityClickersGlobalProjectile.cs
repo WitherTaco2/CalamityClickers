@@ -23,7 +23,7 @@ namespace CalamityClickers
                         CalamityGlobalProjectile.SpawnLifeStealProjectile(projectile, player, healAmount, ModContent.ProjectileType<HydrothermicHealOrb>(), 1200f, 2f);
                 }
             }*/
-            if (player.CalClicker().beetleClickingGlove && projectile.type == ModContent.ProjectileType<ClickDamage>())
+            if (player.CalClicker().accBeetleClickingGlove && projectile.type == ModContent.ProjectileType<ClickDamage>())
             {
                 target.AddBuff(ModContent.BuffType<BeetleClickingGloveDebuff>(), 120);
                 target.CalClicker().clickDebuffOwner = projectile.owner;

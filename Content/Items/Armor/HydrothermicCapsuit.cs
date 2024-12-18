@@ -48,7 +48,7 @@ namespace CalamityClickers.Content.Items.Armor
             player.setBonus = this.GetLocalizedValue("SetBonus") + "\n" + CalamityUtils.GetTextValueFromModItem<HydrothermicArmor>("CommonSetBonus");
 
             player.Calamity().ataxiaBlaze = true;
-            player.GetModPlayer<CalamityClickersPlayer>().ataxiaClicker = true;
+            player.GetModPlayer<CalamityClickersPlayer>().setHydrothermicClicker = true;
             player.GetDamage<ClickerDamage>() += 0.05f;
         }
 

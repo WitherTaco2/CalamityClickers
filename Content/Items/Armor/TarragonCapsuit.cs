@@ -52,7 +52,7 @@ namespace CalamityClickers.Content.Items.Armor
             var modPlayer = player.Calamity();
             modPlayer.tarraSet = true;
             player.GetCritChance<ClickerDamage>() += 10;
-            player.CalClicker().tarragonClicker = true;
+            player.CalClicker().setTarragonClicker = true;
         }
 
         public override void AddRecipes()

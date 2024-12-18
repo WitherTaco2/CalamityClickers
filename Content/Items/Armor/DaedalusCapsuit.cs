@@ -62,7 +62,7 @@ namespace CalamityClickers.Content.Items.Armor
         {
             player.setBonus = ILocalizedModTypeExtensions.GetLocalizedValue(this, "SetBonus");
 
-            player.GetModPlayer<CalamityClickersPlayer>().daedalusClicker = true;
+            player.GetModPlayer<CalamityClickersPlayer>().setDaedalusClicker = true;
             player.GetDamage<ClickerDamage>() += 0.05f;
             player.Clicker().EnableClickEffect(ClickerEffect);
 

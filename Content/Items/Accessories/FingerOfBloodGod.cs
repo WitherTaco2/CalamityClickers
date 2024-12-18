@@ -25,7 +25,7 @@ namespace CalamityClickers.Content.Items.Accessories
         {
             ClickerPlayer clickerPlayer = player.GetModPlayer<ClickerPlayer>();
             clickerPlayer.accTriggerFinger = true;
-            player.GetModPlayer<CalamityClickersPlayer>().fingerOfBG = true;
+            player.GetModPlayer<CalamityClickersPlayer>().accFingerOfBG = true;
         }
         public override void AddRecipes()
         {

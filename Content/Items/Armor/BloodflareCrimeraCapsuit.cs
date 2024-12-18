@@ -47,7 +47,7 @@ namespace CalamityClickers.Content.Items.Armor
 
             var modPlayer = player.Calamity();
             modPlayer.bloodflareSet = true;
-            player.GetModPlayer<CalamityClickersPlayer>().bloodflareClicker = true;
+            player.GetModPlayer<CalamityClickersPlayer>().setBloodflareClicker = true;
             player.crimsonRegen = true;
         }
 

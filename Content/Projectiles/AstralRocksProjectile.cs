@@ -1,4 +1,4 @@
-﻿using CalamityClickers.Content.Items.Armor;
+﻿using CalamityClickers.Commons.CatalystCrossmod;
 using CalamityMod;
 using CalamityMod.CalPlayer;
 using ClickerClass;
@@ -172,10 +172,10 @@ namespace CalamityClickers.Content.Projectiles
             CalamityClickersPlayer modPlayer = player.GetModPlayer<CalamityClickersPlayer>();
             if (player.dead)
             {
-                modPlayer.intergelacticClicker = null;
+                modPlayer.setIntergelacticClicker = null;
             }
 
-            if (modPlayer.intergelacticClicker == null)
+            if (modPlayer.setIntergelacticClicker == null)
             {
                 Projectile.Kill();
                 return;
@@ -326,10 +326,10 @@ namespace CalamityClickers.Content.Projectiles
                             }
                             if (rocks.Count > 0)
                             {
-                                int num11 = (int)Main.rand.Next(rocks.Count);
-                                Main.NewText($"ring {ring} rock {rocks[num11]}");
-                                ShootRocksClicker(Vector2.Normalize(Main.MouseWorld - player.Center) * num, ring, rocks[num11]);
-                                player.GetModPlayer<RenderPlayer>().isRender[num11] = false;
+                                int randIndex = (int)Main.rand.Next(rocks.Count);
+                                //Main.NewText($"ring {ring} rock {rocks[randIndex]}");
+                                ShootRocksClicker(Vector2.Normalize(Main.MouseWorld - player.Center) * num, ring, rocks[randIndex]);
+                                player.GetModPlayer<RenderPlayer>().isRender[rocks[randIndex]] = false;
                             }
                         }
                     }

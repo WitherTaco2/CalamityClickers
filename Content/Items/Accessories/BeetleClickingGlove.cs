@@ -28,7 +28,7 @@ namespace CalamityClickers.Content.Items.Accessories
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             player.GetModPlayer<ClickerPlayer>().accRegalClickingGlove = true;
-            player.CalClicker().beetleClickingGlove = true;
+            player.CalClicker().accBeetleClickingGlove = true;
             if (player.statLife < player.statLifeMax2 / 10 * 2)
                 player.GetDamage<ClickerDamage>() += 0.25f;
         }

@@ -46,8 +46,8 @@ namespace CalamityClickers.Content.Items.Accessories
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             //player.GetModPlayer<CalamityClickersPlayer>().bloodyChocolate = true;
-            player.GetModPlayer<CalamityClickersPlayer>().bloodyChocolate = true;
-            player.GetModPlayer<CalamityClickersPlayer>().bloodyChocolateItem = Item;
+            player.GetModPlayer<CalamityClickersPlayer>().accBloodyChocolate = true;
+            player.GetModPlayer<CalamityClickersPlayer>().accBloodyChocolateItem = Item;
             player.GetModPlayer<ClickerPlayer>().EnableClickEffect(BurnOrBliss);
             player.Clicker().accGlassOfMilk = true;
         }
@@ -62,8 +62,9 @@ namespace CalamityClickers.Content.Items.Accessories
                 .Register();
         }
     }
-    public class BloodyChocCookiesProjectileCookie : CookiePro
+    public class BloodyChocCookiesProjectileCookie : CookiePro, ILocalizedModType
     {
+        public new string LocalizationCategory => "Projectiles.Clicker";
         public override void SetStaticDefaults()
         {
             base.SetStaticDefaults();
