@@ -1,4 +1,5 @@
 ﻿using ClickerClass;
+using ClickerClass.Items;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -6,7 +7,7 @@ using Terraria.ModLoader;
 namespace CalamityClickers.Content.Items.Armor
 {
     [AutoloadEquip(EquipType.Head)]
-    public class IntergelacticCapsuit : ModItem, ILocalizedModType
+    public class IntergelacticCapsuit : ClickerItem, ILocalizedModType
     {
         public new string LocalizationCategory => "Items.Armor.Capsuit";
         public override bool IsLoadingEnabled(Mod mod)
@@ -29,8 +30,7 @@ namespace CalamityClickers.Content.Items.Armor
         {
             player.GetDamage<ClickerDamage>() += 0.15f;
             player.GetCritChance<ClickerDamage>() += 15;
-            player.Clicker().clickerRadius += 0.55f;
-
+            player.Clicker().clickerRadius += 0.6f;
         }
 
         public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -52,7 +52,10 @@ namespace CalamityClickers.Content.Items.Armor
         {
             if (ModLoader.TryGetMod("CatalystMod", out var result))
             {
-                CreateRecipe().AddIngredient(ModContent.ItemType<StatigelCapsuit>()).AddIngredient(result.Find<ModItem>("MetanovaBar").Type, 6).AddTile(TileID.LunarCraftingStation)
+                CreateRecipe()
+                    .AddIngredient(ModContent.ItemType<StatigelCapsuit>())
+                    .AddIngredient(result.Find<ModItem>("MetanovaBar").Type, 6)
+                    .AddTile(TileID.LunarCraftingStation)
                     .Register();
             }
         }

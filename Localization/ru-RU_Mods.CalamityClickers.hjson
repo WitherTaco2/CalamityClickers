@@ -394,8 +394,31 @@ Items: {
 			}
 
 			IntergelacticCapsuit: {
-				// DisplayName: Intergelactic Capsuit
-				// Tooltip: ""
+				// DisplayName: Intergelactic Scouter Mask
+				/* Tooltip:
+					'''
+					15% increased clicker damage and critical strike chance
+					100% increased clicker radius
+					30% increased clicker radius
+					''' */
+				/* SetBonus:
+					'''
+					Surrounds you with two rings of asteroids whose damages scale with your stats
+					Press {0} to make the asteroids more transparent
+					Using a clicker weapons to fly asteroids from belts
+					Asteroids can regenerate over time or using a clicker weapons
+					''' */
+			}
+
+			AuricTeslaPlusRadarCapsuit: {
+				// DisplayName: Auric Tesla Gamer Mask
+				// Tooltip: "{$Mods.CalamityClickers.Items.Armor.Capsuit.AuricTeslaRadarCapsuit.Tooltip}"
+				/* SetBonus:
+					'''
+					Clicker Intergelactic, Bloodflare and God Slayer armor effects
+					Press {0} to make the asteroids more transparent
+					All projectiles spawn healing auric orbs on enemy hits
+					''' */
 			}
 		}
 
@@ -648,6 +671,16 @@ Items: {
 				Белый шоколад притягивается к играку в небольшом радиусе и востанавливает 4 жизни при контакте
 				'''
 		}
+
+		SSMedal: {
+			DisplayName: Медаль SS
+			Tooltip:
+				'''
+				При надевании, вокруг вас будут вращаться круги, наделяющие вас силой
+				При наведении курсора на круги накапливает заряды критического удара, радиуса курсора и эффектов курсора
+				При наведении курсора на центральный круг накапливает заряд всех статов, которые выше, одновременно
+				'''
+		}
 	}
 
 	SFXButtonCalamity.DisplayName: SFX Кнопка - Каламити
@@ -693,13 +726,13 @@ Projectiles: {
 		// CruelClickerProjectile.DisplayName: Lecherous Orb
 		// BloodstoneClickerProjectile.DisplayName: Bloodstone Clicker Projectile
 		// ExoClickerProjectile.DisplayName: Exo Clicker Projectile
-		// BloodyChocCookiesProjectileChocolate.DisplayName: Bloody Choc Cookies Projectile Chocolate
-		// DaedalusCapsuitProjectile.DisplayName: Daedalus Capsuit Projectile
-		// AstralRocksProjectile.DisplayName: Astral Rocks Projectile
-		// AstralRocksProjectileFly.DisplayName: Astral Rocks Projectile Fly
+		// BloodyChocCookiesProjectileCookie.DisplayName: Bloody Cookie
+		// BloodyChocCookiesProjectileChocolate.DisplayName: Chocolate Chip
+		// DaedalusCapsuitProjectile.DisplayName: Daedalus Lightning
+		// AstralRocksProjectile.DisplayName: Astral Rocks
+		// AstralRocksProjectileFly.DisplayName: Astral Rock
+		// SSMedalProjectile.DisplayName: S S Medal Projectile
 	}
-
-	// BloodyChocCookiesProjectileCookie.DisplayName: Bloody Choc Cookies Projectile Cookie
 }
 
 Buffs: {
@@ -729,13 +762,13 @@ Buffs: {
 	}
 
 	GodSlayerCapsuitBuff: {
-		// DisplayName: God Slayer Capsuit Buff
-		// Description: Mods.CalamityClickers.Buffs.GodSlayerCapsuitBuff.Description
+		// DisplayName: Hyperboost
+		// Description: Clickers now always inflict crit
 	}
 
 	HydrothermicCapsuitDebuff: {
-		// DisplayName: Hydrothermic Capsuit Debuff
-		// Description: Mods.CalamityClickers.Buffs.HydrothermicCapsuitDebuff.Description
+		// DisplayName: Hydrothermic Boil
+		// Description: You don't know description
 	}
 }
 

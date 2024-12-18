@@ -4,6 +4,7 @@ using CalamityMod.Items.Materials;
 using CalamityMod.Rarities;
 using CalamityMod.Tiles.Furniture.CraftingStations;
 using ClickerClass;
+using ClickerClass.Items;
 using ClickerClass.Items.Accessories;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -11,7 +12,7 @@ using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Accessories
 {
-    public class SSMedal : ModItem, ILocalizedModType
+    public class SSMedal : ClickerItem, ILocalizedModType
     {
         public new string LocalizationCategory => "Items.Accessories";
         public override void SetDefaults()

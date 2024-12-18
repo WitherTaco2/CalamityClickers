@@ -394,8 +394,31 @@ Items: {
 			}
 
 			IntergelacticCapsuit: {
-				DisplayName: Intergelactic Capsuit
-				Tooltip: ""
+				DisplayName: Intergelactic Scouter Mask
+				Tooltip:
+					'''
+					15% increased clicker damage and critical strike chance
+					100% increased clicker radius
+					30% increased clicker radius
+					'''
+				SetBonus:
+					'''
+					Surrounds you with two rings of asteroids whose damages scale with your stats
+					Press {0} to make the asteroids more transparent
+					Using a clicker weapons to fly asteroids from belts
+					Asteroids can regenerate over time or using a clicker weapons
+					'''
+			}
+
+			AuricTeslaPlusRadarCapsuit: {
+				DisplayName: Auric Tesla Gamer Mask
+				Tooltip: "{$Mods.CalamityClickers.Items.Armor.Capsuit.AuricTeslaRadarCapsuit.Tooltip}"
+				SetBonus:
+					'''
+					Clicker Intergelactic, Bloodflare and God Slayer armor effects
+					Press {0} to make the asteroids more transparent
+					All projectiles spawn healing auric orbs on enemy hits
+					'''
 			}
 		}
 
@@ -648,6 +671,16 @@ Items: {
 				White chocolate homes to owner player in small radius and heal 4 health on contact
 				'''
 		}
+
+		SSMedal: {
+			DisplayName: SS Medal
+			Tooltip:
+				'''
+				While equipped, empowering circles will rotate around you
+				Keeping your cursor within the circles will build up clicker critical strikes, clicker radius, and clicker effects
+				Keeping yoou cursor within the center circle will build up all stats above in one time
+				'''
+		}
 	}
 
 	SFXButtonCalamity.DisplayName: SFX Button - Calamity
@@ -698,8 +731,8 @@ Projectiles: {
 		DaedalusCapsuitProjectile.DisplayName: Daedalus Lightning
 		AstralRocksProjectile.DisplayName: Astral Rocks
 		AstralRocksProjectileFly.DisplayName: Astral Rock
+		SSMedalProjectile.DisplayName: S S Medal Projectile
 	}
-
 }
 
 Buffs: {

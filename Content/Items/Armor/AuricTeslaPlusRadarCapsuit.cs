@@ -6,6 +6,7 @@ using CalamityMod.Items.Materials;
 using CalamityMod.Rarities;
 using CalamityMod.Tiles.Furniture.CraftingStations;
 using ClickerClass;
+using ClickerClass.Items;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
@@ -15,20 +16,24 @@ using Terraria.ModLoader;
 namespace CalamityClickers.Content.Items.Armor
 {
     [AutoloadEquip(EquipType.Head)]
-    public class AuricTeslaPlusRadarCapsuit : ModItem, ILocalizedModType
+    public class AuricTeslaPlusRadarCapsuit : ClickerItem, ILocalizedModType
     {
         public new string LocalizationCategory => "Items.Armor.Capsuit";
-
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ModLoader.TryGetMod("CatalystMod", out var _);
+        }
         public override void SetDefaults()
         {
             Item.width = 27;
             Item.height = 22;
             Item.value = CalamityGlobalItem.RarityVioletBuyPrice;
             Item.rare = ModContent.RarityType<Violet>();
-            Item.defense = 42;
+            Item.defense = 38;
         }
         public override void UpdateEquip(Player player)
         {
+            player.statDefense += 6;
             player.GetDamage<ClickerDamage>() += 0.3f;
             player.GetCritChance<ClickerDamage>() += 30;
             player.Clicker().clickerBonusPercent -= 0.1f;
@@ -38,10 +43,12 @@ namespace CalamityClickers.Content.Items.Armor
         {
             Mod catalyst = ModLoader.GetMod("CatalystMod");
             Player player = Main.player[Main.myPlayer];
-            return (body.type == ModContent.ItemType<AuricTeslaBodyArmor>() && player.body == EquipLoader.GetEquipSlot(catalyst, "AuricBody", EquipType.Body))
-                && (legs.type == ModContent.ItemType<AuricTeslaCuisses>() && player.legs == EquipLoader.GetEquipSlot(catalyst, "AuricLegs", EquipType.Legs));
-        }
+            /*return (body.type == ModContent.ItemType<AuricTeslaBodyArmor>() && player.body == EquipLoader.GetEquipSlot(catalyst, "AuricBody", EquipType.Body))
+                && (legs.type == ModContent.ItemType<AuricTeslaCuisses>() && player.legs == EquipLoader.GetEquipSlot(catalyst, "AuricLegs", EquipType.Legs));*/
 
+            return (body.type == ModContent.ItemType<AuricTeslaBodyArmor>())
+                && (legs.type == ModContent.ItemType<AuricTeslaCuisses>());
+        }
         public override void UpdateArmorSet(Player player)
         {
             //player.setBonus = "Clicker Tarragon, Bloodflare, God Slayer, and Silva armor effects\n30% increased clicker damage and crit";
@@ -101,7 +108,7 @@ namespace CalamityClickers.Content.Items.Armor
                 }
                 else if (tooltips[i].Name == "Defense")
                 {
-                    tooltips[i].Text = Item.defense + "[c/" + text + ":(+" + 4 + ")]" + Lang.tip[25];
+                    tooltips[i].Text = Item.defense + "[c/" + text + ":(+" + 6 + ")]" + Lang.tip[25];
                 }
             }
         }

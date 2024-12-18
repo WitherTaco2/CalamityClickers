@@ -38,6 +38,7 @@ namespace CalamityClickers
         public int setTarragonClickerPower = 0;
         public int setTarragonClickerTime = 0;
         public Item setIntergelacticClicker = null;
+        public bool SetIntergelactic => setIntergelacticClicker != null && !setIntergelacticClicker.IsAir;
         public int CurrentRockDamage;
         public bool HideAsteroids;
         public int setIntergelacticTimer = 60;
@@ -105,7 +106,7 @@ namespace CalamityClickers
             }
 
             //Intergelactic or Auric Tesla+
-            if (setIntergelacticClicker != null)
+            if (SetIntergelactic)
             {
                 //Summon Asteroids
                 CalamityPlayer obj = Player.Calamity();
@@ -142,10 +143,11 @@ namespace CalamityClickers
                     List<int> indexes = new List<int>();
                     for (int i = 0; i < rPlayer.isRender.Count; i++)
                     {
-                        if (rPlayer.isRender[i])
+                        if (!rPlayer.isRender[i])
                             indexes.Add(i);
                     }
-                    if (indexes.Count < rPlayer.isRender.Count)
+                    //Main.NewText(indexes.Count);
+                    if (indexes.Count > 0)
                     {
                         rPlayer.isRender[indexes[Main.rand.Next(indexes.Count)]] = true;
                         setIntergelacticTimer = 60;
@@ -275,103 +277,114 @@ namespace CalamityClickers
                 }
 
                 //SS medal
-                if (clickerSelected && accSSMedal != null && !accSSMedal.IsAir)
+                if (Player.whoAmI == Main.myPlayer)
                 {
-                    int ssMedalType = ModContent.ProjectileType<SSMedalProjectile>();
-                    int sMedalType1 = ModContent.ProjectileType<SMedalPro>();
-                    int sMedalType2 = ModContent.ProjectileType<SMedalPro2>();
-                    int sMedalType3 = ModContent.ProjectileType<SMedalPro3>();
-
-                    for (int i = 0; i < Main.maxProjectiles; i++)
+                    if (clickerSelected && accSSMedal != null && !accSSMedal.IsAir)
                     {
-                        Projectile proj = Main.projectile[i];
+                        int ssMedalType = ModContent.ProjectileType<SSMedalProjectile>();
+                        int sMedalType1 = ModContent.ProjectileType<SMedalPro>();
+                        int sMedalType2 = ModContent.ProjectileType<SMedalPro2>();
+                        int sMedalType3 = ModContent.ProjectileType<SMedalPro3>();
 
-                        if (proj.active && proj.owner == Player.whoAmI && proj.type == ssMedalType && proj.ModProjectile is SSMedalProjectile sMedal)
+                        for (int i = 0; i < Main.maxProjectiles; i++)
                         {
-                            float len = (proj.Size / 2f).LengthSquared() * 0.78f; //Circle inside the projectile hitbox
-                            if (proj.DistanceSQ(Main.MouseWorld) < len)
-                            {
-                                sMedal.MouseoverAlpha = 1f;
-                                if (Player.Clicker().accFMedalAmount < FMedal.ChargeMeterMax)
-                                {
-                                    Player.Clicker().accFMedalAmount += 1;
+                            Projectile proj = Main.projectile[i];
 
-                                    for (int j = 0; j < Main.maxProjectiles; j++)
-                                    {
-                                        Projectile proj1 = Main.projectile[j];
-                                        if (proj1 != null && proj1.active)
-                                        {
-                                            if (proj1.owner == Main.myPlayer && proj1.type == sMedalType1 && proj1.ModProjectile is SMedalProBase sMedalBase)
-                                            {
-                                                sMedalBase.MouseoverAlpha = 1f;
-                                                Vector2 offset = new Vector2(Main.rand.Next(-20, 21), Main.rand.Next(-20, 21));
-                                                Dust dust = Dust.NewDustDirect(proj1.Center + offset, 8, 8, 88, Scale: 1.25f);
-                                                dust.noGravity = true;
-                                                dust.velocity = -offset * 0.05f;
-                                                break;
-                                            }
-                                        }
-                                    }
-                                }
-                                if (Player.Clicker().accAMedalAmount < AMedal.ChargeMeterMax)
+                            if (proj.active && proj.owner == Player.whoAmI && proj.type == ssMedalType && proj.ModProjectile is SSMedalProjectile sMedal)
+                            {
+                                float len = (proj.Size / 2f).LengthSquared() * 0.78f; //Circle inside the projectile hitbox
+                                if (proj.DistanceSQ(Main.MouseWorld) < len)
                                 {
-                                    Player.Clicker().accAMedalAmount += 1;
-                                    for (int j = 0; j < Main.maxProjectiles; j++)
-                                    {
-                                        Projectile proj1 = Main.projectile[j];
-                                        if (proj1 != null && proj1.active)
-                                        {
-                                            if (proj1.owner == Main.myPlayer && proj1.type == sMedalType2 && proj1.ModProjectile is SMedalProBase sMedalBase)
-                                            {
-                                                sMedalBase.MouseoverAlpha = 1f;
-                                                Vector2 offset = new Vector2(Main.rand.Next(-20, 21), Main.rand.Next(-20, 21));
-                                                Dust dust = Dust.NewDustDirect(proj1.Center + offset, 8, 8, 87, Scale: 1.25f);
-                                                dust.noGravity = true;
-                                                dust.velocity = -offset * 0.05f;
-                                                break;
-                                            }
-                                        }
-                                    }
-                                    /*
                                     sMedal.MouseoverAlpha = 1f;
-                                    Vector2 offset = new Vector2(Main.rand.Next(-20, 21), Main.rand.Next(-20, 21));
-                                    Dust dust = Dust.NewDustDirect(Main.MouseWorld + offset, 8, 8, 87, Scale: 1.25f);
-                                    dust.noGravity = true;
-                                    dust.velocity = -offset * 0.05f;
-                                    */
-                                }
-                                if (Player.Clicker().accSMedalAmount < SMedal.ChargeMeterMax)
-                                {
-                                    Player.Clicker().accSMedalAmount += 1;
-                                    for (int j = 0; j < Main.maxProjectiles; j++)
+                                    if (Player.Clicker().accFMedalAmount < FMedal.ChargeMeterMax)
                                     {
-                                        Projectile proj1 = Main.projectile[j];
-                                        if (proj1 != null && proj1.active)
+                                        Player.Clicker().accFMedalAmount += 1;
+
+                                        for (int j = 0; j < Main.maxProjectiles; j++)
                                         {
-                                            if (proj1.owner == Main.myPlayer && proj1.type == sMedalType3 && proj1.ModProjectile is SMedalProBase sMedalBase)
+                                            Projectile proj1 = Main.projectile[j];
+                                            if (proj1 != null && proj1.active)
                                             {
-                                                sMedalBase.MouseoverAlpha = 1f;
-                                                Vector2 offset = new Vector2(Main.rand.Next(-20, 21), Main.rand.Next(-20, 21));
-                                                Dust dust = Dust.NewDustDirect(proj1.Center + offset, 8, 8, 87, Scale: 1.25f);
-                                                dust.noGravity = true;
-                                                dust.velocity = -offset * 0.05f;
-                                                break;
+                                                if (proj1.owner == Main.myPlayer && proj1.type == sMedalType1 && proj1.ModProjectile is SMedalProBase sMedalBase)
+                                                {
+                                                    sMedalBase.MouseoverAlpha = 1f;
+                                                    Vector2 offset = new Vector2(Main.rand.Next(-20, 21), Main.rand.Next(-20, 21));
+                                                    Dust dust = Dust.NewDustDirect(proj1.Center + offset, 8, 8, 88, Scale: 1.25f);
+                                                    dust.noGravity = true;
+                                                    dust.velocity = -offset * 0.05f;
+                                                    break;
+                                                }
                                             }
                                         }
                                     }
-                                    /*
-                                    //sMedal.MouseoverAlpha = 1f;
-                                    Vector2 offset = new Vector2(Main.rand.Next(-20, 21), Main.rand.Next(-20, 21));
-                                    Dust dust = Dust.NewDustDirect(Main.MouseWorld + offset, 8, 8, 89, Scale: 1.25f);
-                                    dust.noGravity = true;
-                                    dust.velocity = -offset * 0.05f;
-                                    */
+                                    if (Player.Clicker().accAMedalAmount < AMedal.ChargeMeterMax)
+                                    {
+                                        Player.Clicker().accAMedalAmount += 1;
+                                        for (int j = 0; j < Main.maxProjectiles; j++)
+                                        {
+                                            Projectile proj1 = Main.projectile[j];
+                                            if (proj1 != null && proj1.active)
+                                            {
+                                                if (proj1.owner == Main.myPlayer && proj1.type == sMedalType2 && proj1.ModProjectile is SMedalProBase sMedalBase)
+                                                {
+                                                    sMedalBase.MouseoverAlpha = 1f;
+                                                    Vector2 offset = new Vector2(Main.rand.Next(-20, 21), Main.rand.Next(-20, 21));
+                                                    Dust dust = Dust.NewDustDirect(proj1.Center + offset, 8, 8, 87, Scale: 1.25f);
+                                                    dust.noGravity = true;
+                                                    dust.velocity = -offset * 0.05f;
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                        /*
+                                        sMedal.MouseoverAlpha = 1f;
+                                        Vector2 offset = new Vector2(Main.rand.Next(-20, 21), Main.rand.Next(-20, 21));
+                                        Dust dust = Dust.NewDustDirect(Main.MouseWorld + offset, 8, 8, 87, Scale: 1.25f);
+                                        dust.noGravity = true;
+                                        dust.velocity = -offset * 0.05f;
+                                        */
+                                    }
+                                    if (Player.Clicker().accSMedalAmount < SMedal.ChargeMeterMax)
+                                    {
+                                        Player.Clicker().accSMedalAmount += 1;
+                                        for (int j = 0; j < Main.maxProjectiles; j++)
+                                        {
+                                            Projectile proj1 = Main.projectile[j];
+                                            if (proj1 != null && proj1.active)
+                                            {
+                                                if (proj1.owner == Main.myPlayer && proj1.type == sMedalType3 && proj1.ModProjectile is SMedalProBase sMedalBase)
+                                                {
+                                                    sMedalBase.MouseoverAlpha = 1f;
+                                                    Vector2 offset = new Vector2(Main.rand.Next(-20, 21), Main.rand.Next(-20, 21));
+                                                    Dust dust = Dust.NewDustDirect(proj1.Center + offset, 8, 8, 87, Scale: 1.25f);
+                                                    dust.noGravity = true;
+                                                    dust.velocity = -offset * 0.05f;
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                        /*
+                                        //sMedal.MouseoverAlpha = 1f;
+                                        Vector2 offset = new Vector2(Main.rand.Next(-20, 21), Main.rand.Next(-20, 21));
+                                        Dust dust = Dust.NewDustDirect(Main.MouseWorld + offset, 8, 8, 89, Scale: 1.25f);
+                                        dust.noGravity = true;
+                                        dust.velocity = -offset * 0.05f;
+                                        */
+                                    }
                                 }
                             }
                         }
                     }
-
+                    if (accSSMedal != null && !accSSMedal.IsAir)
+                    {
+                        int ssMedalType = ModContent.ProjectileType<SSMedalProjectile>();
+                        if (Player.ownedProjectileCounts[ssMedalType] == 0)
+                        {
+                            Projectile.NewProjectile(Player.GetSource_Accessory(accSSMedal), Player.Center, Vector2.Zero, ssMedalType, 0, 0f, Player.whoAmI, 0, 0.5f);
+                        }
+                    }
                 }
+
 
                 if (Player.whoAmI == Main.myPlayer)
                 {
@@ -556,13 +569,18 @@ namespace CalamityClickers
                         }
                     }
                 }
+
+                if (SetIntergelactic)
+                {
+                    setIntergelacticTimer -= 12;
+                }
                 return false;
             }
             return base.Shoot(item, source, position, velocity, type, damage, knockback);
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (setIntergelacticClicker != null && !setIntergelacticClicker.IsAir)
+            if (SetIntergelactic)
             {
                 if (ModLoader.TryGetMod("CatalystMod", out var catalyst))
                     target.AddBuff(catalyst.Find<ModBuff>("AstralBlight").Type, 360);
@@ -621,7 +639,7 @@ namespace CalamityClickers
         }
         public override void OnHurt(Player.HurtInfo info)
         {
-            if (!Player.HasCooldown(TarragonClickerCooldown.ID))
+            if (!Player.HasCooldown(TarragonClickerCooldown.ID) && setTarragonClicker)
             {
                 setTarragonClickerPower = 0;
                 Player.AddCooldown(TarragonClickerCooldown.ID, 10 * 60);
