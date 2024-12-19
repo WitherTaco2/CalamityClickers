@@ -2,13 +2,17 @@ Update 1.1.0.0 -
 
 New Content:
 Added Bloody Choc n' Cookies. Upgraded version of Chocolate Milk n' Cookies that has new two types of chocolate chips (Spicy - more damaging and White - healing) and new Bloody cookie (damage player but gets more powerful buff)
+Added SS Medal. Upgraded version of S Medal after Devourer of Gods. He has new sigil in center that increase other sigil but lesser per tick than individual.
+Added Intergelactic Scouter Mask. (catalyst addon compatibility). Every clicks shoot asteroid from orbid. Asteroids can regenerate over time or on clicks.
+Added Auric Tesla Gamer Mask+. (catalyst addon compatibility). Auric Tesla Gamer Mask variant with Intergelactic Scouter Mask instead of Tarragon Biomask.
 
-Reworks:
-Improved Daedalus Visor (old Daedalus Capsuit). Lightning now fly to mouse position and deal 200% damage but decrease damage by 20% of currect damage every hit
-Reworked Hydrotermic Headset (old Hydrotermic Capsuit). Now inflict a stackable DoT head debuff on direct click damage
-Reworked Tarragon Biomask (old Tarragon Capsuit). Clicking on enemies gets a defence and damage reduction and resets after getting hit
-Improved Bloodflare Clickmera Skull (old Bloodflare Crimera capsuit). Now has addition effect - clicking on enemies increase health regen time
-Reworked God Slayer Cloaker Hood (old God Slayer Capsuit). Hitting with non-crit damage increase crit chance and resets after dealing crit damage. Also after 50th crit gets buff that guaranteed crit chance and gets cooldown
+Changes:
+Improved Daedalus Capsuit. Renamed to Daedalus Visor. Lightning now fly to mouse position and deal 200% damage but decrease damage by 20% of currect damage every hit
+Reworked Hydrotermic Capsuit. Renamed to Hydrotermic Headset. Now inflict a stackable DoT head debuff on direct click damage
+Reworked Tarragon Capsuit. Renamed to Tarragon Biomask. Clicking on enemies gets a defence and damage reduction and resets after getting hit
+Improved Bloodflare Crimera Capsuit. Renamed to Bloodflare Clickmera Skull. Now has addition effect - clicking on enemies increase health regen time
+Reworked God Slayer Capsuit. Renamed to God Slayer Cloaker Hood. Hitting with non-crit damage increase crit chance and resets after dealing crit damage. Also after 50th crit gets buff that guaranteed crit chance and gets cooldown
+Renamed Auric Tesla Capsuit to Auric Tesla Gamer Mask. Now has support of Catalyst addon.
 
 Removes:
 Removed Beetle Clicking Glove. Maybe later rework it
