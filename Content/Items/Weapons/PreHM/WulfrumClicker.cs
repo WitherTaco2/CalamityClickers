@@ -68,8 +68,8 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
     {
         public override void SetStaticDefaults()
         {
-            Main.debuff[base.Type] = true;
-            Main.buffNoSave[base.Type] = true;
+            Main.debuff[Type] = true;
+            Main.buffNoSave[Type] = true;
         }
     }
 }

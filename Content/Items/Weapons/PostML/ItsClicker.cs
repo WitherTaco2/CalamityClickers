@@ -5,7 +5,6 @@ using CalamityMod.Items.Materials;
 using CalamityMod.Particles;
 using CalamityMod.Rarities;
 using CalamityMod.Tiles.Furniture.CraftingStations;
-using ClickerClass;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
@@ -22,12 +21,12 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
         //public override bool SetBorderTexture => true;
         public override void SetStaticDefaultsExtra()
         {
-            ItzClick = ClickerSystem.RegisterClickEffect(Mod, "ItzClick", 1, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            ItzClick = CalamityClickersUtils.RegisterClickEffect(Mod, "ItzClick", 1, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 NPC npc = CalamityUtils.ClosestNPCAt(position, 500, true, true);
                 if (npc != null)
                     npc.AddBuff(ModContent.BuffType<ItsClickerDebuff>(), 30);
-            });
+            }, postMoonLord: true);
             CalamityClickersUtils.RegisterBlacklistedClickEffect(ItzClick);
         }
         public override void SetDefaultsExtra()

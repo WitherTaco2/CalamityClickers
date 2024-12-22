@@ -35,6 +35,11 @@ ClickEffect: {
 		Description: Fall a explosive feathers from sky into mouse position.
 	}
 
+	ReelIn: {
+		Name: Reel In
+		Description: Summon alive clickerfin. Killing him gives increased clicker damage by 25% for 10 seconds
+	}
+
 	SlimePuppet: {
 		Name: Slime Puppet
 		Description: Creates a slime ball which will make a short dash towards the cursor after a short period of time.
@@ -246,6 +251,11 @@ ClickEffect: {
 		Description: Inflict very powerful damage over time debuff.
 	}
 
+	Mischief: {
+		Name: Mischief
+		Description: Summon a mini rat clicker that clicks and trigger clicker effect (except Mischief)
+	}
+
 	# Equip
 	DaedalusLightning: {
 		Name: Daedalus Lightning
@@ -255,6 +265,11 @@ ClickEffect: {
 	BurnOrBliss: {
 		Name: Burn or Bliss
 		Description: Releases a burst of damaging normal, spicy and white chocolate
+	}
+
+	Judgement: {
+		Name: Judgement
+		Description: Smite your targets by holy deathray from sky
 	}
 }
 
@@ -619,6 +634,9 @@ Items: {
 			MiracleClicker.DisplayName: Miracle Clicker
 			CruelClicker.DisplayName: Cruel Clicker
 			ItsClicker.DisplayName: Its Clicker
+			MarkOfRatKing.DisplayName: Mark of Rat King
+			HolyGoldenClicker.DisplayName: Holy Golden Clicker
+			Clickerfin.DisplayName: Clickerfin
 		}
 	}
 
@@ -731,8 +749,11 @@ Projectiles: {
 		DaedalusCapsuitProjectile.DisplayName: Daedalus Lightning
 		AstralRocksProjectile.DisplayName: Astral Rocks
 		AstralRocksProjectileFly.DisplayName: Astral Rock
-		SSMedalProjectile.DisplayName: S S Medal Projectile
+		SSMedalProjectile.DisplayName: SS Medal
+		MarkOfRatKingProjectile.DisplayName: Mini Rat Clicker
 	}
+
+	HolyGoldenClickerProjectile.DisplayName: Holy Golden Clicker Projectile
 }
 
 Buffs: {
@@ -770,6 +791,11 @@ Buffs: {
 		DisplayName: Hydrothermic Boil
 		Description: You don't know description
 	}
+
+	ClickerfinBuff: {
+		DisplayName: Clickerfin Wrath
+		Description: Increased click damage by 25%
+	}
 }
 
 UI: {
@@ -793,7 +819,10 @@ UI: {
 	}
 }
 
-NPCs.LecherousOrbClicker.DisplayName: Lecherous Orb Clicker
+NPCs: {
+	LecherousOrbClicker.DisplayName: Lecherous Orb Clicker
+	ClickerfinNPC.DisplayName: Clickerfin
+}
 
 Misc: {
 	RecipeGroup.AnyNormalSFXButton: Any Normal SFX Button

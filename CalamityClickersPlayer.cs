@@ -23,6 +23,7 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.ModLoader.IO;
 
 namespace CalamityClickers
 {
@@ -31,6 +32,8 @@ namespace CalamityClickers
         public float rageRegenMult = 0;
 
         public bool clickerSelected = false;
+        public int clickerTotal = 0;
+        public int clickAmount = 0;
 
         public bool setDaedalusClicker = false;
         public bool setHydrothermicClicker = false;
@@ -53,6 +56,7 @@ namespace CalamityClickers
         public Item accBloodyChocolateItem = null;
         public int accBloodyChocolateCookieCD = 0;
         public Item accSSMedal = null;
+        public Item accPortableParticleAcceleratorUpgrades = null;
 
         public bool bloodyCookieBuff = false;
         public bool godSlayerClickerBuff = false;
@@ -84,6 +88,7 @@ namespace CalamityClickers
         }
         public override void PostUpdateEquips()
         {
+            //Bloodflare Armor
             if (setBloodflareClicker)
             {
                 float num1 = (Player.statLife / Player.statLifeMax2);
@@ -92,7 +97,31 @@ namespace CalamityClickers
                 //ClickerCompat.SetClickerRadiusAdd(Player, bloodflareRadius);
             }
 
-            //Tarragon
+            //Portable Particle Accelerator Upgrades
+            if (accPortableParticleAcceleratorUpgrades != null && !accPortableParticleAcceleratorUpgrades.IsAir)
+            {
+                float radius = Player.Clicker().ClickerRadiusReal * PortableParticleAccelerator.InnerRadiusRatio / 100f; //No need to check motherboard as that isn't ever relevant with < 100% the radius
+                if (Player.DistanceSQ(Player.Clicker().clickerPosition) < radius * radius)
+                {
+                    if (accPortableParticleAcceleratorUpgrades.ModItem != null)
+                    {
+                        if (accPortableParticleAcceleratorUpgrades.ModItem is LihzahrdParticleAccelerator)
+                        {
+                            Player.GetDamage<ClickerDamage>().Flat += 10;
+                        }
+                        if (accPortableParticleAcceleratorUpgrades.ModItem is LunarClickingGlove)
+                        {
+                            Player.GetDamage<ClickerDamage>().Flat += 25;
+                        }
+                        if (accPortableParticleAcceleratorUpgrades.ModItem is CosmicClickingGlove)
+                        {
+                            Player.GetDamage<ClickerDamage>().Flat += 100;
+                        }
+                    }
+                }
+            }
+
+            //Tarragon Armor
             if (setTarragonClickerTime > 0)
                 setTarragonClickerTime--;
             else
@@ -105,7 +134,7 @@ namespace CalamityClickers
                 Player.endurance += 0.002f * setTarragonClickerPower;
             }
 
-            //Intergelactic or Auric Tesla+
+            //Intergelactic or Auric Tesla+ Armor
             if (SetIntergelactic)
             {
                 //Summon Asteroids
@@ -155,7 +184,7 @@ namespace CalamityClickers
                 }
             }
 
-            //God Slayer
+            //God Slayer Armor
             if (setGodSlayerClicker)
                 Player.GetCritChance<ClickerDamage>() += setGodSlayerClickerPower;
             else
@@ -385,7 +414,7 @@ namespace CalamityClickers
                     }
                 }
 
-
+                //Clicking on Clickable Projectile
                 if (Player.whoAmI == Main.myPlayer)
                 {
                     if (Player.Clicker().clickerInRange && Player.Clicker().clickerSelected)
@@ -593,6 +622,7 @@ namespace CalamityClickers
                 if (setHydrothermicClicker)
                 {
                     target.AddBuff(ModContent.BuffType<HydrothermicCapsuitDebuff>(), (int)MathHelper.Clamp(target.CalClicker().hydrothermicBoil + 6, 5 * 60, 20 * 60));
+                    target.CalClicker().hydrothermicBoilPower += 5;
                 }
                 if (setTarragonClicker && !Player.HasCooldown(TarragonClickerCooldown.ID))
                 {
@@ -635,6 +665,10 @@ namespace CalamityClickers
                 //if (godSlayerClicker)
                 if (godSlayerClickerBuff)
                     modifiers.SetCrit();
+                if (accPortableParticleAcceleratorUpgrades != null && !accPortableParticleAcceleratorUpgrades.IsAir && Main.rand.Next(100) < 15)
+                {
+                    modifiers.CritDamage *= 1.5f;
+                }
             }
         }
         public override void OnHurt(Player.HurtInfo info)
@@ -644,6 +678,16 @@ namespace CalamityClickers
                 setTarragonClickerPower = 0;
                 Player.AddCooldown(TarragonClickerCooldown.ID, 10 * 60);
             }
+        }
+        public override void SaveData(TagCompound tag)
+        {
+            tag.Add("calamityClickerTotal", clickerTotal);
+
+        }
+        public override void LoadData(TagCompound tag)
+        {
+            clickerTotal = tag.GetInt("calamityClickerTotal");
+
         }
     }
 }

@@ -1,0 +1,41 @@
+﻿using CalamityMod.Items;
+using CalamityMod.Items.Materials;
+using CalamityMod.Rarities;
+using ClickerClass;
+using ClickerClass.Items;
+using ClickerClass.Items.Accessories;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace CalamityClickers.Content.Items.Accessories
+{
+    public class LunarClickingGlove : ClickerItem, ILocalizedModType
+    {
+        public new string LocalizationCategory => "Items.Accessories";
+        public override void SetDefaults()
+        {
+            Item.width = 20;
+            Item.height = 20;
+            Item.accessory = true;
+            Item.value = CalamityGlobalItem.RarityTurquoiseBuyPrice;
+            Item.rare = ModContent.RarityType<Turquoise>();
+        }
+        public override void UpdateAccessory(Player player, bool hideVisual)
+        {
+            player.Clicker().accRegalClickingGlove = true;
+            player.GetCritChance<ClickerDamage>() += 10;
+            player.GetModPlayer<CalamityClickersPlayer>().accPortableParticleAcceleratorUpgrades = Item;
+        }
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<RegalClickingGlove>()
+                .AddIngredient<LihzahrdParticleAccelerator>()
+                .AddIngredient(ItemID.LunarBar, 5)
+                .AddIngredient<GalacticaSingularity>(5)
+                .AddTile(TileID.LunarCraftingStation)
+                .Register();
+        }
+    }
+}

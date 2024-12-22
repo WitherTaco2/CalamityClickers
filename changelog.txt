@@ -5,6 +5,7 @@ Added Bloody Choc n' Cookies. Upgraded version of Chocolate Milk n' Cookies that
 Added SS Medal. Upgraded version of S Medal after Devourer of Gods. He has new sigil in center that increase other sigil but lesser per tick than individual.
 Added Intergelactic Scouter Mask. (catalyst addon compatibility). Every clicks shoot asteroid from orbid. Asteroids can regenerate over time or on clicks.
 Added Auric Tesla Gamer Mask+. (catalyst addon compatibility). Auric Tesla Gamer Mask variant with Intergelactic Scouter Mask instead of Tarragon Biomask.
+Added Mark of the Rat King. First donor clicker for supporter Doot_Revenant666. He summon mini clickers what clicks and trigger clicker effects
 
 Changes:
 Improved Daedalus Capsuit. Renamed to Daedalus Visor. Lightning now fly to mouse position and deal 200% damage but decrease damage by 20% of currect damage every hit
