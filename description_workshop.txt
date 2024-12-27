@@ -18,7 +18,7 @@ Also mod has changes in clicker class and calamity
 8. Adapted calamity changes to clicker class items (like The Scroller unique effect or buff of mice tools)
 
 Special Thanks:
-Puka1611 and Trudle for greatest clicker resprites
+Puka1611 and Trudle for greatest clicker resprites and new sprites
 Aeolus for minor helping
 Doot_Revenant666 for equip expansion update suggestions (armor set bonus rework and new ones, assessory suggestions)
 

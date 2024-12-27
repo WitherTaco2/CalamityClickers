@@ -21,7 +21,7 @@ namespace CalamityClickers.Content.Items.Armor
         public new string LocalizationCategory => "Items.Armor.Capsuit";
         public override bool IsLoadingEnabled(Mod mod)
         {
-            return ModLoader.TryGetMod("CatalystMod", out var _);
+            return ModLoader.HasMod("CatalystMod");
         }
         public override void SetDefaults()
         {

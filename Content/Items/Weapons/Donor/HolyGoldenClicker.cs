@@ -25,7 +25,7 @@ namespace CalamityClickers.Content.Items.Weapons.Donor
         {
             Judgement = CalamityClickersUtils.RegisterClickEffect(Mod, "Judgement", 20, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
-                Projectile.NewProjectile(source, position - new Vector2(0, 1000), new Vector2(0, 1), ModContent.ProjectileType<HolyGoldenClickerProjectile>(), damage * 3, knockBack, player.whoAmI);
+                Projectile.NewProjectile(source, position - new Vector2(0, 1000), new Vector2(0, 1), ModContent.ProjectileType<HolyGoldenClickerProjectile>(), damage, knockBack, player.whoAmI);
             }, postMoonLord: true);
         }
         public override void SetDefaultsExtra()
@@ -62,7 +62,7 @@ namespace CalamityClickers.Content.Items.Weapons.Donor
     {
         public override float Lifetime => 60;
         public override float MaxLaserLength => 2400;
-        public override float MaxScale => 1f;
+        public override float MaxScale => 3f;
         //private string StandartTexturePath => base.Texture;
         private string StandartTexturePath => "CalamityClickers/Content/Items/Weapons/Donor/HolyGoldenClickerProjectile";
         public override string Texture => "CalamityMod/Projectiles/InvisibleProj";
@@ -72,30 +72,31 @@ namespace CalamityClickers.Content.Items.Weapons.Donor
         public override void SetStaticDefaults()
         {
             base.SetStaticDefaults();
-            Main.projFrames[Type] = 5;
+            //Main.projFrames[Type] = 5;
         }
         public override void SetDefaults()
         {
             Projectile.width = Projectile.height = 56;
             Projectile.friendly = true;
             Projectile.DamageType = ModContent.GetInstance<ClickerDamage>();
+            Projectile.timeLeft = (int)Lifetime;
             //Projectile.arrow = true;
             Projectile.penetrate = -1;
             Projectile.alpha = 255;
             Projectile.localNPCHitCooldown = 10;
             Projectile.usesLocalNPCImmunity = true;
             Projectile.tileCollide = false;
-            Projectile.ignoreWater = true;
+            //Projectile.ignoreWater = true;
         }
         //public override bool ShouldUpdatePosition() => false;
-        public override void DetermineScale() => Projectile.scale = MathHelper.Lerp(0.01f, 2f, 1f - Projectile.timeLeft / Lifetime);
+        //public override void DetermineScale() => Projectile.scale = MathHelper.Lerp(0.01f, 2f, 1f - Projectile.timeLeft / Lifetime);
+        public override void DetermineScale() => Projectile.scale = Projectile.timeLeft / Lifetime * MaxScale;
         /*public override void OnSpawn(IEntitySource source)
         {
             Projectile.scale = 0;
         }*/
-        public override void ExtraBehavior()
+        /*public override void ExtraBehavior()
         {
-            base.ExtraBehavior();
             Projectile.frameCounter++;
             if (Projectile.frameCounter > 5)
             {
@@ -107,20 +108,20 @@ namespace CalamityClickers.Content.Items.Weapons.Donor
                 Projectile.frameCounter = 0;
             }
             //Projectile.scale += 1f / Lifetime;
-        }
-        public override bool PreDraw(ref Color lightColor)
+        }*/
+        /*public override bool PreDraw(ref Color lightColor)
         {
-            /*if (Projectile.velocity == Vector2.Zero)
+            if (Projectile.velocity == Vector2.Zero)
             {
                 return false;
-            }*/
+            }
 
             DrawBeamWithColor(LaserOverlayColor, Projectile.scale, Projectile.frame, Projectile.frame, Projectile.frame);
             return false;
-        }
+        }*/
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            target.AddBuff(ModContent.BuffType<HolyFlames>(), 30);
+            target.AddBuff(ModContent.BuffType<HolyFlames>(), 120);
         }
     }
 }

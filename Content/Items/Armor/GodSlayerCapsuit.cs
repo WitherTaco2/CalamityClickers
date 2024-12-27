@@ -3,11 +3,14 @@ using CalamityMod.CalPlayer.Dashes;
 using CalamityMod.Items;
 using CalamityMod.Items.Armor.GodSlayer;
 using CalamityMod.Items.Materials;
+using CalamityMod.Particles;
 using CalamityMod.Rarities;
 using CalamityMod.Tiles.Furniture.CraftingStations;
 using ClickerClass;
 using ClickerClass.Items;
+using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Armor
@@ -82,6 +85,19 @@ namespace CalamityClickers.Content.Items.Armor
         public override void Update(Player player, ref int buffIndex)
         {
             player.CalClicker().godSlayerClickerBuff = true;
+        }
+        internal static void DrawEffects(PlayerDrawSet drawInfo)
+        {
+            Player player = drawInfo.drawPlayer;
+
+            if (Main.GlobalTimeWrappedHourly % 10 == 0)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    SparkParticle spark = new SparkParticle(player.Center, Main.rand.NextVector2CircularEdge(10, 10) * Main.rand.NextFloat(0.9f, 1.1f), false, 30, 1, Main.rand.NextBool() ? Color.Aqua : Color.Fuchsia);
+                    GeneralParticleHandler.SpawnParticle(spark);
+                }
+            }
         }
     }
 }

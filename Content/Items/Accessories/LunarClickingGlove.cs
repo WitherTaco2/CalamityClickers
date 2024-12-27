@@ -1,6 +1,5 @@
 ﻿using CalamityMod.Items;
 using CalamityMod.Items.Materials;
-using CalamityMod.Rarities;
 using ClickerClass;
 using ClickerClass.Items;
 using ClickerClass.Items.Accessories;
@@ -18,8 +17,8 @@ namespace CalamityClickers.Content.Items.Accessories
             Item.width = 20;
             Item.height = 20;
             Item.accessory = true;
-            Item.value = CalamityGlobalItem.RarityTurquoiseBuyPrice;
-            Item.rare = ModContent.RarityType<Turquoise>();
+            Item.value = CalamityGlobalItem.RarityRedBuyPrice;
+            Item.rare = ItemRarityID.Red;
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {

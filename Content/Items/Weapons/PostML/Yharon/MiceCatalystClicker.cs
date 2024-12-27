@@ -79,7 +79,11 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
         }
         public override void AIExtra()
         {
-            Projectile.velocity = (Main.MouseWorld - Projectile.Center).SafeNormalize(Vector2.Zero);
+            Vector2 target = Main.MouseWorld;
+            //if (Main.player[Projectile.owner].Clicker().HasAimbotModuleTarget)
+            //    target = Main.npc[Main.player[Projectile.owner].Clicker().accAimbotModuleTarget].Center;
+
+            Projectile.velocity = (target - Projectile.Center).SafeNormalize(Vector2.Zero);
             Projectile.rotation -= 0.104719758f;
             //Projectile.Opacity = (int)MathHelper.Lerp(0, 1, MathHelper.Clamp(1f - Projectile.timeLeft / 30f, 0, 1));
             if (Projectile.timeLeft < 30)

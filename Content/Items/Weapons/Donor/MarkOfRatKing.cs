@@ -11,6 +11,7 @@ using ClickerClass.Items.Weapons.Clickers;
 using ClickerClass.Projectiles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent;
@@ -29,7 +30,9 @@ namespace CalamityClickers.Content.Items.Weapons.Donor
         {
             Mischief = CalamityClickersUtils.RegisterClickEffect(Mod, "Mischief", 15, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
-                Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<MarkOfRatKingProjectile>(), damage / 10, knockBack, player.whoAmI);
+                int rat = ModContent.ProjectileType<MarkOfRatKingProjectile>();
+                if (player.ownedProjectileCounts[rat] < 10)
+                    Projectile.NewProjectile(source, position, Vector2.Zero, rat, damage / 10, knockBack, player.whoAmI);
             }, postMoonLord: true);
             CalamityClickersUtils.RegisterBlacklistedClickEffect(Mischief);
         }
@@ -44,6 +47,36 @@ namespace CalamityClickers.Content.Items.Weapons.Donor
             Item.value = CalamityGlobalItem.RarityHotPinkBuyPrice;
 
             Item.Calamity().donorItem = true;
+        }
+        public override void UpdateInventory(Player player)
+        {
+            if (player.HeldItem.type == Item.type)
+            {
+                int num1 = player.selectedItem - 1;
+                if (num1 > 0)
+                {
+                    if (ClickerSystem.IsClickerWeapon(player.inventory[num1], out var clickerItem))
+                    {
+                        List<string> itemClickEffects = clickerItem.itemClickEffects;
+                        foreach (string effect in itemClickEffects)
+                        {
+                            player.Clicker().EnableClickEffect(effect);
+                        }
+                    }
+                }
+                int num2 = player.selectedItem + 1;
+                if (num2 < player.inventory.Length - 1)
+                {
+                    if (ClickerSystem.IsClickerWeapon(player.inventory[num2], out var clickerItem))
+                    {
+                        List<string> itemClickEffects = clickerItem.itemClickEffects;
+                        foreach (string effect in itemClickEffects)
+                        {
+                            player.Clicker().EnableClickEffect(effect);
+                        }
+                    }
+                }
+            }
         }
         public override void AddRecipes()
         {
@@ -71,7 +104,7 @@ namespace CalamityClickers.Content.Items.Weapons.Donor
             Projectile.timeLeft = lifeTime;
         }
         public NPC target;
-        private int lifeTime = 15 * 60;
+        private int lifeTime = 5 * 60;
         public override void AI()
         {
             Player player = Main.player[Projectile.owner];
@@ -89,7 +122,7 @@ namespace CalamityClickers.Content.Items.Weapons.Donor
                 Projectile.ai[0]++;
                 if ((target.Center - Projectile.Center).Length() < 30)
                 {
-                    if (Projectile.ai[0] > 60 * 2 / clickerPlayer.clickerPerSecond)
+                    if (Projectile.ai[0] > 60 * 4 / clickerPlayer.clickerPerSecond)
                     {
                         Projectile.NewProjectile(Projectile.GetSource_FromAI(), Projectile.Center, Vector2.Zero, ModContent.ProjectileType<ClickDamage>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
 
@@ -109,7 +142,7 @@ namespace CalamityClickers.Content.Items.Weapons.Donor
                                 if (clickerPlayer.HasClickEffect(name, out ClickEffect effect) && name != MarkOfRatKing.Mischief)
                                 {
                                     //Find click amount
-                                    int clickAmountTotal = clickerPlayer.GetClickAmountTotal(player.HeldItem.GetGlobalItem<ClickerItemCore>(), name);
+                                    int clickAmountTotal = clickerPlayer.GetClickAmountTotal(player.HeldItem.GetGlobalItem<ClickerItemCore>(), name) * 3;
                                     bool reachedAmount = (clickerPlayer.clickAmount + player.CalClicker().clickAmount) % clickAmountTotal == 0;
 
                                     if (reachedAmount || (clickerPlayer.accTriggerFinger && clickerPlayer.OutOfCombat))

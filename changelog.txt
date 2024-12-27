@@ -1,19 +1,31 @@
-Update 1.1.0.0 - 
+Update 1.1.0.0 - "Equip Expansion" Update that reworks armor and accqssories, and adds new features. Also add compabability with Catalyst Addon
 
 New Content:
 Added Bloody Choc n' Cookies. Upgraded version of Chocolate Milk n' Cookies that has new two types of chocolate chips (Spicy - more damaging and White - healing) and new Bloody cookie (damage player but gets more powerful buff)
 Added SS Medal. Upgraded version of S Medal after Devourer of Gods. He has new sigil in center that increase other sigil but lesser per tick than individual.
+Added Lihzahrd Particle Accelerator. Direct upgrade of Portable Particle Accelerator with more power within ranga and supercrit
+Added Lunar Clicking Glove. Post-Moon lord Direct upgrade of Regal Clicking Glove and Lihzahrd Particle Accelerator
+Added Cosmic Clicking Glove. Post-DoG Upgrade of Lunar Clicking Glove with Finger of Blood God
+
 Added Intergelactic Scouter Mask. (catalyst addon compatibility). Every clicks shoot asteroid from orbid. Asteroids can regenerate over time or on clicks.
 Added Auric Tesla Gamer Mask+. (catalyst addon compatibility). Auric Tesla Gamer Mask variant with Intergelactic Scouter Mask instead of Tarragon Biomask.
-Added Mark of the Rat King. First donor clicker for supporter Doot_Revenant666. He summon mini clickers what clicks and trigger clicker effects
+
+Added Clickerfin. Abyss Chest clicker that summon alive minions to kill him and gets damage boost
+Added Gelactic Novapoint. Metanova-related Clicker that summon (cool) homings projectils that looks like Astrageldon itself
+Added Mark of the Rat King. First donor clicker for supporter Doot_Revenant666. He summon mini clickers what clicks and trigger clicker effects.
+Added Holy Golden Clicker. Another donor clicker for Puka1611. He summons a holy deathray from sky up to button.
 
 Changes:
+Some Projectiles now detects active AIM Module target's position instead of mouse position
 Improved Daedalus Capsuit. Renamed to Daedalus Visor. Lightning now fly to mouse position and deal 200% damage but decrease damage by 20% of currect damage every hit
 Reworked Hydrotermic Capsuit. Renamed to Hydrotermic Headset. Now inflict a stackable DoT head debuff on direct click damage
 Reworked Tarragon Capsuit. Renamed to Tarragon Biomask. Clicking on enemies gets a defence and damage reduction and resets after getting hit
 Improved Bloodflare Crimera Capsuit. Renamed to Bloodflare Clickmera Skull. Now has addition effect - clicking on enemies increase health regen time
 Reworked God Slayer Capsuit. Renamed to God Slayer Cloaker Hood. Hitting with non-crit damage increase crit chance and resets after dealing crit damage. Also after 50th crit gets buff that guaranteed crit chance and gets cooldown
 Renamed Auric Tesla Capsuit to Auric Tesla Gamer Mask. Now has support of Catalyst addon.
+
+Balance changes:
+Nerfed Resonant Power Plug clicker effect. Now requare 20 click to trigger instead of 15
 
 Removes:
 Removed Beetle Clicking Glove. Maybe later rework it

@@ -68,16 +68,18 @@ namespace CalamityClickers.Content.Items.Accessories
         public override void SetStaticDefaults()
         {
             base.SetStaticDefaults();
-            Main.projFrames[Projectile.type] = 3;
+            Main.projFrames[Projectile.type] = 4;
         }
 
         public override void OnSpawn(IEntitySource source)
         {
             if (source is EntitySource_Parent entitySource_Parent && entitySource_Parent.Entity is Player player)
             {
-                if (Main.rand.NextFloat() <= 0.1f)
+                if (Main.rand.NextFloat() <= 0.1f || player.name == "DebugMan")
                 {
                     Frame = 2;
+                    if (player.name is "Puka1611" or "Puka")
+                        Frame = 3;
                 }
 
                 else if (Main.rand.NextFloat() <= 0.1f)
@@ -156,6 +158,8 @@ namespace CalamityClickers.Content.Items.Accessories
             }
 
             Projectile.frame = Frame;
+            if (Main.player[Projectile.owner].name is "Puka1611" or "Puka")
+                Projectile.frame = Main.rand.Next(6, 9);
 
             if (Frame is 3 or 4 or 5)
             {
@@ -184,8 +188,8 @@ namespace CalamityClickers.Content.Items.Accessories
                     {
                         if (Projectile.owner == Main.myPlayer && !Main.player[Main.myPlayer].moonLeech)
                         {
-                            player.HealEffect(4/*, broadcast: false*/);
-                            player.statLife += 4;
+                            player.HealEffect(2/*, broadcast: false*/);
+                            player.statLife += 2;
                             if (player.statLife > player.statLifeMax2)
                             {
                                 player.statLife = player.statLifeMax2;

@@ -8,6 +8,8 @@ using CalamityMod;
 using CalamityMod.CalPlayer;
 using CalamityMod.Items.Accessories;
 using CalamityMod.Items.Weapons.Melee;
+using CalamityMod.Particles;
+using CalamityMod.Projectiles.Rogue;
 using ClickerClass;
 using ClickerClass.Buffs;
 using ClickerClass.Core.Netcode.Packets;
@@ -238,7 +240,7 @@ namespace CalamityClickers
                                             dust.noGravity = true;
                                         }
                                     }
-                                    else if (cookie.Frame == 2)
+                                    else if (cookie.Frame == 2 || cookie.Frame == 3)
                                     {
                                         SoundEngine.PlaySound(SoundID.Item4, Player.Center);
                                         Player.AddBuff(ModContent.BuffType<BloodyChocCookiesBuff>(), 600);
@@ -619,11 +621,6 @@ namespace CalamityClickers
         {
             if (proj.type == ModContent.ProjectileType<ClickDamage>())
             {
-                if (setHydrothermicClicker)
-                {
-                    target.AddBuff(ModContent.BuffType<HydrothermicCapsuitDebuff>(), (int)MathHelper.Clamp(target.CalClicker().hydrothermicBoil + 6, 5 * 60, 20 * 60));
-                    target.CalClicker().hydrothermicBoilPower += 5;
-                }
                 if (setTarragonClicker && !Player.HasCooldown(TarragonClickerCooldown.ID))
                 {
                     setTarragonClickerPower++;
@@ -651,10 +648,26 @@ namespace CalamityClickers
                             {
                                 Player.AddBuff(ModContent.BuffType<GodSlayerCapsuitBuff>(), 5 * 60);
                                 Player.AddCooldown(UltraboostCooldown.ID, 30 * 60);
+                                SoundEngine.PlaySound(new SoundStyle("CalamityMod/Sounds/Custom/AbilitySounds/RageActivate"));
+                                for (int i = 0; i < 20; i++)
+                                {
+                                    SparkParticle spark = new SparkParticle(Player.Center, Main.rand.NextVector2CircularEdge(20, 20) * Main.rand.NextFloat(0.9f, 1.1f), false, 60, 2, Main.rand.NextBool() ? Color.Aqua : Color.Fuchsia);
+                                    GeneralParticleHandler.SpawnParticle(spark);
+                                }
+                                DirectionalPulseRing ring = new DirectionalPulseRing(Player.Center, Vector2.Zero, Main.rand.NextBool() ? Color.Aqua : Color.Fuchsia, Vector2.One / 2, 0, 0, 2f, 10);
+                                GeneralParticleHandler.SpawnParticle(ring);
                                 setGodSlayerClickerCritCounter = 0;
                             }
                         }
                     }
+                }
+            }
+            if (proj.DamageType is ClickerDamage)
+            {
+                if (setHydrothermicClicker)
+                {
+                    target.AddBuff(ModContent.BuffType<HydrothermicCapsuitDebuff>(), (int)MathHelper.Clamp(target.CalClicker().hydrothermicBoil + 6, 5 * 60, 20 * 60));
+                    target.CalClicker().hydrothermicBoilPower += 5;
                 }
             }
         }
@@ -676,6 +689,27 @@ namespace CalamityClickers
             if (!Player.HasCooldown(TarragonClickerCooldown.ID) && setTarragonClicker)
             {
                 setTarragonClickerPower = 0;
+                setTarragonClickerTime = 0;
+
+                float random = Main.rand.Next(30, 90);
+                float spread = random * 0.0174f;
+                double startAngle = Main.rand.NextFloat(0, MathHelper.TwoPi) - spread / 2;
+                double deltaAngle = spread / 8f;
+
+                int projID = ModContent.ProjectileType<TarraThornRight>();
+                int splitDamage = 500;
+                float splitKB = 1f;
+                float velocityPower = 3f;
+                for (int i = 0; i < 4; i++)
+                {
+                    double offsetAngle = startAngle + deltaAngle * (i + i * i) / 2f + 32f * i;
+                    int index = Projectile.NewProjectile(Player.GetSource_None(), Player.Center.X, Player.Center.Y, (float)(Math.Sin(offsetAngle) * 5f) * velocityPower, (float)(Math.Cos(offsetAngle) * 5f) * velocityPower, projID, splitDamage, splitKB, Player.whoAmI);
+                    Main.projectile[index].DamageType = ModContent.GetInstance<ClickerDamage>();
+                    index = Projectile.NewProjectile(Player.GetSource_None(), Player.Center.X, Player.Center.Y, (float)(-Math.Sin(offsetAngle) * 5f) * velocityPower, (float)(-Math.Cos(offsetAngle) * 5f) * velocityPower, projID, splitDamage, splitKB, Player.whoAmI);
+                    Main.projectile[index].DamageType = ModContent.GetInstance<ClickerDamage>();
+                }
+                DirectionalPulseRing ring = new DirectionalPulseRing(Player.Center, Vector2.Zero, Color.Lime, Vector2.One / 2, 0, 0, 3f, 10);
+                GeneralParticleHandler.SpawnParticle(ring);
                 Player.AddCooldown(TarragonClickerCooldown.ID, 10 * 60);
             }
         }
@@ -688,6 +722,11 @@ namespace CalamityClickers
         {
             clickerTotal = tag.GetInt("calamityClickerTotal");
 
+        }
+        public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
+        {
+            if (godSlayerClickerBuff && drawInfo.shadow == 0f)
+                GodSlayerCapsuitBuff.DrawEffects(drawInfo);
         }
     }
 }

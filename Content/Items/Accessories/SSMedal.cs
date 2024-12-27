@@ -48,6 +48,12 @@ namespace CalamityClickers.Content.Items.Accessories
             set => Projectile.ai[1] = value;
         }
 
+        public float Rot
+        {
+            get => Projectile.localAI[0];
+            set => Projectile.localAI[0] = value;
+        }
+
         public override void SetStaticDefaults()
         {
             base.SetStaticDefaults();
@@ -87,7 +93,8 @@ namespace CalamityClickers.Content.Items.Accessories
                 Projectile.timeLeft = 10;
             }
 
-            Projectile.Center = player.Center;
+            Rot = clickerPlayer.accMedalRot;
+            Projectile.Center = player.Center + new Vector2(0, 40).RotatedBy(-Rot * 1.5f);
             Projectile.gfxOffY = player.gfxOffY;
 
             if (MouseoverAlpha > 0.1f)

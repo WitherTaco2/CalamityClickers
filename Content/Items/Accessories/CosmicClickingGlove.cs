@@ -18,8 +18,8 @@ namespace CalamityClickers.Content.Items.Accessories
             Item.width = 20;
             Item.height = 20;
             Item.accessory = true;
-            Item.value = CalamityGlobalItem.RarityTurquoiseBuyPrice;
-            Item.rare = ModContent.RarityType<Turquoise>();
+            Item.value = CalamityGlobalItem.RarityDarkBlueBuyPrice;
+            Item.rare = ModContent.RarityType<DarkBlue>();
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {

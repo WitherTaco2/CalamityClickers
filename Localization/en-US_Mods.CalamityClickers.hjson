@@ -172,6 +172,11 @@ ClickEffect: {
 		Description: Grown thorns in 8 directions.
 	}
 
+	Judgement: {
+		Name: Judgement
+		Description: Smite your targets by holy deathray from sky
+	}
+
 	# Post-Polterghast
 	GhastlyPortal: {
 		Name: Call to the Beyond
@@ -253,7 +258,7 @@ ClickEffect: {
 
 	Mischief: {
 		Name: Mischief
-		Description: Summon a mini rat clicker that clicks and trigger clicker effect (except Mischief)
+		Description: Summon a mini rat clicker that clicks and trigger clicker effects of nearby clickers in inventory (except Mischief)
 	}
 
 	# Equip
@@ -267,15 +272,25 @@ ClickEffect: {
 		Description: Releases a burst of damaging normal, spicy and white chocolate
 	}
 
-	Judgement: {
-		Name: Judgement
-		Description: Smite your targets by holy deathray from sky
+	NovaSlimer: {
+		Name: Nova Slimer
+		Description: $Mods.ClickerClass.Common.Unknown
 	}
 }
 
 Items: {
 	Armor: {
 		Capsuit: {
+			VictideCapsuit: {
+				DisplayName: Aerospec Capsuit
+				Tooltip: 5% increased clicker damage
+				SetBonus:
+					'''
+					10% increased clicker radius
+					+1.5 HP/s life regen and 10% increased click damage while submerged in liquid
+					'''
+			}
+
 			AerospecCapsuit: {
 				DisplayName: Aerospec Capsuit
 				Tooltip:
@@ -334,12 +349,29 @@ Items: {
 					'''
 					Inferno effect when below 50% life
 					You emit a blazing explosion when you are hit
-					Inflict a 'Hydrothermic Boil' by clicker weapons
+					5% increased clicker damage
+					Inflict a 'Hydrothermic Boil' on hit by clicker weapons
 					'Hydrothermic Boil' is DoT debuff with 50 base damage over time
 					Hitting by clicker weapons increase debuff dps by 5 and expand time by 0.1 second
 					up to 500 dps and 20 second of time
 					Debuff acts as Heat debuff
-					5% increased clicker damage
+					'''
+			}
+
+			IntergelacticCapsuit: {
+				DisplayName: Intergelactic Scouter Mask
+				Tooltip:
+					'''
+					15% increased clicker damage and critical strike chance
+					100% increased clicker radius
+					30% increased clicker radius
+					'''
+				SetBonus:
+					'''
+					Surrounds you with two rings of asteroids whose damages scale with your stats
+					Press '{Mods.CatalystMod.Keybinds.ToggleVisibility}' to make the asteroids more transparent
+					Using a clicker weapons to fly asteroids from belts
+					Asteroids can regenerate over time or using a clicker weapons
 					'''
 			}
 
@@ -358,7 +390,7 @@ Items: {
 					Enemies have a chance to drop extra hearts on death
 					Hitting enemies by clicker weapons increase defence by 1 and damage reduction by 0.2% and expand buff time by 1 second
 					up to 50 defence, 10% damage reduction and 20 second of time
-					Getting hit resets buff, gets 10 second to cooldown and summon 5 barks
+					Getting hit resets buff, gets 10 second to cooldown and summon damaging roots
 					'''
 			}
 
@@ -392,7 +424,7 @@ Items: {
 					'''
 					Increases click critical chance by 1% by each consecutive non-critical hit
 					Bonus resets after dealing critical hit
-					After dealing 50 critical hits by clicker weapons, the user gives an 'Ultraboost' that guarants critical hits
+					After dealing 50 click critical hits, the user gives an 'Ultraboost' that guarants critical hits
 					'Ultraboost' has 30 second of cooldown
 					'''
 			}
@@ -408,31 +440,13 @@ Items: {
 				SetBonus: Clicker Tarragon, Bloodflare and God Slayer effects
 			}
 
-			IntergelacticCapsuit: {
-				DisplayName: Intergelactic Scouter Mask
-				Tooltip:
-					'''
-					15% increased clicker damage and critical strike chance
-					100% increased clicker radius
-					30% increased clicker radius
-					'''
-				SetBonus:
-					'''
-					Surrounds you with two rings of asteroids whose damages scale with your stats
-					Press {0} to make the asteroids more transparent
-					Using a clicker weapons to fly asteroids from belts
-					Asteroids can regenerate over time or using a clicker weapons
-					'''
-			}
-
 			AuricTeslaPlusRadarCapsuit: {
-				DisplayName: Auric Tesla Gamer Mask
+				DisplayName: "{$Mods.CalamityClickers.Items.Armor.Capsuit.AuricTeslaRadarCapsuit.DisplayName}"
 				Tooltip: "{$Mods.CalamityClickers.Items.Armor.Capsuit.AuricTeslaRadarCapsuit.Tooltip}"
 				SetBonus:
 					'''
 					Clicker Intergelactic, Bloodflare and God Slayer armor effects
-					Press {0} to make the asteroids more transparent
-					All projectiles spawn healing auric orbs on enemy hits
+					Press '{Mods.CatalystMod.Keybinds.ToggleVisibility}' to make the asteroids more transparent
 					'''
 			}
 		}
@@ -492,6 +506,8 @@ Items: {
 				DisplayName: Blob Commander
 				DisplayNameLegecy: Gooclicker
 			}
+
+			Clickerfin.DisplayName: Clickerfin
 
 			# Hardmode
 			CryoClicker: {
@@ -565,6 +581,7 @@ Items: {
 
 			CosmicStarClicker.DisplayName: Cosmic Star Clicker
 			StarblightClicker.DisplayName: Starblight Clicker
+			GeleomegeddonClicker.DisplayName: Gelactic Novapoint
 
 			# Post-Moonlord
 			PolterplasmClicker: {
@@ -600,6 +617,8 @@ Items: {
 				DisplayNameLegecy: Bloodstone Clicker
 			}
 
+			HolyGoldenClicker.DisplayName: Holy Golden Clicker
+
 			# Post-Polterghast
 			RuinousClicker: {
 				DisplayName: Ghastly Glicker
@@ -633,10 +652,9 @@ Items: {
 
 			MiracleClicker.DisplayName: Miracle Clicker
 			CruelClicker.DisplayName: Cruel Clicker
+			# Endgame
 			ItsClicker.DisplayName: Its Clicker
 			MarkOfRatKing.DisplayName: Mark of Rat King
-			HolyGoldenClicker.DisplayName: Holy Golden Clicker
-			Clickerfin.DisplayName: Clickerfin
 		}
 	}
 
@@ -699,6 +717,39 @@ Items: {
 				Keeping yoou cursor within the center circle will build up all stats above in one time
 				'''
 		}
+
+		LihzahrdParticleAccelerator: {
+			DisplayName: Lihzahrd Particle Accelerator
+			Tooltip:
+				'''
+				Clickers within the inner 50% of your clicker radius deal 10 more damage
+				5% increased click critical chance
+				After click crititical hit has 20% chance to supercrit with 3x damage than 2x
+				'''
+		}
+
+		LunarClickingGlove: {
+			DisplayName: Lunar Clicking Glove
+			Tooltip:
+				'''
+				{$Mods.ClickerClass.Items.RegalClickingGlove.Tooltip}
+				Clickers within the inner 50% of your clicker radius deal 25 more damage
+				10% increased click critical chance
+				After click crititical hit has 20% chance to supercrit with 3x damage than 2x
+				'''
+		}
+
+		CosmicClickingGlove: {
+			DisplayName: Cosmic Clicking Glove
+			Tooltip:
+				'''
+				{$Mods.ClickerClass.Items.RegalClickingGlove.Tooltip}
+				Clickers within the inner 50% of your clicker radius deal 100 more damage
+				15% increased click critical chance
+				After click crititical hit has 20% chance to supercrit with 3x damage than 2x
+				{$Mods.CalamityClickers.Items.Accessories.FingerOfBloodGod.Tooltip}
+				'''
+		}
 	}
 
 	SFXButtonCalamity.DisplayName: SFX Button - Calamity
@@ -751,6 +802,7 @@ Projectiles: {
 		AstralRocksProjectileFly.DisplayName: Astral Rock
 		SSMedalProjectile.DisplayName: SS Medal
 		MarkOfRatKingProjectile.DisplayName: Mini Rat Clicker
+		GeleomegeddonClickerProjectile.DisplayName: Geleomegeddon Clicker Projectile
 	}
 
 	HolyGoldenClickerProjectile.DisplayName: Holy Golden Clicker Projectile
@@ -784,7 +836,7 @@ Buffs: {
 
 	GodSlayerCapsuitBuff: {
 		DisplayName: Hyperboost
-		Description: Clickers now always inflict crit
+		Description: Clickers now always inflict critical strike
 	}
 
 	HydrothermicCapsuitDebuff: {

@@ -42,6 +42,10 @@ namespace CalamityClickers.Content.MainMenu
     }
     public class CalamityClickersMenu : ModMenu
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return false;
+        }
         public class MenuClicker
         {
             public int IdentityIndex;
@@ -91,12 +95,14 @@ namespace CalamityClickers.Content.MainMenu
 
             int ClickerType()
             {
-                int index = Main.rand.Next(Main.maxItems);
-                while (!ClickerSystem.IsClickerWeapon(index))
+                List<int> clickers = new List<int>();
+                for (int i = 0; i < Main.maxItems; i++)
                 {
-                    index = Main.rand.Next(Main.maxItems);
+                    if (ClickerSystem.IsClickerWeapon(i))
+                        clickers.Add(i);
                 }
-                return index;
+                return Main.rand.NextFromList(clickers.ToArray());
+                //return clickers[Main.rand.Next(clickers.Count - 1)];
             }
 
             if (Main.rand.NextBool(4))

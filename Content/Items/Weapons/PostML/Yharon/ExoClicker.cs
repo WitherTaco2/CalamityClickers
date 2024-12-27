@@ -19,7 +19,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
         public override int DustType => DustID.Stone;
         public override void SetStaticDefaultsExtra()
         {
-            MiniExoTwins = CalamityClickersUtils.RegisterClickEffect(Mod, "MiniExoTwins", 15, () => RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            MiniExoTwins = CalamityClickersUtils.RegisterClickEffect(Mod, "MiniExoTwins", 20, () => RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 float rand = Main.rand.NextFloat(MathHelper.TwoPi);
                 for (int i = 0; i < 2; i++)
@@ -71,9 +71,13 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
             int time = 100 - (int)(Projectile.timeLeft) % 100; //Time is up
             if (time < 70)
             {
+                Vector2 target = Main.MouseWorld;
+                if (Main.player[Projectile.owner].Clicker().HasAimbotModuleTarget)
+                    target = Main.npc[Main.player[Projectile.owner].Clicker().accAimbotModuleTarget].Center;
+
                 double perc = Utils.Lerp(0, MathHelper.TwoPi * 2, MathF.Pow(Utils.GetLerpValue(0, 70, time, true), 0.21f));
-                Projectile.Center = Vector2.Lerp(LastPos, Main.MouseWorld, MathHelper.Clamp(0f, 1f, MathF.Pow(time / 25, 0.31f))) + Vector2.UnitX.RotatedBy(perc + MathHelper.Pi * Projectile.frame + Projectile.ai[1]) * 100;
-                Projectile.rotation = (Main.MouseWorld - Projectile.Center).ToRotation() + MathHelper.PiOver2;
+                Projectile.Center = Vector2.Lerp(LastPos, target, MathHelper.Clamp(0f, 1f, MathF.Pow(time / 25, 0.31f))) + Vector2.UnitX.RotatedBy(perc + MathHelper.Pi * Projectile.frame + Projectile.ai[1]) * 100;
+                Projectile.rotation = (target - Projectile.Center).ToRotation() + MathHelper.PiOver2;
             }
             else
             {

@@ -87,6 +87,8 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Polterghast
                 MousePlayer mousePlayer = Main.player[Projectile.owner].GetModPlayer<MousePlayer>();
                 if (mousePlayer.TryGetMousePosition(out Vector2 mouseWorld))
                 {
+                    if (Main.player[Projectile.owner].Clicker().HasAimbotModuleTarget)
+                        mouseWorld = Main.npc[Main.player[Projectile.owner].Clicker().accAimbotModuleTarget].Center;
                     Vector2 vector = mouseWorld - Projectile.Center;
                     float speed = 13f;
                     float mag = vector.Length();

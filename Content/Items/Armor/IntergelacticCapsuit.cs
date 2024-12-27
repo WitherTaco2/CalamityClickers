@@ -12,7 +12,7 @@ namespace CalamityClickers.Content.Items.Armor
         public new string LocalizationCategory => "Items.Armor.Capsuit";
         public override bool IsLoadingEnabled(Mod mod)
         {
-            return ModLoader.TryGetMod("CatalystMod", out var _);
+            return ModLoader.HasMod("CatalystMod");
         }
         public override void SetDefaults()
         {
@@ -44,6 +44,7 @@ namespace CalamityClickers.Content.Items.Armor
         public override void UpdateArmorSet(Player player)
         {
             player.setBonus = this.GetLocalizedValue("SetBonus");
+            //player.setBonus = this.GetLocalization("SetBonus").WithFormatArgs(Language.GetTextValue("Mods.CatalystMod.Common.BoundKey", (object)current)).Value;
 
             player.CalClicker().setIntergelacticClicker = Item;
         }
