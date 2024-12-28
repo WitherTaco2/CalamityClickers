@@ -5,7 +5,6 @@ using CalamityMod.Tiles.Furniture.CraftingStations;
 using ClickerClass;
 using ClickerClass.Items;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Accessories
@@ -34,8 +33,7 @@ namespace CalamityClickers.Content.Items.Accessories
             CreateRecipe()
                 .AddIngredient<LunarClickingGlove>()
                 .AddIngredient<FingerOfBloodGod>()
-                .AddIngredient(ItemID.LunarBar, 8)
-                .AddIngredient<GalacticaSingularity>(4)
+                .AddIngredient<CosmiliteBar>(8)
                 .AddIngredient<AscendantSpiritEssence>(4)
                 .AddTile<CosmicAnvil>()
                 .Register();

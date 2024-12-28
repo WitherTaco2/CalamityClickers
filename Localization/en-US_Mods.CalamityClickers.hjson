@@ -20,6 +20,11 @@ ClickEffect: {
 		Description: You gets a buff 'Mushy' for 2 seconds.
 	}
 
+	SulphurousBubbles: {
+		Name: Sulphurous Bubbles
+		Description: Creates 4-5 bubbles that can be clicked for create an damaging area and inflict Irradiated
+	}
+
 	BloodyExplosion: {
 		Name: Bloody Splash
 		Description: Creates an splash explosion, inflict Burning Blood.
@@ -37,7 +42,7 @@ ClickEffect: {
 
 	ReelIn: {
 		Name: Reel In
-		Description: Summon alive clickerfin. Killing him gives increased clicker damage by 25% for 10 seconds
+		Description: Summon alive clickerfin. Killing him gives increased click damage by 25% for 10 seconds
 	}
 
 	SlimePuppet: {
@@ -177,6 +182,11 @@ ClickEffect: {
 		Description: Smite your targets by holy deathray from sky
 	}
 
+	NovaSlimer: {
+		Name: Nova Slimer
+		Description: Summon a homing Novaslime
+	}
+
 	# Post-Polterghast
 	GhastlyPortal: {
 		Name: Call to the Beyond
@@ -271,18 +281,13 @@ ClickEffect: {
 		Name: Burn or Bliss
 		Description: Releases a burst of damaging normal, spicy and white chocolate
 	}
-
-	NovaSlimer: {
-		Name: Nova Slimer
-		Description: $Mods.ClickerClass.Common.Unknown
-	}
 }
 
 Items: {
 	Armor: {
 		Capsuit: {
 			VictideCapsuit: {
-				DisplayName: Aerospec Capsuit
+				DisplayName: Victide Anemonous Mask
 				Tooltip: 5% increased clicker damage
 				SetBonus:
 					'''
@@ -486,6 +491,8 @@ Items: {
 				DisplayName: Fungal Clasp
 				DisplayNameLegecy: Mushy Clicker
 			}
+
+			BubbleClicker.DisplayName: Bubble Poker
 
 			RottenClicker: {
 				DisplayName: Jet Black
@@ -715,6 +722,7 @@ Items: {
 				While equipped, empowering circles will rotate around you
 				Keeping your cursor within the circles will build up clicker critical strikes, clicker radius, and clicker effects
 				Keeping yoou cursor within the center circle will build up all stats above in one time
+				Right Click on fully charged center circle will release an energy but consume all circle's boosts
 				'''
 		}
 
@@ -793,7 +801,7 @@ Projectiles: {
 		PlagueClickerProjectile.DisplayName: Plague Bee
 		CosmiliteClickerProjectile.DisplayName: Cosmic Knive
 		CruelClickerProjectile.DisplayName: Lecherous Orb
-		BloodstoneClickerProjectile.DisplayName: Bloodstone Clicker Projectile
+		BloodstoneClickerProjectile.DisplayName: Bloodstone Knife
 		ExoClickerProjectile.DisplayName: Exo Clicker Projectile
 		BloodyChocCookiesProjectileCookie.DisplayName: Bloody Cookie
 		BloodyChocCookiesProjectileChocolate.DisplayName: Chocolate Chip
@@ -802,10 +810,12 @@ Projectiles: {
 		AstralRocksProjectileFly.DisplayName: Astral Rock
 		SSMedalProjectile.DisplayName: SS Medal
 		MarkOfRatKingProjectile.DisplayName: Mini Rat Clicker
-		GeleomegeddonClickerProjectile.DisplayName: Geleomegeddon Clicker Projectile
+		GeleomegeddonClickerProjectile.DisplayName: Nova Slime
+		BubbleClickerProjectile.DisplayName: Acid Bubble
+		BubbleClickerProjectile2.DisplayName: Irradiated Aura
+		SSMedalProjectileExplosion.DisplayName: Electric Explosion
+		HolyGoldenClickerProjectile.DisplayName: Holy Deathray
 	}
-
-	HolyGoldenClickerProjectile.DisplayName: Holy Golden Clicker Projectile
 }
 
 Buffs: {

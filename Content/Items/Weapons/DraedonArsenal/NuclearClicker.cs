@@ -64,6 +64,18 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
                 AddCondition(ArsenalTierGatedRecipe.ConstructRecipeCondition(5, out Func<bool> condition), condition).
                 AddTile<CosmicAnvil>().
                 Register();
+
+            /*if (ModLoader.TryGetMod("CatalystMod", out Mod catalyst))
+            {
+                CreateRecipe().
+                    AddIngredient<MysteriousCircuitry>(20).
+                    AddIngredient<DubiousPlating>(15).
+                    AddIngredient(catalyst.Find<ModItem>("MetanovaBar").Item.type, 8).
+                    AddIngredient<AscendantSpiritEssence>(2).
+                    AddCondition(ArsenalTierGatedRecipe.ConstructRecipeCondition(5, out Func<bool> condition1), condition1).
+                    AddTile<CosmicAnvil>().
+                    Register();
+            }*/
         }
     }
     public class NuclearClickerBoom : BaseMassiveExplosionProjectile, ILocalizedModType, IModType

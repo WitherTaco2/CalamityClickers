@@ -1,6 +1,7 @@
 ﻿using CalamityClickers.Content.Items.Weapons;
 using CalamityMod.Items;
 using CalamityMod.Items.Materials;
+using CalamityMod.Particles;
 using CalamityMod.Rarities;
 using CalamityMod.Tiles.Furniture.CraftingStations;
 using ClickerClass;
@@ -8,6 +9,7 @@ using ClickerClass.Items;
 using ClickerClass.Items.Accessories;
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.Audio;
 using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Accessories
@@ -20,8 +22,8 @@ namespace CalamityClickers.Content.Items.Accessories
             Item.width = 20;
             Item.height = 20;
             Item.accessory = true;
-            Item.value = CalamityGlobalItem.RarityYellowBuyPrice;
-            Item.rare = ModContent.RarityType<DarkBlue>();
+            Item.value = CalamityGlobalItem.RarityVioletBuyPrice;
+            Item.rare = ModContent.RarityType<Violet>();
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
@@ -34,6 +36,7 @@ namespace CalamityClickers.Content.Items.Accessories
                 .AddIngredient<SMedal>()
                 .AddIngredient<CoreofCalamity>()
                 .AddIngredient<AscendantSpiritEssence>(4)
+                .AddIngredient<AuricBar>(5)
                 .AddTile<CosmicAnvil>()
                 .Register();
         }
@@ -107,6 +110,41 @@ namespace CalamityClickers.Content.Items.Accessories
                 MouseoverAlpha = 0.1f;
             }
         }
-
+    }
+    public class SSMedalProjectileExplosion : ModdedClickerProjectile
+    {
+        //public override bool UseInvisibleProjectile => false;
+        public override void SetDefaultsExtra()
+        {
+            Projectile.width = Projectile.height = 10000;
+            Projectile.penetrate = -1;
+            Projectile.timeLeft = 5;
+            Projectile.friendly = true;
+            Projectile.tileCollide = false;
+            Projectile.aiStyle = -1;
+            AIType = -1;
+            Projectile.usesIDStaticNPCImmunity = true;
+            Projectile.idStaticNPCHitCooldown = 8;
+        }
+        public override void AI()
+        {
+            if (Projectile.ai[1] == 0)
+            {
+                SoundEngine.PlaySound(new SoundStyle("CalamityMod/Sounds/Item/HalleysInfernoHit"), Projectile.Center);
+                //GaussWeaponFire
+                //FinalDawnSlash
+                for (int i = 0; i < 50; i++)
+                {
+                    SparkParticle spark = new SparkParticle(Projectile.Center, Main.rand.NextVector2CircularEdge(200, 200) * Main.rand.NextFloat(0.9f, 1.1f), false, 30, 1, Main.rand.NextBool() ? Color.Aqua : Color.Cyan);
+                    GeneralParticleHandler.SpawnParticle(spark);
+                }
+                for (int j = 0; j < 5; j++)
+                {
+                    DirectionalPulseRing ring = new DirectionalPulseRing(Projectile.Center, Vector2.Zero, Main.rand.NextBool() ? Color.Aqua : Color.Cyan, Vector2.One / 2, 0, 0, 50f * (j / 5f), 10);
+                    GeneralParticleHandler.SpawnParticle(ring);
+                }
+                Projectile.ai[1] = 1;
+            }
+        }
     }
 }

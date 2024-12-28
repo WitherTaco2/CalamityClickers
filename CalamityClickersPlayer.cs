@@ -23,6 +23,7 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
+using Terraria.GameInput;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -401,6 +402,17 @@ namespace CalamityClickers
                                         dust.noGravity = true;
                                         dust.velocity = -offset * 0.05f;
                                         */
+                                    }
+                                    if (Player.Clicker().accSMedalAmount >= SMedal.ChargeMeterMax
+                                        && Player.Clicker().accAMedalAmount >= AMedal.ChargeMeterMax
+                                        && Player.Clicker().accFMedalAmount >= FMedal.ChargeMeterMax
+                                        && PlayerInput.Triggers.JustReleased.MouseRight)
+                                    {
+                                        Projectile.NewProjectile(Player.GetSource_Accessory(accSSMedal), proj.Center, Vector2.Zero, ModContent.ProjectileType<SSMedalProjectileExplosion>(), 10000, 2f, Player.whoAmI);
+
+                                        Player.Clicker().accSMedalAmount = 0;
+                                        Player.Clicker().accAMedalAmount = 0;
+                                        Player.Clicker().accFMedalAmount = 0;
                                     }
                                 }
                             }

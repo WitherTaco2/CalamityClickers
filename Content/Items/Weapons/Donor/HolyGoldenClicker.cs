@@ -58,8 +58,9 @@ namespace CalamityClickers.Content.Items.Weapons.Donor
                 .Register();
         }
     }
-    public class HolyGoldenClickerProjectile : BaseLaserbeamProjectile
+    public class HolyGoldenClickerProjectile : BaseLaserbeamProjectile, ILocalizedModType
     {
+        public new string LocalizationCategory => "Projectiles.Clicker";
         public override float Lifetime => 60;
         public override float MaxLaserLength => 2400;
         public override float MaxScale => 3f;

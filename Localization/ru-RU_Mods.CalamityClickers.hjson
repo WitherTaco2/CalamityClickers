@@ -20,6 +20,11 @@ ClickEffect: {
 		Description: Вы получаете бафф «Мягкий» на 2 секунды
 	}
 
+	SulphurousBubbles: {
+		Name: Сернистые пузырьки
+		Description: Создает 4-5 пузырьков, по которым можно щелкнуть, чтобы создать поврежденную область и наложить «Облученный»
+	}
+
 	BloodyExplosion: {
 		Name: Кровавый Взрыв
 		Description: Создает кровавый взрыв, накладывает «Кипящяя Кровь»
@@ -36,8 +41,8 @@ ClickEffect: {
 	}
 
 	ReelIn: {
-		// Name: Reel In
-		// Description: Summon alive clickerfin. Killing him gives increased clicker damage by 25% for 10 seconds
+		Name: Наматывать
+		Description: Вызовите живого курсора-плавника. Убив его, вы увеличите урон клика на 25% в течении 10 секунд
 	}
 
 	SlimePuppet: {
@@ -173,8 +178,13 @@ ClickEffect: {
 	}
 
 	Judgement: {
-		// Name: Judgement
-		// Description: Smite your targets by holy deathray from sky
+		Name: Суд
+		Description: Поразите своих противников священным смертоносным лучом с неба
+	}
+
+	NovaSlimer: {
+		Name: Нова слизьнер
+		Description: Призывает самоноводащегося слизня Новы
 	}
 
 	# Post-Polterghast
@@ -257,8 +267,8 @@ ClickEffect: {
 	}
 
 	Mischief: {
-		// Name: Mischief
-		// Description: Summon a mini rat clicker that clicks and trigger clicker effects of nearby clickers in inventory (except Mischief)
+		Name: Озорство
+		Description: Призовите мини крыс-курсоров, который кликает и запускает кликерные эффекты ближайших курсоров в инвентаре (кроме Озорства).
 	}
 
 	# Equip
@@ -271,18 +281,13 @@ ClickEffect: {
 		Name: Ожог или блаженство
 		Description: Выпускает взрыв наносящего урон обычно, острового или белого шоколада
 	}
-
-	NovaSlimer: {
-		// Name: Nova Slimer
-		// Description: $Mods.ClickerClass.Common.Unknown
-	}
 }
 
 Items: {
 	Armor: {
 		Capsuit: {
 			VictideCapsuit: {
-				// DisplayName: Aerospec Capsuit
+				// DisplayName: Victide Anemonous Mask
 				// Tooltip: 5% increased clicker damage
 				/* SetBonus:
 					'''
@@ -487,6 +492,8 @@ Items: {
 				DisplayNameLegecy: Мягкий Курсор
 			}
 
+			BubbleClicker.DisplayName: Пузырьковый покер
+
 			RottenClicker: {
 				DisplayName: Черный как смола
 				DisplayNameLegecy: Гниющий Курсор
@@ -655,7 +662,7 @@ Items: {
 			# Endgame
 			ItsClicker.DisplayName: Вот это Курсор
 			MarkOfRatKing.DisplayName: Знак Крысиного Короля
-		} 
+		}
 	}
 
 	Accessories: {
@@ -709,46 +716,47 @@ Items: {
 		}
 
 		SSMedal: {
-			DisplayName: Медаль SS
+			DisplayName: Медаль SS-ранга
 			Tooltip:
 				'''
 				При надевании, вокруг вас будут вращаться круги, наделяющие вас силой
 				При наведении курсора на круги накапливает заряды критического удара, радиуса курсора и эффектов курсора
 				При наведении курсора на центральный круг накапливает заряд всех статов, которые выше, одновременно
+				Правый клик по центральному кругу высвобождает энергию, но тратит все бонусы кругов
 				'''
 		}
 
 		LihzahrdParticleAccelerator: {
-			// DisplayName: Lihzahrd Particle Accelerator
-			/* Tooltip:
+			DisplayName: Ускоритель частиц Ящеров
+			Tooltip:
 				'''
-				Clickers within the inner 50% of your clicker radius deal 10 more damage
-				5% increased click critical chance
-				After click crititical hit has 20% chance to supercrit with 3x damage than 2x
-				''' */
+				Клики в пределах 50% общего радиуса курсора наносят на 10 единиц больше урона
+				5% увеличиного шанца критического удара клика
+				После критического удара клика имеется 20% шанца на суперкрит с 3х урона вместо 2х
+				'''
 		}
 
 		LunarClickingGlove: {
-			// DisplayName: Lunar Clicking Glove
-			/* Tooltip:
+			DisplayName: Лунная кликающая перчатка
+			Tooltip:
 				'''
-				{$Mods.ClickerClass.Items.RegalClickingGlove.Tooltip}
-				Clickers within the inner 50% of your clicker radius deal 25 more damage
-				10% increased click critical chance
-				After click crititical hit has 20% chance to supercrit with 3x damage than 2x
-				''' */
+				{$Mods.ClickerClass.Items.RegalClickingGlove.Tooltip}				
+				Клики в пределах 50% общего радиуса курсора наносят на 25 единиц больше урона
+				10% увеличиного шанца критического удара клика
+				После критического удара клика имеется 20% шанца на суперкрит с 3х урона вместо 2х
+				'''
 		}
 
 		CosmicClickingGlove: {
-			// DisplayName: Cosmic Clicking Glove
-			/* Tooltip:
+			DisplayName: Космическая кликающая перчатка
+			Tooltip:
 				'''
 				{$Mods.ClickerClass.Items.RegalClickingGlove.Tooltip}
-				Clickers within the inner 50% of your clicker radius deal 100 more damage
-				15% increased click critical chance
-				After click crititical hit has 20% chance to supercrit with 3x damage than 2x
+				Клики в пределах 50% общего радиуса курсора наносят на 100 единиц больше урона
+				10% увеличиного шанца критического удара клика
+				После критического удара клика имеется 20% шанца на суперкрит с 3х урона вместо 2х
 				{$Mods.CalamityClickers.Items.Accessories.FingerOfBloodGod.Tooltip}
-				''' */
+				'''
 		}
 	}
 
@@ -791,21 +799,23 @@ Projectiles: {
 		StellarClickerProjectile.DisplayName: Звездная коса
 		NuclearClickerBoom.DisplayName: Ядерный взрыв
 		PlagueClickerProjectile.DisplayName: Чумная пчела
-		// CosmiliteClickerProjectile.DisplayName: Cosmic Knive
-		// CruelClickerProjectile.DisplayName: Lecherous Orb
-		// BloodstoneClickerProjectile.DisplayName: Bloodstone Clicker Projectile
+		CosmiliteClickerProjectile.DisplayName: Космический нож
+		CruelClickerProjectile.DisplayName: Похотливый Шар
+		BloodstoneClickerProjectile.DisplayName: Нож из Кровавого камня
 		// ExoClickerProjectile.DisplayName: Exo Clicker Projectile
-		// BloodyChocCookiesProjectileCookie.DisplayName: Bloody Cookie
-		// BloodyChocCookiesProjectileChocolate.DisplayName: Chocolate Chip
-		// DaedalusCapsuitProjectile.DisplayName: Daedalus Lightning
-		// AstralRocksProjectile.DisplayName: Astral Rocks
-		// AstralRocksProjectileFly.DisplayName: Astral Rock
-		// SSMedalProjectile.DisplayName: SS Medal
-		// MarkOfRatKingProjectile.DisplayName: Mini Rat Clicker
-		// GeleomegeddonClickerProjectile.DisplayName: Geleomegeddon Clicker Projectile
+		BloodyChocCookiesProjectileCookie.DisplayName: Кровавое печенье
+		BloodyChocCookiesProjectileChocolate.DisplayName: Шоколадная крошка
+		DaedalusCapsuitProjectile.DisplayName: Молния Дедала
+		AstralRocksProjectile.DisplayName: Астральный камень
+		AstralRocksProjectileFly.DisplayName: Астральный камень
+		SSMedalProjectile.DisplayName: Медаль SS-ранга
+		MarkOfRatKingProjectile.DisplayName: Mini Rat Clicker Мини крыса-курсор
+		GeleomegeddonClickerProjectile.DisplayName: Слизень Новы
+		BubbleClickerProjectile.DisplayName: Серный пузырь
+		BubbleClickerProjectile2.DisplayName: Аура узлучения
+		SSMedalProjectileExplosion.DisplayName: Электрический взрыв
+		HolyGoldenClickerProjectile.DisplayName: Святой луч
 	}
-
-	// HolyGoldenClickerProjectile.DisplayName: Holy Golden Clicker Projectile
 }
 
 Buffs: {
