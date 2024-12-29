@@ -20,10 +20,10 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Polterghast
         public override bool SetBorderTexture => true;
         public override void SetStaticDefaultsExtra()
         {
-            GhastlyPortal = CalamityClickersUtils.RegisterClickEffect(Mod, "GhastlyPortal", 25, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            GhastlyPortal = ClickerCompat.RegisterClickEffect(Mod, "GhastlyPortal", 25, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<RuinousClickerProjectile>(), damage, knockBack, player.whoAmI);
-            }, postMoonLord: true);
+            }); CalamityClickersUtils.RegisterPostWildMagicClickEffect(GhastlyPortal);
         }
         public override void SetDefaultsExtra()
         {

@@ -24,12 +24,13 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
         public override int DustType => ModContent.DustType<MiceDust>();
         public override void SetStaticDefaultsExtra()
         {
-            MiceCatalyst = CalamityClickersUtils.RegisterClickEffect(Mod, "MiceCatalyst", 25, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            MiceCatalyst = ClickerCompat.RegisterClickEffect(Mod, "MiceCatalyst", 25, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 SoundEngine.PlaySound(SoundID.Item117, position);
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<MiceCatalystClickerProjectile>(), damage, knockBack, player.whoAmI);
-            }, postMoonLord: true);
-            CalamityClickersUtils.RegisterBlacklistedClickEffect(MiceCatalyst);
+            });
+            CalamityClickersUtils.RegisterPostWildMagicClickEffect(MiceCatalyst);
+            CalamityClickersUtils.RegisterPostNightmareMagicClickEffect(MiceCatalyst);
         }
         public override void SetDefaultsExtra()
         {

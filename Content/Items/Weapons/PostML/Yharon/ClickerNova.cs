@@ -25,12 +25,13 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
         //public const float StarVelocity = 50;
         public override void SetStaticDefaultsExtra()
         {
-            Popstar = CalamityClickersUtils.RegisterClickEffect(Mod, "Popstar", 25, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            Popstar = ClickerCompat.RegisterClickEffect(Mod, "Popstar", 25, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 SoundEngine.PlaySound(new SoundStyle("CalamityClickers/Assets/Sounds/Custom/asriel_star"), position);
                 Projectile.NewProjectile(source, position - new Vector2(0, StarOffset), new Vector2(0, StarOffset / ClickerNovaProjectile.TimeLeft), ModContent.ProjectileType<ClickerNovaProjectile>(), damage, knockBack, player.whoAmI);
-            }, postMoonLord: true);
-            CalamityClickersUtils.RegisterBlacklistedClickEffect(Popstar);
+            });
+            CalamityClickersUtils.RegisterPostWildMagicClickEffect(Popstar);
+            CalamityClickersUtils.RegisterPostNightmareMagicClickEffect(Popstar);
         }
         public override void SetDefaultsExtra()
         {

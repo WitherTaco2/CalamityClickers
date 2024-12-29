@@ -1,12 +1,9 @@
 ﻿using CalamityMod.Items.Materials;
-using CalamityMod.Tiles.Furniture.CraftingStations;
 using ClickerClass.Items;
 using ClickerClass.Items.Accessories;
 using ClickerClass.Items.Misc;
 using ClickerClass.Items.Tools;
-using ClickerClass.Items.Weapons.Clickers;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace CalamityClickers.Commons
@@ -77,12 +74,12 @@ namespace CalamityClickers.Commons
 
             }
 
-            Recipe.Create(ModContent.ItemType<TheClicker>())
+            /*Recipe.Create(ModContent.ItemType<TheClicker>())
                 .AddIngredient<LordsClicker>()
                 .AddIngredient(ItemID.WhitePaint, 50)
                 .AddIngredient<ShadowspecBar>(5)
                 .AddTile<DraedonsForge>()
-                .Register();
+                .Register();*/
         }
     }
 }

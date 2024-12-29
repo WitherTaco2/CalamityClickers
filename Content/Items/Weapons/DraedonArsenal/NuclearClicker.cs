@@ -26,7 +26,7 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
         public override int DustType => DustID.CursedTorch;
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "NuclearExplosion", 25, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            ClickerEffect = ClickerCompat.RegisterClickEffect(Mod, "NuclearExplosion", 25, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 SoundEngine.PlaySound(TeslaCannon.FireSound, position);
                 for (int i = 0; i < 7; i++)
@@ -41,7 +41,8 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
                         explosion.netUpdate = true;
                     }
                 }
-            }, postMoonLord: true);
+            });
+            CalamityClickersUtils.RegisterPostWildMagicClickEffect(ClickerEffect);
         }
         public override void SetDefaultsExtra()
         {

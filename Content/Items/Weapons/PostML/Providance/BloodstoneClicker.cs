@@ -23,7 +23,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Providance
         public override Color RadiusColor => new Color(204, 42, 60);
         public override void SetStaticDefaultsExtra()
         {
-            Lifestealing = CalamityClickersUtils.RegisterClickEffect(Mod, "Lifestealing", 1, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            Lifestealing = ClickerCompat.RegisterClickEffect(Mod, "Lifestealing", 1, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 //
                 if (player.moonLeech || player.HasCooldown(LifeSteal.ID) /*|| !player*/)
@@ -38,12 +38,12 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Providance
                         player.AddCooldown(LifeSteal.ID, 20);
                     }
 
-            }, postMoonLord: true);
-            BloodyKnives = CalamityClickersUtils.RegisterClickEffect(Mod, "BloodyKnives", 20, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            }); CalamityClickersUtils.RegisterPostWildMagicClickEffect(Lifestealing);
+            BloodyKnives = ClickerCompat.RegisterClickEffect(Mod, "BloodyKnives", 20, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 for (int i = 0; i < 8; i++)
                     Projectile.NewProjectile(source, position, Vector2.UnitX.RotatedBy(MathHelper.TwoPi / 8 * i) * 10, ModContent.ProjectileType<BloodstoneClickerProjectile>(), damage, knockBack, player.whoAmI);
-            }, postMoonLord: true);
+            }); CalamityClickersUtils.RegisterPostWildMagicClickEffect(BloodyKnives);
         }
         public override void SetDefaultsExtra()
         {

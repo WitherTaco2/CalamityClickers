@@ -22,15 +22,16 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
         public override bool SetBorderTexture => true;
         public override void SetStaticDefaultsExtra()
         {
-            PhoenixWrath = CalamityClickersUtils.RegisterClickEffect(Mod, "PhoenixWrath", 12, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            PhoenixWrath = ClickerCompat.RegisterClickEffect(Mod, "PhoenixWrath", 12, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 int offSet = player.direction * 350;
                 float direction = player.direction * 3f;
 
                 Projectile.NewProjectile(source, new Vector2(position.X - offSet, position.Y - 225), new Vector2(direction, 0f), ModContent.ProjectileType<PhoenixClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
                 Projectile.NewProjectile(source, new Vector2(position.X + offSet, position.Y - 200), new Vector2(-direction, 0f), ModContent.ProjectileType<PhoenixClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
-            }, postMoonLord: true);
-            CalamityClickersUtils.RegisterBlacklistedClickEffect(PhoenixWrath);
+            });
+            CalamityClickersUtils.RegisterPostWildMagicClickEffect(PhoenixWrath);
+            CalamityClickersUtils.RegisterPostNightmareMagicClickEffect(PhoenixWrath);
         }
         public override void SetDefaultsExtra()
         {

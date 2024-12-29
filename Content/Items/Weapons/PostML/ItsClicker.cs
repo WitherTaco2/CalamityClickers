@@ -21,13 +21,14 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
         //public override bool SetBorderTexture => true;
         public override void SetStaticDefaultsExtra()
         {
-            ItzClick = CalamityClickersUtils.RegisterClickEffect(Mod, "ItzClick", 1, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            ItzClick = ClickerCompat.RegisterClickEffect(Mod, "ItzClick", 1, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 NPC npc = CalamityUtils.ClosestNPCAt(position, 500, true, true);
                 if (npc != null)
                     npc.AddBuff(ModContent.BuffType<ItsClickerDebuff>(), 30);
-            }, postMoonLord: true);
-            CalamityClickersUtils.RegisterBlacklistedClickEffect(ItzClick);
+            });
+            CalamityClickersUtils.RegisterPostWildMagicClickEffect(ItzClick);
+            CalamityClickersUtils.RegisterPostNightmareMagicClickEffect(ItzClick);
         }
         public override void SetDefaultsExtra()
         {

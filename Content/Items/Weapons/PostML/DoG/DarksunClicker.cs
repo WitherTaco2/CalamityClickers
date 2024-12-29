@@ -25,11 +25,11 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
         public override Color RadiusColor => new Color(225, 191, 73);
         public override void SetStaticDefaultsExtra()
         {
-            Totality2 = CalamityClickersUtils.RegisterClickEffect(Mod, "Totality2", 15, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            Totality2 = ClickerCompat.RegisterClickEffect(Mod, "Totality2", 15, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<DarksunClickerProjectile>(), damage, knockBack, player.whoAmI);
-            }, postMoonLord: true);
-            CalamityClickersUtils.RegisterBlacklistedClickEffect(Totality2);
+            });
+            CalamityClickersUtils.RegisterPostWildMagicClickEffect(Totality2);
         }
         public override void SetDefaultsExtra()
         {

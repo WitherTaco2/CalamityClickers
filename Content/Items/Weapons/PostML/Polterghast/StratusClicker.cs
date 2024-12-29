@@ -21,7 +21,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Polterghast
         public override Color RadiusColor => new Color(123, 228, 234);
         public override void SetStaticDefaultsExtra()
         {
-            StratusMoon = CalamityClickersUtils.RegisterClickEffect(Mod, "StratusMoon", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            StratusMoon = ClickerCompat.RegisterClickEffect(Mod, "StratusMoon", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 for (int i = 0; i < 7; i++)
                 {
@@ -29,7 +29,8 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Polterghast
                     //Projectile.NewProjectile(source, position - Vector2.UnitY.RotatedBy(random) * 100, Vector2.UnitY.RotatedBy(random) * 10, ModContent.ProjectileType<StratusClickerProjectile>(), damage, knockBack, player.whoAmI);
                     Projectile.NewProjectile(source, position, Vector2.UnitY.RotatedBy(MathHelper.TwoPi / 7 * i) * 10, ModContent.ProjectileType<StratusClickerProjectile>(), damage, knockBack, player.whoAmI);
                 }
-            }, postMoonLord: true);
+            });
+            CalamityClickersUtils.RegisterPostWildMagicClickEffect(StratusMoon);
         }
         public override void SetDefaultsExtra()
         {

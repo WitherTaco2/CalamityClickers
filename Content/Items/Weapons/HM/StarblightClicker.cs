@@ -24,7 +24,6 @@ namespace CalamityClickers.Content.Items.Weapons.HM
             Stardust = ClickerSystem.RegisterClickEffect(Mod, "Stardust", 9, () => RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<StarblightClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
-
             });
         }
         public override void SetDefaultsExtra()

@@ -30,6 +30,7 @@ Improved Bloodflare Crimera Capsuit. Renamed to Bloodflare Clickmera Skull. Now 
 Reworked God Slayer Capsuit. Renamed to God Slayer Cloaker Hood. Hitting with non-crit damage increase crit chance and resets after dealing crit damage. Also after 50th crit gets buff that guaranteed crit chance and gets cooldown
 Renamed Auric Tesla Capsuit to Auric Tesla Gamer Mask. Now has support of Catalyst addon.
 
+Rewrote of Wild Magic and Nightmare Magic clicker effect. Now this addon requare an Clicker Extra API
 
 Balance changes:
 Nerfed Resonant Power Plug clicker effect. Now requare 20 click to trigger instead of 15

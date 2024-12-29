@@ -19,15 +19,16 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
         public override int DustType => DustID.Stone;
         public override void SetStaticDefaultsExtra()
         {
-            MiniExoTwins = CalamityClickersUtils.RegisterClickEffect(Mod, "MiniExoTwins", 20, () => RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            MiniExoTwins = ClickerCompat.RegisterClickEffect(Mod, "MiniExoTwins", 20, () => RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 float rand = Main.rand.NextFloat(MathHelper.TwoPi);
                 for (int i = 0; i < 2; i++)
                 {
                     int index = Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<ExoClickerProjectile>(), damage, knockBack, player.whoAmI, i, rand);
                 }
-            }, postMoonLord: true);
-            CalamityClickersUtils.RegisterBlacklistedClickEffect(MiniExoTwins);
+            });
+            CalamityClickersUtils.RegisterPostWildMagicClickEffect(MiniExoTwins);
+            CalamityClickersUtils.RegisterPostNightmareMagicClickEffect(MiniExoTwins);
         }
         public override void SetDefaultsExtra()
         {

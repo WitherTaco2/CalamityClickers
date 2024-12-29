@@ -18,7 +18,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
         public override bool SetBorderTexture => true;
         public override void SetStaticDefaultsExtra()
         {
-            PlagueBees2 = CalamityClickersUtils.RegisterClickEffect(Mod, "PlagueBees2", 12, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            PlagueBees2 = ClickerCompat.RegisterClickEffect(Mod, "PlagueBees2", 12, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 for (int projIndex = 0; projIndex < 20; projIndex++)
                 {
@@ -26,7 +26,8 @@ namespace CalamityClickers.Content.Items.Weapons.PostML
                     float speedY = (float)Main.rand.Next(-35, 36) * 0.02f;
                     Projectile.NewProjectile(source, position.X, position.Y, speedX, speedY, ModContent.ProjectileType<PlagueClickerProjectile>(), player.beeDamage(damage / 4), player.beeKB(0f), player.whoAmI);
                 }
-            }, postMoonLord: true);
+            });
+            CalamityClickersUtils.RegisterPostWildMagicClickEffect(PlagueBees2);
         }
 
         public override void SetDefaultsExtra()

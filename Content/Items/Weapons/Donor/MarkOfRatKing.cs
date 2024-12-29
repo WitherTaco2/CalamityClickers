@@ -28,13 +28,14 @@ namespace CalamityClickers.Content.Items.Weapons.Donor
         //public override bool SetBorderTexture => true;
         public override void SetStaticDefaultsExtra()
         {
-            Mischief = CalamityClickersUtils.RegisterClickEffect(Mod, "Mischief", 15, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            Mischief = ClickerCompat.RegisterClickEffect(Mod, "Mischief", 15, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 int rat = ModContent.ProjectileType<MarkOfRatKingProjectile>();
                 if (player.ownedProjectileCounts[rat] < 10)
                     Projectile.NewProjectile(source, position, Vector2.Zero, rat, damage / 10, knockBack, player.whoAmI);
-            }, postMoonLord: true);
-            CalamityClickersUtils.RegisterBlacklistedClickEffect(Mischief);
+            });
+            CalamityClickersUtils.RegisterPostWildMagicClickEffect(Mischief);
+            CalamityClickersUtils.RegisterPostNightmareMagicClickEffect(Mischief);
         }
         public override void SetDefaultsExtra()
         {

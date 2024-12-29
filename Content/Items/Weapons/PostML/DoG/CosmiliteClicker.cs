@@ -19,14 +19,14 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
 
         public override void SetStaticDefaultsExtra()
         {
-            Distort = CalamityClickersUtils.RegisterClickEffect(Mod, "Distort", 12, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            Distort = ClickerCompat.RegisterClickEffect(Mod, "Distort", 12, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 for (int i = 0; i < 5; i++)
                 {
                     Projectile.NewProjectile(source, position, Vector2.UnitX.RotatedByRandom(MathHelper.TwoPi) * 5, ModContent.ProjectileType<CosmiliteClickerProjectile>(), damage, knockBack, player.whoAmI);
                 }
-            }, postMoonLord: true);
-            //CalamityClickersUtils.RegisterBlacklistedClickEffect(ClickerEffect);
+            });
+            CalamityClickersUtils.RegisterPostWildMagicClickEffect(Distort);
         }
         public override void SetDefaultsExtra()
         {

@@ -17,39 +17,23 @@ namespace CalamityClickers
             {
                 string message = args[0] as string;
 
-                if (message == "RegisterPostMoonlordClickerEffect" || message == "RegisterPostMLClickerEffect")
+                if (message == "RegisterPostNightmareMagicClickerEffect")
                 {
                     var name = args[1] as string;
                     if (name == null)
                     {
                         throw new Exception($"Call Error: The name argument for the attempted message, \"{message}\" has returned null.");
                     }
-                    if (!CalamityClickersSystem.PostMLClickerEffects.Contains(name))
+                    if (!CalamityClickersSystem.PostNightmareClickerEffects.Contains(name))
                     {
-                        CalamityClickersSystem.PostMLClickerEffects.Add(name);
+                        CalamityClickersSystem.PostNightmareClickerEffects.Add(name);
                     }
                     else
                     {
                         throw new Exception($"Call Error: Post-moonlord Clicker effect \"{name}\" is already registered, \"{message}\" has returned null.");
                     }
                 }
-                else if (message == "RegisterBlacklistedClickerEffect")
-                {
-                    var name = args[1] as string;
-                    if (name == null)
-                    {
-                        throw new Exception($"Call Error: The name argument for the attempted message, \"{message}\" has returned null.");
-                    }
-                    if (!CalamityClickersSystem.BlacklistedClickerEffects.Contains(name))
-                    {
-                        CalamityClickersSystem.BlacklistedClickerEffects.Add(name);
-                    }
-                    else
-                    {
-                        throw new Exception($"Call Error: Blacklisted Clicker effect \"{name}\" is already registered, \"{message}\" has returned null.");
-                    }
-                }
-                else if (message == "SetAccessoryItem")
+                if (message == "SetAccessoryItem")
                 {
                     var player = args[1] as Player;
                     var accName = args[2] as string;

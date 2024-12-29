@@ -23,19 +23,20 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
             //Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 9));
             //ItemID.Sets.AnimatesAsSoul[Type] = true;
 
-            /*ClickerEffect = CalamityClickersUtils.RegisterClickEffect(Mod, "Hurt", 1, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            /*ClickerEffect = ClickerCompat.RegisterClickEffect(Mod, "Hurt", 1, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 player.HealEffect(-2);
                 player.statLife -= 2;
             }, postMoonLord: true);
             CalamityClickersUtils.RegisterBlacklistedClickEffect(ClickerEffect);*/
 
-            LecherousOrb = CalamityClickersUtils.RegisterClickEffect(Mod, "LecherousOrb", 20, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            LecherousOrb = ClickerCompat.RegisterClickEffect(Mod, "LecherousOrb", 20, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position + Main.rand.NextVector2Circular(200, 200), Main.rand.NextVector2CircularEdge(1, 1), ModContent.ProjectileType<CruelClickerProjectile>(), damage, knockBack, player.whoAmI);
                 player.Hurt(PlayerDeathReason.ByCustomReason(" has been sacrificed"), 20, 1, dodgeable: false, scalingArmorPenetration: 1f, knockback: 0);
-            }, postMoonLord: true);
-            CalamityClickersUtils.RegisterBlacklistedClickEffect(LecherousOrb);
+            });
+            CalamityClickersUtils.RegisterPostWildMagicClickEffect(LecherousOrb);
+            CalamityClickersUtils.RegisterPostNightmareMagicClickEffect(LecherousOrb);
         }
         public override void SetDefaultsExtra()
         {

@@ -21,13 +21,13 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
         public override bool SetBorderTexture => true;
         public override void SetStaticDefaultsExtra()
         {
-            NightmareMagic = CalamityClickersUtils.RegisterClickEffect(Mod, "NightmareMagic", 5, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            NightmareMagic = ClickerCompat.RegisterClickEffect(Mod, "NightmareMagic", 5, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 List<ClickEffect> allowed = new List<ClickEffect>();
 
                 foreach (var name in ClickerSystem.GetAllEffectNames())
                 {
-                    if (!CalamityClickersSystem.BlacklistedClickerEffects.Contains(name) && ClickerSystem.IsClickEffect(name, out ClickEffect effect))
+                    if (!(CalamityClickers.extraAPI.Call("GetBlacklistedRandomClickerEffectList") as List<string>).Contains(name) && !CalamityClickersSystem.PostNightmareClickerEffects.Contains(name) && ClickerSystem.IsClickEffect(name, out ClickEffect effect))
                     {
                         allowed.Add(effect);
                     }
@@ -37,7 +37,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
 
                 ClickEffect random = Main.rand.Next(allowed);
                 random.Action?.Invoke(player, source, position, type, damage, knockBack);
-            }, postMoonLord: true);
+            });
             CalamityClickersUtils.RegisterBlacklistedClickEffect(NightmareMagic);
         }
         public override void SetDefaultsExtra()

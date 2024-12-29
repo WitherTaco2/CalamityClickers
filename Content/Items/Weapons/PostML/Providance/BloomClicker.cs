@@ -21,7 +21,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Providance
 
         public override void SetStaticDefaultsExtra()
         {
-            TarragonThorns = CalamityClickersUtils.RegisterClickEffect(Mod, "TarragonThorns", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            TarragonThorns = ClickerCompat.RegisterClickEffect(Mod, "TarragonThorns", 10, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 float random = Main.rand.Next(30, 90);
                 float spread = random * 0.0174f;
@@ -39,7 +39,8 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Providance
                     index = Projectile.NewProjectile(source, position.X, position.Y, (float)(-Math.Sin(offsetAngle) * 5f) * 2f, (float)(-Math.Cos(offsetAngle) * 5f) * 2f, projID, splitDamage, splitKB, player.whoAmI);
                     Main.projectile[index].DamageType = ModContent.GetInstance<ClickerDamage>();
                 }
-            }, postMoonLord: true);
+            });
+            CalamityClickersUtils.RegisterPostWildMagicClickEffect(TarragonThorns);
         }
         public override void SetDefaultsExtra()
         {

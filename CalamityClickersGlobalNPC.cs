@@ -32,7 +32,6 @@ using CalamityMod.NPCs.SupremeCalamitas;
 using CalamityMod.NPCs.TownNPCs;
 using CalamityMod.NPCs.Yharon;
 using ClickerClass.Items;
-using ClickerClass.Items.Weapons.Clickers;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
@@ -202,33 +201,6 @@ namespace CalamityClickers
         {
             LeadingConditionRule mainRule = npcLoot.DefineNormalOnlyDropSet();
 
-
-            foreach (var rule in npcLoot.Get())
-            {
-                if (rule is CommonDrop normalDrop)
-                {
-                    if (normalDrop.itemId == ModContent.ItemType<TheClicker>())
-                    {
-                        npcLoot.Remove(rule);
-                    }
-
-                }
-                /*if (rule is LeadingConditionRule leadingRule)
-                {
-                    int i = 0;
-                    foreach (var chain in leadingRule.ChainedRules)
-                    {
-                        if (chain.RuleToChain is CommonDrop chainDrop)
-                        {
-                            if (chainDrop.itemId == ModContent.ItemType<TheClicker>())
-                            {
-                                leadingRule.ChainedRules.RemoveAt(i);
-                            }
-                        }
-                        i++;
-                    }
-                }*/
-            }
             if (npc.type == ModContent.NPCType<Horse>())
             {
                 mainRule.Add(ModContent.ItemType<EarthenClicker>(), 4);

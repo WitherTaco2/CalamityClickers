@@ -20,13 +20,14 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
         public override int DustType => Main.rand.NextBool() ? DustID.GemSapphire : DustID.GemAmethyst;
         public override void SetStaticDefaultsExtra()
         {
-            NebulaStars = CalamityClickersUtils.RegisterClickEffect(Mod, "NebulaStars", 7, () => RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            NebulaStars = ClickerCompat.RegisterClickEffect(Mod, "NebulaStars", 7, () => RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 for (int i = 0; i < 7; i++)
                 {
                     Projectile.NewProjectile(source, position + Vector2.UnitX.RotatedBy(MathHelper.TwoPi / 7 * i) * 10, Vector2.UnitX.RotatedBy(MathHelper.TwoPi / 7 * i) * 3, ModContent.ProjectileType<ClickerOfGodsProjectile>(), damage / 2, knockBack, player.whoAmI);
                 }
-            }, postMoonLord: true);
+            });
+            CalamityClickersUtils.RegisterPostWildMagicClickEffect(NebulaStars);
         }
         public override void SetDefaultsExtra()
         {

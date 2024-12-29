@@ -24,13 +24,14 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
         public override int DustType => DustID.WhiteTorch;
         public override void SetStaticDefaultsExtra()
         {
-            Exomination = CalamityClickersUtils.RegisterClickEffect(Mod, "Exomination", 15, () => RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            Exomination = ClickerCompat.RegisterClickEffect(Mod, "Exomination", 15, () => RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 SoundEngine.PlaySound(Supernova.ExplosionSound, position);
                 int p = Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<SupernovaBoom>(), damage, knockBack, player.whoAmI);
                 Main.projectile[p].DamageType = ModContent.GetInstance<ClickerDamage>();
-            }, postMoonLord: true);
-            CalamityClickersUtils.RegisterBlacklistedClickEffect(Exomination);
+            });
+            CalamityClickersUtils.RegisterPostWildMagicClickEffect(Exomination);
+            CalamityClickersUtils.RegisterPostNightmareMagicClickEffect(Exomination);
         }
         public override void SetDefaultsExtra()
         {

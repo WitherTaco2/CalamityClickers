@@ -1,4 +1,6 @@
 using CalamityClickers.Commons;
+using CalamityMod.Items.Materials;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace CalamityClickers
@@ -6,11 +8,17 @@ namespace CalamityClickers
     public class CalamityClickers : Mod
     {
         public static CalamityClickers mod;
+        public static Mod extraAPI;
         public override void Load()
         {
             mod = this;
             //CooldownRegistry.Register<GodSlayerOverclockCooldown>(GodSlayerOverclockCooldown.ID);
+            ModLoader.TryGetMod("ClickerExtraAPI", out extraAPI);
             CalamityClickersLoading.Load();
+
+            extraAPI.Call("NerfTheClicker");
+            extraAPI.Call("AddTheClickerRecipeIngredient", ItemID.WhitePaint, 50);
+            extraAPI.Call("AddTheClickerRecipeIngredient", ModContent.ItemType<ShadowspecBar>(), 5);
         }
         public override void Unload()
         {

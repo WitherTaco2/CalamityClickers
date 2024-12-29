@@ -7,30 +7,15 @@ using CalamityClickers.Content.Items.Weapons.PostML.Yharon;
 using CalamityClickers.Content.Items.Weapons.PreHM;
 using CalamityMod;
 using CalamityMod.Items.TreasureBags;
-using ClickerClass;
-using ClickerClass.Items;
-using ClickerClass.Items.Weapons.Clickers;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
-using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;
 
 namespace CalamityClickers
 {
     public class CalamityClickersGlobalItem : GlobalItem
     {
-        public override void SetDefaults(Item item)
-        {
-            if (ClickerSystem.IsClickerWeapon(item, out ClickerItemCore clickerItem))
-            {
-                if (clickerItem.itemClickEffects.Contains(ClickEffect.WildMagic))
-                {
-                    clickerItem.itemClickEffects.Remove(ClickEffect.WildMagic);
-                    ClickerCompat.AddEffect(item, CalamityClickersEffects.WildMagic);
-                }
-            }
-        }
         public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
             Mod calamity = ModLoader.GetMod("CalamityMod");
@@ -64,22 +49,6 @@ namespace CalamityClickers
         }
         public override void ModifyItemLoot(Item item, ItemLoot itemLoot)
         {
-            foreach (var rule in itemLoot.Get())
-            {
-                if (rule is CommonDrop normalDrop)
-                {
-                    if (normalDrop.itemId == ModContent.ItemType<TheClicker>())
-                    {
-                        itemLoot.Remove(rule);
-                    }
-                }
-            }
-
-
-
-
-
-
             if (item.type == ModContent.ItemType<DesertScourgeBag>())
             {
                 itemLoot.Add(ModContent.ItemType<ScourgeClicker>(), 4);

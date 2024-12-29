@@ -21,10 +21,11 @@ namespace CalamityClickers.Content.Items.Weapons.DLC
         public override Color RadiusColor => new Color(193, 136, 246);
         public override void SetStaticDefaultsExtra()
         {
-            NovaSlimer = CalamityClickersUtils.RegisterClickEffect(Mod, "NovaSlimer", 20, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            NovaSlimer = ClickerCompat.RegisterClickEffect(Mod, "NovaSlimer", 20, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<GeleomegeddonClickerProjectile>(), damage * 2, knockBack, player.whoAmI);
-            }, postMoonLord: true);
+            });
+            CalamityClickersUtils.RegisterPostWildMagicClickEffect(NovaSlimer);
         }
         public override void SetDefaultsExtra()
         {
