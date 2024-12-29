@@ -9,6 +9,7 @@ using ClickerClass.Items.Weapons.Clickers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -25,6 +26,7 @@ namespace CalamityClickers.Content.Items.Weapons.Donor
         {
             Judgement = CalamityClickersUtils.RegisterClickEffect(Mod, "Judgement", 20, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
+                SoundEngine.PlaySound(new SoundStyle("CalamityMod/Sounds/Item/LanceofDestinyStrong"), position);
                 Projectile.NewProjectile(source, position - new Vector2(0, 1000), new Vector2(0, 1), ModContent.ProjectileType<HolyGoldenClickerProjectile>(), damage, knockBack, player.whoAmI);
             }, postMoonLord: true);
         }

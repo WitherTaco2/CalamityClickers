@@ -281,6 +281,11 @@ ClickEffect: {
 		Name: Burn or Bliss
 		Description: Releases a burst of damaging normal, spicy and white chocolate
 	}
+
+	Popstar: {
+		Name: Popstar
+		Description: $Mods.ClickerClass.Common.Unknown
+	}
 }
 
 Items: {
@@ -662,6 +667,7 @@ Items: {
 			# Endgame
 			ItsClicker.DisplayName: Its Clicker
 			MarkOfRatKing.DisplayName: Mark of Rat King
+			ClickerNova.DisplayName: Clicker Nova
 		}
 	}
 
@@ -815,6 +821,8 @@ Projectiles: {
 		BubbleClickerProjectile2.DisplayName: Irradiated Aura
 		SSMedalProjectileExplosion.DisplayName: Electric Explosion
 		HolyGoldenClickerProjectile.DisplayName: Holy Deathray
+		ClickerNovaProjectile.DisplayName: Clicker Nova Projectile
+		ClickerNovaProjectileSmall.DisplayName: Clicker Nova Projectile Small
 	}
 }
 

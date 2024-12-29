@@ -281,6 +281,11 @@ ClickEffect: {
 		Name: Ожог или блаженство
 		Description: Выпускает взрыв наносящего урон обычно, острового или белого шоколада
 	}
+
+	Popstar: {
+		// Name: Popstar
+		// Description: $Mods.ClickerClass.Common.Unknown
+	}
 }
 
 Items: {
@@ -662,6 +667,7 @@ Items: {
 			# Endgame
 			ItsClicker.DisplayName: Вот это Курсор
 			MarkOfRatKing.DisplayName: Знак Крысиного Короля
+			// ClickerNova.DisplayName: Clicker Nova
 		}
 	}
 
@@ -815,6 +821,8 @@ Projectiles: {
 		BubbleClickerProjectile2.DisplayName: Аура узлучения
 		SSMedalProjectileExplosion.DisplayName: Электрический взрыв
 		HolyGoldenClickerProjectile.DisplayName: Святой луч
+		// ClickerNovaProjectile.DisplayName: Clicker Nova Projectile
+		// ClickerNovaProjectileSmall.DisplayName: Clicker Nova Projectile Small
 	}
 }
 

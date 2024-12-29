@@ -34,9 +34,9 @@ namespace CalamityClickers.Content.Items.Accessories
         {
             CreateRecipe()
                 .AddIngredient<SMedal>()
-                .AddIngredient<CoreofCalamity>()
-                .AddIngredient<AscendantSpiritEssence>(4)
                 .AddIngredient<AuricBar>(5)
+                .AddIngredient<AscendantSpiritEssence>(4)
+                .AddIngredient<CoreofCalamity>()
                 .AddTile<CosmicAnvil>()
                 .Register();
         }

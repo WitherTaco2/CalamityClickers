@@ -9,6 +9,7 @@ using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Accessories
 {
+    [AutoloadEquip(EquipType.HandsOn)]
     public class CosmicClickingGlove : ClickerItem, ILocalizedModType
     {
         public new string LocalizationCategory => "Items.Accessories";

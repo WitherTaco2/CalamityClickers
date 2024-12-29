@@ -1,5 +1,4 @@
 using CalamityClickers.Commons;
-using System;
 using Terraria.ModLoader;
 
 namespace CalamityClickers
@@ -17,54 +16,6 @@ namespace CalamityClickers
         {
             mod = null;
         }
-        public override object Call(params object[] args)
-        {
-            CalamityClickers calamityClicker = CalamityClickers.mod;
-            //Simplify code by resizing args
-            Array.Resize(ref args, 25);
-            string success = "Success";
-            try
-            {
-                string message = args[0] as string;
-
-                if (message == "RegisterPostMoonlordClickerEffect" || message == "RegisterPostMLClickerEffect")
-                {
-                    var name = args[1] as string;
-                    if (name == null)
-                    {
-                        throw new Exception($"Call Error: The name argument for the attempted message, \"{message}\" has returned null.");
-                    }
-                    if (!CalamityClickersSystem.PostMLClickerEffects.Contains(name))
-                    {
-                        CalamityClickersSystem.PostMLClickerEffects.Add(name);
-                    }
-                    else
-                    {
-                        throw new Exception($"Call Error: Post-moonlord Clicker effect \"{name}\" is already registered, \"{message}\" has returned null.");
-                    }
-                }
-                if (message == "RegisterBlacklistedClickerEffect")
-                {
-                    var name = args[1] as string;
-                    if (name == null)
-                    {
-                        throw new Exception($"Call Error: The name argument for the attempted message, \"{message}\" has returned null.");
-                    }
-                    if (!CalamityClickersSystem.BlacklistedClickerEffects.Contains(name))
-                    {
-                        CalamityClickersSystem.BlacklistedClickerEffects.Add(name);
-                    }
-                    else
-                    {
-                        throw new Exception($"Call Error: Blacklisted Clicker effect \"{name}\" is already registered, \"{message}\" has returned null.");
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                calamityClicker.Logger.Error($"Call Error: {e.StackTrace} {e.Message}");
-            }
-            return null;
-        }
+        public override object Call(params object[] args) => CalamityClickersModCalls.Call(args);
     }
 }
