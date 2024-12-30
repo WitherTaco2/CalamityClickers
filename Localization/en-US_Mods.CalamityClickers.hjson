@@ -97,11 +97,6 @@ ClickEffect: {
 		Description: Creates a circle of music notes.
 	}
 
-	WildMagicNew: {
-		Name: Wild Magic
-		Description: Randomly acts as any possible click effect.
-	}
-
 	CoolFlake: {
 		Name: Cool Flake
 		Description: Creates Snowflake minion. Only one exist. Updates a lifetime of existing snowflake.
@@ -245,6 +240,12 @@ ClickEffect: {
 		Description: Summon a catalyst cloud that creates projectiles which homes to mouse position.
 	}
 
+	Popstar: {
+		Name: Popstar
+		Description: Fall the Omega Star that spit to 3 rings of stars on mouse position
+	}
+
+	# Pre-Endgame Bosses
 	MiniExoTwins: {
 		Name: Olympic Call
 		Description: Summon mini Artemis and Mini Apollo to attack around cursor.
@@ -280,11 +281,6 @@ ClickEffect: {
 	BurnOrBliss: {
 		Name: Burn or Bliss
 		Description: Releases a burst of damaging normal, spicy and white chocolate
-	}
-
-	Popstar: {
-		Name: Popstar
-		Description: $Mods.ClickerClass.Common.Unknown
 	}
 }
 
@@ -353,7 +349,7 @@ Items: {
 					'''
 					12% increased clicker damage
 					10% increased clicker critical strike chance
-					55% increased clicker radius
+					25% increased clicker radius
 					'''
 				SetBonus:
 					'''
@@ -373,7 +369,6 @@ Items: {
 				Tooltip:
 					'''
 					15% increased clicker damage and critical strike chance
-					100% increased clicker radius
 					30% increased clicker radius
 					'''
 				SetBonus:
@@ -656,6 +651,7 @@ Items: {
 			# Post-Yharon
 			PhoenixClicker.DisplayName: Phoenix Clicker
 			MiceCatalystClicker.DisplayName: Mice Catalyst Clicker
+			ClickerNova.DisplayName: Clicker Nova
 
 			ExoClicker: {
 				DisplayName: Resonant Power Plug
@@ -667,7 +663,6 @@ Items: {
 			# Endgame
 			ItsClicker.DisplayName: Its Clicker
 			MarkOfRatKing.DisplayName: Mark of Rat King
-			ClickerNova.DisplayName: Clicker Nova
 		}
 	}
 
@@ -821,8 +816,8 @@ Projectiles: {
 		BubbleClickerProjectile2.DisplayName: Irradiated Aura
 		SSMedalProjectileExplosion.DisplayName: Electric Explosion
 		HolyGoldenClickerProjectile.DisplayName: Holy Deathray
-		ClickerNovaProjectile.DisplayName: Clicker Nova Projectile
-		ClickerNovaProjectileSmall.DisplayName: Clicker Nova Projectile Small
+		ClickerNovaProjectile.DisplayName: Omega Star
+		ClickerNovaProjectileSmall.DisplayName: Small Star
 	}
 }
 

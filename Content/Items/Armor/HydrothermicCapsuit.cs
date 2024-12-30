@@ -27,7 +27,7 @@ namespace CalamityClickers.Content.Items.Armor
         {
             player.GetDamage<ClickerDamage>() += 0.12f;
             player.GetCritChance<ClickerDamage>() += 10;
-            player.Clicker().clickerRadius += 1.1f;
+            player.Clicker().clickerRadius += 0.5f;
             player.lavaImmune = true;
             player.buffImmune[BuffID.OnFire] = true;
         }

@@ -10,6 +10,7 @@ using CalamityMod.Items.Accessories;
 using CalamityMod.Items.Weapons.Melee;
 using CalamityMod.Particles;
 using CalamityMod.Projectiles.Rogue;
+using CalamityMod.Projectiles.Typeless;
 using ClickerClass;
 using ClickerClass.Buffs;
 using ClickerClass.Core.Netcode.Packets;
@@ -38,6 +39,7 @@ namespace CalamityClickers
         public int clickerTotal = 0;
         public int clickAmount = 0;
 
+        public bool setVictideClicker = false;
         public bool setDaedalusClicker = false;
         public bool setHydrothermicClicker = false;
         public bool setTarragonClicker = false;
@@ -71,6 +73,7 @@ namespace CalamityClickers
 
             clickerSelected = false;
 
+            setVictideClicker = false;
             setDaedalusClicker = false;
             setHydrothermicClicker = false;
             setTarragonClicker = false;
@@ -616,6 +619,17 @@ namespace CalamityClickers
                 if (SetIntergelactic)
                 {
                     setIntergelacticTimer -= 12;
+                }
+                if (setVictideClicker)
+                {
+                    if (Player.whoAmI == Main.myPlayer && Main.rand.NextBool(10))
+                    {
+                        // Victide All-class Seashells: 200%, soft cap starts at 46 base damage
+                        int seashellDamage = CalamityUtils.DamageSoftCap(damage * 2, 46);
+                        seashellDamage = Player.ApplyArmorAccDamageBonusesTo(seashellDamage);
+
+                        Projectile.NewProjectile(source, Main.MouseWorld, Vector2.Zero, ModContent.ProjectileType<Seashell>(), seashellDamage, 1f, Player.whoAmI);
+                    }
                 }
                 return false;
             }

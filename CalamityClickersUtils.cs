@@ -31,7 +31,7 @@ namespace CalamityClickers
         }
         public static void RegisterPostNightmareMagicClickEffect(string clickEffectName)
         {
-            if (CalamityClickersSystem.PostNightmareClickerEffects.Contains(clickEffectName))
+            if (!CalamityClickersSystem.PostNightmareClickerEffects.Contains(clickEffectName))
                 CalamityClickersSystem.PostNightmareClickerEffects.Add(clickEffectName);
         }
         public static void RegisterBlacklistedClickEffect(string clickEffectName)

@@ -9,13 +9,14 @@ using Terraria.ModLoader;
 
 namespace CalamityClickers.Content.Items.Armor
 {
+    [AutoloadEquip(EquipType.Head)]
     public class VictideCapsuit : ClickerItem, ILocalizedModType
     {
         public new string LocalizationCategory => "Items.Armor.Capsuit";
-        public override bool IsLoadingEnabled(Mod mod)
+        /*public override bool IsLoadingEnabled(Mod mod)
         {
             return false;
-        }
+        }*/
         public override void SetDefaults()
         {
             Item.width = 22;
@@ -32,6 +33,7 @@ namespace CalamityClickers.Content.Items.Armor
         {
             player.setBonus = this.GetLocalizedValue("SetBonus") + "\n" + CalamityUtils.GetTextValueFromModItem<VictideBreastplate>("CommonSetBonus");
             player.Calamity().victideSet = true;
+            player.CalClicker().setVictideClicker = true;
             player.ignoreWater = true;
             if (Collision.DrownCollision(player.position, player.width, player.height, player.gravDir))
             {
