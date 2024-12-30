@@ -45,7 +45,7 @@ namespace CalamityClickers.Content.Items.Weapons
                 return null;
             }
         }
-        public override void SetStaticDefaults()
+        public sealed override void SetStaticDefaults()
         {
             base.SetStaticDefaults();
             //if (BorderTexture is null)
@@ -72,7 +72,7 @@ namespace CalamityClickers.Content.Items.Weapons
         public abstract float Radius { get; }
         public abstract Microsoft.Xna.Framework.Color RadiusColor { get; }
         public virtual int DustType => -1;
-        public override void SetDefaults()
+        public sealed override void SetDefaults()
         {
             base.SetDefaults();
             ClickerSystem.SetClickerWeaponDefaults(base.Item);

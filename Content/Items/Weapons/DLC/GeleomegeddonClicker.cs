@@ -1,6 +1,7 @@
 ﻿using CalamityClickers.Content.Items.Weapons.HM;
 using CalamityClickers.Content.Items.Weapons.PreHM;
 using CalamityMod;
+using CalamityMod.Dusts;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
@@ -19,6 +20,15 @@ namespace CalamityClickers.Content.Items.Weapons.DLC
         public static string NovaSlimer { get; internal set; } = string.Empty;
         public override float Radius => 7f;
         public override Color RadiusColor => new Color(193, 136, 246);
+        public override int DustType
+        {
+            get
+            {
+                if (ModLoader.TryGetMod("CatalystMod", out var result))
+                    return Main.rand.NextBool() ? result.Find<ModDust>("AstraDust").Type : result.Find<ModDust>("AstraDustPurple").Type;
+                return ModContent.DustType<AstralChunkDust>();
+            }
+        }
         public override void SetStaticDefaultsExtra()
         {
             NovaSlimer = ClickerCompat.RegisterClickEffect(Mod, "NovaSlimer", 20, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
@@ -30,8 +40,8 @@ namespace CalamityClickers.Content.Items.Weapons.DLC
         public override void SetDefaultsExtra()
         {
             AddEffect(Item, NovaSlimer);
-            Mod clamity = ModLoader.GetMod("CatalystMod");
-            SetDust(Item, Main.rand.NextBool() ? clamity.Find<ModDust>("AstraDust").Type : clamity.Find<ModDust>("AstraDustPurple").Type);
+            //Mod clamity = ModLoader.GetMod("CatalystMod");
+            //SetDust(Item, Main.rand.NextBool() ? clamity.Find<ModDust>("AstraDust").Type : clamity.Find<ModDust>("AstraDustPurple").Type);
 
             Item.damage = 145;
             Item.knockBack = 1f;
@@ -43,8 +53,8 @@ namespace CalamityClickers.Content.Items.Weapons.DLC
         }
         public override void UpdateInventory(Player player)
         {
-            Mod clamity = ModLoader.GetMod("CatalystMod");
-            SetDust(Item, Main.rand.NextBool() ? clamity.Find<ModDust>("AstraDust").Type : clamity.Find<ModDust>("AstraDustPurple").Type);
+            Mod catalyst = ModLoader.GetMod("CatalystMod");
+            SetDust(Item, Main.rand.NextBool() ? catalyst.Find<ModDust>("AstraDust").Type : catalyst.Find<ModDust>("AstraDustPurple").Type);
         }
         public override void AddRecipes()
         {
