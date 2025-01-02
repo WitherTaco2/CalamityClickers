@@ -1,0 +1,24 @@
+Scrap Presser
+900
+Scrap Missile 10
+Shoots a missle from above at the target that shatters on impact
+
+Handheld ClickerDrill
+1450
+Drill Shot 10
+Shoots a Drill that latches onto at enemy
+
+Field Polorizer
+1800
+Electrofield 8
+Summon a lingering electromagnetic field that extends on hit
+
+Bioinjector
+2250
+Vital Infusion 20
+Charges a green BioNeedle next to player. Right Click to heal 25 health by cost of one needle and 50 charges
+
+Fusion Pointer
+2500
+Current Strike 8
+Fires a powerful current of ionized particles that arcs through enemies
