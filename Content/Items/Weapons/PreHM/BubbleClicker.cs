@@ -68,7 +68,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
     }
     public class BubbleClickerProjectile2 : ModdedClickerProjectile
     {
-        public override void SetDefaultsExtra()
+        public override void SetDefaults()
         {
             Projectile.width = Projectile.height = 110;
             Projectile.friendly = true;

@@ -62,8 +62,9 @@ namespace CalamityClickers.Content.Items.Accessories
             base.SetStaticDefaults();
         }
 
-        public override void SetDefaultsExtra()
+        public override void SetDefaults()
         {
+            base.SetDefaults();
             Projectile.width = 40;
             Projectile.height = 40;
             Projectile.aiStyle = -1;

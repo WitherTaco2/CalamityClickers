@@ -89,8 +89,10 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
             set => Projectile.ai[2] = value;
         }
 
-        public override void SetDefaultsExtra()
+        public override void SetDefaults()
         {
+            base.SetDefaults();
+
             Projectile.width = 50;
             Projectile.height = 50;
             Projectile.aiStyle = -1;

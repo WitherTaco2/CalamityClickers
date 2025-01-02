@@ -1,5 +1,5 @@
 displayName = Calamity Clickers
 author = WitherTaco
-version = 1.1.0.2
+version = 1.1.0.1
 modReferences = CalamityMod, ClickerClass, ClickerExtraAPI
 weakReferences = CatalystMod

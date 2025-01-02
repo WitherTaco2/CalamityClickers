@@ -41,7 +41,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
             get => Projectile.ai[0] == 1f;
             set => Projectile.ai[0] = value ? 1f : 0f;
         }
-        public override void SetDefaultsExtra()
+        public override void SetDefaults()
         {
             Projectile.width = 150;
             Projectile.height = 150;

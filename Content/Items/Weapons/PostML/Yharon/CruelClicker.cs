@@ -103,7 +103,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
         {
 
         }
-        public override void SetDefaultsExtra()
+        public override void SetDefaults()
         {
             Projectile.width = 64; Projectile.height = 90;
             Projectile.aiStyle = -1;

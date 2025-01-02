@@ -43,8 +43,9 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
     public class ClickerOfGodsProjectile : ModdedClickerProjectile
     {
         public override bool UseInvisibleProjectile => false;
-        public override void SetDefaultsExtra()
+        public override void SetDefaults()
         {
+            base.SetDefaults();
 
             Projectile.width = Projectile.height = 34;
             Projectile.aiStyle = -1;

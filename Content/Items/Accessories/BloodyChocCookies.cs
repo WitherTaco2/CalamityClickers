@@ -22,7 +22,6 @@ namespace CalamityClickers.Content.Items.Accessories
         public static string BurnOrBliss { get; internal set; } = string.Empty;
         public override void SetStaticDefaults()
         {
-            base.SetStaticDefaults();
             BurnOrBliss = ClickerSystem.RegisterClickEffect(Mod, "BurnOrBliss", 15, new Color(165, 110, 60, 0), delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 bool spawnEffects = true;
