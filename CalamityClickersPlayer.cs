@@ -86,6 +86,7 @@ namespace CalamityClickers
             accBloodyChocolate = false;
             accBloodyChocolateItem = null;
             accSSMedal = null;
+            accPortableParticleAcceleratorUpgrades = null;
 
             bloodyCookieBuff = false;
             godSlayerClickerBuff = false;

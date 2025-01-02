@@ -79,7 +79,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
             Main.projFrames[Projectile.type] = 4;
         }
 
-        public override void SetDefaults()
+        public override void SetDefaultsExtra()
         {
             base.SetDefaults();
 

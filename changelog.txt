@@ -1,6 +1,6 @@
-Update 1.1.0.1 - Catalyst Hitfixes
+Update 1.1.0.2 - Catalyst Hitfixes
 
 
 Bug Fixes:
-Fixed not loading mod in multiplayer while has Catalyst Mod
+Fixed Lihzahrd Particle Accelerator always gets effect after unequip
 

@@ -62,7 +62,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Polterghast
             ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
         }
 
-        public override void SetDefaults()
+        public override void SetDefaultsExtra()
         {
             Projectile.width = 50;
             Projectile.height = 50;
