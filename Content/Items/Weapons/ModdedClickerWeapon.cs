@@ -45,21 +45,16 @@ namespace CalamityClickers.Content.Items.Weapons
                 return null;
             }
         }
-        public sealed override void SetStaticDefaults()
+        public override void SetStaticDefaults()
         {
             base.SetStaticDefaults();
-            //if (BorderTexture is null)
-            //    Mod.Logger.Debug(this.Name + "'s outline returns null");
-            //Mod.Logger.Debug(this.Name + ": " + BorderTexture ?? "");
             ClickerSystem.RegisterClickerWeapon(this, BorderTexture);
-            //Mod.Logger.Debug(this.Name + " has in ClickerWeaponBorderTexture: " + ClickerSystem.GetPathToBorderTexture(Item.type));
             if (BorderTexture != null)
             {
                 PropertyInfo b = typeof(ClickerSystem).GetProperty("ClickerWeaponBorderTexture", BindingFlags.Static | BindingFlags.NonPublic);
                 var v = ((Dictionary<int, string>)b.GetValue(ModContent.GetInstance<ClickerSystem>()));
                 v.Add(Item.type, BorderTexture);
                 b.SetValue(ModContent.GetInstance<ClickerSystem>(), v);
-
             }
 
             SetStaticDefaultsExtra();
@@ -72,10 +67,10 @@ namespace CalamityClickers.Content.Items.Weapons
         public abstract float Radius { get; }
         public abstract Microsoft.Xna.Framework.Color RadiusColor { get; }
         public virtual int DustType => -1;
-        public sealed override void SetDefaults()
+        public override void SetDefaults()
         {
             base.SetDefaults();
-            ClickerSystem.SetClickerWeaponDefaults(base.Item);
+            ClickerSystem.SetClickerWeaponDefaults(Item);
             SetRadius(Item, Radius);
             SetColor(Item, RadiusColor);
             //AddEffect(Item, ClickerEffect);
@@ -150,7 +145,7 @@ namespace CalamityClickers.Content.Items.Weapons
         public virtual bool UseInvisibleProjectile => true;
         public override string Texture => UseInvisibleProjectile ? "CalamityMod/Projectiles/InvisibleProj" : base.Texture;
 
-        public sealed override void SetDefaults()
+        public override void SetDefaults()
         {
             base.SetDefaults();
 
