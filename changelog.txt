@@ -1,8 +1,6 @@
-Update 1.1.0.2 - Clicker Visiblity Update Drop
+Update 1.1.0.2 - Catalyst Hitfixes
 
-Changes:
-Updated some clickers outlines for increase visibility of real cursor position (summular Clicker Nova)
 
 Bug Fixes:
-Fixed Lihzahrd Particle Accelerator (and their upgrades) always gets effect after unequip
-Fixed Mice Catalyst Clicker small bolts not shoots to random direction.
+Fixed Lihzahrd Particle Accelerator always gets effect after unequip
+
