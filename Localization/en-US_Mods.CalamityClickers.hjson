@@ -203,6 +203,11 @@ ClickEffect: {
 		Description: Creates a knives, what stucks on hit and inflict Burning Blood and Marked for Death.
 	}
 
+	PhantasmalReach: {
+		Name: Phantasmal Reach
+		Description: Changes damage based on how far cursor from player. From 0.75x in player position to 1.75x in corner of the screen
+	}
+
 	# Post-DoG
 	NebulaStars: {
 		Name: Nebula Stars
@@ -610,11 +615,7 @@ Items: {
 			GeleomegeddonClicker.DisplayName: Gelactic Novapoint
 
 			# Post-Moonlord
-			PolterplasmClicker: {
-				DisplayName: Beyonder's Grasp
-				DisplayNameLegecy: Polterplasm Clicker
-			}
-
+			
 			ElementalClicker: {
 				DisplayName: Verandia Elementulip
 				DisplayNameLegecy: Elemental Clicker
@@ -649,6 +650,11 @@ Items: {
 			RuinousClicker: {
 				DisplayName: Ghastly Glicker
 				DisplayNameLegecy: Ruinous Clicker
+			}
+
+			PolterplasmClicker: {
+				DisplayName: Beyonder's Grasp
+				DisplayNameLegecy: Polterplasm Clicker
 			}
 
 			StratusClicker: {

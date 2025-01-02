@@ -4,6 +4,7 @@ using ClickerClass.Items.Weapons.Clickers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -11,11 +12,21 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Polterghast
 {
     public class PolterplasmClicker : ModdedClickerWeapon
     {
-        //public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string PhantasmalReach { get; internal set; } = string.Empty;
         public override float Radius => 6f;
         public override Color RadiusColor => new Color(255, 80, 128);
+        public override void SetStaticDefaultsExtra()
+        {
+            PhantasmalReach = ClickerCompat.RegisterClickEffect(Mod, "PhantasmalReach", 1, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            {
+
+            });
+            CalamityClickersUtils.RegisterPostWildMagicClickEffect(PhantasmalReach);
+            CalamityClickersUtils.RegisterBlacklistedClickEffect(PhantasmalReach);
+        }
         public override void SetDefaultsExtra()
         {
+            AddEffect(Item, PhantasmalReach);
             AddEffect(Item, "ClickerClass:PhaseReach");
             SetDust(Item, 88);
 
@@ -59,6 +70,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Polterghast
             CreateRecipe()
                 .AddIngredient<SpectreClicker>()
                 .AddIngredient<Necroplasm>(12)
+                .AddIngredient<RuinousSoul>(2)
                 .AddTile(TileID.LunarCraftingStation)
                 .Register();
         }
