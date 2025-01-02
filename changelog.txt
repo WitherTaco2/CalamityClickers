@@ -1,6 +1,12 @@
-Update 1.1.0.1 - Catalyst Hitfixes
+Update 1.1.1.0 - Auric Clickers Buff Patch
 
+Changes:
+Improved some Clicker outline for increase notice of real cursop positions
+Clicker Nova small stars now homes to enemies after fly
+Mice Catalyst Clicked buffed spark count (1 -> 2)
+Mice Catalyst Clicked buffed catalyst cloud fly speed
 
 Bug Fixes:
-Fixed not loading mod in multiplayer while has Catalyst Mod
+Fixed Lihzahrd Particle Accelerator (and their upgrades) always gets effect after unequip
+Fixed Mice Catalyst Clicker small bolts not shoots to random direction.
 

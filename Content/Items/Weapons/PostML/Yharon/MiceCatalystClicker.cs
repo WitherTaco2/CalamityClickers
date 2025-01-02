@@ -76,7 +76,8 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
         }
         public override void ShootOnClick()
         {
-            Projectile.NewProjectile(Projectile.GetSource_FromAI(), Projectile.Center, Vector2.UnitX.RotatedByRandom(MathHelper.TwoPi), ModContent.ProjectileType<MiceClickerPro>(), Projectile.damage / 2, Projectile.knockBack, Projectile.owner);
+            for (int i = 0; i < 2; i++)
+                Projectile.NewProjectile(Projectile.GetSource_FromAI(), Projectile.Center, Vector2.UnitX.RotatedByRandom(MathHelper.TwoPi) * 3, ModContent.ProjectileType<MiceClickerPro>(), Projectile.damage / 2, Projectile.knockBack, Projectile.owner, Main.rand.Next(100));
         }
         public override void AIExtra()
         {
@@ -84,7 +85,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
             //if (Main.player[Projectile.owner].Clicker().HasAimbotModuleTarget)
             //    target = Main.npc[Main.player[Projectile.owner].Clicker().accAimbotModuleTarget].Center;
 
-            Projectile.velocity = (target - Projectile.Center).SafeNormalize(Vector2.Zero);
+            Projectile.velocity = (target - Projectile.Center).SafeNormalize(Vector2.Zero) * 2;
             Projectile.rotation -= 0.104719758f;
             //Projectile.Opacity = (int)MathHelper.Lerp(0, 1, MathHelper.Clamp(1f - Projectile.timeLeft / 30f, 0, 1));
             if (Projectile.timeLeft < 30)

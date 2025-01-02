@@ -28,7 +28,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
             Popstar = ClickerCompat.RegisterClickEffect(Mod, "Popstar", 25, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 SoundEngine.PlaySound(new SoundStyle("CalamityClickers/Assets/Sounds/Custom/asriel_star"), position);
-                Projectile.NewProjectile(source, position - new Vector2(0, StarOffset), new Vector2(0, StarOffset / ClickerNovaProjectile.TimeLeft), ModContent.ProjectileType<ClickerNovaProjectile>(), damage, knockBack, player.whoAmI);
+                Projectile.NewProjectile(source, position - new Vector2(0, StarOffset), new Vector2(0, StarOffset / ClickerNovaProjectile.TimeLeft), ModContent.ProjectileType<ClickerNovaProjectile>(), damage * 3, knockBack, player.whoAmI);
             });
             CalamityClickersUtils.RegisterPostWildMagicClickEffect(Popstar);
             CalamityClickersUtils.RegisterPostNightmareMagicClickEffect(Popstar);
@@ -80,9 +80,10 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
             int rand = Main.rand.NextBool() ? 1 : -1;
             for (int i = 0; i < MaxSmallStarCount; i++)
             {
-                Projectile.NewProjectile(Projectile.GetSource_FromAI(), Projectile.Center, new Vector2(0, 30).RotatedBy(MathHelper.TwoPi / MaxSmallStarCount * i), ModContent.ProjectileType<ClickerNovaProjectileSmall>(), Projectile.damage, Projectile.knockBack, Projectile.owner, rand);
-                Projectile.NewProjectile(Projectile.GetSource_FromAI(), Projectile.Center, new Vector2(0, 20).RotatedBy(MathHelper.TwoPi / MaxSmallStarCount * i), ModContent.ProjectileType<ClickerNovaProjectileSmall>(), Projectile.damage, Projectile.knockBack, Projectile.owner, rand);
-                Projectile.NewProjectile(Projectile.GetSource_FromAI(), Projectile.Center, new Vector2(0, 10).RotatedBy(MathHelper.TwoPi / MaxSmallStarCount * i), ModContent.ProjectileType<ClickerNovaProjectileSmall>(), Projectile.damage, Projectile.knockBack, Projectile.owner, rand);
+                int damage = Projectile.damage / 3;
+                Projectile.NewProjectile(Projectile.GetSource_FromAI(), Projectile.Center, new Vector2(0, 30).RotatedBy(MathHelper.TwoPi / MaxSmallStarCount * i), ModContent.ProjectileType<ClickerNovaProjectileSmall>(), damage, Projectile.knockBack, Projectile.owner, rand);
+                Projectile.NewProjectile(Projectile.GetSource_FromAI(), Projectile.Center, new Vector2(0, 20).RotatedBy(MathHelper.TwoPi / MaxSmallStarCount * i), ModContent.ProjectileType<ClickerNovaProjectileSmall>(), damage, Projectile.knockBack, Projectile.owner, rand);
+                Projectile.NewProjectile(Projectile.GetSource_FromAI(), Projectile.Center, new Vector2(0, 10).RotatedBy(MathHelper.TwoPi / MaxSmallStarCount * i), ModContent.ProjectileType<ClickerNovaProjectileSmall>(), damage, Projectile.knockBack, Projectile.owner, rand);
             }
         }
         public override bool PreDraw(ref Color lightColor)
@@ -129,22 +130,36 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
     public class ClickerNovaProjectileSmall : ModdedClickerProjectile
     {
         public override bool UseInvisibleProjectile => false;
-
+        public const int TimeLeft = 600;
         public override void SetDefaultsExtra()
         {
             Projectile.width = Projectile.height = 32;
-            Projectile.timeLeft = 200;
+            Projectile.timeLeft = TimeLeft;
             Projectile.penetrate = -1;
             Projectile.friendly = true;
             Projectile.tileCollide = false;
             Projectile.ignoreWater = true;
             Projectile.aiStyle = -1;
             AIType = -1;
+            Projectile.usesLocalNPCImmunity = true;
+            Projectile.localNPCHitCooldown = 10;
         }
         public override void AI()
         {
             Projectile.rotation += 0.4f;
-            Projectile.velocity = Projectile.velocity.RotatedBy(0.02f * Projectile.ai[0]);
+            if (Projectile.timeLeft == TimeLeft - 200)
+            {
+                Projectile.penetrate = 1;
+            }
+
+            if (Projectile.timeLeft > TimeLeft - 200)
+            {
+                Projectile.velocity = Projectile.velocity.RotatedBy(0.02f * Projectile.ai[0]);
+            }
+            else
+            {
+                CalamityUtils.HomeInOnNPC(Projectile, true, 2000, 100, 50);
+            }
         }
         public override bool PreDraw(ref Color lightColor)
         {
