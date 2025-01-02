@@ -203,6 +203,11 @@ ClickEffect: {
 		Description: Создает ножи, которые вонзаются при ударе, накладывая Жгучую кровь и Отмеченный на смерть
 	}
 
+	PhantasmalReach: {
+		Name: Фантастический простор
+		Description: Изменяет урон в зависимости от того, насколько далеко курсор находится от игрока. С 0.75x в положении игрока до 1.75x в углу экрана
+	}
+
 	# Post-DoG
 	NebulaStars: {
 		Name: Звезды туманности
@@ -591,11 +596,7 @@ Items: {
 			GeleomegeddonClicker.DisplayName: Галактический Нова-указатель
 
 			# Post-Moonlord
-			PolterplasmClicker: {
-				DisplayName: Запредельная досягаемость
-				DisplayNameLegecy: Полтэрплазмовый Курсор
-			}
-
+			
 			ElementalClicker: {
 				DisplayName: Элементулип Веранды
 				DisplayNameLegecy: Элементальный Курсор
@@ -630,6 +631,11 @@ Items: {
 			RuinousClicker: {
 				DisplayName: Страшный Курсор
 				DisplayNameLegecy: Губительный Курсор
+			}
+
+			PolterplasmClicker: {
+				DisplayName: Запредельная досягаемость
+				DisplayNameLegecy: Полтэрплазмовый Курсор
 			}
 
 			StratusClicker: {

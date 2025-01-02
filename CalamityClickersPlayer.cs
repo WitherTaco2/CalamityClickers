@@ -3,6 +3,7 @@ using CalamityClickers.Content.Cooldowns;
 using CalamityClickers.Content.Items.Accessories;
 using CalamityClickers.Content.Items.Armor;
 using CalamityClickers.Content.Items.Weapons;
+using CalamityClickers.Content.Items.Weapons.PostML.Polterghast;
 using CalamityClickers.Content.Projectiles;
 using CalamityMod;
 using CalamityMod.CalPlayer;
@@ -95,6 +96,14 @@ namespace CalamityClickers
         }
         public override void PostUpdateEquips()
         {
+            if (ClickerSystem.IsClickerWeapon(Player.HeldItem))
+            {
+                if (Player.HeldItem.GetGlobalItem<ClickerItemCore>().itemClickEffects.Contains(PolterplasmClicker.PhantasmalReach))
+                {
+                    Player.GetDamage<ClickerDamage>() *= (0.75f + Utils.GetLerpValue(0, MathF.Sqrt(Main.screenWidth * Main.screenWidth + Main.screenHeight * Main.screenHeight), (Main.MouseWorld - Player.Center).Length()));
+                }
+            }
+
             //Bloodflare Armor
             if (setBloodflareClicker)
             {
