@@ -150,7 +150,7 @@ namespace CalamityClickers.Content.Items.Weapons
         public virtual bool UseInvisibleProjectile => true;
         public override string Texture => UseInvisibleProjectile ? "CalamityMod/Projectiles/InvisibleProj" : base.Texture;
 
-        public sealed override void SetDefaults()
+        public override void SetDefaults()
         {
             base.SetDefaults();
 
