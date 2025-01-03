@@ -1,6 +1,7 @@
 ﻿using CalamityMod;
 using CalamityMod.Items;
 using CalamityMod.Items.Armor.Victide;
+using CalamityMod.Items.Materials;
 using ClickerClass;
 using ClickerClass.Items;
 using Terraria;
@@ -46,6 +47,14 @@ namespace CalamityClickers.Content.Items.Armor
         public override void UpdateEquip(Player player)
         {
             player.GetDamage<MagicDamageClass>() += 0.05f;
+        }
+
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<SeaRemains>(3)
+                .AddTile(TileID.Anvils)
+                .Register();
         }
     }
 }
