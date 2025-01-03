@@ -6,6 +6,7 @@ Clicker Nova small stars now homes to enemies after fly
 Buffed Mice Catalyst Clicked spark count (1 -> 2)
 Buffed Mice Catalyst Clicked catalyst cloud fly speed
 Reworked Beyonder's Grasp. Now requare an Ruinous Soul in recipe and has new 'Phantasmal Reach' clicker effect that changes damage depending on how far cursor from player.
+Buffed Beyonder's Grasp damage (130 -> 170)
 
 Bug Fixes:
 Fixed Lihzahrd Particle Accelerator (and their upgrades) always gets effect after unequip
