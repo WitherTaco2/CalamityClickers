@@ -8,6 +8,7 @@ Buffed Mice Catalyst Clicked catalyst cloud fly speed
 Reworked Beyonder's Grasp. Now requare an Ruinous Soul in recipe and has new 'Phantasmal Reach' clicker effect that changes damage depending on how far cursor from player. 'Phantasmal Reach' work outside of Beyonder's Grasp
 Buffed Beyonder's Grasp damage (130 -> 170)
 Wulfrum Pressing Device clicker effect now work outside of this weapon
+Nerfed Nightmare Clicker clicker effect (5 -> 6 clicks until trigger)
 
 Bug Fixes:
 Fixed Lihzahrd Particle Accelerator (and their upgrades) always gets effect after unequip
