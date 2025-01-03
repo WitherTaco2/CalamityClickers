@@ -30,7 +30,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Polterghast
             AddEffect(Item, "ClickerClass:PhaseReach");
             SetDust(Item, 88);
 
-            Item.damage = 130;
+            Item.damage = 170;
             Item.knockBack = 1f;
             Item.rare = ItemRarityID.Red;
             Item.value = CalamityGlobalItem.RarityRedBuyPrice;
