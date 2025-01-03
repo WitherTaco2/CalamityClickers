@@ -282,6 +282,21 @@ ClickEffect: {
 		Name: Ожог или блаженство
 		Description: Выпускает взрыв наносящего урон обычно, острового или белого шоколада
 	}
+
+	ScrapMissile: {
+		// Name: Scrap Missile
+		// Description: $Mods.ClickerClass.Common.Unknown
+	}
+
+	DrillShot: {
+		// Description: $Mods.ClickerClass.Common.Unknown
+		// Name: Drill Shot
+	}
+
+	Electrofield: {
+		// Name: Electrofield
+		// Description: $Mods.ClickerClass.Common.Unknown
+	}
 }
 
 Items: {
@@ -595,7 +610,7 @@ Items: {
 				DisplayName: Запредельная досягаемость
 				DisplayNameLegecy: Полтэрплазмовый Курсор
 			}
-			
+
 			ElementalClicker: {
 				DisplayName: Элементулип Веранды
 				DisplayNameLegecy: Элементальный Курсор
@@ -663,6 +678,16 @@ Items: {
 			# Endgame
 			ItsClicker.DisplayName: Вот это Курсор
 			MarkOfRatKing.DisplayName: Знак Крысиного Короля
+			# Draedon
+			// ScrapPresser.DisplayName: Scrap Presser
+			// HandheldClickerDrill.DisplayName: Handheld ClickerDrill
+
+			A: {
+				// DisplayName: A
+				// Lore: ""
+			}
+
+			// FieldPolorizer.DisplayName: Field Polorizer
 		}
 	}
 
@@ -818,6 +843,9 @@ Projectiles: {
 		HolyGoldenClickerProjectile.DisplayName: Святой луч
 		ClickerNovaProjectile.DisplayName: Омега звезда
 		ClickerNovaProjectileSmall.DisplayName: Малая звезда
+		// ScrapPresserPro.DisplayName: Scrap Presser Pro
+		// HandheldClickerDrillPro.DisplayName: Handheld Clicker Drill Pro
+		// FieldPolorizerPro.DisplayName: Field Polorizer Pro
 	}
 }
 

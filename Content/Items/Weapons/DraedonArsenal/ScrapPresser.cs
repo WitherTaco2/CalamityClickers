@@ -8,6 +8,7 @@ using CalamityMod.Rarities;
 using ClickerClass;
 using Microsoft.Xna.Framework;
 using System;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -19,7 +20,7 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
     public class ScrapPresser : ModdedClickerWeapon
     {
         public static string ScrapMissile { get; internal set; } = string.Empty;
-        public override float Radius => 3.4f;
+        public override float Radius => 2.7f;
         public override Color RadiusColor => new Color(255, 64, 31);
         public override void SetStaticDefaultsExtra()
         {
@@ -27,18 +28,19 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
             {
                 Vector2 pos = position;
 
-                NPC npc = CalamityUtils.ClosestNPCAt(pos, 400, false, true);
+                NPC npc = CalamityUtils.ClosestNPCAt(pos, 1000, false, true);
                 if (npc != null)
                 {
                     SoundEngine.PlaySound(new SoundStyle("CalamityMod/Sounds/Custom/Codebreaker/LongRangeSensorArrayInstall"), pos);
                     Vector2 vec1 = Vector2.UnitY.RotateRandom(0.1f);
-                    Projectile.NewProjectile(source, npc.Center - vec1 * 100, vec1, ModContent.ProjectileType<ScrapPresserPro>(), damage, knockBack, player.whoAmI);
+                    Projectile.NewProjectile(source, npc.Center - vec1 * 500, vec1, ModContent.ProjectileType<ScrapPresserPro>(), damage * 2, knockBack, player.whoAmI);
                 }
             }, true);
         }
         public override void SetDefaultsExtra()
         {
             AddEffect(Item, ScrapMissile);
+            SetDust(Item, DustID.Electric);
 
             Item.damage = 13;
             Item.knockBack = 1.5f;
@@ -48,9 +50,10 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
             CalamityGlobalItem modItem = Item.Calamity();
             modItem.UsesCharge = true;
             modItem.MaxCharge = 50f;
-            modItem.ChargePerUse = 0.01f;
+            modItem.ChargePerUse = 0.02f;
 
         }
+        public override void ModifyTooltips(List<TooltipLine> tooltips) => CalamityGlobalItem.InsertKnowledgeTooltip(tooltips, 1);
         public override void AddRecipes()
         {
             CreateRecipe().
@@ -65,12 +68,13 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
     }
     public class ScrapPresserPro : ModdedClickerProjectile
     {
+        public override bool UseInvisibleProjectile => false;
         public override void SetDefaultsExtra()
         {
             Projectile.width = Projectile.height = 16;
             Projectile.aiStyle = -1;
             AIType = -1;
-            Projectile.penetrate = 1;
+            Projectile.penetrate = -1;
             Projectile.timeLeft = 300;
             Projectile.friendly = true;
             Projectile.usesLocalNPCImmunity = true;
@@ -80,7 +84,11 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
         {
             if (Projectile.ai[1] == 0)
             {
-                CalamityUtils.HomeInOnNPC(Projectile, false, 500, 20, 20);
+                CalamityUtils.HomeInOnNPC(Projectile, false, 500, 10, 20);
+                if (Main.rand.NextBool(2))
+                {
+                    Dust.NewDustPerfect(Projectile.Center, DustID.Flare, -Projectile.velocity.SafeNormalize(Vector2.Zero), Scale: 0.5f);
+                }
             }
             Projectile.rotation = Projectile.velocity.ToRotation();
         }
@@ -94,10 +102,11 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
                 GeneralParticleHandler.SpawnParticle(ring);
                 for (int i = 0; i < 6; i++)
                 {
-                    SparkParticle spark = new SparkParticle(Projectile.Center, Vector2.UnitX.RotatedBy(MathHelper.TwoPi / 6 * i), false, 15, 1, Color.Orange);
+                    SparkParticle spark = new SparkParticle(Projectile.Center, Vector2.UnitX.RotatedBy(MathHelper.TwoPi / 6 * i), false, 5, 0.5f, Color.Orange);
                     GeneralParticleHandler.SpawnParticle(spark);
                 }
 
+                SoundEngine.PlaySound(SoundID.Item14, Projectile.Center);
                 Projectile.ExpandHitboxBy(100);
                 Projectile.timeLeft = 10;
                 Projectile.velocity = Vector2.Zero;

@@ -1,4 +1,5 @@
 ﻿using ClickerClass;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 
@@ -38,6 +39,11 @@ namespace CalamityClickers
         {
             if (!(CalamityClickers.extraAPI.Call("GetBlacklistedRandomClickerEffectList") as List<string>).Contains(clickEffectName))
                 CalamityClickers.extraAPI.Call("RegisterBlacklistedRandomClickerEffect", clickEffectName);
+        }
+        public static Color GetColorFromHex(string hexValue)
+        {
+            var cc1 = System.Drawing.ColorTranslator.FromHtml("#" + hexValue.Replace("#", ""));
+            return new Color(cc1.R, cc1.G, cc1.B);
         }
     }
 }

@@ -282,6 +282,22 @@ ClickEffect: {
 		Name: Burn or Bliss
 		Description: Releases a burst of damaging normal, spicy and white chocolate
 	}
+
+	# Draedon
+	ScrapMissile: {
+		Name: Scrap Missile
+		Description: $Mods.ClickerClass.Common.Unknown
+	}
+
+	DrillShot: {
+		Description: $Mods.ClickerClass.Common.Unknown
+		Name: Drill Shot
+	}
+
+	Electrofield: {
+		Name: Electrofield
+		Description: $Mods.ClickerClass.Common.Unknown
+	}
 }
 
 Items: {
@@ -663,6 +679,16 @@ Items: {
 			# Endgame
 			ItsClicker.DisplayName: Its Clicker
 			MarkOfRatKing.DisplayName: Mark of Rat King
+			# Draedon
+			ScrapPresser.DisplayName: Scrap Presser
+			HandheldClickerDrill.DisplayName: Handheld ClickerDrill
+
+			A: {
+				DisplayName: A
+				Lore: ""
+			}
+
+			FieldPolorizer.DisplayName: Field Polorizer
 		}
 	}
 
@@ -818,6 +844,9 @@ Projectiles: {
 		HolyGoldenClickerProjectile.DisplayName: Holy Deathray
 		ClickerNovaProjectile.DisplayName: Omega Star
 		ClickerNovaProjectileSmall.DisplayName: Small Star
+		ScrapPresserPro.DisplayName: Scrap Presser Pro
+		HandheldClickerDrillPro.DisplayName: Handheld Clicker Drill Pro
+		FieldPolorizerPro.DisplayName: Field Polorizer Pro
 	}
 }
 
