@@ -4,7 +4,6 @@ using CalamityMod.Items;
 using CalamityMod.Items.Materials;
 using CalamityMod.Items.Placeables.Ores;
 using CalamityMod.Rarities;
-using ClickerClass;
 using ClickerClass.Core;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -62,13 +61,12 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Polterghast
             ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
         }
 
-        public override void SetDefaults()
+        public override void SetDefaultsExtra()
         {
             Projectile.width = 50;
             Projectile.height = 50;
             Projectile.alpha = 100;
             Projectile.friendly = true;
-            Projectile.DamageType = ModContent.GetInstance<ClickerDamage>();
             Projectile.tileCollide = false;
             Projectile.penetrate = -1;
             Projectile.extraUpdates = 2;

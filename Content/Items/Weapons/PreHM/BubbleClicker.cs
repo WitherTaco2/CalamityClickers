@@ -68,7 +68,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
     }
     public class BubbleClickerProjectile2 : ModdedClickerProjectile
     {
-        public override void SetDefaults()
+        public override void SetDefaultsExtra()
         {
             Projectile.width = Projectile.height = 110;
             Projectile.friendly = true;
@@ -76,7 +76,6 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
             Projectile.tileCollide = false;
             Projectile.penetrate = -1;
             Projectile.timeLeft = 120;
-            Projectile.DamageType = DamageClass.Magic;
             Projectile.usesIDStaticNPCImmunity = true;
             Projectile.idStaticNPCHitCooldown = 8;
         }
