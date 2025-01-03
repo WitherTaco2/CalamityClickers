@@ -1,5 +1,6 @@
 ﻿using ClickerClass;
 using Microsoft.Xna.Framework;
+using ClickerClass.Items;
 using System.Collections.Generic;
 using Terraria;
 
@@ -25,6 +26,7 @@ namespace CalamityClickers
                 CalamityClickers.extraAPI.Call("RegisterPostWildMagicClickerEffect", clickerEffect);
             return clickerEffect;
         }*/
+        public static List<string> GetHeldClickerEffects(this Player Player) => Player.HeldItem.GetGlobalItem<ClickerItemCore>().itemClickEffects;
         public static void RegisterPostWildMagicClickEffect(string clickEffectName)
         {
             if (!(CalamityClickers.extraAPI.Call("GetPostWildMagicClickerEffectList") as List<string>).Contains(clickEffectName))

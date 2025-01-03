@@ -33,7 +33,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
             Item.value = CalamityGlobalItem.RarityBlueBuyPrice;
 
         }
-        public bool autoClicker = true;
+        /*public bool autoClicker = true;
         public override void UpdateInventory(Player player)
         {
             if (player.HeldItem.type == Item.type && autoClicker)
@@ -54,7 +54,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
                 return true;
             }
             return base.UseItem(player);
-        }
+        }*/
         public override void AddRecipes()
         {
             CreateRecipe()
@@ -70,6 +70,7 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
         {
             Main.debuff[Type] = true;
             Main.buffNoSave[Type] = true;
+            Main.buffNoTimeDisplay[Type] = true;
         }
     }
 }

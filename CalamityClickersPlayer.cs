@@ -4,6 +4,7 @@ using CalamityClickers.Content.Items.Accessories;
 using CalamityClickers.Content.Items.Armor;
 using CalamityClickers.Content.Items.Weapons;
 using CalamityClickers.Content.Items.Weapons.PostML.Polterghast;
+using CalamityClickers.Content.Items.Weapons.PreHM;
 using CalamityClickers.Content.Projectiles;
 using CalamityMod;
 using CalamityMod.CalPlayer;
@@ -68,6 +69,7 @@ namespace CalamityClickers
         public bool godSlayerClickerBuff = false;
 
         public bool enchLecherous;
+        public bool wulfrumAutoclick = true;
         public override void ResetEffects()
         {
             rageRegenMult = 0;
@@ -98,9 +100,20 @@ namespace CalamityClickers
         {
             if (ClickerSystem.IsClickerWeapon(Player.HeldItem))
             {
-                if (Player.HeldItem.GetGlobalItem<ClickerItemCore>().itemClickEffects.Contains(PolterplasmClicker.PhantasmalReach))
+                List<string> clickerEffects = Player.HeldItem.GetGlobalItem<ClickerItemCore>().itemClickEffects;
+                if (Player.GetHeldClickerEffects().Contains(PolterplasmClicker.PhantasmalReach))
                 {
                     Player.GetDamage<ClickerDamage>() *= (0.75f + Utils.GetLerpValue(0, MathF.Sqrt(Main.screenWidth * Main.screenWidth + Main.screenHeight * Main.screenHeight), (Main.MouseWorld - Player.Center).Length()));
+                }
+                if (Player.GetHeldClickerEffects().Contains(WulfrumClicker.BasicAutoclicker))
+                {
+                    if (PlayerInput.Triggers.JustReleased.MouseRight) wulfrumAutoclick = !wulfrumAutoclick;
+
+                    if (wulfrumAutoclick)
+                    {
+                        ClickerCompat.SetAutoReuseEffect(Player, 8);
+                        Player.AddBuff(ModContent.BuffType<WulfrumClickerBuff>(), 3);
+                    }
                 }
             }
 

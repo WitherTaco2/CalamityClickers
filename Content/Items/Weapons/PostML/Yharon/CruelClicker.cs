@@ -2,7 +2,6 @@
 using CalamityMod.Items;
 using CalamityMod.NPCs.Other;
 using CalamityMod.Rarities;
-using ClickerClass;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -103,13 +102,12 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Yharon
         {
 
         }
-        public override void SetDefaults()
+        public override void SetDefaultsExtra()
         {
             Projectile.width = 64; Projectile.height = 90;
             Projectile.aiStyle = -1;
             AIType = -1;
             Projectile.friendly = true;
-            Projectile.DamageType = ModContent.GetInstance<ClickerDamage>();
             Projectile.penetrate = 1;
             Projectile.tileCollide = false;
             Projectile.timeLeft = 800;
