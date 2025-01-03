@@ -13,3 +13,4 @@ Bug Fixes:
 Fixed Lihzahrd Particle Accelerator (and their upgrades) always gets effect after unequip
 Fixed Mice Catalyst Clicker small bolts not shoots to random direction.
 Fixed Bubble Poker projectile wrong damage class
+Fixed Victide Anemonous Mask don t have recipe 
