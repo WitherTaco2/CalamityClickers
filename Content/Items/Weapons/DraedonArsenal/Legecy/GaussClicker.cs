@@ -1,16 +1,14 @@
 ﻿using CalamityMod;
-using CalamityMod.CustomRecipes;
 using CalamityMod.Items;
-using CalamityMod.Items.Materials;
+using CalamityMod.Rarities;
 using ClickerClass;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
 using Terraria.DataStructures;
-using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
+namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal.Legecy
 {
     public class GaussClicker : ModdedClickerWeapon
     {
@@ -23,6 +21,7 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
             {
                 Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<GaussClickerProjectile>(), damage / 2, 0f, player.whoAmI, 0);
             });
+            CalamityClickersUtils.RegisterBlacklistedClickEffect(GaussFlux);
         }
         public override void SetDefaultsExtra()
         {
@@ -30,15 +29,15 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
 
             Item.damage = 35;
             Item.knockBack = 1.5f;
-            Item.rare = ItemRarityID.Pink;
+            Item.rare = ModContent.RarityType<DarkOrange>();
             Item.value = CalamityGlobalItem.RarityPinkBuyPrice;
 
             CalamityGlobalItem modItem = Item.Calamity();
             modItem.UsesCharge = true;
-            modItem.MaxCharge = 50f;
-            modItem.ChargePerUse = 0.02f;
+            modItem.MaxCharge = 85;
+            modItem.ChargePerUse = 0.01f;
         }
-        public override void AddRecipes()
+        /*public override void AddRecipes()
         {
             CreateRecipe().
                 AddIngredient<MysteriousCircuitry>(12).
@@ -48,7 +47,7 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
                 AddCondition(ArsenalTierGatedRecipe.ConstructRecipeCondition(2, out Func<bool> condition), condition).
                 AddTile(TileID.MythrilAnvil).
                 Register();
-        }
+        }*/
     }
     public class GaussClickerProjectile : ModdedClickerProjectile, ILocalizedModType
     {
@@ -59,7 +58,6 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
             Projectile.width = 100;
             Projectile.height = 100;
             Projectile.friendly = true;
-            Projectile.DamageType = DamageClass.Melee;
             Projectile.penetrate = 5;
             Projectile.timeLeft = 180;
             Projectile.usesIDStaticNPCImmunity = true;

@@ -1,14 +1,10 @@
 ﻿using CalamityMod;
-using CalamityMod.CustomRecipes;
 using CalamityMod.Items;
-using CalamityMod.Items.Materials;
 using CalamityMod.Items.Weapons.DraedonsArsenal;
 using CalamityMod.Projectiles.BaseProjectiles;
 using CalamityMod.Rarities;
-using CalamityMod.Tiles.Furniture.CraftingStations;
 using ClickerClass;
 using Microsoft.Xna.Framework;
-using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
@@ -16,17 +12,17 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
+namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal.Legecy
 {
     public class NuclearClicker : ModdedClickerWeapon
     {
-        public static string ClickerEffect { get; internal set; } = string.Empty;
+        public static string NuclearExplosion { get; internal set; } = string.Empty;
         public override float Radius => 8f;
         public override Color RadiusColor => new Color(236, 255, 31);
         public override int DustType => DustID.CursedTorch;
         public override void SetStaticDefaultsExtra()
         {
-            ClickerEffect = ClickerCompat.RegisterClickEffect(Mod, "NuclearExplosion", 25, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            NuclearExplosion = ClickerCompat.RegisterClickEffect(Mod, "NuclearExplosion", 25, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 SoundEngine.PlaySound(TeslaCannon.FireSound, position);
                 for (int i = 0; i < 7; i++)
@@ -42,20 +38,26 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
                     }
                 }
             });
-            CalamityClickersUtils.RegisterPostWildMagicClickEffect(ClickerEffect);
+            CalamityClickersUtils.RegisterPostWildMagicClickEffect(NuclearExplosion);
+            CalamityClickersUtils.RegisterBlacklistedClickEffect(NuclearExplosion);
         }
         public override void SetDefaultsExtra()
         {
-            AddEffect(Item, ClickerEffect);
+            AddEffect(Item, NuclearExplosion);
             SetDust(Item, DustType);
 
             Item.damage = 300;
             Item.knockBack = 1f;
-            Item.rare = ModContent.RarityType<DarkBlue>();
+            Item.rare = ModContent.RarityType<DarkOrange>();
             Item.value = CalamityGlobalItem.RarityDarkBlueBuyPrice;
+
+            CalamityGlobalItem modItem = Item.Calamity();
+            modItem.UsesCharge = true;
+            modItem.MaxCharge = 250;
+            modItem.ChargePerUse = 0.02f;
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips) => CalamityGlobalItem.InsertKnowledgeTooltip(tooltips, 5);
-        public override void AddRecipes()
+        /*public override void AddRecipes()
         {
             CreateRecipe().
                 AddIngredient<MysteriousCircuitry>(20).
@@ -76,8 +78,8 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
                     AddCondition(ArsenalTierGatedRecipe.ConstructRecipeCondition(5, out Func<bool> condition1), condition1).
                     AddTile<CosmicAnvil>().
                     Register();
-            }*/
-        }
+            }
+        }*/
     }
     public class NuclearClickerBoom : BaseMassiveExplosionProjectile, ILocalizedModType, IModType
     {
@@ -99,19 +101,19 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
 
         public override void SetDefaults()
         {
-            base.Projectile.width = (base.Projectile.height = 2);
-            base.Projectile.friendly = true;
-            base.Projectile.tileCollide = false;
-            base.Projectile.penetrate = -1;
-            base.Projectile.usesLocalNPCImmunity = true;
-            base.Projectile.localNPCHitCooldown = 10;
-            base.Projectile.timeLeft = Lifetime;
-            base.Projectile.DamageType = ModContent.GetInstance<ClickerDamage>();
+            Projectile.width = Projectile.height = 2;
+            Projectile.friendly = true;
+            Projectile.tileCollide = false;
+            Projectile.penetrate = -1;
+            Projectile.usesLocalNPCImmunity = true;
+            Projectile.localNPCHitCooldown = 10;
+            Projectile.timeLeft = Lifetime;
+            Projectile.DamageType = ModContent.GetInstance<ClickerDamage>();
         }
 
         public override void PostAI()
         {
-            Lighting.AddLight(base.Projectile.Center, 0.2f, 0.1f, 0f);
+            Lighting.AddLight(Projectile.Center, 0.2f, 0.1f, 0f);
         }
     }
 }
