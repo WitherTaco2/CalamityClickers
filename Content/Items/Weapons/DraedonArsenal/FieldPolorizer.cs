@@ -86,7 +86,7 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            Projectile.ExpandHitboxBy(Projectile.width + 5);
+            Projectile.ExpandHitboxBy(Projectile.width + 10);
         }
     }
 }
