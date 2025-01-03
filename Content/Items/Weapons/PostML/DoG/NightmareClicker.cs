@@ -21,7 +21,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
         public override bool SetBorderTexture => true;
         public override void SetStaticDefaultsExtra()
         {
-            NightmareMagic = ClickerCompat.RegisterClickEffect(Mod, "NightmareMagic", 5, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
+            NightmareMagic = ClickerCompat.RegisterClickEffect(Mod, "NightmareMagic", 6, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 List<ClickEffect> allowed = new List<ClickEffect>();
 
