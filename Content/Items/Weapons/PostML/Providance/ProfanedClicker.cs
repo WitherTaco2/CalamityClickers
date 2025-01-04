@@ -30,7 +30,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Providance
             AddEffect(Item, ProfanedInferno);
             SetDust(Item, ModContent.DustType<HolyFireDust>());
 
-            Item.damage = 140;
+            Item.damage = 200;
             Item.knockBack = 1f;
             Item.rare = ModContent.RarityType<Turquoise>();
             Item.value = CalamityGlobalItem.RarityTurquoiseBuyPrice;

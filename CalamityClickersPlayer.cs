@@ -121,16 +121,23 @@ namespace CalamityClickers
                     int needle = ModContent.ProjectileType<BioinjectorPro>();
                     if (PlayerInput.Triggers.JustReleased.MouseRight && Player.ownedProjectileCounts[needle] > 0)
                     {
+                        List<int> indexes = new List<int>();
                         for (int index = 0; index < Main.maxProjectiles; ++index)
                         {
-                            Projectile proj = Main.projectile[index];
+                            ref Projectile proj = ref Main.projectile[index];
+                            if (!proj.active) continue;
                             if (proj.type == needle)
                             {
-                                proj.Kill();
-                                Player.Heal(25);
-                                break;
+                                indexes.Add(index);
                             }
                         }
+                        if (indexes.Count > 0)
+                        {
+                            int randIndex = Main.rand.Next(indexes);
+                            Main.projectile[randIndex].ai[0] = 1;
+                            Player.Heal(25);
+                        }
+
                     }
                 }
             }

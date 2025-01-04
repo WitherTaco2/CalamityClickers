@@ -5,7 +5,6 @@ using CalamityMod.Cooldowns;
 using CalamityMod.Items;
 using CalamityMod.Items.Materials;
 using CalamityMod.Rarities;
-using ClickerClass.Items.Weapons.Clickers;
 using Microsoft.Xna.Framework;
 using System.IO;
 using Terraria;
@@ -28,22 +27,36 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Providance
                 //
                 if (player.moonLeech || player.HasCooldown(LifeSteal.ID) /*|| !player*/)
                     return;
-                NPC npc = CalamityUtils.ClosestNPCAt(position, 32, true, true);
-                if (npc != null || !npc.active)
+                /*NPC npc = CalamityUtils.ClosestNPCAt(position, 32, true);
+                if (npc != null || npc.active)
                     if (npc.HasBuff<MarkedforDeath>())
                     {
-
-                        player.statLife += 2;
-                        player.HealEffect(2);
+                        player.Heal(2);
                         player.AddCooldown(LifeSteal.ID, 20);
+                    }*/
+                foreach (var npc in Main.npc)
+                {
+                    if (npc == null || !npc.active) continue;
+                    if ((position - npc.Center).Length() < 32)
+                    {
+                        if (npc.HasBuff<MarkedforDeath>())
+                        {
+                            player.Heal(2);
+                            player.AddCooldown(LifeSteal.ID, 20);
+                            break;
+                        }
                     }
+                }
 
-            }); CalamityClickersUtils.RegisterPostWildMagicClickEffect(Lifestealing);
+            });
+            CalamityClickersUtils.RegisterPostWildMagicClickEffect(Lifestealing);
+            CalamityClickersUtils.RegisterBlacklistedClickEffect(Lifestealing);
             BloodyKnives = ClickerCompat.RegisterClickEffect(Mod, "BloodyKnives", 20, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 for (int i = 0; i < 8; i++)
                     Projectile.NewProjectile(source, position, Vector2.UnitX.RotatedBy(MathHelper.TwoPi / 8 * i) * 10, ModContent.ProjectileType<BloodstoneClickerProjectile>(), damage, knockBack, player.whoAmI);
-            }); CalamityClickersUtils.RegisterPostWildMagicClickEffect(BloodyKnives);
+            });
+            CalamityClickersUtils.RegisterPostWildMagicClickEffect(BloodyKnives);
         }
         public override void SetDefaultsExtra()
         {
@@ -52,7 +65,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Providance
             //AddEffect(Item, ClickEffect.Linger);
             SetDust(Item, DustID.Blood);
 
-            Item.damage = 170;
+            Item.damage = 200;
             Item.knockBack = 1f;
             Item.rare = ModContent.RarityType<Turquoise>();
             Item.value = CalamityGlobalItem.RarityTurquoiseBuyPrice;
@@ -60,7 +73,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Providance
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient<HemoClicker>()
+                //.AddIngredient<HemoClicker>()
                 .AddIngredient<BloodstoneCore>(5)
                 .AddTile(TileID.LunarCraftingStation)
                 .Register();

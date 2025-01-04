@@ -1,17 +1,33 @@
-Update 1.1.1.0 - Clickers Buff Patch
+Update 1.2.0.0 - "Draedon's Computer" Update that adds an new Draedon's Arsenal Clickers and rebalance a lot of clickers (primary after Moonlord)
+
+New Draedon Clickers:
+Added Scrap Presser. T1 Draedon Arsenal Clicker. Shoots an missle from sky
+Added Handheld ClickerDrill. T2 Draedon Arsenal Clicker. Creates a drill what stucks on enemy
+Added Field Polorizer. T3 Draedon Arsenal Clicker. Creates an magnetic field that increase size every his hit
+Added Bioinjector. T4 Draedon Arsenal Clicker. Support Clicker. Creates niddle that can be used for heal
+
 
 Changes:
 Improved some Clicker outline for increase notice of real cursop positions
 Clicker Nova small stars now homes to enemies after fly
-Buffed Mice Catalyst Clicked spark count (1 -> 2)
-Buffed Mice Catalyst Clicked catalyst cloud fly speed
+Buffed Mice Catalyst Clicked spark count (1 -> 2) and catalyst cloud fly speed (up to 3x from previous)
 Reworked Beyonder's Grasp. Now requare an Ruinous Soul in recipe and has new 'Phantasmal Reach' clicker effect that changes damage depending on how far cursor from player. 'Phantasmal Reach' work outside of Beyonder's Grasp
-Buffed Beyonder's Grasp damage (130 -> 170)
+Buffed Beyonder's Grasp damage (130 -> 240)
 Wulfrum Pressing Device clicker effect now work outside of this weapon
 Nerfed Nightmare Clicker clicker effect (5 -> 6 clicks until trigger)
+Buffed Profaned Rapturer base damage (140 -> 200)
+Buffed Twisted Duality base damage (145 -> 200) and thorn damage (0.5x -> 1x of clicker damage)
+Twisted Duality now not requare Pointy Clicker
+Hemophilic Dagger now not requare Hemo Clicker
+Rebalanced Ghastly Glicker base damage (170 -> 230) and ghast damage (1x -> 0.5x of clicker damage)
+Rebalanced Bellatrix base damage (190 -> 230) and moon damage (1x -> 0.75x of clicker damage)
+Bellatrix now has randomize of shooting moons
+Buffed Clicker of Gods base damage (330 -> 340)
 
 Bug Fixes:
 Fixed Lihzahrd Particle Accelerator (and their upgrades) always gets effect after unequip
 Fixed Mice Catalyst Clicker small bolts not shoots to random direction.
 Fixed Bubble Poker projectile wrong damage class
 Fixed Victide Anemonous Mask don t have recipe 
+Fixed lifesteal potential bugs with Hemophilic Dagger
+Fixed Plague Clicker and Infested Bee Clicker plague damage has big id static cooldown (10 -> 2)

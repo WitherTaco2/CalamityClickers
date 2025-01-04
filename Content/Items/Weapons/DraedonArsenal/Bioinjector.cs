@@ -83,8 +83,8 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
             get => (int)Projectile.ai[0];
         }*/
         public Vector2 StartSpot;
-        public int Timer;
-        public const int Time = 40;
+        public const float Time = 40;
+        public const float ActiveToHealTime = 10;
         public CurveSegment InitialAway = new CurveSegment(SineOutEasing, 0f, 0f, -0.2f, 3);
         public CurveSegment AccelerateTowards = new CurveSegment(PolyInEasing, 0.3f, -0.2f, 1.2f, 3);
         public CurveSegment Bump1Segment = new CurveSegment(SineBumpEasing, 0.5f, 1f, 0.24f);
@@ -93,6 +93,20 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
         public override void OnSpawn(IEntitySource source)
         {
             StartSpot = Projectile.Center;
+        }
+        public int Timer
+        {
+            get => (int)Projectile.localAI[1];
+            set => Projectile.localAI[1] = value;
+        }
+        public bool ActiveToHeal
+        {
+            get => Projectile.ai[0] > 0;
+        }
+        public int ActiveToHealTimer
+        {
+            get => (int)Projectile.ai[1];
+            set => Projectile.ai[1] = value;
         }
         public override void AI()
         {
@@ -106,6 +120,11 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
             Projectile.timeLeft = 1800;
             if (Timer > 0)
                 Timer--;
+            if (ActiveToHeal && ActiveToHealTimer < ActiveToHealTime)
+                ActiveToHealTimer++;
+            if (ActiveToHealTimer == ActiveToHealTime)
+                Projectile.Kill();
+
 
 
             Vector2 realIdealSpot = player.MountedCenter + player.gfxOffY * Vector2.UnitY;
@@ -122,9 +141,11 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
                 if (proj.type == Projectile.type)
                     ++niddlePosition;
             }
-            realIdealSpot -= new Vector2(0, 40 + 5 * MathF.Sin(new UnifiedRandom(Projectile.whoAmI).NextFloat(0.9f, 1.1f) * Main.GlobalTimeWrappedHourly)).RotatedBy(niddlePosition * MathHelper.PiOver4);
+            float rot = niddlePosition * 0.4f;
+            realIdealSpot -= new Vector2(0, 70 + 30 * MathF.Sin(new UnifiedRandom(Projectile.whoAmI).NextFloat(0.9f, 1.1f) * Main.GlobalTimeWrappedHourly)).RotatedBy(rot);
+            Projectile.rotation = rot;
 
-            Projectile.Center = Vector2.Lerp(realIdealSpot, StartSpot, ProgressionOfNeedle);
+            Projectile.Center = Vector2.Lerp(Vector2.Lerp(realIdealSpot, StartSpot, ProgressionOfNeedle), player.Center, ActiveToHealTimer / ActiveToHealTime);
         }
         public override void SendExtraAI(BinaryWriter writer)
         {

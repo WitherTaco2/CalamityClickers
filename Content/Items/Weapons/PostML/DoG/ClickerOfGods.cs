@@ -34,7 +34,7 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.DoG
             AddEffect(Item, NebulaStars);
             SetDust(Item, DustType);
 
-            Item.damage = 330;
+            Item.damage = 340;
             Item.knockBack = 1f;
             Item.rare = ModContent.RarityType<DarkBlue>();
             Item.value = CalamityGlobalItem.RarityDarkBlueBuyPrice;

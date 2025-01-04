@@ -22,15 +22,16 @@ namespace CalamityClickers.Content.Items.Weapons.PostML.Polterghast
         {
             GhastlyPortal = ClickerCompat.RegisterClickEffect(Mod, "GhastlyPortal", 25, RadiusColor, delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
-                Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<RuinousClickerProjectile>(), damage, knockBack, player.whoAmI);
-            }); CalamityClickersUtils.RegisterPostWildMagicClickEffect(GhastlyPortal);
+                Projectile.NewProjectile(source, position, Vector2.Zero, ModContent.ProjectileType<RuinousClickerProjectile>(), damage / 2, knockBack, player.whoAmI);
+            });
+            CalamityClickersUtils.RegisterPostWildMagicClickEffect(GhastlyPortal);
         }
         public override void SetDefaultsExtra()
         {
             AddEffect(Item, GhastlyPortal);
             SetDust(Item, DustID.GemRuby);
 
-            Item.damage = 170;
+            Item.damage = 230;
             Item.knockBack = 1f;
             Item.rare = ModContent.RarityType<PureGreen>();
             Item.value = CalamityGlobalItem.RarityPureGreenBuyPrice;

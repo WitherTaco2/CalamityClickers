@@ -45,6 +45,9 @@ namespace CalamityClickers.Content.Items.Weapons.HM
         {
             base.SetDefaults();
             Projectile.DamageType = ModContent.GetInstance<ClickerDamage>();
+            //Projectile.usesIDStaticNPCImmunity = false;
+            //Projectile.usesLocalNPCImmunity = true;
+            Projectile.idStaticNPCHitCooldown = 2;
         }
         public override bool? CanHitNPC(NPC target)
         {
