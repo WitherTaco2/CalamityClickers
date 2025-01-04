@@ -75,7 +75,7 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
         public override void AddRecipes()
         {
             CreateRecipe().
-                AddIngredient<MysteriousCircuitry>(11).
+                AddIngredient<MysteriousCircuitry>(12).
                 AddIngredient<DubiousPlating>(8).
                 AddRecipeGroup("AnyMythrilBar", 10).
                 AddIngredient(ItemID.SoulofMight, 20).

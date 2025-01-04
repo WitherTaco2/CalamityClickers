@@ -286,16 +286,21 @@ ClickEffect: {
 	# Draedon
 	ScrapMissile: {
 		Name: Scrap Missile
-		Description: $Mods.ClickerClass.Common.Unknown
+		Description: Shoots a missle from above at the target that shatters on impact
 	}
 
 	DrillShot: {
-		Description: $Mods.ClickerClass.Common.Unknown
 		Name: Drill Shot
+		Description: Shoots a Drill that latches onto at enemy
 	}
 
 	Electrofield: {
 		Name: Electrofield
+		Description: Summon a lingering electromagnetic field that extends on hit
+	}
+
+	VitalInfusion: {
+		Name: Vital Infusion
 		Description: $Mods.ClickerClass.Common.Unknown
 	}
 }
@@ -548,8 +553,6 @@ Items: {
 				DisplayNameLegecy: Earthen Clicker
 			}
 
-			GaussClicker.DisplayName: Gauss Clicker
-
 			BrimstoneClicker: {
 				DisplayName: Ignic Clicker
 				DisplayNameLegecy: Brimstone Clicker
@@ -663,7 +666,7 @@ Items: {
 
 			NightmareClicker.DisplayName: Nightmare Clicker
 			DarksunClicker.DisplayName: Darksun Clicker
-			NuclearClicker.DisplayName: Nuclear Clicker
+			#
 			# Post-Yharon
 			PhoenixClicker.DisplayName: Phoenix Clicker
 			MiceCatalystClicker.DisplayName: Mice Catalyst Clicker
@@ -676,19 +679,18 @@ Items: {
 
 			MiracleClicker.DisplayName: Miracle Clicker
 			CruelClicker.DisplayName: Cruel Clicker
+			#
 			# Endgame
 			ItsClicker.DisplayName: Its Clicker
 			MarkOfRatKing.DisplayName: Mark of Rat King
+			#
 			# Draedon
+			GaussClicker.DisplayName: Gauss Clicker
+			NuclearClicker.DisplayName: Nuclear Clicker
 			ScrapPresser.DisplayName: Scrap Presser
 			HandheldClickerDrill.DisplayName: Handheld ClickerDrill
-
-			A: {
-				DisplayName: A
-				Lore: ""
-			}
-
 			FieldPolorizer.DisplayName: Field Polorizer
+			Bioinjector.DisplayName: Bioinjector
 		}
 	}
 
@@ -847,6 +849,7 @@ Projectiles: {
 		ScrapPresserPro.DisplayName: Scrap Presser Pro
 		HandheldClickerDrillPro.DisplayName: Handheld Clicker Drill Pro
 		FieldPolorizerPro.DisplayName: Field Polorizer Pro
+		BioinjectorPro.DisplayName: Bioinjector Pro
 	}
 }
 

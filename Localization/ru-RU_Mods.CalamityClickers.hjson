@@ -283,18 +283,24 @@ ClickEffect: {
 		Description: Выпускает взрыв наносящего урон обычно, острового или белого шоколада
 	}
 
+	# Draedon
 	ScrapMissile: {
 		// Name: Scrap Missile
-		// Description: $Mods.ClickerClass.Common.Unknown
+		// Description: Shoots a missle from above at the target that shatters on impact
 	}
 
 	DrillShot: {
-		// Description: $Mods.ClickerClass.Common.Unknown
 		// Name: Drill Shot
+		// Description: Shoots a Drill that latches onto at enemy
 	}
 
 	Electrofield: {
 		// Name: Electrofield
+		// Description: Summon a lingering electromagnetic field that extends on hit
+	}
+
+	VitalInfusion: {
+		// Name: Vital Infusion
 		// Description: $Mods.ClickerClass.Common.Unknown
 	}
 }
@@ -547,8 +553,6 @@ Items: {
 				DisplayNameLegecy: Земледробящий Курсор
 			}
 
-			GaussClicker.DisplayName: Гаусовый Курсор
-
 			BrimstoneClicker: {
 				DisplayName: Кликер Игниса
 				DisplayNameLegecy: Серный Курсор
@@ -662,7 +666,7 @@ Items: {
 
 			NightmareClicker.DisplayName: Курсор Кошмаров
 			DarksunClicker.DisplayName: Курсор темного солнца
-			NuclearClicker.DisplayName: Ядерный Курсор
+			#
 			# Post-Yharon
 			PhoenixClicker.DisplayName: Курсор Феникса
 			MiceCatalystClicker.DisplayName: Курсор катализатора мыши
@@ -675,19 +679,18 @@ Items: {
 
 			MiracleClicker.DisplayName: Чудо-Курсор
 			CruelClicker.DisplayName: Жестокий Курсор
+			#
 			# Endgame
 			ItsClicker.DisplayName: Вот это Курсор
 			MarkOfRatKing.DisplayName: Знак Крысиного Короля
+			#
 			# Draedon
+			GaussClicker.DisplayName: Гаусовый Курсор
+			NuclearClicker.DisplayName: Ядерный Курсор
 			// ScrapPresser.DisplayName: Scrap Presser
 			// HandheldClickerDrill.DisplayName: Handheld ClickerDrill
-
-			A: {
-				// DisplayName: A
-				// Lore: ""
-			}
-
 			// FieldPolorizer.DisplayName: Field Polorizer
+			// Bioinjector.DisplayName: Bioinjector
 		}
 	}
 
@@ -846,6 +849,7 @@ Projectiles: {
 		// ScrapPresserPro.DisplayName: Scrap Presser Pro
 		// HandheldClickerDrillPro.DisplayName: Handheld Clicker Drill Pro
 		// FieldPolorizerPro.DisplayName: Field Polorizer Pro
+		// BioinjectorPro.DisplayName: Bioinjector Pro
 	}
 }
 

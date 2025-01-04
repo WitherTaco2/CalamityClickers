@@ -47,8 +47,8 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
         public override void AddRecipes()
         {
             CreateRecipe().
-                AddIngredient<MysteriousCircuitry>(6).
-                AddIngredient<DubiousPlating>(5).
+                AddIngredient<MysteriousCircuitry>(14).
+                AddIngredient<DubiousPlating>(11).
                 AddIngredient<InfectedArmorPlating>(10).
                 AddIngredient<LifeAlloy>(5).
                 AddCondition(ArsenalTierGatedRecipe.ConstructRecipeCondition(3, out Func<bool> condition), condition).
