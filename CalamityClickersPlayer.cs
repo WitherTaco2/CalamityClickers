@@ -3,6 +3,7 @@ using CalamityClickers.Content.Cooldowns;
 using CalamityClickers.Content.Items.Accessories;
 using CalamityClickers.Content.Items.Armor;
 using CalamityClickers.Content.Items.Weapons;
+using CalamityClickers.Content.Items.Weapons.DraedonArsenal;
 using CalamityClickers.Content.Items.Weapons.PostML.Polterghast;
 using CalamityClickers.Content.Items.Weapons.PreHM;
 using CalamityClickers.Content.Projectiles;
@@ -113,6 +114,23 @@ namespace CalamityClickers
                     {
                         ClickerCompat.SetAutoReuseEffect(Player, 8);
                         Player.AddBuff(ModContent.BuffType<WulfrumClickerBuff>(), 3);
+                    }
+                }
+                if (Player.GetHeldClickerEffects().Contains(Bioinjector.VitalInfusion))
+                {
+                    int needle = ModContent.ProjectileType<BioinjectorPro>();
+                    if (PlayerInput.Triggers.JustReleased.MouseRight && Player.ownedProjectileCounts[needle] > 0)
+                    {
+                        for (int index = 0; index < Main.maxProjectiles; ++index)
+                        {
+                            Projectile proj = Main.projectile[index];
+                            if (proj.type == needle)
+                            {
+                                proj.Kill();
+                                Player.Heal(25);
+                                break;
+                            }
+                        }
                     }
                 }
             }
