@@ -5,6 +5,8 @@ Added Scrap Presser. T1 Draedon Arsenal Clicker. Shoots an missle from sky
 Added Handheld ClickerDrill. T2 Draedon Arsenal Clicker. Creates a drill what stucks on enemy
 Added Field Polorizer. T3 Draedon Arsenal Clicker. Creates an magnetic field that increase size every his hit
 Added Bioinjector. T4 Draedon Arsenal Clicker. Support Clicker. Creates niddle that can be used for heal
+Added Fusion Pointer. T5 Draedon Arsenal Clicker. Work like High Tech Clicker in late post-Moonlord
+Added mod call power value for ("SetAccessoryItem", "LihzahrdParticleAccelerator") and rewrote calculation of power. Now effects of Particle Accelerator upgrades now stacks each other
 
 
 Changes:
@@ -24,10 +26,20 @@ Rebalanced Bellatrix base damage (190 -> 230) and moon damage (1x -> 0.75x of cl
 Bellatrix now has randomize of shooting moons
 Buffed Clicker of Gods base damage (330 -> 340)
 
+
 Bug Fixes:
 Fixed Lihzahrd Particle Accelerator (and their upgrades) always gets effect after unequip
 Fixed Mice Catalyst Clicker small bolts not shoots to random direction.
 Fixed Bubble Poker projectile wrong damage class
-Fixed Victide Anemonous Mask don t have recipe 
+Fixed Victide Anemonous Mask don't have recipe 
 Fixed lifesteal potential bugs with Hemophilic Dagger
 Fixed Plague Clicker and Infested Bee Clicker plague damage has big id static cooldown (10 -> 2)
+Fixed potential bugs with Mod Calls
+Fixed Daedalus Visor and Bloody Choc n' Cookies don't have -Clicker Item- tag
+
+
+Localization changes and fixes (Ru):
+Переименован Кликер-плавник на Кликерфин
+Добавлена русская локализация для баффа Кликерфина (Гнев Кликерфина), живого Кликерфин
+Добавлена русская локализация для Маска анемонуса прилива (Victide Anemonous Mask)
+Добавлена русская локализация для перезарядок, добавленных в 1.1.0.0

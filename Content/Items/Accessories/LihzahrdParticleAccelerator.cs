@@ -24,6 +24,7 @@ namespace CalamityClickers.Content.Items.Accessories
         {
             player.GetCritChance<ClickerDamage>() += 5;
             player.GetModPlayer<CalamityClickersPlayer>().accPortableParticleAcceleratorUpgrades = Item;
+            player.GetModPlayer<CalamityClickersPlayer>().accPortableParticleAcceleratorUpgradesPower += 10;
         }
         public override void AddRecipes()
         {

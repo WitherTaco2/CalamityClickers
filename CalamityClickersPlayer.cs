@@ -65,6 +65,7 @@ namespace CalamityClickers
         public int accBloodyChocolateCookieCD = 0;
         public Item accSSMedal = null;
         public Item accPortableParticleAcceleratorUpgrades = null;
+        public int accPortableParticleAcceleratorUpgradesPower = 0;
 
         public bool bloodyCookieBuff = false;
         public bool godSlayerClickerBuff = false;
@@ -159,7 +160,7 @@ namespace CalamityClickers
                 {
                     if (accPortableParticleAcceleratorUpgrades.ModItem != null)
                     {
-                        if (accPortableParticleAcceleratorUpgrades.ModItem is LihzahrdParticleAccelerator)
+                        /*if (accPortableParticleAcceleratorUpgrades.ModItem is LihzahrdParticleAccelerator)
                         {
                             Player.GetDamage<ClickerDamage>().Flat += 10;
                         }
@@ -170,7 +171,9 @@ namespace CalamityClickers
                         if (accPortableParticleAcceleratorUpgrades.ModItem is CosmicClickingGlove)
                         {
                             Player.GetDamage<ClickerDamage>().Flat += 100;
-                        }
+                        }*/
+
+                        Player.GetDamage<ClickerDamage>().Flat += accPortableParticleAcceleratorUpgradesPower;
                     }
                 }
             }

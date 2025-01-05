@@ -26,6 +26,7 @@ namespace CalamityClickers.Content.Items.Accessories
             player.Clicker().accRegalClickingGlove = true;
             player.GetCritChance<ClickerDamage>() += 10;
             player.GetModPlayer<CalamityClickersPlayer>().accPortableParticleAcceleratorUpgrades = Item;
+            player.GetModPlayer<CalamityClickersPlayer>().accPortableParticleAcceleratorUpgradesPower += 25;
         }
         public override void AddRecipes()
         {

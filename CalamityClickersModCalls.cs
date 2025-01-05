@@ -27,6 +27,7 @@ namespace CalamityClickers
                     if (!CalamityClickersSystem.PostNightmareClickerEffects.Contains(name))
                     {
                         CalamityClickersSystem.PostNightmareClickerEffects.Add(name);
+                        return success;
                     }
                     else
                     {
@@ -58,25 +59,38 @@ namespace CalamityClickers
                     {
                         calClickerPlayer.accBloodyChocolate = true;
                         calClickerPlayer.accBloodyChocolateItem = item;
+                        return success;
                     }
-                    if (accName == "BloodyChocCookies")
+                    else if (accName == "BloodyChocCookies")
                     {
                         calClickerPlayer.accBloodyChocolate = true;
                         calClickerPlayer.accBloodyChocolateItem = item;
                         player.GetModPlayer<ClickerPlayer>().EnableClickEffect(BloodyChocCookies.BurnOrBliss);
+                        return success;
                     }
                     else if (accName == "FingerOfBloodGod")
                     {
                         calClickerPlayer.accFingerOfBG = true;
+                        return success;
                     }
                     else if (accName == "LihzahrdParticleAccelerator")
                     {
                         calClickerPlayer.accPortableParticleAcceleratorUpgrades = item;
+
+                        var power = args[4] as int?;
+                        if (accName == null)
+                        {
+                            throw new Exception($"Call Error: The power argument for the attempted message, \"{message}\" has returned null.");
+                        }
+                        calClickerPlayer.accPortableParticleAcceleratorUpgradesPower += power.Value;
+                        return success;
+
                     }
                     else if (accName == "SSMedal")
                     {
                         calClickerPlayer.accSSMedal = item;
                         clickerPlayer.accSMedalItem = item;
+                        return success;
                     }
 
                     throw new Exception($"Call Error: The accName argument for the attempted message, \"{message}\" has no valid entry point.");

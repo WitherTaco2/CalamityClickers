@@ -20,6 +20,7 @@ namespace CalamityClickers.Content.Items.Armor
 
         public override void SetStaticDefaults()
         {
+            base.SetStaticDefaults();
             ClickerEffect = ClickerSystem.RegisterClickEffect(Mod, "DaedalusLightning", 15, new Color(218, 105, 233), delegate (Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, int type, int damage, float knockBack)
             {
                 for (int k = 0; k < 3; k++)

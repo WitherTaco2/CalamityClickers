@@ -290,23 +290,28 @@ ClickEffect: {
 
 	# Draedon
 	ScrapMissile: {
-		// Name: Scrap Missile
-		// Description: Shoots a missle from above at the target that shatters on impact
+		Name: Ракета из лома
+		Description: Стреляет ракетой сверху по цели, которая разлетается вдребезги при ударе
 	}
 
 	DrillShot: {
-		// Name: Drill Shot
-		// Description: Shoots a Drill that latches onto at enemy
+		Name: Удар дрели
+		Description: Стреляет буром, который застревает во враге
 	}
 
 	Electrofield: {
-		// Name: Electrofield
-		// Description: Summon a lingering electromagnetic field that extends on hit
+		Name: Электрическое поле
+		Description: Вызовите длительное электромагнитное поле, которое расширяется при ударах
 	}
 
 	VitalInfusion: {
-		// Name: Vital Infusion
-		// Description: $Mods.ClickerClass.Common.Unknown
+		Name: Жизненно важное вливание
+		Description: Заряжает зеленую био-иглу рядом с игроком. Нажмите правую клавишу мыши, чтобы восстановить 25 единиц здоровья за счет стоимости одной иглы
+	}
+
+	CurrentStrike: {
+		Name: Поточный удар
+		Description: Выпускает мощный поток ионизированных частиц, который проходит по дуге сквозь врагов
 	}
 }
 
@@ -314,13 +319,13 @@ Items: {
 	Armor: {
 		Capsuit: {
 			VictideCapsuit: {
-				// DisplayName: Victide Anemonous Mask
-				// Tooltip: 5% increased clicker damage
-				/* SetBonus:
+				DisplayName: Маска анемонуса прилива
+				Tooltip: 5% увеличение урона клика
+				SetBonus:
 					'''
-					10% increased clicker radius
-					+1.5 HP/s life regen and 10% increased click damage while submerged in liquid
-					''' */
+					10% увеличение радиуса кликера
+					+1.5 жизни в секунду и 10% увеличение урона клика, когда находишься в жидкости
+					'''
 			}
 
 			AerospecCapsuit: {
@@ -540,7 +545,7 @@ Items: {
 				DisplayNameLegecy: Гуокурсор
 			}
 
-			Clickerfin.DisplayName: Курсор-плавник
+			Clickerfin.DisplayName: Кликерфин
 
 			# Hardmode
 			CryoClicker: {
@@ -693,10 +698,11 @@ Items: {
 			# Draedon
 			GaussClicker.DisplayName: Гаусовый Курсор
 			NuclearClicker.DisplayName: Ядерный Курсор
-			// ScrapPresser.DisplayName: Scrap Presser
-			// HandheldClickerDrill.DisplayName: Handheld ClickerDrill
-			// FieldPolorizer.DisplayName: Field Polorizer
-			// Bioinjector.DisplayName: Bioinjector
+			ScrapPresser.DisplayName: Пресс для лома
+			HandheldClickerDrill.DisplayName: Переносной Курсор-Дрель
+			FieldPolorizer.DisplayName: Поляризатор зоны
+			Bioinjector.DisplayName: Биоинжектор
+			FusionPointer.DisplayName: Указатель слияния
 		}
 	}
 
@@ -852,10 +858,11 @@ Projectiles: {
 		HolyGoldenClickerProjectile.DisplayName: Святой луч
 		ClickerNovaProjectile.DisplayName: Омега звезда
 		ClickerNovaProjectileSmall.DisplayName: Малая звезда
-		// ScrapPresserPro.DisplayName: Scrap Presser Pro
-		// HandheldClickerDrillPro.DisplayName: Handheld Clicker Drill Pro
-		// FieldPolorizerPro.DisplayName: Field Polorizer Pro
-		// BioinjectorPro.DisplayName: Bioinjector Pro
+		ScrapPresserPro.DisplayName: Ракета из лома
+		HandheldClickerDrillPro.DisplayName: Курсор-дрель
+		FieldPolorizerPro.DisplayName: Электромагнитное поле
+		BioinjectorPro.DisplayName: Био-игла
+		FusionPointerPro.DisplayName: Ионизированные частицы
 	}
 }
 
@@ -896,8 +903,8 @@ Buffs: {
 	}
 
 	ClickerfinBuff: {
-		// DisplayName: Clickerfin Wrath
-		// Description: Increased click damage by 25%
+		DisplayName: Гнев Кликерфина
+		Description: Увеличен урон клика на 25%
 	}
 }
 
@@ -905,8 +912,8 @@ UI: {
 	Cooldowns: {
 		GodSlayerOverclockCooldown: Перезарядка разгона Убийцы Богов
 		FingerOfBloodGodCooldown: Перезарядка Пальца Кровавого Бога
-		// TarragonClickerCooldown: Tarragon Clicker Defence Cooldown
-		// UltraboostCooldown: Ultraboost Cooldown
+		TarragonClickerCooldown: Перезарядка защиты кликера Таррагона
+		UltraboostCooldown: Перезарядка Ультра-ускорения
 	}
 
 	Enchantments: {
@@ -924,7 +931,7 @@ UI: {
 
 NPCs: {
 	// LecherousOrbClicker.DisplayName: Lecherous Orb Clicker
-	// ClickerfinNPC.DisplayName: Clickerfin
+	ClickerfinNPC.DisplayName: Кликерфин
 }
 
 Misc: {

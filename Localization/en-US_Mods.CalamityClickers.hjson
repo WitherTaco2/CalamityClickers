@@ -306,7 +306,12 @@ ClickEffect: {
 
 	VitalInfusion: {
 		Name: Vital Infusion
-		Description: $Mods.ClickerClass.Common.Unknown
+		Description: Charges a green BioNeedle next to player. Right Click to heal 25 health by cost of one needle
+	}
+
+	CurrentStrike: {
+		Name: Current Strike
+		Description: Fires a powerful currents of ionized particles that arcs through enemies
 	}
 }
 
@@ -697,6 +702,7 @@ Items: {
 			HandheldClickerDrill.DisplayName: Handheld ClickerDrill
 			FieldPolorizer.DisplayName: Field Polorizer
 			Bioinjector.DisplayName: Bioinjector
+			FusionPointer.DisplayName: Fusion Pointer
 		}
 	}
 
@@ -852,10 +858,11 @@ Projectiles: {
 		HolyGoldenClickerProjectile.DisplayName: Holy Deathray
 		ClickerNovaProjectile.DisplayName: Omega Star
 		ClickerNovaProjectileSmall.DisplayName: Small Star
-		ScrapPresserPro.DisplayName: Scrap Presser Pro
-		HandheldClickerDrillPro.DisplayName: Handheld Clicker Drill Pro
-		FieldPolorizerPro.DisplayName: Field Polorizer Pro
-		BioinjectorPro.DisplayName: Bioinjector Pro
+		ScrapPresserPro.DisplayName: Scrap Missle
+		HandheldClickerDrillPro.DisplayName: ClickerDrill
+		FieldPolorizerPro.DisplayName: Electromagnetic Field
+		BioinjectorPro.DisplayName: BioNeedle
+		FusionPointerPro.DisplayName: Ionized Particles
 	}
 }
 

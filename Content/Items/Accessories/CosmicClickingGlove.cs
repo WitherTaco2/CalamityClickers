@@ -26,6 +26,7 @@ namespace CalamityClickers.Content.Items.Accessories
             player.Clicker().accRegalClickingGlove = true;
             player.GetCritChance<ClickerDamage>() += 15;
             player.GetModPlayer<CalamityClickersPlayer>().accPortableParticleAcceleratorUpgrades = Item;
+            player.GetModPlayer<CalamityClickersPlayer>().accPortableParticleAcceleratorUpgradesPower += 100;
             player.Clicker().accTriggerFinger = true;
             player.GetModPlayer<CalamityClickersPlayer>().accFingerOfBG = true;
         }

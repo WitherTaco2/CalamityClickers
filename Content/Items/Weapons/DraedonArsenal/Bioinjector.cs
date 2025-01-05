@@ -56,7 +56,7 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
                 AddIngredient<UelibloomBar>(8).
                 AddIngredient(ItemID.LunarBar, 4).
                 AddCondition(ArsenalTierGatedRecipe.ConstructRecipeCondition(4, out Func<bool> condition), condition).
-                AddTile(TileID.MythrilAnvil).
+                AddTile(TileID.LunarCraftingStation).
                 Register();
         }
     }
