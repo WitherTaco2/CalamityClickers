@@ -36,7 +36,7 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
             AddEffect(Item, VitalInfusion);
             SetDust(Item, DustID.Electric);
 
-            Item.damage = 180;
+            Item.damage = 220;
             Item.knockBack = 1.5f;
             Item.rare = ModContent.RarityType<DarkOrange>();
             Item.value = CalamityGlobalItem.RarityTurquoiseBuyPrice;
