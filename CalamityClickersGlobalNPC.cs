@@ -1,5 +1,6 @@
 ﻿using CalamityClickers.Content.Items.Armor;
 using CalamityClickers.Content.Items.Misc.SFXButton;
+using CalamityClickers.Content.Items.Weapons.DLC;
 using CalamityClickers.Content.Items.Weapons.HM;
 using CalamityClickers.Content.Items.Weapons.PostML;
 using CalamityClickers.Content.Items.Weapons.PostML.DoG;
@@ -301,6 +302,10 @@ namespace CalamityClickers
                 var normalOnly = new LeadingConditionRule(new Conditions.NotExpert());
                 lastWorm.Add(normalOnly);
                 normalOnly.Add(ModContent.ItemType<CosmicStarClicker>(), 4);
+            }
+            if (ModLoader.TryGetMod("InfernumMode", out var infernum) && npc.type == infernum.Find<ModNPC>("BereftVassal").Type) //BereftVassalBossBag 
+            {
+                mainRule.Add(ModContent.ItemType<BereftVassalsClicker>(), 4);
             }
 
 

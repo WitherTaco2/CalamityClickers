@@ -58,6 +58,18 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
                 AddCondition(ArsenalTierGatedRecipe.ConstructRecipeCondition(4, out Func<bool> condition), condition).
                 AddTile(TileID.LunarCraftingStation).
                 Register();
+            if (ModLoader.TryGetMod("CatalystMod", out var mod))
+            {
+                CreateRecipe().
+                    AddIngredient<MysteriousCircuitry>(17).
+                    AddIngredient<DubiousPlating>(13).
+                    AddIngredient(mod.Find<ModItem>("MetanovaBar").Type, 4).
+                    AddIngredient(ItemID.LunarBar, 4).
+                    AddCondition(ArsenalTierGatedRecipe.ConstructRecipeCondition(4, out Func<bool> condition2), condition2).
+                    AddTile(TileID.LunarCraftingStation).
+                    Register();
+
+            }
         }
     }
     public class BioinjectorPro : ModdedClickerProjectile

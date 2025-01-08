@@ -43,7 +43,7 @@ namespace CalamityClickers.Content.Items.Weapons.DLC
             //Mod clamity = ModLoader.GetMod("CatalystMod");
             //SetDust(Item, Main.rand.NextBool() ? clamity.Find<ModDust>("AstraDust").Type : clamity.Find<ModDust>("AstraDustPurple").Type);
 
-            Item.damage = 145;
+            Item.damage = 200;
             Item.knockBack = 1f;
             if (ModLoader.TryGetMod("CatalystMod", out var result))
                 Item.rare = result.Find<ModRarity>("SuperbossRarity").Type;

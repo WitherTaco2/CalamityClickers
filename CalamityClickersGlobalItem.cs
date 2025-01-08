@@ -1,4 +1,5 @@
-﻿using CalamityClickers.Content.Items.Weapons.HM;
+﻿using CalamityClickers.Content.Items.Weapons.DLC;
+using CalamityClickers.Content.Items.Weapons.HM;
 using CalamityClickers.Content.Items.Weapons.PostML;
 using CalamityClickers.Content.Items.Weapons.PostML.DoG;
 using CalamityClickers.Content.Items.Weapons.PostML.Polterghast;
@@ -94,6 +95,10 @@ namespace CalamityClickers
             if (item.type == ModContent.ItemType<AstrumDeusBag>())
             {
                 itemLoot.Add(ModContent.ItemType<CosmicStarClicker>(), 4);
+            }
+            if (ModLoader.TryGetMod("InfernumMode", out var infernum) && item.type == infernum.Find<ModItem>("BereftVassalBossBag").Type)
+            {
+                itemLoot.Add(ModContent.ItemType<BereftVassalsClicker>(), 4);
             }
 
 

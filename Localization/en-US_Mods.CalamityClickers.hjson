@@ -143,6 +143,11 @@ ClickEffect: {
 		Description: Causes 8 blood blast projectiles to be summoned near the player and shoot across the screen.
 	}
 
+	TaurusFang: {
+		Name: Taurus Fang
+		Description: Creates an 13 homing Arid Fangs that stucks in enemy
+	}
+
 	# Post-Moonlord
 	# Early Stage
 	
@@ -703,6 +708,7 @@ Items: {
 			FieldPolorizer.DisplayName: Field Polorizer
 			Bioinjector.DisplayName: Bioinjector
 			FusionPointer.DisplayName: Fusion Pointer
+			BereftVassalsClicker.DisplayName: Taurus' Fang
 		}
 	}
 
@@ -863,6 +869,7 @@ Projectiles: {
 		FieldPolorizerPro.DisplayName: Electromagnetic Field
 		BioinjectorPro.DisplayName: BioNeedle
 		FusionPointerPro.DisplayName: Ionized Particles
+		BereftVassalsClickerPro.DisplayName: Arid Fangs
 	}
 }
 
@@ -932,6 +939,11 @@ UI: {
 NPCs: {
 	LecherousOrbClicker.DisplayName: Lecherous Orb Clicker
 	ClickerfinNPC.DisplayName: Clickerfin
+
+	ClickerfinNormalNPC: {
+		DisplayName: Clickerfin
+		Bestiary: Thanks to its sharp nose, clickerfin can rummage through the local gravel, finding various living creatures, such as worms. It is also a defense method that can make a deep wound in the predator's body.
+	}
 }
 
 Misc: {

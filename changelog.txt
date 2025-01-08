@@ -1,4 +1,4 @@
-Update 1.2.0.0 - "Draedon's Computer" Update that adds an new Draedon's Arsenal Clickers and rebalance a lot of clickers (primary after Moonlord)
+Update 1.2.0.0 - "Draedon's Computer" Update that adds an new Draedon's Arsenal Clickers and rebalance a lot of clickers (primary after Moonlord). And added compatibility with Infernum Mode
 
 New Draedon Clickers:
 Added Scrap Presser. T1 Draedon Arsenal Clicker. Shoots an missle from sky
@@ -7,6 +7,8 @@ Added Field Polorizer. T3 Draedon Arsenal Clicker. Creates an magnetic field tha
 Added Bioinjector. T4 Draedon Arsenal Clicker. Support Clicker. Creates niddle that can be used for heal
 Added Fusion Pointer. T5 Draedon Arsenal Clicker. Work like High Tech Clicker in late post-Moonlord
 Added mod call power value for ("SetAccessoryItem", "LihzahrdParticleAccelerator") and rewrote calculation of power. Now effects of Particle Accelerator upgrades now stacks each other
+Added Clickerfin as Infermum-only abyss enemy. Added due in fact that Infernum removes abyss chests
+Added Taurus' Fang. Infernum Mod Bereft Vassal's Clicker
 
 
 Changes:

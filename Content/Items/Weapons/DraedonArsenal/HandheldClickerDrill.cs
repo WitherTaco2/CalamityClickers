@@ -116,13 +116,13 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
             {
                 Projectile.Center = Main.npc[(int)Projectile.ai[0]].Center - new Vector2(Projectile.ai[1], Projectile.ai[2]);
             }
-            if (Projectile.soundDelay >= 0)
+            if (Projectile.soundDelay <= 0)
             {
-                Projectile.soundDelay--;
+                //Projectile.soundDelay--;
                 if (Projectile.soundDelay == 0)
                 {
                     SoundEngine.PlaySound(SoundID.Item23, Projectile.Center);
-                    Projectile.soundDelay = 60;
+                    Projectile.soundDelay = 30;
                 }
             }
         }
