@@ -3,7 +3,6 @@ using CalamityMod.CustomRecipes;
 using CalamityMod.Items;
 using CalamityMod.Items.Materials;
 using CalamityMod.Particles;
-using CalamityMod.Rarities;
 using ClickerClass;
 using Microsoft.Xna.Framework;
 using System;
@@ -50,7 +49,7 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
 
             Item.damage = 35;
             Item.knockBack = 1.5f;
-            Item.rare = ModContent.RarityType<DarkOrange>();
+            Item.rare = ItemRarityID.Pink;
             Item.value = CalamityGlobalItem.RarityPinkBuyPrice;
 
             CalamityGlobalItem modItem = Item.Calamity();

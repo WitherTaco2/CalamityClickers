@@ -33,28 +33,6 @@ namespace CalamityClickers.Content.Items.Weapons.PreHM
             Item.value = CalamityGlobalItem.RarityBlueBuyPrice;
 
         }
-        /*public bool autoClicker = true;
-        public override void UpdateInventory(Player player)
-        {
-            if (player.HeldItem.type == Item.type && autoClicker)
-            {
-                ClickerCompat.SetAutoReuseEffect(player, 8);
-                player.AddBuff(ModContent.BuffType<WulfrumClickerBuff>(), 3);
-            }
-        }
-        public override bool AltFunctionUse(Player player)
-        {
-            return true;
-        }
-        public override bool? UseItem(Player player)
-        {
-            if (player.altFunctionUse == 2)
-            {
-                autoClicker = !autoClicker;
-                return true;
-            }
-            return base.UseItem(player);
-        }*/
         public override void AddRecipes()
         {
             CreateRecipe()

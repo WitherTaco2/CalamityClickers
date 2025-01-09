@@ -129,7 +129,7 @@ ClickEffect: {
 	}
 
 	Stardust: {
-		Name: Stardust Звездная пыть
+		Name: Звездная пыть
 		Description: Высвобождает звездную пыль
 	}
 
@@ -144,8 +144,8 @@ ClickEffect: {
 	}
 
 	TaurusFang: {
-		// Name: Taurus Fang
-		// Description: Creates an 13 homing Arid Fangs that stucks in enemy
+		Name: Клык Тауруса
+		Description: Создает 13 самонаводящихся клыка Арида, который застревают во враге
 	}
 
 	# Post-Moonlord
@@ -162,13 +162,13 @@ ClickEffect: {
 	}
 
 	RedLightning: {
-		Name: Древние Красные Молнии
+		Name: Красные Молнии
 		Description: Вызывает четыре разряда молнии с неба
 	}
 
 	#Post-Providence
 	ProfanedInferno: {
-		Name: Оскверненный Инферно
+		Name: Оскверненное Инферно
 		Description: Вызывает взрыв Священной вспышки. Накладывает «Священное Пламя» на 3 секунды
 	}
 
@@ -183,7 +183,7 @@ ClickEffect: {
 	}
 
 	NovaSlimer: {
-		Name: Нова слизьнер
+		Name: Нова слизнёр
 		Description: Призывает самоноводащегося слизня Новы
 	}
 
@@ -246,7 +246,7 @@ ClickEffect: {
 	}
 
 	MiceCatalyst: {
-		Name: Каталист Мыши
+		Name: Катализатор Мыши
 		Description: Призовите облако катализатора, которое создает снаряды, летящие к положении мыши
 	}
 
@@ -290,7 +290,7 @@ ClickEffect: {
 
 	BurnOrBliss: {
 		Name: Ожог или блаженство
-		Description: Выпускает взрыв наносящего урон обычно, острового или белого шоколада
+		Description: Выпускает взрыв наносящего урон обычного, острового или белого шоколада
 	}
 
 	# Draedon

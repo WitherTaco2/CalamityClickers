@@ -303,7 +303,7 @@ namespace CalamityClickers
                 lastWorm.Add(normalOnly);
                 normalOnly.Add(ModContent.ItemType<CosmicStarClicker>(), 4);
             }
-            if (ModLoader.TryGetMod("InfernumMode", out var infernum) && npc.type == infernum.Find<ModNPC>("BereftVassal").Type) //BereftVassalBossBag 
+            if (ModLoader.TryGetMod("InfernumMode", out var infernum) && npc.type == infernum.Find<ModNPC>("BereftVassal").Type)
             {
                 mainRule.Add(ModContent.ItemType<BereftVassalsClicker>(), 4);
             }

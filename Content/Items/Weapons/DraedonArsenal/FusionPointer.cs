@@ -43,8 +43,8 @@ namespace CalamityClickers.Content.Items.Weapons.DraedonArsenal
 
             Item.damage = 350;
             Item.knockBack = 1.5f;
-            Item.rare = ModContent.RarityType<DarkOrange>();
-            Item.value = CalamityGlobalItem.RarityYellowBuyPrice;
+            Item.rare = ModContent.RarityType<DarkBlue>();
+            Item.value = CalamityGlobalItem.RarityDarkBlueBuyPrice;
 
             CalamityGlobalItem modItem = Item.Calamity();
             modItem.UsesCharge = true;
