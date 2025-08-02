@@ -18,7 +18,7 @@ namespace CalamityClickers.Commons.CatalystCrossmod
 
         public List<AstralRocksProjectile.AstralRockRenderData> astralRockRenderData;
 
-        public List<bool> isRender;
+        public List<bool> isRender = new List<bool>() { true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, };
 
         public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
         {

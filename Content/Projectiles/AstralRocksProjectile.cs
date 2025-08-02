@@ -17,6 +17,8 @@ namespace CalamityClickers.Content.Projectiles
     {
         public struct AstralRockRenderData
         {
+            public int whoIam;
+
             public int frame;
 
             public Vector3 offsetFromPlayer;
@@ -37,14 +39,16 @@ namespace CalamityClickers.Content.Projectiles
                 return baseScale * (20f / (num - -20f));
             }
 
-            public AstralRockRenderData(Vector3 pos, UnifiedRandom frameRand)
+            public AstralRockRenderData(int id, Vector3 pos, UnifiedRandom frameRand)
             {
+                whoIam = id;
                 offsetFromPlayer = pos;
                 frame = frameRand.Next(8);
             }
 
-            public AstralRockRenderData(Vector3 pos, int frame)
+            public AstralRockRenderData(int id, Vector3 pos, int frame)
             {
+                whoIam = id;
                 offsetFromPlayer = pos;
                 this.frame = frame;
             }
@@ -376,14 +380,14 @@ namespace CalamityClickers.Content.Projectiles
                     {
                         Vector3 pos = Vector3.Transform(new Vector3(Projectile.ai[0] * (float)i, 0f, 0f), Matrix.CreateFromYawPitchRoll(1f, -1f, num5 + MathF.PI * 2f / (float)num4 * (float)j));
                         pos.X = 0f - pos.X;
-                        modPlayer2.astralRockRenderData.Add(new AstralRockRenderData(pos, 8));
+                        modPlayer2.astralRockRenderData.Add(new AstralRockRenderData(j, pos, 8));
                     }
 
                     for (int k = 0; k < num4; k++)
                     {
                         Vector3 pos2 = Vector3.Transform(new Vector3(Projectile.ai[1] * (float)i, 0f, 0f), Matrix.CreateFromYawPitchRoll(-1f, -1f, num6 + MathF.PI * 2f / (float)num4 * (float)k));
                         pos2.X = 0f - pos2.X;
-                        modPlayer2.astralRockRenderData.Add(new AstralRockRenderData(pos2, 8));
+                        modPlayer2.astralRockRenderData.Add(new AstralRockRenderData(k + num4, pos2, 8));
                     }
 
                     continue;
@@ -395,11 +399,11 @@ namespace CalamityClickers.Content.Projectiles
                     pos3.X = 0f - pos3.X;
                     if (val.auricSet)
                     {
-                        modPlayer2.astralRockRenderData.Add(new AstralRockRenderData(pos3, AuricTeslaFrame));
+                        modPlayer2.astralRockRenderData.Add(new AstralRockRenderData(l, pos3, AuricTeslaFrame));
                     }
                     else
                     {
-                        modPlayer2.astralRockRenderData.Add(new AstralRockRenderData(pos3, frameRand));
+                        modPlayer2.astralRockRenderData.Add(new AstralRockRenderData(l, pos3, frameRand));
                     }
                 }
 
@@ -409,11 +413,11 @@ namespace CalamityClickers.Content.Projectiles
                     pos4.X = 0f - pos4.X;
                     if (val.auricSet)
                     {
-                        modPlayer2.astralRockRenderData.Add(new AstralRockRenderData(pos4, AuricTeslaFrame));
+                        modPlayer2.astralRockRenderData.Add(new AstralRockRenderData(m + num4, pos4, AuricTeslaFrame));
                     }
                     else
                     {
-                        modPlayer2.astralRockRenderData.Add(new AstralRockRenderData(pos4, frameRand));
+                        modPlayer2.astralRockRenderData.Add(new AstralRockRenderData(m + num4, pos4, frameRand));
                     }
                 }
             }

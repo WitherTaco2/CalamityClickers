@@ -1,4 +1,4 @@
-Update 1.2.0.1 - Lihzahrd Particle Accelerator hotfixes
+Update 1.2.0.3 - Avatar of Emptiness fix
 
 Bugfixes:
-Fixed Lihzahrd Particle Accelerator has SOOOO much damage
+Ported to latest tml version

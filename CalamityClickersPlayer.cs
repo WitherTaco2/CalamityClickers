@@ -99,6 +99,16 @@ namespace CalamityClickers
 
             enchLecherous = false;
         }
+        public override void UpdateEquips()
+        {
+            if (ModLoader.TryGetMod("NoxusBoss", out Mod aoe))
+            {
+                if (Player.isNearNPC(aoe.Find<ModNPC>("AvatarOfEmptiness").Type))
+                {
+                    ClickerCompat.EnableClickEffect(Player, "ClickerClass:PhaseReach");
+                }
+            }
+        }
         public override void PostUpdateEquips()
         {
             if (ClickerSystem.IsClickerWeapon(Player.HeldItem))
@@ -509,7 +519,7 @@ namespace CalamityClickers
         {
             Player.Clicker().clickerBonusPercent = 1f / (2f - Player.Clicker().clickerBonusPercent);
 
-            UpdateRippers();
+            //UpdateRippers();
         }
         private void UpdateRippers()
         {
