@@ -1,4 +1,6 @@
-Update 1.2.0.3 - Avatar of Emptiness fix
+Update 1.2.0.4 - Localization patch
+
+Updated English localization by Puka1611
 
 Bugfixes:
-Ported to latest tml version
+Fixed Wretched Fervor dropping from tresure bag

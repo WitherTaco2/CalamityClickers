@@ -76,6 +76,10 @@ namespace CalamityClickers
             {
                 itemLoot.Add(ModContent.ItemType<AquaticClicker>(), 4);
             }
+            if (item.type == ModContent.ItemType<CalamitasCloneBag>())
+            {
+                itemLoot.Add(ModContent.ItemType<ClickerOfCalamity>(), 4);
+            }
             if (item.type == ModContent.ItemType<LeviathanBag>())
             {
                 itemLoot.Add(ModContent.ItemType<AnahitasClicker>(), 4);
